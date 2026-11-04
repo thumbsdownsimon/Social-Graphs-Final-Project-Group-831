@@ -1,0 +1,588 @@
+{
+ "pooled": {
+  "votes_used": 494,
+  "share_contested": 0.7794,
+  "share_votes_with_any_rebel": 0.0911,
+  "rebel_share_of_cast": 0.0013,
+  "absent_share": 0.4036,
+  "corpus": {
+   "xml_files": 1889,
+   "total_mb": 1213.9,
+   "sampled_mb": 38.6,
+   "sampled_words": 2732688,
+   "sampled_speeches": 26085,
+   "chair_share_of_speeches": 0.519,
+   "chair_share_of_words": 0.063,
+   "estimated_total_words": 86007931,
+   "estimated_total_speeches": 820993,
+   "name_match_rate": 0.968,
+   "mention_exact_resolve_rate": 0.839
+  }
+ },
+ "file_name_suffixes": {
+  "helemoedet.xml": 68
+ },
+ "party_agreement": {
+  "parsed": 7629,
+  "failed": 2907,
+  "failed_examples": [
+   "\nVedtaget\n\nFor\t                  95\nImod\t                  21\nHverken for/imod\t                    0\nI alt\t                116\n",
+   "\nVedtaget\n\nFor\t                  60\nImod\t                  51\nHverken for/imod\t                    0\nI alt\t                111\n",
+   "\nVedtaget\n\nFor\t                116\nImod\t                    2\nHverken for/imod\t                    0\nI alt\t                118\n",
+   "\nVedtaget\n\nFor\t                112\nImod\t                    2\nHverken for/imod\t                    0\nI alt\t                114\n",
+   "\nVedtaget\n\nFor\t                  94\nImod\t                    0\nHverken for/imod\t                  19\nI alt\t                113\n"
+  ],
+  "agreement": {
+   "20101": {
+    "S-V": 0.552,
+    "DF-V": 0.897,
+    "KF-V": 1.0,
+    "EL-S": 0.704,
+    "S-SF": 0.973,
+    "DF-S": 0.448
+   },
+   "20102": {},
+   "20111": {
+    "S-V": 0.655,
+    "DF-V": 0.765,
+    "KF-V": 0.935,
+    "EL-S": 0.784,
+    "S-SF": 1.0,
+    "DF-S": 0.499
+   },
+   "20121": {
+    "S-V": 0.745,
+    "DF-V": 0.692,
+    "KF-V": 0.907,
+    "EL-S": 0.657,
+    "S-SF": 1.0,
+    "DF-S": 0.551
+   },
+   "20131": {
+    "S-V": 0.744,
+    "DF-V": 0.708,
+    "KF-V": 0.93,
+    "EL-S": 0.652,
+    "S-SF": 0.963,
+    "DF-S": 0.581
+   },
+   "20141": {
+    "S-V": 0.784,
+    "DF-V": 0.71,
+    "KF-V": 0.841,
+    "EL-S": 0.659,
+    "S-SF": 0.861,
+    "DF-S": 0.64
+   },
+   "20142": {
+    "S-V": 0.571,
+    "DF-V": 1.0,
+    "KF-V": 1.0,
+    "EL-S": 0.857,
+    "S-SF": 0.846,
+    "DF-S": 0.571
+   },
+   "20151": {
+    "S-V": 0.791,
+    "DF-V": 0.81,
+    "KF-V": 0.953,
+    "EL-S": 0.411,
+    "S-SF": 0.553,
+    "DF-S": 0.627
+   },
+   "20161": {
+    "S-V": 0.791,
+    "DF-V": 0.8,
+    "KF-V": 1.0,
+    "EL-S": 0.444,
+    "S-SF": 0.609,
+    "DF-S": 0.62
+   },
+   "20171": {
+    "S-V": 0.81,
+    "DF-V": 0.816,
+    "KF-V": 1.0,
+    "EL-S": 0.492,
+    "S-SF": 0.644,
+    "DF-S": 0.662
+   },
+   "20181": {
+    "S-V": 0.795,
+    "DF-V": 0.924,
+    "EL-S": 0.573,
+    "S-SF": 0.3,
+    "DF-S": 0.731
+   },
+   "20182": {},
+   "20191": {
+    "S-V": 0.83,
+    "DF-V": 0.825,
+    "KF-V": 0.938,
+    "EL-S": 0.801,
+    "S-SF": 0.825,
+    "DF-S": 0.722
+   },
+   "20201": {
+    "S-V": 0.721,
+    "DF-V": 0.738,
+    "KF-V": 0.895,
+    "EL-S": 0.749,
+    "S-SF": 0.847,
+    "DF-S": 0.559
+   },
+   "20211": {
+    "S-V": 0.689,
+    "DF-V": 0.721,
+    "KF-V": 0.892,
+    "EL-S": 0.79,
+    "S-SF": 0.845,
+    "DF-S": 0.535
+   },
+   "20221": {},
+   "20222": {
+    "S-V": 1.0,
+    "DF-V": 0.613,
+    "KF-V": 0.795,
+    "EL-S": 0.758,
+    "S-SF": 0.775,
+    "DF-S": 0.589,
+    "M-S": 0.997
+   },
+   "20231": {
+    "S-V": 1.0,
+    "DF-V": 0.644,
+    "KF-V": 0.704,
+    "EL-S": 0.594,
+    "S-SF": 0.682,
+    "DF-S": 0.642,
+    "M-S": 1.0
+   },
+   "20241": {
+    "S-V": 1.0,
+    "DF-V": 0.477,
+    "KF-V": 0.698,
+    "EL-S": 0.572,
+    "S-SF": 0.784,
+    "DF-S": 0.477,
+    "M-S": 0.998
+   },
+   "20251": {
+    "S-V": 1.0,
+    "DF-V": 0.516,
+    "KF-V": 0.918,
+    "EL-S": 0.578,
+    "S-SF": 0.692,
+    "DF-S": 0.512,
+    "M-S": 1.0
+   },
+   "20252": {
+    "S-V": 0.775,
+    "DF-V": 0.692,
+    "KF-V": 0.9,
+    "EL-S": 0.789,
+    "S-SF": 1.0,
+    "DF-S": 0.487,
+    "M-S": 1.0
+   },
+   "20261": {}
+  }
+ },
+ "exchanges": {
+  "by_session": {
+   "20091": {
+    "files": 3,
+    "pairs": 74,
+    "cross_party": 63,
+    "words": 153775,
+    "floor_is_minister": 11,
+    "same_party": 0,
+    "s_v_members": 16,
+    "v_or_s_to_minister": 6
+   },
+   "20101": {
+    "files": 3,
+    "pairs": 98,
+    "cross_party": 70,
+    "words": 163737,
+    "floor_is_minister": 28,
+    "same_party": 0,
+    "s_v_members": 6,
+    "v_or_s_to_minister": 7
+   },
+   "20102": {
+    "files": 2,
+    "pairs": 0,
+    "cross_party": 0,
+    "words": 1986
+   },
+   "20111": {
+    "files": 3,
+    "pairs": 138,
+    "cross_party": 105,
+    "words": 167988,
+    "floor_is_minister": 30,
+    "same_party": 3,
+    "s_v_members": 11,
+    "v_or_s_to_minister": 11
+   },
+   "20121": {
+    "files": 3,
+    "pairs": 90,
+    "cross_party": 71,
+    "words": 163179,
+    "floor_is_minister": 19,
+    "same_party": 0,
+    "s_v_members": 10,
+    "v_or_s_to_minister": 13
+   },
+   "20131": {
+    "files": 3,
+    "pairs": 75,
+    "cross_party": 53,
+    "words": 127410,
+    "floor_is_minister": 22,
+    "same_party": 0,
+    "s_v_members": 4,
+    "v_or_s_to_minister": 8
+   },
+   "20141": {
+    "files": 3,
+    "pairs": 84,
+    "cross_party": 61,
+    "words": 189398,
+    "floor_is_minister": 20,
+    "same_party": 0,
+    "s_v_members": 3,
+    "v_or_s_to_minister": 7
+   },
+   "20142": {
+    "files": 3,
+    "pairs": 92,
+    "cross_party": 73,
+    "words": 81392,
+    "floor_is_minister": 19,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 2
+   },
+   "20151": {
+    "files": 3,
+    "pairs": 88,
+    "cross_party": 55,
+    "words": 131597,
+    "floor_is_minister": 33,
+    "same_party": 0,
+    "s_v_members": 2,
+    "v_or_s_to_minister": 2
+   },
+   "20161": {
+    "files": 3,
+    "pairs": 77,
+    "cross_party": 59,
+    "words": 193749,
+    "floor_is_minister": 16,
+    "same_party": 0,
+    "s_v_members": 2,
+    "v_or_s_to_minister": 0
+   },
+   "20171": {
+    "files": 3,
+    "pairs": 30,
+    "cross_party": 22,
+    "words": 95843,
+    "floor_is_minister": 8,
+    "same_party": 0,
+    "s_v_members": 1,
+    "v_or_s_to_minister": 1
+   },
+   "20181": {
+    "files": 3,
+    "pairs": 23,
+    "cross_party": 20,
+    "words": 80119,
+    "floor_is_minister": 3,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 0
+   },
+   "20182": {
+    "files": 3,
+    "pairs": 2,
+    "cross_party": 1,
+    "words": 7599,
+    "floor_is_minister": 1,
+    "same_party": 0,
+    "s_v_members": 1,
+    "v_or_s_to_minister": 0
+   },
+   "20191": {
+    "files": 3,
+    "pairs": 79,
+    "cross_party": 63,
+    "words": 104669,
+    "floor_is_minister": 16,
+    "same_party": 0,
+    "s_v_members": 1,
+    "v_or_s_to_minister": 2
+   },
+   "20201": {
+    "files": 3,
+    "pairs": 76,
+    "cross_party": 59,
+    "words": 107021,
+    "floor_is_minister": 15,
+    "same_party": 0,
+    "s_v_members": 1,
+    "v_or_s_to_minister": 2
+   },
+   "20211": {
+    "files": 3,
+    "pairs": 36,
+    "cross_party": 26,
+    "words": 114710,
+    "floor_is_minister": 10,
+    "same_party": 0,
+    "s_v_members": 1,
+    "v_or_s_to_minister": 2
+   },
+   "20221": {
+    "files": 3,
+    "pairs": 97,
+    "cross_party": 88,
+    "words": 141910,
+    "floor_is_minister": 9,
+    "same_party": 0,
+    "s_v_members": 3,
+    "v_or_s_to_minister": 2
+   },
+   "20222": {
+    "files": 3,
+    "pairs": 137,
+    "cross_party": 112,
+    "words": 222067,
+    "floor_is_minister": 25,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 1
+   },
+   "20231": {
+    "files": 3,
+    "pairs": 46,
+    "cross_party": 34,
+    "words": 104859,
+    "floor_is_minister": 12,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 0
+   },
+   "20241": {
+    "files": 3,
+    "pairs": 27,
+    "cross_party": 19,
+    "words": 40603,
+    "floor_is_minister": 8,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 0
+   },
+   "20251": {
+    "files": 3,
+    "pairs": 49,
+    "cross_party": 43,
+    "words": 141792,
+    "floor_is_minister": 6,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 0
+   },
+   "20252": {
+    "files": 3,
+    "pairs": 44,
+    "cross_party": 34,
+    "words": 138050,
+    "floor_is_minister": 8,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 0
+   },
+   "20261": {
+    "files": 3,
+    "pairs": 11,
+    "cross_party": 2,
+    "words": 59235,
+    "floor_is_minister": 9,
+    "same_party": 0,
+    "s_v_members": 0,
+    "v_or_s_to_minister": 1
+   }
+  },
+  "examples": [
+   {
+    "file": "20101_M98_helemoedet.xml",
+    "floor": "Bjarne Laustsen (S)",
+    "chair": "Hr. René Christensen, en kort bemærkning.",
+    "challenger": "René Christensen (DF)",
+    "challenge": "Nu kan jeg forstå på Socialdemokratiet, at man ønsker, at den her ordning skal fortsætte, selv om man kan se, at renterne vil stige og stige, og at landbruget på et tidspunkt vil komme ud og få så høj"
+   },
+   {
+    "file": "20111_M28_helemoedet.xml",
+    "floor": "Morten Bødskov ()",
+    "chair": "Tak. Vi går til en ny ordfører, og det er hr. Martin Henriksen fra Dansk Folkeparti, og det er for en kort bemærkning.",
+    "challenger": "Martin Henriksen (DF)",
+    "challenge": "Jeg synes, at det er utroligt, at Justitsministeriet nægter et medlem af Folketinget hjælp og assistance til at udarbejde et ændringsforslag, sådan at man her i Folketingssalen kan stemme ja eller nej"
+   },
+   {
+    "file": "20111_M30_helemoedet.xml",
+    "floor": "Morten Bødskov ()",
+    "chair": "Det er nu hr. Karsten Lauritzen, Venstre, for en kort bemærkning.",
+    "challenger": "Karsten Lauritzen (V)",
+    "challenge": "Jeg vil gerne spørge, om justitsministeren er enig i fru Anne Baastrups udsagn om, at man med den nugældende lovgivning smider børn i fængsel, og om justitsministeren vil redegøre for, hvordan det i s"
+   },
+   {
+    "file": "20131_M28_helemoedet.xml",
+    "floor": "Erling Bonnesen (V)",
+    "chair": "Hr. René Christensen for en kort bemærkning.",
+    "challenger": "René Christensen (DF)",
+    "challenge": "Tak. Det, der egentlig fik mig til at rejse mig for at spørge, var hr. Per Clausens kommentar om, hvorvidt det her ville mindske den stress, der jo ikke er godt for dyrenes velfærd. Jeg vil så bare sp"
+   },
+   {
+    "file": "20131_M88_helemoedet.xml",
+    "floor": "Joachim B. Olsen (LA)",
+    "chair": "Der er en kort bemærkning fra hr. Finn Sørensen.",
+    "challenger": "Finn Sørensen (EL)",
+    "challenge": "Jeg skal bare spørge ordføreren, om ordføreren erkender, at der er forskel på at lave nogle utilsigtede fejl i sin iver efter at gøre noget godt og så på at gøre det, man har gjort med den her kontant"
+   },
+   {
+    "file": "20161_M97_helemoedet.xml",
+    "floor": "Søren Pape Poulsen ()",
+    "chair": "Hr. Peter Kofod Poulsen for den anden korte bemærkning.",
+    "challenger": "Peter Kofod Poulsen (DF)",
+    "challenge": "Tak for det. Konfronteres med sine handlinger, når man er ned til 12 år, siger ministeren. Altså, jeg regner med, at børn helt ned i børnehaveklassen i Danmark bliver konfronteret med deres handlinger"
+   },
+   {
+    "file": "20171_M89_helemoedet.xml",
+    "floor": "Josephine Fock (ALT)",
+    "chair": "Tak. Så er det hr. Martin Henriksen for en kort bemærkning.",
+    "challenger": "Martin Henriksen (DF)",
+    "challenge": "Det var da godt, at fru Josephine Fock kunne starte dagen med at være for et DF-forslag. Det handler jo bl.a., som fru Josephine Fock selvfølgelig godt ved, om en overbygning til stu'en, som vil hjælp"
+   },
+   {
+    "file": "20211_M35_helemoedet.xml",
+    "floor": "Kasper Roug (S)",
+    "chair": "Der en kort bemærkning til hr. Carl Valentin, SF.",
+    "challenger": "Carl Valentin (SF)",
+    "challenge": "Tak for det. Jeg vil gerne stille et i virkeligheden simpelt spørgsmål, og det er, om Socialdemokratiet egentlig ikke synes, at det her er et ret beskedent forslag, i forhold til hvad man kunne foresl"
+   },
+   {
+    "file": "20221_M3_helemoedet.xml",
+    "floor": "Mette Frederiksen ()",
+    "chair": "Tak. Næste korte bemærkning er til fru Pia Olsen Dyhr. Værsgo.",
+    "challenger": "Pia Olsen Dyhr (SF)",
+    "challenge": "Jeg tror, at hvis man sidder som dansker og lytter til den her debat, tænker man: Jeg håber, at når de går ud af Folketingssalen, begynder de også at snakke om den politik, de vil føre efter et valg. "
+   },
+   {
+    "file": "20222_M25_helemoedet.xml",
+    "floor": "Bjørn Brandenborg (S)",
+    "chair": "Hr. Peter Kofod for sin anden korte bemærkning. Værsgo.",
+    "challenger": "Peter Kofod (DF)",
+    "challenge": "Jo, men jeg tror bare, vi er mange, der synes, at det er en gammel debat. Spørgsmålet om, hvordan vi kan give politiet nogle bedre redskaber, er noget, vi har diskuteret mange gange, og hver gang er d"
+   },
+   {
+    "file": "20222_M60_helemoedet.xml",
+    "floor": "Mette Frederiksen ()",
+    "chair": "Tak til statsministeren. Der er nu adgang til én kort bemærkning til ordførerne, og den første er fra hr. Karsten Hønge, SF.",
+    "challenger": "Karsten Hønge (SF)",
+    "challenge": "Tak for redegørelsen, både den skriftlige og den mundtlige. Det er en god anledning hvert år til, at vi kan komme godt omkring rigsfællesskabet. Og jeg er helt enig i statsministerens konklusion om, a"
+   },
+   {
+    "file": "20251_M40_helemoedet.xml",
+    "floor": "Kaare Dybvad Bek ()",
+    "chair": "Tak til ministeren. Der er en kort bemærkning til hr. Lars Boje Mathiesen.",
+    "challenger": "Lars Boje Mathiesen (BP)",
+    "challenge": "Hvorfor er det, ministeren ikke har større tillid til danskerne? Nu har ministeren brugt 5-10 minutter på at storrose ATP-ordningen og dens lave omkostninger. Man holdt godt nok lidt igen med, hvor me"
+   },
+   {
+    "file": "20251_M42_helemoedet.xml",
+    "floor": "Samira Nawa (RV)",
+    "chair": "Tak for den ordførertale. Der er en kort bemærkning til hr. Steffen W. Frølund fra Liberal Alliance. Værsgo.",
+    "challenger": "Steffen W. Frølund (LA)",
+    "challenge": "Tak for talen. Det var egentlig metakommentarerne omkring debatten, som jeg lige ville reagere på. For hvis vi er i en situation, hvor Radikales energipolitik er, at vi kun må indføre energiformer i D"
+   },
+   {
+    "file": "20261_M7_helemoedet.xml",
+    "floor": "Martin Lidegaard ()",
+    "chair": "Der er to korte bemærkninger. Den første er til hr. Christian Kirk, Dansk Folkeparti.",
+    "challenger": "Christian Kirk (DF)",
+    "challenge": "Tak for ordet, formand. Jeg vil gerne sige tak til ministeren for at adressere mine bekymringer på talerstolen. Først og fremmest vil jeg sige, at en af de få klubber, vi kan være i sammen, nok er klu"
+   }
+  ],
+  "parties_of_speaking_ministers": {
+   "20091": {
+    "(blank)": 248
+   },
+   "20101": {
+    "(blank)": 146
+   },
+   "20111": {
+    "(blank)": 220
+   },
+   "20121": {
+    "(blank)": 167
+   },
+   "20131": {
+    "(blank)": 61
+   },
+   "20141": {
+    "(blank)": 186
+   },
+   "20142": {
+    "(blank)": 37
+   },
+   "20151": {
+    "(blank)": 78
+   },
+   "20161": {
+    "(blank)": 185
+   },
+   "20171": {
+    "(blank)": 49
+   },
+   "20181": {
+    "(blank)": 16
+   },
+   "20182": {
+    "(blank)": 3
+   },
+   "20191": {
+    "(blank)": 56
+   },
+   "20201": {
+    "(blank)": 49
+   },
+   "20211": {
+    "(blank)": 86
+   },
+   "20221": {
+    "(blank)": 40
+   },
+   "20222": {
+    "(blank)": 112
+   },
+   "20231": {
+    "(blank)": 74
+   },
+   "20241": {
+    "(blank)": 20
+   },
+   "20251": {
+    "(blank)": 103
+   },
+   "20252": {
+    "(blank)": 171
+   },
+   "20261": {
+    "(blank)": 108
+   }
+  }
+ }
+}

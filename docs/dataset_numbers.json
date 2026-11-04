@@ -1,0 +1,244 @@
+{
+ "files_repaired": [
+  "20222_M62_helemoedet.xml"
+ ],
+ "roles_in_xml": {
+  "formand": 427915,
+  "medlem": 326984,
+  "minister": 65659,
+  "MødeSlut": 1878,
+  "(blank)": 888,
+  "Pause": 748,
+  "fungerende minister": 531,
+  "aldersformanden": 74,
+  "midlertidig formand": 43
+ },
+ "debate_files_parsed": 1878,
+ "name_methods_share_of_turns": {
+  "exact": 0.9594,
+  "exact_seated": 0.0261,
+  "alias": 0.0118,
+  "tokens_seated": 0.0024,
+  "exact_ever_seated": 0.0003,
+  "exact_party": 0.0001
+ },
+ "unresolved_names_top": {},
+ "party_xml_vs_membership": {
+  "compared_turns": 702481,
+  "agree": 1.0,
+  "top_disagreements": [
+   {
+    "xml_party": "RV",
+    "member_party": "UFG",
+    "count": 16
+   },
+   {
+    "xml_party": "UFG",
+    "member_party": "DF",
+    "count": 1
+   }
+  ]
+ },
+ "party_source_share_of_non_chair_turns": {
+  "transcript": 0.8317,
+  "membership": 0.1333,
+  "nearest_session": 0.0268,
+  "none": 0.0082
+ },
+ "party_source_share_of_minister_turns": {
+  "membership": 0.7872,
+  "nearest_session": 0.1591,
+  "none": 0.049,
+  "transcript": 0.0047
+ },
+ "challenges": {
+  "chair_calls_matched": 45560,
+  "edges": 45529,
+  "both_people_resolved": 45529,
+  "both_parties_known": 45117,
+  "same_party": 112,
+  "floor_is_minister": 9042,
+  "per_session": {
+   "20091": 5517,
+   "20101": 3589,
+   "20111": 3923,
+   "20121": 3152,
+   "20131": 2334,
+   "20141": 2390,
+   "20142": 148,
+   "20151": 2737,
+   "20161": 1833,
+   "20171": 1381,
+   "20181": 1547,
+   "20182": 2,
+   "20191": 2117,
+   "20201": 3537,
+   "20211": 2463,
+   "20221": 97,
+   "20222": 1784,
+   "20231": 3184,
+   "20241": 2585,
+   "20251": 964,
+   "20252": 245
+  }
+ },
+ "party_positions": {
+  "votes_parsed": 7625,
+  "votes_unparsed": 2907,
+  "first_session": "20101",
+  "tokens_dropped": [
+   "hverken for eller imod stemte 0.",
+   ".  Ved en fejl stemte  hverken for eller imod forslaget.",
+   "imod stemte 69 (DF"
+  ],
+  "party_codes": {
+   "S": 7624,
+   "RV": 7623,
+   "V": 7620,
+   "SF": 7620,
+   "EL": 7619,
+   "KF": 7618,
+   "DF": 7616,
+   "LA": 7585,
+   "ALT": 5150,
+   "UFG": 2417,
+   "NB": 2276,
+   "DD": 1613,
+   "M": 1602,
+   "FG": 588,
+   "BP": 373,
+   "KD": 349,
+   "SP": 243,
+   "IA": 236,
+   "SIU": 68,
+   "T": 26,
+   "JF": 14,
+   "N": 6,
+   "Alt": 1
+  }
+ },
+ "governments": [
+  {
+   "from": "2009-11-24",
+   "parties": [
+    "KF",
+    "V"
+   ],
+   "minister_counts": {
+    "V": 12,
+    "KF": 7,
+    "DD": 1
+   },
+   "single_minister_parties": [
+    "DD"
+   ],
+   "ministers_without_party": 0
+  },
+  {
+   "from": "2011-10-03",
+   "parties": [
+    "RV",
+    "S",
+    "SF"
+   ],
+   "minister_counts": {
+    "RV": 5,
+    "S": 9,
+    "SF": 5
+   },
+   "single_minister_parties": [],
+   "ministers_without_party": 3
+  },
+  {
+   "from": "2014-02-03",
+   "parties": [
+    "RV",
+    "S"
+   ],
+   "minister_counts": {
+    "S": 12,
+    "RV": 6
+   },
+   "single_minister_parties": [],
+   "ministers_without_party": 2
+  },
+  {
+   "from": "2015-06-28",
+   "parties": [
+    "V"
+   ],
+   "minister_counts": {
+    "V": 15,
+    "DD": 1
+   },
+   "single_minister_parties": [
+    "DD"
+   ],
+   "ministers_without_party": 1
+  },
+  {
+   "from": "2016-11-28",
+   "parties": [
+    "KF",
+    "LA",
+    "V"
+   ],
+   "minister_counts": {
+    "V": 12,
+    "LA": 6,
+    "KF": 3,
+    "DD": 1
+   },
+   "single_minister_parties": [
+    "DD"
+   ],
+   "ministers_without_party": 0
+  },
+  {
+   "from": "2019-06-27",
+   "parties": [
+    "S"
+   ],
+   "minister_counts": {
+    "S": 18
+   },
+   "single_minister_parties": [],
+   "ministers_without_party": 1
+  },
+  {
+   "from": "2022-12-15",
+   "parties": [
+    "M",
+    "S",
+    "V"
+   ],
+   "minister_counts": {
+    "V": 7,
+    "S": 10,
+    "M": 4
+   },
+   "single_minister_parties": [],
+   "ministers_without_party": 0
+  },
+  {
+   "from": "2026-06-03",
+   "parties": [
+    "M",
+    "RV",
+    "S",
+    "SF"
+   ],
+   "minister_counts": {
+    "S": 8,
+    "RV": 3,
+    "SF": 4,
+    "EL": 1,
+    "M": 3
+   },
+   "single_minister_parties": [
+    "EL"
+   ],
+   "ministers_without_party": 0
+  }
+ ]
+}

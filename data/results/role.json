@@ -1,0 +1,5601 @@
+{
+ "role_word_rates": [
+  {
+   "party": "ALT",
+   "quarter": "2015Q3",
+   "rate": 5.93,
+   "government": false,
+   "words": 8090
+  },
+  {
+   "party": "ALT",
+   "quarter": "2015Q4",
+   "rate": 3.94,
+   "government": false,
+   "words": 103478
+  },
+  {
+   "party": "ALT",
+   "quarter": "2016Q1",
+   "rate": 4.57,
+   "government": false,
+   "words": 97307
+  },
+  {
+   "party": "ALT",
+   "quarter": "2016Q2",
+   "rate": 3.6,
+   "government": false,
+   "words": 165742
+  },
+  {
+   "party": "ALT",
+   "quarter": "2016Q3",
+   "rate": 6.33,
+   "government": false,
+   "words": 4894
+  },
+  {
+   "party": "ALT",
+   "quarter": "2016Q4",
+   "rate": 4.03,
+   "government": false,
+   "words": 64763
+  },
+  {
+   "party": "ALT",
+   "quarter": "2016Q4",
+   "rate": 5.28,
+   "government": false,
+   "words": 46391
+  },
+  {
+   "party": "ALT",
+   "quarter": "2017Q1",
+   "rate": 3.92,
+   "government": false,
+   "words": 122183
+  },
+  {
+   "party": "ALT",
+   "quarter": "2017Q2",
+   "rate": 4.7,
+   "government": false,
+   "words": 151688
+  },
+  {
+   "party": "ALT",
+   "quarter": "2017Q3",
+   "rate": 10.88,
+   "government": false,
+   "words": 4962
+  },
+  {
+   "party": "ALT",
+   "quarter": "2017Q4",
+   "rate": 4.52,
+   "government": false,
+   "words": 96644
+  },
+  {
+   "party": "ALT",
+   "quarter": "2018Q1",
+   "rate": 4.01,
+   "government": false,
+   "words": 79858
+  },
+  {
+   "party": "ALT",
+   "quarter": "2018Q2",
+   "rate": 4.24,
+   "government": false,
+   "words": 143711
+  },
+  {
+   "party": "ALT",
+   "quarter": "2018Q3",
+   "rate": 10.93,
+   "government": false,
+   "words": 6224
+  },
+  {
+   "party": "ALT",
+   "quarter": "2018Q4",
+   "rate": 4.44,
+   "government": false,
+   "words": 140160
+  },
+  {
+   "party": "ALT",
+   "quarter": "2019Q1",
+   "rate": 4.3,
+   "government": false,
+   "words": 129980
+  },
+  {
+   "party": "ALT",
+   "quarter": "2019Q2",
+   "rate": 4.05,
+   "government": false,
+   "words": 67882
+  },
+  {
+   "party": "ALT",
+   "quarter": "2019Q4",
+   "rate": 4.64,
+   "government": false,
+   "words": 74216
+  },
+  {
+   "party": "ALT",
+   "quarter": "2020Q1",
+   "rate": 3.71,
+   "government": false,
+   "words": 46077
+  },
+  {
+   "party": "ALT",
+   "quarter": "2020Q2",
+   "rate": 4.52,
+   "government": false,
+   "words": 22148
+  },
+  {
+   "party": "ALT",
+   "quarter": "2020Q3",
+   "rate": 0.97,
+   "government": false,
+   "words": 3093
+  },
+  {
+   "party": "ALT",
+   "quarter": "2020Q4",
+   "rate": 6.78,
+   "government": false,
+   "words": 22414
+  },
+  {
+   "party": "ALT",
+   "quarter": "2021Q1",
+   "rate": 6.92,
+   "government": false,
+   "words": 19372
+  },
+  {
+   "party": "ALT",
+   "quarter": "2021Q2",
+   "rate": 5.13,
+   "government": false,
+   "words": 38567
+  },
+  {
+   "party": "ALT",
+   "quarter": "2021Q4",
+   "rate": 6.17,
+   "government": false,
+   "words": 24944
+  },
+  {
+   "party": "ALT",
+   "quarter": "2022Q1",
+   "rate": 9.49,
+   "government": false,
+   "words": 10749
+  },
+  {
+   "party": "ALT",
+   "quarter": "2022Q2",
+   "rate": 6.03,
+   "government": false,
+   "words": 22549
+  },
+  {
+   "party": "ALT",
+   "quarter": "2022Q4",
+   "rate": 5.38,
+   "government": false,
+   "words": 8171
+  },
+  {
+   "party": "ALT",
+   "quarter": "2023Q1",
+   "rate": 7.14,
+   "government": false,
+   "words": 38930
+  },
+  {
+   "party": "ALT",
+   "quarter": "2023Q2",
+   "rate": 4.28,
+   "government": false,
+   "words": 87869
+  },
+  {
+   "party": "ALT",
+   "quarter": "2023Q3",
+   "rate": 10.25,
+   "government": false,
+   "words": 3904
+  },
+  {
+   "party": "ALT",
+   "quarter": "2023Q4",
+   "rate": 6.26,
+   "government": false,
+   "words": 33396
+  },
+  {
+   "party": "ALT",
+   "quarter": "2024Q1",
+   "rate": 7.02,
+   "government": false,
+   "words": 39485
+  },
+  {
+   "party": "ALT",
+   "quarter": "2024Q2",
+   "rate": 6.66,
+   "government": false,
+   "words": 74680
+  },
+  {
+   "party": "ALT",
+   "quarter": "2024Q4",
+   "rate": 7.24,
+   "government": false,
+   "words": 62267
+  },
+  {
+   "party": "ALT",
+   "quarter": "2025Q1",
+   "rate": 5.42,
+   "government": false,
+   "words": 58066
+  },
+  {
+   "party": "ALT",
+   "quarter": "2025Q2",
+   "rate": 4.68,
+   "government": false,
+   "words": 103660
+  },
+  {
+   "party": "ALT",
+   "quarter": "2025Q3",
+   "rate": 8.97,
+   "government": false,
+   "words": 6909
+  },
+  {
+   "party": "ALT",
+   "quarter": "2025Q4",
+   "rate": 5.04,
+   "government": false,
+   "words": 84208
+  },
+  {
+   "party": "ALT",
+   "quarter": "2026Q1",
+   "rate": 5.94,
+   "government": false,
+   "words": 49670
+  },
+  {
+   "party": "ALT",
+   "quarter": "2026Q2",
+   "rate": 5.89,
+   "government": false,
+   "words": 3905
+  },
+  {
+   "party": "ALT",
+   "quarter": "2026Q3",
+   "rate": 5.93,
+   "government": false,
+   "words": 9445
+  },
+  {
+   "party": "BP",
+   "quarter": "2025Q2",
+   "rate": 6.48,
+   "government": false,
+   "words": 18992
+  },
+  {
+   "party": "BP",
+   "quarter": "2025Q3",
+   "rate": 13.22,
+   "government": false,
+   "words": 4010
+  },
+  {
+   "party": "BP",
+   "quarter": "2025Q4",
+   "rate": 6.81,
+   "government": false,
+   "words": 39502
+  },
+  {
+   "party": "BP",
+   "quarter": "2026Q1",
+   "rate": 5.03,
+   "government": false,
+   "words": 16318
+  },
+  {
+   "party": "BP",
+   "quarter": "2026Q2",
+   "rate": 7.81,
+   "government": false,
+   "words": 14977
+  },
+  {
+   "party": "BP",
+   "quarter": "2026Q3",
+   "rate": 8.26,
+   "government": false,
+   "words": 9205
+  },
+  {
+   "party": "DD",
+   "quarter": "2022Q3",
+   "rate": 6.18,
+   "government": false,
+   "words": 11321
+  },
+  {
+   "party": "DD",
+   "quarter": "2022Q4",
+   "rate": 10.76,
+   "government": false,
+   "words": 10968
+  },
+  {
+   "party": "DD",
+   "quarter": "2022Q4",
+   "rate": 11.33,
+   "government": false,
+   "words": 4941
+  },
+  {
+   "party": "DD",
+   "quarter": "2023Q1",
+   "rate": 11.04,
+   "government": false,
+   "words": 96075
+  },
+  {
+   "party": "DD",
+   "quarter": "2023Q2",
+   "rate": 6.54,
+   "government": false,
+   "words": 188312
+  },
+  {
+   "party": "DD",
+   "quarter": "2023Q3",
+   "rate": 3.93,
+   "government": false,
+   "words": 8405
+  },
+  {
+   "party": "DD",
+   "quarter": "2023Q4",
+   "rate": 7.89,
+   "government": false,
+   "words": 118217
+  },
+  {
+   "party": "DD",
+   "quarter": "2024Q1",
+   "rate": 8.46,
+   "government": false,
+   "words": 103827
+  },
+  {
+   "party": "DD",
+   "quarter": "2024Q2",
+   "rate": 7.16,
+   "government": false,
+   "words": 233239
+  },
+  {
+   "party": "DD",
+   "quarter": "2024Q3",
+   "rate": 6.22,
+   "government": false,
+   "words": 8849
+  },
+  {
+   "party": "DD",
+   "quarter": "2024Q4",
+   "rate": 8.84,
+   "government": false,
+   "words": 188143
+  },
+  {
+   "party": "DD",
+   "quarter": "2025Q1",
+   "rate": 7.99,
+   "government": false,
+   "words": 167305
+  },
+  {
+   "party": "DD",
+   "quarter": "2025Q2",
+   "rate": 7.47,
+   "government": false,
+   "words": 198133
+  },
+  {
+   "party": "DD",
+   "quarter": "2025Q3",
+   "rate": 6.7,
+   "government": false,
+   "words": 10741
+  },
+  {
+   "party": "DD",
+   "quarter": "2025Q4",
+   "rate": 7.86,
+   "government": false,
+   "words": 117527
+  },
+  {
+   "party": "DD",
+   "quarter": "2026Q1",
+   "rate": 8.27,
+   "government": false,
+   "words": 109915
+  },
+  {
+   "party": "DD",
+   "quarter": "2026Q2",
+   "rate": 9.72,
+   "government": false,
+   "words": 37551
+  },
+  {
+   "party": "DD",
+   "quarter": "2026Q3",
+   "rate": 7.15,
+   "government": false,
+   "words": 44643
+  },
+  {
+   "party": "DF",
+   "quarter": "2009Q4",
+   "rate": 5.24,
+   "government": false,
+   "words": 84857
+  },
+  {
+   "party": "DF",
+   "quarter": "2010Q1",
+   "rate": 4.13,
+   "government": false,
+   "words": 175977
+  },
+  {
+   "party": "DF",
+   "quarter": "2010Q2",
+   "rate": 3.38,
+   "government": false,
+   "words": 346834
+  },
+  {
+   "party": "DF",
+   "quarter": "2010Q3",
+   "rate": 3.18,
+   "government": false,
+   "words": 11327
+  },
+  {
+   "party": "DF",
+   "quarter": "2010Q4",
+   "rate": 3.66,
+   "government": false,
+   "words": 154149
+  },
+  {
+   "party": "DF",
+   "quarter": "2011Q1",
+   "rate": 4.58,
+   "government": false,
+   "words": 177169
+  },
+  {
+   "party": "DF",
+   "quarter": "2011Q2",
+   "rate": 2.91,
+   "government": false,
+   "words": 230037
+  },
+  {
+   "party": "DF",
+   "quarter": "2011Q4",
+   "rate": 11.9,
+   "government": false,
+   "words": 228581
+  },
+  {
+   "party": "DF",
+   "quarter": "2012Q1",
+   "rate": 10.09,
+   "government": false,
+   "words": 273160
+  },
+  {
+   "party": "DF",
+   "quarter": "2012Q2",
+   "rate": 8.63,
+   "government": false,
+   "words": 274774
+  },
+  {
+   "party": "DF",
+   "quarter": "2012Q3",
+   "rate": 6.82,
+   "government": false,
+   "words": 38859
+  },
+  {
+   "party": "DF",
+   "quarter": "2012Q4",
+   "rate": 8.98,
+   "government": false,
+   "words": 219041
+  },
+  {
+   "party": "DF",
+   "quarter": "2013Q1",
+   "rate": 8.05,
+   "government": false,
+   "words": 190949
+  },
+  {
+   "party": "DF",
+   "quarter": "2013Q2",
+   "rate": 8.33,
+   "government": false,
+   "words": 256170
+  },
+  {
+   "party": "DF",
+   "quarter": "2013Q4",
+   "rate": 8.32,
+   "government": false,
+   "words": 168010
+  },
+  {
+   "party": "DF",
+   "quarter": "2014Q1",
+   "rate": 8.67,
+   "government": false,
+   "words": 52496
+  },
+  {
+   "party": "DF",
+   "quarter": "2014Q1",
+   "rate": 9.77,
+   "government": false,
+   "words": 86670
+  },
+  {
+   "party": "DF",
+   "quarter": "2014Q2",
+   "rate": 8.04,
+   "government": false,
+   "words": 219573
+  },
+  {
+   "party": "DF",
+   "quarter": "2014Q3",
+   "rate": 5.09,
+   "government": false,
+   "words": 11200
+  },
+  {
+   "party": "DF",
+   "quarter": "2014Q4",
+   "rate": 8.42,
+   "government": false,
+   "words": 176027
+  },
+  {
+   "party": "DF",
+   "quarter": "2015Q1",
+   "rate": 8.91,
+   "government": false,
+   "words": 175376
+  },
+  {
+   "party": "DF",
+   "quarter": "2015Q2",
+   "rate": 7.22,
+   "government": false,
+   "words": 159182
+  },
+  {
+   "party": "DF",
+   "quarter": "2015Q3",
+   "rate": 2.63,
+   "government": false,
+   "words": 5319
+  },
+  {
+   "party": "DF",
+   "quarter": "2015Q4",
+   "rate": 4.31,
+   "government": false,
+   "words": 163853
+  },
+  {
+   "party": "DF",
+   "quarter": "2016Q1",
+   "rate": 5.56,
+   "government": false,
+   "words": 207499
+  },
+  {
+   "party": "DF",
+   "quarter": "2016Q2",
+   "rate": 5.18,
+   "government": false,
+   "words": 264877
+  },
+  {
+   "party": "DF",
+   "quarter": "2016Q3",
+   "rate": 3.31,
+   "government": false,
+   "words": 8459
+  },
+  {
+   "party": "DF",
+   "quarter": "2016Q4",
+   "rate": 6.37,
+   "government": false,
+   "words": 106532
+  },
+  {
+   "party": "DF",
+   "quarter": "2016Q4",
+   "rate": 6.17,
+   "government": false,
+   "words": 81476
+  },
+  {
+   "party": "DF",
+   "quarter": "2017Q1",
+   "rate": 7.0,
+   "government": false,
+   "words": 230974
+  },
+  {
+   "party": "DF",
+   "quarter": "2017Q2",
+   "rate": 5.21,
+   "government": false,
+   "words": 242796
+  },
+  {
+   "party": "DF",
+   "quarter": "2017Q3",
+   "rate": 4.62,
+   "government": false,
+   "words": 10600
+  },
+  {
+   "party": "DF",
+   "quarter": "2017Q4",
+   "rate": 6.78,
+   "government": false,
+   "words": 185318
+  },
+  {
+   "party": "DF",
+   "quarter": "2018Q1",
+   "rate": 6.7,
+   "government": false,
+   "words": 177191
+  },
+  {
+   "party": "DF",
+   "quarter": "2018Q2",
+   "rate": 6.45,
+   "government": false,
+   "words": 230896
+  },
+  {
+   "party": "DF",
+   "quarter": "2018Q3",
+   "rate": 3.38,
+   "government": false,
+   "words": 9757
+  },
+  {
+   "party": "DF",
+   "quarter": "2018Q4",
+   "rate": 5.59,
+   "government": false,
+   "words": 239568
+  },
+  {
+   "party": "DF",
+   "quarter": "2019Q1",
+   "rate": 4.69,
+   "government": false,
+   "words": 190085
+  },
+  {
+   "party": "DF",
+   "quarter": "2019Q2",
+   "rate": 4.99,
+   "government": false,
+   "words": 86287
+  },
+  {
+   "party": "DF",
+   "quarter": "2019Q4",
+   "rate": 6.83,
+   "government": false,
+   "words": 275557
+  },
+  {
+   "party": "DF",
+   "quarter": "2020Q1",
+   "rate": 6.95,
+   "government": false,
+   "words": 190457
+  },
+  {
+   "party": "DF",
+   "quarter": "2020Q2",
+   "rate": 8.98,
+   "government": false,
+   "words": 308128
+  },
+  {
+   "party": "DF",
+   "quarter": "2020Q3",
+   "rate": 5.44,
+   "government": false,
+   "words": 12133
+  },
+  {
+   "party": "DF",
+   "quarter": "2020Q4",
+   "rate": 7.24,
+   "government": false,
+   "words": 281962
+  },
+  {
+   "party": "DF",
+   "quarter": "2021Q1",
+   "rate": 7.53,
+   "government": false,
+   "words": 282008
+  },
+  {
+   "party": "DF",
+   "quarter": "2021Q2",
+   "rate": 6.06,
+   "government": false,
+   "words": 323813
+  },
+  {
+   "party": "DF",
+   "quarter": "2021Q3",
+   "rate": 8.25,
+   "government": false,
+   "words": 14427
+  },
+  {
+   "party": "DF",
+   "quarter": "2021Q4",
+   "rate": 7.02,
+   "government": false,
+   "words": 178159
+  },
+  {
+   "party": "DF",
+   "quarter": "2022Q1",
+   "rate": 5.45,
+   "government": false,
+   "words": 129627
+  },
+  {
+   "party": "DF",
+   "quarter": "2022Q2",
+   "rate": 5.21,
+   "government": false,
+   "words": 154003
+  },
+  {
+   "party": "DF",
+   "quarter": "2022Q3",
+   "rate": 4.19,
+   "government": false,
+   "words": 17190
+  },
+  {
+   "party": "DF",
+   "quarter": "2022Q4",
+   "rate": 4.49,
+   "government": false,
+   "words": 10025
+  },
+  {
+   "party": "DF",
+   "quarter": "2023Q1",
+   "rate": 8.41,
+   "government": false,
+   "words": 103952
+  },
+  {
+   "party": "DF",
+   "quarter": "2023Q2",
+   "rate": 5.58,
+   "government": false,
+   "words": 228219
+  },
+  {
+   "party": "DF",
+   "quarter": "2023Q3",
+   "rate": 4.87,
+   "government": false,
+   "words": 6778
+  },
+  {
+   "party": "DF",
+   "quarter": "2023Q4",
+   "rate": 7.42,
+   "government": false,
+   "words": 130945
+  },
+  {
+   "party": "DF",
+   "quarter": "2024Q1",
+   "rate": 5.92,
+   "government": false,
+   "words": 133706
+  },
+  {
+   "party": "DF",
+   "quarter": "2024Q2",
+   "rate": 5.73,
+   "government": false,
+   "words": 173253
+  },
+  {
+   "party": "DF",
+   "quarter": "2024Q3",
+   "rate": 9.59,
+   "government": false,
+   "words": 4065
+  },
+  {
+   "party": "DF",
+   "quarter": "2024Q4",
+   "rate": 7.81,
+   "government": false,
+   "words": 135789
+  },
+  {
+   "party": "DF",
+   "quarter": "2025Q1",
+   "rate": 6.46,
+   "government": false,
+   "words": 146758
+  },
+  {
+   "party": "DF",
+   "quarter": "2025Q2",
+   "rate": 5.45,
+   "government": false,
+   "words": 172752
+  },
+  {
+   "party": "DF",
+   "quarter": "2025Q3",
+   "rate": 12.35,
+   "government": false,
+   "words": 6557
+  },
+  {
+   "party": "DF",
+   "quarter": "2025Q4",
+   "rate": 8.08,
+   "government": false,
+   "words": 93979
+  },
+  {
+   "party": "DF",
+   "quarter": "2026Q1",
+   "rate": 7.41,
+   "government": false,
+   "words": 81117
+  },
+  {
+   "party": "DF",
+   "quarter": "2026Q2",
+   "rate": 10.59,
+   "government": false,
+   "words": 41171
+  },
+  {
+   "party": "DF",
+   "quarter": "2026Q3",
+   "rate": 7.74,
+   "government": false,
+   "words": 32687
+  },
+  {
+   "party": "EL",
+   "quarter": "2009Q4",
+   "rate": 6.18,
+   "government": false,
+   "words": 75567
+  },
+  {
+   "party": "EL",
+   "quarter": "2010Q1",
+   "rate": 6.24,
+   "government": false,
+   "words": 144874
+  },
+  {
+   "party": "EL",
+   "quarter": "2010Q2",
+   "rate": 6.31,
+   "government": false,
+   "words": 247943
+  },
+  {
+   "party": "EL",
+   "quarter": "2010Q3",
+   "rate": 8.49,
+   "government": false,
+   "words": 10364
+  },
+  {
+   "party": "EL",
+   "quarter": "2010Q4",
+   "rate": 6.91,
+   "government": false,
+   "words": 149941
+  },
+  {
+   "party": "EL",
+   "quarter": "2011Q1",
+   "rate": 5.65,
+   "government": false,
+   "words": 171609
+  },
+  {
+   "party": "EL",
+   "quarter": "2011Q2",
+   "rate": 5.44,
+   "government": false,
+   "words": 159742
+  },
+  {
+   "party": "EL",
+   "quarter": "2011Q4",
+   "rate": 5.74,
+   "government": false,
+   "words": 118506
+  },
+  {
+   "party": "EL",
+   "quarter": "2012Q1",
+   "rate": 5.2,
+   "government": false,
+   "words": 131861
+  },
+  {
+   "party": "EL",
+   "quarter": "2012Q2",
+   "rate": 5.87,
+   "government": false,
+   "words": 165710
+  },
+  {
+   "party": "EL",
+   "quarter": "2012Q3",
+   "rate": 7.41,
+   "government": false,
+   "words": 30481
+  },
+  {
+   "party": "EL",
+   "quarter": "2012Q4",
+   "rate": 6.52,
+   "government": false,
+   "words": 147601
+  },
+  {
+   "party": "EL",
+   "quarter": "2013Q1",
+   "rate": 5.75,
+   "government": false,
+   "words": 151683
+  },
+  {
+   "party": "EL",
+   "quarter": "2013Q2",
+   "rate": 7.09,
+   "government": false,
+   "words": 303745
+  },
+  {
+   "party": "EL",
+   "quarter": "2013Q4",
+   "rate": 6.13,
+   "government": false,
+   "words": 131385
+  },
+  {
+   "party": "EL",
+   "quarter": "2014Q1",
+   "rate": 7.01,
+   "government": false,
+   "words": 53653
+  },
+  {
+   "party": "EL",
+   "quarter": "2014Q1",
+   "rate": 7.11,
+   "government": false,
+   "words": 71267
+  },
+  {
+   "party": "EL",
+   "quarter": "2014Q2",
+   "rate": 5.57,
+   "government": false,
+   "words": 217594
+  },
+  {
+   "party": "EL",
+   "quarter": "2014Q3",
+   "rate": 7.98,
+   "government": false,
+   "words": 8893
+  },
+  {
+   "party": "EL",
+   "quarter": "2014Q4",
+   "rate": 5.43,
+   "government": false,
+   "words": 152794
+  },
+  {
+   "party": "EL",
+   "quarter": "2015Q1",
+   "rate": 5.18,
+   "government": false,
+   "words": 138363
+  },
+  {
+   "party": "EL",
+   "quarter": "2015Q2",
+   "rate": 5.22,
+   "government": false,
+   "words": 208503
+  },
+  {
+   "party": "EL",
+   "quarter": "2015Q3",
+   "rate": 5.98,
+   "government": false,
+   "words": 28421
+  },
+  {
+   "party": "EL",
+   "quarter": "2015Q4",
+   "rate": 5.74,
+   "government": false,
+   "words": 272794
+  },
+  {
+   "party": "EL",
+   "quarter": "2016Q1",
+   "rate": 6.16,
+   "government": false,
+   "words": 237677
+  },
+  {
+   "party": "EL",
+   "quarter": "2016Q2",
+   "rate": 4.88,
+   "government": false,
+   "words": 388974
+  },
+  {
+   "party": "EL",
+   "quarter": "2016Q3",
+   "rate": 7.26,
+   "government": false,
+   "words": 13352
+  },
+  {
+   "party": "EL",
+   "quarter": "2016Q4",
+   "rate": 4.92,
+   "government": false,
+   "words": 128944
+  },
+  {
+   "party": "EL",
+   "quarter": "2016Q4",
+   "rate": 6.3,
+   "government": false,
+   "words": 89136
+  },
+  {
+   "party": "EL",
+   "quarter": "2017Q1",
+   "rate": 5.49,
+   "government": false,
+   "words": 228028
+  },
+  {
+   "party": "EL",
+   "quarter": "2017Q2",
+   "rate": 5.1,
+   "government": false,
+   "words": 259813
+  },
+  {
+   "party": "EL",
+   "quarter": "2017Q3",
+   "rate": 10.0,
+   "government": false,
+   "words": 13298
+  },
+  {
+   "party": "EL",
+   "quarter": "2017Q4",
+   "rate": 5.23,
+   "government": false,
+   "words": 230190
+  },
+  {
+   "party": "EL",
+   "quarter": "2018Q1",
+   "rate": 4.75,
+   "government": false,
+   "words": 163711
+  },
+  {
+   "party": "EL",
+   "quarter": "2018Q2",
+   "rate": 5.3,
+   "government": false,
+   "words": 199729
+  },
+  {
+   "party": "EL",
+   "quarter": "2018Q3",
+   "rate": 8.53,
+   "government": false,
+   "words": 11483
+  },
+  {
+   "party": "EL",
+   "quarter": "2018Q4",
+   "rate": 5.39,
+   "government": false,
+   "words": 265057
+  },
+  {
+   "party": "EL",
+   "quarter": "2019Q1",
+   "rate": 5.38,
+   "government": false,
+   "words": 220660
+  },
+  {
+   "party": "EL",
+   "quarter": "2019Q2",
+   "rate": 4.73,
+   "government": false,
+   "words": 115670
+  },
+  {
+   "party": "EL",
+   "quarter": "2019Q4",
+   "rate": 3.83,
+   "government": false,
+   "words": 179621
+  },
+  {
+   "party": "EL",
+   "quarter": "2020Q1",
+   "rate": 3.31,
+   "government": false,
+   "words": 114704
+  },
+  {
+   "party": "EL",
+   "quarter": "2020Q2",
+   "rate": 4.19,
+   "government": false,
+   "words": 174871
+  },
+  {
+   "party": "EL",
+   "quarter": "2020Q3",
+   "rate": 4.68,
+   "government": false,
+   "words": 11749
+  },
+  {
+   "party": "EL",
+   "quarter": "2020Q4",
+   "rate": 3.9,
+   "government": false,
+   "words": 239316
+  },
+  {
+   "party": "EL",
+   "quarter": "2021Q1",
+   "rate": 4.79,
+   "government": false,
+   "words": 165409
+  },
+  {
+   "party": "EL",
+   "quarter": "2021Q2",
+   "rate": 4.6,
+   "government": false,
+   "words": 240767
+  },
+  {
+   "party": "EL",
+   "quarter": "2021Q3",
+   "rate": 10.73,
+   "government": false,
+   "words": 18362
+  },
+  {
+   "party": "EL",
+   "quarter": "2021Q4",
+   "rate": 4.66,
+   "government": false,
+   "words": 167771
+  },
+  {
+   "party": "EL",
+   "quarter": "2022Q1",
+   "rate": 4.97,
+   "government": false,
+   "words": 116105
+  },
+  {
+   "party": "EL",
+   "quarter": "2022Q2",
+   "rate": 4.15,
+   "government": false,
+   "words": 203338
+  },
+  {
+   "party": "EL",
+   "quarter": "2022Q3",
+   "rate": 2.59,
+   "government": false,
+   "words": 22795
+  },
+  {
+   "party": "EL",
+   "quarter": "2022Q4",
+   "rate": 7.07,
+   "government": false,
+   "words": 26742
+  },
+  {
+   "party": "EL",
+   "quarter": "2022Q4",
+   "rate": 6.87,
+   "government": false,
+   "words": 11650
+  },
+  {
+   "party": "EL",
+   "quarter": "2023Q1",
+   "rate": 8.65,
+   "government": false,
+   "words": 146520
+  },
+  {
+   "party": "EL",
+   "quarter": "2023Q2",
+   "rate": 5.39,
+   "government": false,
+   "words": 179534
+  },
+  {
+   "party": "EL",
+   "quarter": "2023Q3",
+   "rate": 10.17,
+   "government": false,
+   "words": 6490
+  },
+  {
+   "party": "EL",
+   "quarter": "2023Q4",
+   "rate": 6.92,
+   "government": false,
+   "words": 125171
+  },
+  {
+   "party": "EL",
+   "quarter": "2024Q1",
+   "rate": 5.34,
+   "government": false,
+   "words": 139274
+  },
+  {
+   "party": "EL",
+   "quarter": "2024Q2",
+   "rate": 4.74,
+   "government": false,
+   "words": 222337
+  },
+  {
+   "party": "EL",
+   "quarter": "2024Q3",
+   "rate": 4.35,
+   "government": false,
+   "words": 6894
+  },
+  {
+   "party": "EL",
+   "quarter": "2024Q4",
+   "rate": 7.35,
+   "government": false,
+   "words": 162657
+  },
+  {
+   "party": "EL",
+   "quarter": "2025Q1",
+   "rate": 5.31,
+   "government": false,
+   "words": 121036
+  },
+  {
+   "party": "EL",
+   "quarter": "2025Q2",
+   "rate": 5.18,
+   "government": false,
+   "words": 220936
+  },
+  {
+   "party": "EL",
+   "quarter": "2025Q3",
+   "rate": 4.64,
+   "government": false,
+   "words": 6031
+  },
+  {
+   "party": "EL",
+   "quarter": "2025Q4",
+   "rate": 6.93,
+   "government": false,
+   "words": 135609
+  },
+  {
+   "party": "EL",
+   "quarter": "2026Q1",
+   "rate": 6.31,
+   "government": false,
+   "words": 84746
+  },
+  {
+   "party": "EL",
+   "quarter": "2026Q2",
+   "rate": 5.9,
+   "government": false,
+   "words": 4235
+  },
+  {
+   "party": "EL",
+   "quarter": "2026Q3",
+   "rate": 5.33,
+   "government": false,
+   "words": 21216
+  },
+  {
+   "party": "FG",
+   "quarter": "2021Q4",
+   "rate": 7.93,
+   "government": false,
+   "words": 27869
+  },
+  {
+   "party": "FG",
+   "quarter": "2022Q1",
+   "rate": 8.52,
+   "government": false,
+   "words": 33685
+  },
+  {
+   "party": "FG",
+   "quarter": "2022Q2",
+   "rate": 6.15,
+   "government": false,
+   "words": 32514
+  },
+  {
+   "party": "IA",
+   "quarter": "2011Q4",
+   "rate": 5.31,
+   "government": false,
+   "words": 5652
+  },
+  {
+   "party": "IA",
+   "quarter": "2012Q4",
+   "rate": 6.64,
+   "government": false,
+   "words": 7827
+  },
+  {
+   "party": "IA",
+   "quarter": "2013Q1",
+   "rate": 3.64,
+   "government": false,
+   "words": 4400
+  },
+  {
+   "party": "IA",
+   "quarter": "2013Q2",
+   "rate": 6.47,
+   "government": false,
+   "words": 3707
+  },
+  {
+   "party": "IA",
+   "quarter": "2013Q4",
+   "rate": 6.19,
+   "government": false,
+   "words": 4359
+  },
+  {
+   "party": "IA",
+   "quarter": "2014Q2",
+   "rate": 5.05,
+   "government": false,
+   "words": 9309
+  },
+  {
+   "party": "IA",
+   "quarter": "2014Q4",
+   "rate": 9.05,
+   "government": false,
+   "words": 6407
+  },
+  {
+   "party": "IA",
+   "quarter": "2015Q1",
+   "rate": 12.72,
+   "government": false,
+   "words": 4401
+  },
+  {
+   "party": "IA",
+   "quarter": "2015Q2",
+   "rate": 7.47,
+   "government": false,
+   "words": 3480
+  },
+  {
+   "party": "IA",
+   "quarter": "2015Q4",
+   "rate": 4.36,
+   "government": false,
+   "words": 13975
+  },
+  {
+   "party": "IA",
+   "quarter": "2016Q1",
+   "rate": 6.54,
+   "government": false,
+   "words": 8251
+  },
+  {
+   "party": "IA",
+   "quarter": "2016Q2",
+   "rate": 5.02,
+   "government": false,
+   "words": 16519
+  },
+  {
+   "party": "IA",
+   "quarter": "2016Q4",
+   "rate": 6.31,
+   "government": false,
+   "words": 10936
+  },
+  {
+   "party": "IA",
+   "quarter": "2016Q4",
+   "rate": 8.15,
+   "government": false,
+   "words": 7360
+  },
+  {
+   "party": "IA",
+   "quarter": "2017Q2",
+   "rate": 2.81,
+   "government": false,
+   "words": 17443
+  },
+  {
+   "party": "IA",
+   "quarter": "2017Q4",
+   "rate": 5.55,
+   "government": false,
+   "words": 11702
+  },
+  {
+   "party": "IA",
+   "quarter": "2018Q1",
+   "rate": 3.59,
+   "government": false,
+   "words": 5293
+  },
+  {
+   "party": "IA",
+   "quarter": "2018Q2",
+   "rate": 3.53,
+   "government": false,
+   "words": 14435
+  },
+  {
+   "party": "IA",
+   "quarter": "2018Q3",
+   "rate": 4.27,
+   "government": false,
+   "words": 3513
+  },
+  {
+   "party": "IA",
+   "quarter": "2018Q4",
+   "rate": 6.04,
+   "government": false,
+   "words": 18198
+  },
+  {
+   "party": "IA",
+   "quarter": "2019Q2",
+   "rate": 5.52,
+   "government": false,
+   "words": 3077
+  },
+  {
+   "party": "IA",
+   "quarter": "2019Q4",
+   "rate": 4.28,
+   "government": false,
+   "words": 18705
+  },
+  {
+   "party": "IA",
+   "quarter": "2020Q2",
+   "rate": 3.96,
+   "government": false,
+   "words": 5556
+  },
+  {
+   "party": "IA",
+   "quarter": "2020Q3",
+   "rate": 6.57,
+   "government": false,
+   "words": 3044
+  },
+  {
+   "party": "IA",
+   "quarter": "2020Q4",
+   "rate": 4.49,
+   "government": false,
+   "words": 13143
+  },
+  {
+   "party": "IA",
+   "quarter": "2021Q2",
+   "rate": 4.09,
+   "government": false,
+   "words": 11731
+  },
+  {
+   "party": "IA",
+   "quarter": "2021Q4",
+   "rate": 3.01,
+   "government": false,
+   "words": 10957
+  },
+  {
+   "party": "IA",
+   "quarter": "2022Q2",
+   "rate": 2.56,
+   "government": false,
+   "words": 14474
+  },
+  {
+   "party": "IA",
+   "quarter": "2022Q3",
+   "rate": 2.64,
+   "government": false,
+   "words": 3035
+  },
+  {
+   "party": "IA",
+   "quarter": "2022Q4",
+   "rate": 4.02,
+   "government": false,
+   "words": 3983
+  },
+  {
+   "party": "IA",
+   "quarter": "2023Q1",
+   "rate": 3.47,
+   "government": false,
+   "words": 12968
+  },
+  {
+   "party": "IA",
+   "quarter": "2023Q2",
+   "rate": 2.88,
+   "government": false,
+   "words": 10423
+  },
+  {
+   "party": "IA",
+   "quarter": "2023Q4",
+   "rate": 5.18,
+   "government": false,
+   "words": 12924
+  },
+  {
+   "party": "IA",
+   "quarter": "2024Q2",
+   "rate": 3.98,
+   "government": false,
+   "words": 13583
+  },
+  {
+   "party": "IA",
+   "quarter": "2024Q4",
+   "rate": 3.49,
+   "government": false,
+   "words": 12046
+  },
+  {
+   "party": "IA",
+   "quarter": "2025Q1",
+   "rate": 4.26,
+   "government": false,
+   "words": 3993
+  },
+  {
+   "party": "IA",
+   "quarter": "2025Q2",
+   "rate": 2.37,
+   "government": false,
+   "words": 13093
+  },
+  {
+   "party": "IA",
+   "quarter": "2025Q4",
+   "rate": 2.77,
+   "government": false,
+   "words": 8312
+  },
+  {
+   "party": "JF",
+   "quarter": "2011Q4",
+   "rate": 8.05,
+   "government": false,
+   "words": 4597
+  },
+  {
+   "party": "JF",
+   "quarter": "2012Q1",
+   "rate": 3.97,
+   "government": false,
+   "words": 3271
+  },
+  {
+   "party": "JF",
+   "quarter": "2012Q4",
+   "rate": 5.0,
+   "government": false,
+   "words": 5399
+  },
+  {
+   "party": "JF",
+   "quarter": "2013Q4",
+   "rate": 8.17,
+   "government": false,
+   "words": 5263
+  },
+  {
+   "party": "JF",
+   "quarter": "2014Q2",
+   "rate": 5.58,
+   "government": false,
+   "words": 7528
+  },
+  {
+   "party": "JF",
+   "quarter": "2014Q4",
+   "rate": 8.74,
+   "government": false,
+   "words": 5491
+  },
+  {
+   "party": "JF",
+   "quarter": "2015Q4",
+   "rate": 7.96,
+   "government": false,
+   "words": 7408
+  },
+  {
+   "party": "JF",
+   "quarter": "2016Q2",
+   "rate": 7.21,
+   "government": false,
+   "words": 4991
+  },
+  {
+   "party": "JF",
+   "quarter": "2016Q4",
+   "rate": 6.15,
+   "government": false,
+   "words": 7972
+  },
+  {
+   "party": "JF",
+   "quarter": "2017Q2",
+   "rate": 4.89,
+   "government": false,
+   "words": 5522
+  },
+  {
+   "party": "JF",
+   "quarter": "2017Q4",
+   "rate": 4.38,
+   "government": false,
+   "words": 3194
+  },
+  {
+   "party": "JF",
+   "quarter": "2018Q2",
+   "rate": 5.97,
+   "government": false,
+   "words": 6362
+  },
+  {
+   "party": "JF",
+   "quarter": "2018Q4",
+   "rate": 6.85,
+   "government": false,
+   "words": 6277
+  },
+  {
+   "party": "JF",
+   "quarter": "2019Q4",
+   "rate": 3.42,
+   "government": false,
+   "words": 7311
+  },
+  {
+   "party": "JF",
+   "quarter": "2020Q2",
+   "rate": 5.02,
+   "government": false,
+   "words": 3584
+  },
+  {
+   "party": "JF",
+   "quarter": "2020Q4",
+   "rate": 2.44,
+   "government": false,
+   "words": 9834
+  },
+  {
+   "party": "JF",
+   "quarter": "2021Q2",
+   "rate": 3.87,
+   "government": false,
+   "words": 7234
+  },
+  {
+   "party": "JF",
+   "quarter": "2021Q4",
+   "rate": 4.92,
+   "government": false,
+   "words": 6500
+  },
+  {
+   "party": "JF",
+   "quarter": "2022Q2",
+   "rate": 3.24,
+   "government": false,
+   "words": 7401
+  },
+  {
+   "party": "JF",
+   "quarter": "2023Q1",
+   "rate": 2.74,
+   "government": false,
+   "words": 7661
+  },
+  {
+   "party": "JF",
+   "quarter": "2023Q2",
+   "rate": 2.94,
+   "government": false,
+   "words": 6467
+  },
+  {
+   "party": "JF",
+   "quarter": "2023Q4",
+   "rate": 3.79,
+   "government": false,
+   "words": 6326
+  },
+  {
+   "party": "JF",
+   "quarter": "2024Q2",
+   "rate": 4.3,
+   "government": false,
+   "words": 6742
+  },
+  {
+   "party": "JF",
+   "quarter": "2024Q4",
+   "rate": 1.59,
+   "government": false,
+   "words": 3139
+  },
+  {
+   "party": "JF",
+   "quarter": "2025Q2",
+   "rate": 3.75,
+   "government": false,
+   "words": 6675
+  },
+  {
+   "party": "KD",
+   "quarter": "2010Q4",
+   "rate": 4.73,
+   "government": false,
+   "words": 6979
+  },
+  {
+   "party": "KD",
+   "quarter": "2011Q1",
+   "rate": 4.15,
+   "government": false,
+   "words": 17102
+  },
+  {
+   "party": "KD",
+   "quarter": "2011Q2",
+   "rate": 4.02,
+   "government": false,
+   "words": 8450
+  },
+  {
+   "party": "KD",
+   "quarter": "2021Q2",
+   "rate": 6.23,
+   "government": false,
+   "words": 58238
+  },
+  {
+   "party": "KD",
+   "quarter": "2021Q3",
+   "rate": 8.12,
+   "government": false,
+   "words": 7139
+  },
+  {
+   "party": "KD",
+   "quarter": "2021Q4",
+   "rate": 5.04,
+   "government": false,
+   "words": 29780
+  },
+  {
+   "party": "KD",
+   "quarter": "2022Q1",
+   "rate": 4.97,
+   "government": false,
+   "words": 25334
+  },
+  {
+   "party": "KD",
+   "quarter": "2022Q2",
+   "rate": 4.27,
+   "government": false,
+   "words": 3743
+  },
+  {
+   "party": "KF",
+   "quarter": "2009Q4",
+   "rate": 3.04,
+   "government": true,
+   "words": 49637
+  },
+  {
+   "party": "KF",
+   "quarter": "2010Q1",
+   "rate": 3.12,
+   "government": true,
+   "words": 95847
+  },
+  {
+   "party": "KF",
+   "quarter": "2010Q2",
+   "rate": 3.38,
+   "government": true,
+   "words": 188808
+  },
+  {
+   "party": "KF",
+   "quarter": "2010Q3",
+   "rate": 3.08,
+   "government": true,
+   "words": 10067
+  },
+  {
+   "party": "KF",
+   "quarter": "2010Q4",
+   "rate": 2.77,
+   "government": true,
+   "words": 85254
+  },
+  {
+   "party": "KF",
+   "quarter": "2011Q1",
+   "rate": 2.66,
+   "government": true,
+   "words": 95391
+  },
+  {
+   "party": "KF",
+   "quarter": "2011Q2",
+   "rate": 2.5,
+   "government": true,
+   "words": 108840
+  },
+  {
+   "party": "KF",
+   "quarter": "2011Q4",
+   "rate": 9.49,
+   "government": false,
+   "words": 84234
+  },
+  {
+   "party": "KF",
+   "quarter": "2012Q1",
+   "rate": 7.97,
+   "government": false,
+   "words": 87544
+  },
+  {
+   "party": "KF",
+   "quarter": "2012Q2",
+   "rate": 7.62,
+   "government": false,
+   "words": 133226
+  },
+  {
+   "party": "KF",
+   "quarter": "2012Q3",
+   "rate": 10.54,
+   "government": false,
+   "words": 5790
+  },
+  {
+   "party": "KF",
+   "quarter": "2012Q4",
+   "rate": 6.69,
+   "government": false,
+   "words": 106109
+  },
+  {
+   "party": "KF",
+   "quarter": "2013Q1",
+   "rate": 5.64,
+   "government": false,
+   "words": 79037
+  },
+  {
+   "party": "KF",
+   "quarter": "2013Q2",
+   "rate": 6.42,
+   "government": false,
+   "words": 102479
+  },
+  {
+   "party": "KF",
+   "quarter": "2013Q4",
+   "rate": 6.28,
+   "government": false,
+   "words": 93999
+  },
+  {
+   "party": "KF",
+   "quarter": "2014Q1",
+   "rate": 5.86,
+   "government": false,
+   "words": 29536
+  },
+  {
+   "party": "KF",
+   "quarter": "2014Q1",
+   "rate": 6.9,
+   "government": false,
+   "words": 43166
+  },
+  {
+   "party": "KF",
+   "quarter": "2014Q2",
+   "rate": 6.96,
+   "government": false,
+   "words": 107256
+  },
+  {
+   "party": "KF",
+   "quarter": "2014Q3",
+   "rate": 5.52,
+   "government": false,
+   "words": 6155
+  },
+  {
+   "party": "KF",
+   "quarter": "2014Q4",
+   "rate": 5.71,
+   "government": false,
+   "words": 74647
+  },
+  {
+   "party": "KF",
+   "quarter": "2015Q1",
+   "rate": 6.38,
+   "government": false,
+   "words": 68989
+  },
+  {
+   "party": "KF",
+   "quarter": "2015Q2",
+   "rate": 5.15,
+   "government": false,
+   "words": 84472
+  },
+  {
+   "party": "KF",
+   "quarter": "2015Q3",
+   "rate": 1.2,
+   "government": false,
+   "words": 4155
+  },
+  {
+   "party": "KF",
+   "quarter": "2015Q4",
+   "rate": 3.16,
+   "government": false,
+   "words": 75039
+  },
+  {
+   "party": "KF",
+   "quarter": "2016Q1",
+   "rate": 2.29,
+   "government": false,
+   "words": 61951
+  },
+  {
+   "party": "KF",
+   "quarter": "2016Q2",
+   "rate": 2.27,
+   "government": false,
+   "words": 79845
+  },
+  {
+   "party": "KF",
+   "quarter": "2016Q3",
+   "rate": 5.73,
+   "government": false,
+   "words": 5935
+  },
+  {
+   "party": "KF",
+   "quarter": "2016Q4",
+   "rate": 2.54,
+   "government": false,
+   "words": 35758
+  },
+  {
+   "party": "KF",
+   "quarter": "2016Q4",
+   "rate": 6.03,
+   "government": true,
+   "words": 19390
+  },
+  {
+   "party": "KF",
+   "quarter": "2017Q1",
+   "rate": 2.81,
+   "government": true,
+   "words": 43104
+  },
+  {
+   "party": "KF",
+   "quarter": "2017Q2",
+   "rate": 3.71,
+   "government": true,
+   "words": 50735
+  },
+  {
+   "party": "KF",
+   "quarter": "2017Q3",
+   "rate": 5.6,
+   "government": true,
+   "words": 5539
+  },
+  {
+   "party": "KF",
+   "quarter": "2017Q4",
+   "rate": 3.09,
+   "government": true,
+   "words": 46224
+  },
+  {
+   "party": "KF",
+   "quarter": "2018Q1",
+   "rate": 2.29,
+   "government": true,
+   "words": 35403
+  },
+  {
+   "party": "KF",
+   "quarter": "2018Q2",
+   "rate": 3.05,
+   "government": true,
+   "words": 52732
+  },
+  {
+   "party": "KF",
+   "quarter": "2018Q3",
+   "rate": 8.47,
+   "government": true,
+   "words": 3187
+  },
+  {
+   "party": "KF",
+   "quarter": "2018Q4",
+   "rate": 2.48,
+   "government": true,
+   "words": 57586
+  },
+  {
+   "party": "KF",
+   "quarter": "2019Q1",
+   "rate": 2.47,
+   "government": true,
+   "words": 40021
+  },
+  {
+   "party": "KF",
+   "quarter": "2019Q2",
+   "rate": 2.19,
+   "government": true,
+   "words": 21905
+  },
+  {
+   "party": "KF",
+   "quarter": "2019Q4",
+   "rate": 5.26,
+   "government": false,
+   "words": 101233
+  },
+  {
+   "party": "KF",
+   "quarter": "2020Q1",
+   "rate": 4.97,
+   "government": false,
+   "words": 62327
+  },
+  {
+   "party": "KF",
+   "quarter": "2020Q2",
+   "rate": 5.47,
+   "government": false,
+   "words": 104758
+  },
+  {
+   "party": "KF",
+   "quarter": "2020Q3",
+   "rate": 5.07,
+   "government": false,
+   "words": 7294
+  },
+  {
+   "party": "KF",
+   "quarter": "2020Q4",
+   "rate": 7.09,
+   "government": false,
+   "words": 144624
+  },
+  {
+   "party": "KF",
+   "quarter": "2021Q1",
+   "rate": 7.34,
+   "government": false,
+   "words": 91223
+  },
+  {
+   "party": "KF",
+   "quarter": "2021Q2",
+   "rate": 5.4,
+   "government": false,
+   "words": 144701
+  },
+  {
+   "party": "KF",
+   "quarter": "2021Q3",
+   "rate": 4.01,
+   "government": false,
+   "words": 7486
+  },
+  {
+   "party": "KF",
+   "quarter": "2021Q4",
+   "rate": 7.68,
+   "government": false,
+   "words": 103685
+  },
+  {
+   "party": "KF",
+   "quarter": "2022Q1",
+   "rate": 6.67,
+   "government": false,
+   "words": 64815
+  },
+  {
+   "party": "KF",
+   "quarter": "2022Q2",
+   "rate": 6.08,
+   "government": false,
+   "words": 132489
+  },
+  {
+   "party": "KF",
+   "quarter": "2022Q3",
+   "rate": 4.95,
+   "government": false,
+   "words": 12536
+  },
+  {
+   "party": "KF",
+   "quarter": "2022Q4",
+   "rate": 8.28,
+   "government": false,
+   "words": 13410
+  },
+  {
+   "party": "KF",
+   "quarter": "2023Q1",
+   "rate": 5.67,
+   "government": false,
+   "words": 49940
+  },
+  {
+   "party": "KF",
+   "quarter": "2023Q2",
+   "rate": 5.06,
+   "government": false,
+   "words": 97350
+  },
+  {
+   "party": "KF",
+   "quarter": "2023Q3",
+   "rate": 9.9,
+   "government": false,
+   "words": 3939
+  },
+  {
+   "party": "KF",
+   "quarter": "2023Q4",
+   "rate": 7.33,
+   "government": false,
+   "words": 82123
+  },
+  {
+   "party": "KF",
+   "quarter": "2024Q1",
+   "rate": 4.0,
+   "government": false,
+   "words": 62957
+  },
+  {
+   "party": "KF",
+   "quarter": "2024Q2",
+   "rate": 5.46,
+   "government": false,
+   "words": 109139
+  },
+  {
+   "party": "KF",
+   "quarter": "2024Q3",
+   "rate": 11.73,
+   "government": false,
+   "words": 5030
+  },
+  {
+   "party": "KF",
+   "quarter": "2024Q4",
+   "rate": 6.03,
+   "government": false,
+   "words": 99581
+  },
+  {
+   "party": "KF",
+   "quarter": "2025Q1",
+   "rate": 4.67,
+   "government": false,
+   "words": 86789
+  },
+  {
+   "party": "KF",
+   "quarter": "2025Q2",
+   "rate": 4.21,
+   "government": false,
+   "words": 120078
+  },
+  {
+   "party": "KF",
+   "quarter": "2025Q3",
+   "rate": 4.1,
+   "government": false,
+   "words": 5859
+  },
+  {
+   "party": "KF",
+   "quarter": "2025Q4",
+   "rate": 4.72,
+   "government": false,
+   "words": 65664
+  },
+  {
+   "party": "KF",
+   "quarter": "2026Q1",
+   "rate": 3.46,
+   "government": false,
+   "words": 38159
+  },
+  {
+   "party": "KF",
+   "quarter": "2026Q2",
+   "rate": 6.68,
+   "government": false,
+   "words": 11981
+  },
+  {
+   "party": "KF",
+   "quarter": "2026Q3",
+   "rate": 4.25,
+   "government": false,
+   "words": 17892
+  },
+  {
+   "party": "LA",
+   "quarter": "2009Q4",
+   "rate": 5.27,
+   "government": false,
+   "words": 13478
+  },
+  {
+   "party": "LA",
+   "quarter": "2010Q1",
+   "rate": 3.76,
+   "government": false,
+   "words": 34834
+  },
+  {
+   "party": "LA",
+   "quarter": "2010Q2",
+   "rate": 4.43,
+   "government": false,
+   "words": 68796
+  },
+  {
+   "party": "LA",
+   "quarter": "2010Q3",
+   "rate": 4.75,
+   "government": false,
+   "words": 4846
+  },
+  {
+   "party": "LA",
+   "quarter": "2010Q4",
+   "rate": 4.43,
+   "government": false,
+   "words": 24152
+  },
+  {
+   "party": "LA",
+   "quarter": "2011Q1",
+   "rate": 3.96,
+   "government": false,
+   "words": 44731
+  },
+  {
+   "party": "LA",
+   "quarter": "2011Q2",
+   "rate": 4.61,
+   "government": false,
+   "words": 38158
+  },
+  {
+   "party": "LA",
+   "quarter": "2011Q4",
+   "rate": 9.22,
+   "government": false,
+   "words": 96228
+  },
+  {
+   "party": "LA",
+   "quarter": "2012Q1",
+   "rate": 7.24,
+   "government": false,
+   "words": 94899
+  },
+  {
+   "party": "LA",
+   "quarter": "2012Q2",
+   "rate": 6.21,
+   "government": false,
+   "words": 148582
+  },
+  {
+   "party": "LA",
+   "quarter": "2012Q3",
+   "rate": 11.06,
+   "government": false,
+   "words": 15274
+  },
+  {
+   "party": "LA",
+   "quarter": "2012Q4",
+   "rate": 6.85,
+   "government": false,
+   "words": 107624
+  },
+  {
+   "party": "LA",
+   "quarter": "2013Q1",
+   "rate": 6.53,
+   "government": false,
+   "words": 84274
+  },
+  {
+   "party": "LA",
+   "quarter": "2013Q2",
+   "rate": 6.76,
+   "government": false,
+   "words": 113458
+  },
+  {
+   "party": "LA",
+   "quarter": "2013Q4",
+   "rate": 7.4,
+   "government": false,
+   "words": 84101
+  },
+  {
+   "party": "LA",
+   "quarter": "2014Q1",
+   "rate": 6.52,
+   "government": false,
+   "words": 26380
+  },
+  {
+   "party": "LA",
+   "quarter": "2014Q1",
+   "rate": 6.51,
+   "government": false,
+   "words": 39294
+  },
+  {
+   "party": "LA",
+   "quarter": "2014Q2",
+   "rate": 5.76,
+   "government": false,
+   "words": 93743
+  },
+  {
+   "party": "LA",
+   "quarter": "2014Q3",
+   "rate": 10.44,
+   "government": false,
+   "words": 7373
+  },
+  {
+   "party": "LA",
+   "quarter": "2014Q4",
+   "rate": 5.84,
+   "government": false,
+   "words": 93329
+  },
+  {
+   "party": "LA",
+   "quarter": "2015Q1",
+   "rate": 5.48,
+   "government": false,
+   "words": 82350
+  },
+  {
+   "party": "LA",
+   "quarter": "2015Q2",
+   "rate": 4.43,
+   "government": false,
+   "words": 91484
+  },
+  {
+   "party": "LA",
+   "quarter": "2015Q3",
+   "rate": 2.0,
+   "government": false,
+   "words": 8988
+  },
+  {
+   "party": "LA",
+   "quarter": "2015Q4",
+   "rate": 3.57,
+   "government": false,
+   "words": 90564
+  },
+  {
+   "party": "LA",
+   "quarter": "2016Q1",
+   "rate": 3.36,
+   "government": false,
+   "words": 95305
+  },
+  {
+   "party": "LA",
+   "quarter": "2016Q2",
+   "rate": 3.95,
+   "government": false,
+   "words": 136352
+  },
+  {
+   "party": "LA",
+   "quarter": "2016Q3",
+   "rate": 5.99,
+   "government": false,
+   "words": 7674
+  },
+  {
+   "party": "LA",
+   "quarter": "2016Q4",
+   "rate": 3.08,
+   "government": false,
+   "words": 48098
+  },
+  {
+   "party": "LA",
+   "quarter": "2016Q4",
+   "rate": 5.22,
+   "government": true,
+   "words": 31777
+  },
+  {
+   "party": "LA",
+   "quarter": "2017Q1",
+   "rate": 2.96,
+   "government": true,
+   "words": 73636
+  },
+  {
+   "party": "LA",
+   "quarter": "2017Q2",
+   "rate": 2.85,
+   "government": true,
+   "words": 97679
+  },
+  {
+   "party": "LA",
+   "quarter": "2017Q3",
+   "rate": 4.21,
+   "government": true,
+   "words": 7362
+  },
+  {
+   "party": "LA",
+   "quarter": "2017Q4",
+   "rate": 2.99,
+   "government": true,
+   "words": 73510
+  },
+  {
+   "party": "LA",
+   "quarter": "2018Q1",
+   "rate": 2.13,
+   "government": true,
+   "words": 53138
+  },
+  {
+   "party": "LA",
+   "quarter": "2018Q2",
+   "rate": 3.77,
+   "government": true,
+   "words": 79667
+  },
+  {
+   "party": "LA",
+   "quarter": "2018Q3",
+   "rate": 6.23,
+   "government": true,
+   "words": 7222
+  },
+  {
+   "party": "LA",
+   "quarter": "2018Q4",
+   "rate": 3.03,
+   "government": true,
+   "words": 93330
+  },
+  {
+   "party": "LA",
+   "quarter": "2019Q1",
+   "rate": 2.47,
+   "government": true,
+   "words": 72480
+  },
+  {
+   "party": "LA",
+   "quarter": "2019Q2",
+   "rate": 2.13,
+   "government": true,
+   "words": 36567
+  },
+  {
+   "party": "LA",
+   "quarter": "2019Q4",
+   "rate": 4.79,
+   "government": false,
+   "words": 91669
+  },
+  {
+   "party": "LA",
+   "quarter": "2020Q1",
+   "rate": 3.42,
+   "government": false,
+   "words": 70442
+  },
+  {
+   "party": "LA",
+   "quarter": "2020Q2",
+   "rate": 5.15,
+   "government": false,
+   "words": 89698
+  },
+  {
+   "party": "LA",
+   "quarter": "2020Q3",
+   "rate": 9.07,
+   "government": false,
+   "words": 6948
+  },
+  {
+   "party": "LA",
+   "quarter": "2020Q4",
+   "rate": 7.15,
+   "government": false,
+   "words": 63733
+  },
+  {
+   "party": "LA",
+   "quarter": "2021Q1",
+   "rate": 5.88,
+   "government": false,
+   "words": 50542
+  },
+  {
+   "party": "LA",
+   "quarter": "2021Q2",
+   "rate": 4.64,
+   "government": false,
+   "words": 55208
+  },
+  {
+   "party": "LA",
+   "quarter": "2021Q3",
+   "rate": 4.21,
+   "government": false,
+   "words": 6643
+  },
+  {
+   "party": "LA",
+   "quarter": "2021Q4",
+   "rate": 6.49,
+   "government": false,
+   "words": 42356
+  },
+  {
+   "party": "LA",
+   "quarter": "2022Q1",
+   "rate": 5.07,
+   "government": false,
+   "words": 26030
+  },
+  {
+   "party": "LA",
+   "quarter": "2022Q2",
+   "rate": 8.84,
+   "government": false,
+   "words": 37778
+  },
+  {
+   "party": "LA",
+   "quarter": "2022Q3",
+   "rate": 12.13,
+   "government": false,
+   "words": 7584
+  },
+  {
+   "party": "LA",
+   "quarter": "2022Q4",
+   "rate": 8.8,
+   "government": false,
+   "words": 12729
+  },
+  {
+   "party": "LA",
+   "quarter": "2023Q1",
+   "rate": 6.58,
+   "government": false,
+   "words": 56976
+  },
+  {
+   "party": "LA",
+   "quarter": "2023Q2",
+   "rate": 4.2,
+   "government": false,
+   "words": 127905
+  },
+  {
+   "party": "LA",
+   "quarter": "2023Q3",
+   "rate": 11.03,
+   "government": false,
+   "words": 4079
+  },
+  {
+   "party": "LA",
+   "quarter": "2023Q4",
+   "rate": 7.67,
+   "government": false,
+   "words": 106585
+  },
+  {
+   "party": "LA",
+   "quarter": "2024Q1",
+   "rate": 4.17,
+   "government": false,
+   "words": 79367
+  },
+  {
+   "party": "LA",
+   "quarter": "2024Q2",
+   "rate": 4.74,
+   "government": false,
+   "words": 146181
+  },
+  {
+   "party": "LA",
+   "quarter": "2024Q3",
+   "rate": 5.77,
+   "government": false,
+   "words": 4679
+  },
+  {
+   "party": "LA",
+   "quarter": "2024Q4",
+   "rate": 6.4,
+   "government": false,
+   "words": 134144
+  },
+  {
+   "party": "LA",
+   "quarter": "2025Q1",
+   "rate": 5.49,
+   "government": false,
+   "words": 103574
+  },
+  {
+   "party": "LA",
+   "quarter": "2025Q2",
+   "rate": 5.48,
+   "government": false,
+   "words": 158296
+  },
+  {
+   "party": "LA",
+   "quarter": "2025Q3",
+   "rate": 16.62,
+   "government": false,
+   "words": 6921
+  },
+  {
+   "party": "LA",
+   "quarter": "2025Q4",
+   "rate": 5.23,
+   "government": false,
+   "words": 93612
+  },
+  {
+   "party": "LA",
+   "quarter": "2026Q1",
+   "rate": 4.73,
+   "government": false,
+   "words": 63680
+  },
+  {
+   "party": "LA",
+   "quarter": "2026Q2",
+   "rate": 7.21,
+   "government": false,
+   "words": 9567
+  },
+  {
+   "party": "LA",
+   "quarter": "2026Q3",
+   "rate": 7.79,
+   "government": false,
+   "words": 27358
+  },
+  {
+   "party": "M",
+   "quarter": "2022Q4",
+   "rate": 5.99,
+   "government": false,
+   "words": 11020
+  },
+  {
+   "party": "M",
+   "quarter": "2023Q1",
+   "rate": 3.58,
+   "government": true,
+   "words": 58029
+  },
+  {
+   "party": "M",
+   "quarter": "2023Q2",
+   "rate": 2.7,
+   "government": true,
+   "words": 111962
+  },
+  {
+   "party": "M",
+   "quarter": "2023Q3",
+   "rate": 6.88,
+   "government": true,
+   "words": 5671
+  },
+  {
+   "party": "M",
+   "quarter": "2023Q4",
+   "rate": 2.51,
+   "government": true,
+   "words": 79403
+  },
+  {
+   "party": "M",
+   "quarter": "2024Q1",
+   "rate": 2.99,
+   "government": true,
+   "words": 69981
+  },
+  {
+   "party": "M",
+   "quarter": "2024Q2",
+   "rate": 2.94,
+   "government": true,
+   "words": 104587
+  },
+  {
+   "party": "M",
+   "quarter": "2024Q3",
+   "rate": 4.98,
+   "government": true,
+   "words": 4218
+  },
+  {
+   "party": "M",
+   "quarter": "2024Q4",
+   "rate": 3.39,
+   "government": true,
+   "words": 90379
+  },
+  {
+   "party": "M",
+   "quarter": "2025Q1",
+   "rate": 2.41,
+   "government": true,
+   "words": 58916
+  },
+  {
+   "party": "M",
+   "quarter": "2025Q2",
+   "rate": 2.98,
+   "government": true,
+   "words": 80655
+  },
+  {
+   "party": "M",
+   "quarter": "2025Q3",
+   "rate": 5.3,
+   "government": true,
+   "words": 4526
+  },
+  {
+   "party": "M",
+   "quarter": "2025Q4",
+   "rate": 1.5,
+   "government": true,
+   "words": 49290
+  },
+  {
+   "party": "M",
+   "quarter": "2026Q1",
+   "rate": 2.74,
+   "government": true,
+   "words": 35809
+  },
+  {
+   "party": "M",
+   "quarter": "2026Q2",
+   "rate": 4.22,
+   "government": true,
+   "words": 13502
+  },
+  {
+   "party": "M",
+   "quarter": "2026Q3",
+   "rate": 3.28,
+   "government": true,
+   "words": 12821
+  },
+  {
+   "party": "N",
+   "quarter": "2025Q2",
+   "rate": 5.45,
+   "government": false,
+   "words": 6236
+  },
+  {
+   "party": "N",
+   "quarter": "2025Q4",
+   "rate": 5.63,
+   "government": false,
+   "words": 3196
+  },
+  {
+   "party": "NB",
+   "quarter": "2019Q4",
+   "rate": 3.87,
+   "government": false,
+   "words": 90003
+  },
+  {
+   "party": "NB",
+   "quarter": "2020Q1",
+   "rate": 3.96,
+   "government": false,
+   "words": 86910
+  },
+  {
+   "party": "NB",
+   "quarter": "2020Q2",
+   "rate": 4.36,
+   "government": false,
+   "words": 114025
+  },
+  {
+   "party": "NB",
+   "quarter": "2020Q3",
+   "rate": 3.42,
+   "government": false,
+   "words": 5557
+  },
+  {
+   "party": "NB",
+   "quarter": "2020Q4",
+   "rate": 5.86,
+   "government": false,
+   "words": 119939
+  },
+  {
+   "party": "NB",
+   "quarter": "2021Q1",
+   "rate": 5.02,
+   "government": false,
+   "words": 90007
+  },
+  {
+   "party": "NB",
+   "quarter": "2021Q2",
+   "rate": 4.04,
+   "government": false,
+   "words": 143132
+  },
+  {
+   "party": "NB",
+   "quarter": "2021Q3",
+   "rate": 5.19,
+   "government": false,
+   "words": 5781
+  },
+  {
+   "party": "NB",
+   "quarter": "2021Q4",
+   "rate": 4.71,
+   "government": false,
+   "words": 64703
+  },
+  {
+   "party": "NB",
+   "quarter": "2022Q1",
+   "rate": 5.42,
+   "government": false,
+   "words": 52386
+  },
+  {
+   "party": "NB",
+   "quarter": "2022Q2",
+   "rate": 5.0,
+   "government": false,
+   "words": 90054
+  },
+  {
+   "party": "NB",
+   "quarter": "2022Q3",
+   "rate": 3.66,
+   "government": false,
+   "words": 10916
+  },
+  {
+   "party": "NB",
+   "quarter": "2022Q4",
+   "rate": 5.99,
+   "government": false,
+   "words": 9353
+  },
+  {
+   "party": "NB",
+   "quarter": "2022Q4",
+   "rate": 5.83,
+   "government": false,
+   "words": 4803
+  },
+  {
+   "party": "NB",
+   "quarter": "2023Q1",
+   "rate": 5.5,
+   "government": false,
+   "words": 45274
+  },
+  {
+   "party": "NB",
+   "quarter": "2023Q2",
+   "rate": 4.36,
+   "government": false,
+   "words": 143318
+  },
+  {
+   "party": "NB",
+   "quarter": "2023Q4",
+   "rate": 5.01,
+   "government": false,
+   "words": 131193
+  },
+  {
+   "party": "NB",
+   "quarter": "2024Q1",
+   "rate": 5.84,
+   "government": false,
+   "words": 5305
+  },
+  {
+   "party": "NQ",
+   "quarter": "2018Q2",
+   "rate": 6.39,
+   "government": false,
+   "words": 10487
+  },
+  {
+   "party": "NQ",
+   "quarter": "2018Q4",
+   "rate": 9.5,
+   "government": false,
+   "words": 6001
+  },
+  {
+   "party": "RV",
+   "quarter": "2009Q4",
+   "rate": 7.77,
+   "government": false,
+   "words": 47252
+  },
+  {
+   "party": "RV",
+   "quarter": "2010Q1",
+   "rate": 7.62,
+   "government": false,
+   "words": 115128
+  },
+  {
+   "party": "RV",
+   "quarter": "2010Q2",
+   "rate": 6.94,
+   "government": false,
+   "words": 190470
+  },
+  {
+   "party": "RV",
+   "quarter": "2010Q3",
+   "rate": 10.31,
+   "government": false,
+   "words": 6207
+  },
+  {
+   "party": "RV",
+   "quarter": "2010Q4",
+   "rate": 8.29,
+   "government": false,
+   "words": 99705
+  },
+  {
+   "party": "RV",
+   "quarter": "2011Q1",
+   "rate": 7.35,
+   "government": false,
+   "words": 112264
+  },
+  {
+   "party": "RV",
+   "quarter": "2011Q2",
+   "rate": 6.58,
+   "government": false,
+   "words": 104174
+  },
+  {
+   "party": "RV",
+   "quarter": "2011Q4",
+   "rate": 5.84,
+   "government": true,
+   "words": 54498
+  },
+  {
+   "party": "RV",
+   "quarter": "2012Q1",
+   "rate": 3.37,
+   "government": true,
+   "words": 71011
+  },
+  {
+   "party": "RV",
+   "quarter": "2012Q2",
+   "rate": 3.79,
+   "government": true,
+   "words": 95544
+  },
+  {
+   "party": "RV",
+   "quarter": "2012Q3",
+   "rate": 4.43,
+   "government": true,
+   "words": 10385
+  },
+  {
+   "party": "RV",
+   "quarter": "2012Q4",
+   "rate": 4.28,
+   "government": true,
+   "words": 67970
+  },
+  {
+   "party": "RV",
+   "quarter": "2013Q1",
+   "rate": 4.21,
+   "government": true,
+   "words": 65050
+  },
+  {
+   "party": "RV",
+   "quarter": "2013Q2",
+   "rate": 4.49,
+   "government": true,
+   "words": 84634
+  },
+  {
+   "party": "RV",
+   "quarter": "2013Q4",
+   "rate": 2.54,
+   "government": true,
+   "words": 68205
+  },
+  {
+   "party": "RV",
+   "quarter": "2014Q1",
+   "rate": 3.95,
+   "government": true,
+   "words": 15187
+  },
+  {
+   "party": "RV",
+   "quarter": "2014Q1",
+   "rate": 3.35,
+   "government": true,
+   "words": 33150
+  },
+  {
+   "party": "RV",
+   "quarter": "2014Q2",
+   "rate": 3.75,
+   "government": true,
+   "words": 88762
+  },
+  {
+   "party": "RV",
+   "quarter": "2014Q3",
+   "rate": 5.35,
+   "government": true,
+   "words": 7097
+  },
+  {
+   "party": "RV",
+   "quarter": "2014Q4",
+   "rate": 3.66,
+   "government": true,
+   "words": 66703
+  },
+  {
+   "party": "RV",
+   "quarter": "2015Q1",
+   "rate": 2.73,
+   "government": true,
+   "words": 62376
+  },
+  {
+   "party": "RV",
+   "quarter": "2015Q2",
+   "rate": 3.08,
+   "government": true,
+   "words": 60322
+  },
+  {
+   "party": "RV",
+   "quarter": "2015Q3",
+   "rate": 6.08,
+   "government": false,
+   "words": 7571
+  },
+  {
+   "party": "RV",
+   "quarter": "2015Q4",
+   "rate": 6.85,
+   "government": false,
+   "words": 78220
+  },
+  {
+   "party": "RV",
+   "quarter": "2016Q1",
+   "rate": 6.5,
+   "government": false,
+   "words": 76629
+  },
+  {
+   "party": "RV",
+   "quarter": "2016Q2",
+   "rate": 5.09,
+   "government": false,
+   "words": 124624
+  },
+  {
+   "party": "RV",
+   "quarter": "2016Q3",
+   "rate": 7.42,
+   "government": false,
+   "words": 7012
+  },
+  {
+   "party": "RV",
+   "quarter": "2016Q4",
+   "rate": 4.89,
+   "government": false,
+   "words": 51290
+  },
+  {
+   "party": "RV",
+   "quarter": "2016Q4",
+   "rate": 7.13,
+   "government": false,
+   "words": 46409
+  },
+  {
+   "party": "RV",
+   "quarter": "2017Q1",
+   "rate": 4.31,
+   "government": false,
+   "words": 90689
+  },
+  {
+   "party": "RV",
+   "quarter": "2017Q2",
+   "rate": 4.18,
+   "government": false,
+   "words": 107050
+  },
+  {
+   "party": "RV",
+   "quarter": "2017Q3",
+   "rate": 6.69,
+   "government": false,
+   "words": 6731
+  },
+  {
+   "party": "RV",
+   "quarter": "2017Q4",
+   "rate": 5.18,
+   "government": false,
+   "words": 71590
+  },
+  {
+   "party": "RV",
+   "quarter": "2018Q1",
+   "rate": 4.05,
+   "government": false,
+   "words": 71939
+  },
+  {
+   "party": "RV",
+   "quarter": "2018Q2",
+   "rate": 4.73,
+   "government": false,
+   "words": 80694
+  },
+  {
+   "party": "RV",
+   "quarter": "2018Q3",
+   "rate": 4.94,
+   "government": false,
+   "words": 5664
+  },
+  {
+   "party": "RV",
+   "quarter": "2018Q4",
+   "rate": 7.45,
+   "government": false,
+   "words": 95114
+  },
+  {
+   "party": "RV",
+   "quarter": "2019Q1",
+   "rate": 6.07,
+   "government": false,
+   "words": 65612
+  },
+  {
+   "party": "RV",
+   "quarter": "2019Q2",
+   "rate": 4.4,
+   "government": false,
+   "words": 25239
+  },
+  {
+   "party": "RV",
+   "quarter": "2019Q4",
+   "rate": 4.03,
+   "government": false,
+   "words": 121278
+  },
+  {
+   "party": "RV",
+   "quarter": "2020Q1",
+   "rate": 4.67,
+   "government": false,
+   "words": 102040
+  },
+  {
+   "party": "RV",
+   "quarter": "2020Q2",
+   "rate": 5.59,
+   "government": false,
+   "words": 129476
+  },
+  {
+   "party": "RV",
+   "quarter": "2020Q3",
+   "rate": 5.2,
+   "government": false,
+   "words": 7692
+  },
+  {
+   "party": "RV",
+   "quarter": "2020Q4",
+   "rate": 4.21,
+   "government": false,
+   "words": 143343
+  },
+  {
+   "party": "RV",
+   "quarter": "2021Q1",
+   "rate": 3.64,
+   "government": false,
+   "words": 91663
+  },
+  {
+   "party": "RV",
+   "quarter": "2021Q2",
+   "rate": 3.85,
+   "government": false,
+   "words": 130551
+  },
+  {
+   "party": "RV",
+   "quarter": "2021Q3",
+   "rate": 5.42,
+   "government": false,
+   "words": 7377
+  },
+  {
+   "party": "RV",
+   "quarter": "2021Q4",
+   "rate": 3.58,
+   "government": false,
+   "words": 81574
+  },
+  {
+   "party": "RV",
+   "quarter": "2022Q1",
+   "rate": 4.7,
+   "government": false,
+   "words": 73763
+  },
+  {
+   "party": "RV",
+   "quarter": "2022Q2",
+   "rate": 4.09,
+   "government": false,
+   "words": 109277
+  },
+  {
+   "party": "RV",
+   "quarter": "2022Q3",
+   "rate": 2.17,
+   "government": false,
+   "words": 7390
+  },
+  {
+   "party": "RV",
+   "quarter": "2022Q4",
+   "rate": 6.45,
+   "government": false,
+   "words": 10536
+  },
+  {
+   "party": "RV",
+   "quarter": "2023Q1",
+   "rate": 6.72,
+   "government": false,
+   "words": 39287
+  },
+  {
+   "party": "RV",
+   "quarter": "2023Q2",
+   "rate": 4.81,
+   "government": false,
+   "words": 120245
+  },
+  {
+   "party": "RV",
+   "quarter": "2023Q4",
+   "rate": 6.0,
+   "government": false,
+   "words": 97928
+  },
+  {
+   "party": "RV",
+   "quarter": "2024Q1",
+   "rate": 4.87,
+   "government": false,
+   "words": 93373
+  },
+  {
+   "party": "RV",
+   "quarter": "2024Q2",
+   "rate": 4.92,
+   "government": false,
+   "words": 106682
+  },
+  {
+   "party": "RV",
+   "quarter": "2024Q4",
+   "rate": 5.81,
+   "government": false,
+   "words": 77239
+  },
+  {
+   "party": "RV",
+   "quarter": "2025Q1",
+   "rate": 4.86,
+   "government": false,
+   "words": 68874
+  },
+  {
+   "party": "RV",
+   "quarter": "2025Q2",
+   "rate": 5.02,
+   "government": false,
+   "words": 105848
+  },
+  {
+   "party": "RV",
+   "quarter": "2025Q3",
+   "rate": 7.12,
+   "government": false,
+   "words": 5053
+  },
+  {
+   "party": "RV",
+   "quarter": "2025Q4",
+   "rate": 3.73,
+   "government": false,
+   "words": 62680
+  },
+  {
+   "party": "RV",
+   "quarter": "2026Q1",
+   "rate": 3.84,
+   "government": false,
+   "words": 41917
+  },
+  {
+   "party": "RV",
+   "quarter": "2026Q2",
+   "rate": 0.58,
+   "government": true,
+   "words": 10371
+  },
+  {
+   "party": "RV",
+   "quarter": "2026Q3",
+   "rate": 0.98,
+   "government": true,
+   "words": 11266
+  },
+  {
+   "party": "S",
+   "quarter": "2009Q4",
+   "rate": 11.9,
+   "government": false,
+   "words": 132909
+  },
+  {
+   "party": "S",
+   "quarter": "2010Q1",
+   "rate": 13.33,
+   "government": false,
+   "words": 368584
+  },
+  {
+   "party": "S",
+   "quarter": "2010Q2",
+   "rate": 10.26,
+   "government": false,
+   "words": 637232
+  },
+  {
+   "party": "S",
+   "quarter": "2010Q3",
+   "rate": 12.86,
+   "government": false,
+   "words": 25188
+  },
+  {
+   "party": "S",
+   "quarter": "2010Q4",
+   "rate": 13.97,
+   "government": false,
+   "words": 292821
+  },
+  {
+   "party": "S",
+   "quarter": "2011Q1",
+   "rate": 12.21,
+   "government": false,
+   "words": 272733
+  },
+  {
+   "party": "S",
+   "quarter": "2011Q2",
+   "rate": 10.14,
+   "government": false,
+   "words": 308034
+  },
+  {
+   "party": "S",
+   "quarter": "2011Q4",
+   "rate": 5.89,
+   "government": true,
+   "words": 155075
+  },
+  {
+   "party": "S",
+   "quarter": "2012Q1",
+   "rate": 5.14,
+   "government": true,
+   "words": 143393
+  },
+  {
+   "party": "S",
+   "quarter": "2012Q2",
+   "rate": 5.2,
+   "government": true,
+   "words": 193929
+  },
+  {
+   "party": "S",
+   "quarter": "2012Q3",
+   "rate": 4.99,
+   "government": true,
+   "words": 22662
+  },
+  {
+   "party": "S",
+   "quarter": "2012Q4",
+   "rate": 4.34,
+   "government": true,
+   "words": 153652
+  },
+  {
+   "party": "S",
+   "quarter": "2013Q1",
+   "rate": 4.08,
+   "government": true,
+   "words": 127354
+  },
+  {
+   "party": "S",
+   "quarter": "2013Q2",
+   "rate": 4.79,
+   "government": true,
+   "words": 182038
+  },
+  {
+   "party": "S",
+   "quarter": "2013Q4",
+   "rate": 3.57,
+   "government": true,
+   "words": 126404
+  },
+  {
+   "party": "S",
+   "quarter": "2014Q1",
+   "rate": 3.34,
+   "government": true,
+   "words": 28428
+  },
+  {
+   "party": "S",
+   "quarter": "2014Q1",
+   "rate": 4.08,
+   "government": true,
+   "words": 59096
+  },
+  {
+   "party": "S",
+   "quarter": "2014Q2",
+   "rate": 4.15,
+   "government": true,
+   "words": 158305
+  },
+  {
+   "party": "S",
+   "quarter": "2014Q3",
+   "rate": 3.85,
+   "government": true,
+   "words": 11175
+  },
+  {
+   "party": "S",
+   "quarter": "2014Q4",
+   "rate": 3.63,
+   "government": true,
+   "words": 127726
+  },
+  {
+   "party": "S",
+   "quarter": "2015Q1",
+   "rate": 3.43,
+   "government": true,
+   "words": 102476
+  },
+  {
+   "party": "S",
+   "quarter": "2015Q2",
+   "rate": 3.42,
+   "government": true,
+   "words": 137838
+  },
+  {
+   "party": "S",
+   "quarter": "2015Q3",
+   "rate": 11.95,
+   "government": false,
+   "words": 8872
+  },
+  {
+   "party": "S",
+   "quarter": "2015Q4",
+   "rate": 11.15,
+   "government": false,
+   "words": 223578
+  },
+  {
+   "party": "S",
+   "quarter": "2016Q1",
+   "rate": 10.82,
+   "government": false,
+   "words": 234068
+  },
+  {
+   "party": "S",
+   "quarter": "2016Q2",
+   "rate": 7.94,
+   "government": false,
+   "words": 252362
+  },
+  {
+   "party": "S",
+   "quarter": "2016Q3",
+   "rate": 11.15,
+   "government": false,
+   "words": 12376
+  },
+  {
+   "party": "S",
+   "quarter": "2016Q4",
+   "rate": 10.18,
+   "government": false,
+   "words": 128747
+  },
+  {
+   "party": "S",
+   "quarter": "2016Q4",
+   "rate": 13.23,
+   "government": false,
+   "words": 99462
+  },
+  {
+   "party": "S",
+   "quarter": "2017Q1",
+   "rate": 14.06,
+   "government": false,
+   "words": 294451
+  },
+  {
+   "party": "S",
+   "quarter": "2017Q2",
+   "rate": 8.74,
+   "government": false,
+   "words": 227061
+  },
+  {
+   "party": "S",
+   "quarter": "2017Q3",
+   "rate": 12.29,
+   "government": false,
+   "words": 17249
+  },
+  {
+   "party": "S",
+   "quarter": "2017Q4",
+   "rate": 8.83,
+   "government": false,
+   "words": 198998
+  },
+  {
+   "party": "S",
+   "quarter": "2018Q1",
+   "rate": 10.2,
+   "government": false,
+   "words": 158991
+  },
+  {
+   "party": "S",
+   "quarter": "2018Q2",
+   "rate": 8.54,
+   "government": false,
+   "words": 184299
+  },
+  {
+   "party": "S",
+   "quarter": "2018Q3",
+   "rate": 9.55,
+   "government": false,
+   "words": 16448
+  },
+  {
+   "party": "S",
+   "quarter": "2018Q4",
+   "rate": 8.84,
+   "government": false,
+   "words": 261423
+  },
+  {
+   "party": "S",
+   "quarter": "2019Q1",
+   "rate": 10.45,
+   "government": false,
+   "words": 220391
+  },
+  {
+   "party": "S",
+   "quarter": "2019Q2",
+   "rate": 6.26,
+   "government": false,
+   "words": 86945
+  },
+  {
+   "party": "S",
+   "quarter": "2019Q4",
+   "rate": 4.09,
+   "government": true,
+   "words": 151581
+  },
+  {
+   "party": "S",
+   "quarter": "2020Q1",
+   "rate": 4.12,
+   "government": true,
+   "words": 90923
+  },
+  {
+   "party": "S",
+   "quarter": "2020Q2",
+   "rate": 3.79,
+   "government": true,
+   "words": 154019
+  },
+  {
+   "party": "S",
+   "quarter": "2020Q3",
+   "rate": 4.07,
+   "government": true,
+   "words": 12526
+  },
+  {
+   "party": "S",
+   "quarter": "2020Q4",
+   "rate": 3.83,
+   "government": true,
+   "words": 199838
+  },
+  {
+   "party": "S",
+   "quarter": "2021Q1",
+   "rate": 3.43,
+   "government": true,
+   "words": 135100
+  },
+  {
+   "party": "S",
+   "quarter": "2021Q2",
+   "rate": 4.13,
+   "government": true,
+   "words": 210950
+  },
+  {
+   "party": "S",
+   "quarter": "2021Q3",
+   "rate": 3.41,
+   "government": true,
+   "words": 14683
+  },
+  {
+   "party": "S",
+   "quarter": "2021Q4",
+   "rate": 3.61,
+   "government": true,
+   "words": 146648
+  },
+  {
+   "party": "S",
+   "quarter": "2022Q1",
+   "rate": 3.29,
+   "government": true,
+   "words": 94085
+  },
+  {
+   "party": "S",
+   "quarter": "2022Q2",
+   "rate": 3.16,
+   "government": true,
+   "words": 165252
+  },
+  {
+   "party": "S",
+   "quarter": "2022Q3",
+   "rate": 4.44,
+   "government": true,
+   "words": 16657
+  },
+  {
+   "party": "S",
+   "quarter": "2022Q4",
+   "rate": 7.47,
+   "government": true,
+   "words": 21026
+  },
+  {
+   "party": "S",
+   "quarter": "2022Q4",
+   "rate": 5.22,
+   "government": true,
+   "words": 4214
+  },
+  {
+   "party": "S",
+   "quarter": "2023Q1",
+   "rate": 5.07,
+   "government": true,
+   "words": 95777
+  },
+  {
+   "party": "S",
+   "quarter": "2023Q2",
+   "rate": 3.62,
+   "government": true,
+   "words": 197501
+  },
+  {
+   "party": "S",
+   "quarter": "2023Q3",
+   "rate": 7.27,
+   "government": true,
+   "words": 9348
+  },
+  {
+   "party": "S",
+   "quarter": "2023Q4",
+   "rate": 3.52,
+   "government": true,
+   "words": 130521
+  },
+  {
+   "party": "S",
+   "quarter": "2024Q1",
+   "rate": 4.06,
+   "government": true,
+   "words": 115893
+  },
+  {
+   "party": "S",
+   "quarter": "2024Q2",
+   "rate": 3.76,
+   "government": true,
+   "words": 188222
+  },
+  {
+   "party": "S",
+   "quarter": "2024Q3",
+   "rate": 6.45,
+   "government": true,
+   "words": 10545
+  },
+  {
+   "party": "S",
+   "quarter": "2024Q4",
+   "rate": 4.1,
+   "government": true,
+   "words": 165979
+  },
+  {
+   "party": "S",
+   "quarter": "2025Q1",
+   "rate": 3.87,
+   "government": true,
+   "words": 142318
+  },
+  {
+   "party": "S",
+   "quarter": "2025Q2",
+   "rate": 4.16,
+   "government": true,
+   "words": 204597
+  },
+  {
+   "party": "S",
+   "quarter": "2025Q3",
+   "rate": 5.31,
+   "government": true,
+   "words": 14884
+  },
+  {
+   "party": "S",
+   "quarter": "2025Q4",
+   "rate": 3.23,
+   "government": true,
+   "words": 132709
+  },
+  {
+   "party": "S",
+   "quarter": "2026Q1",
+   "rate": 3.68,
+   "government": true,
+   "words": 86584
+  },
+  {
+   "party": "S",
+   "quarter": "2026Q2",
+   "rate": 4.31,
+   "government": true,
+   "words": 24835
+  },
+  {
+   "party": "S",
+   "quarter": "2026Q3",
+   "rate": 3.64,
+   "government": true,
+   "words": 30739
+  },
+  {
+   "party": "SF",
+   "quarter": "2009Q4",
+   "rate": 10.83,
+   "government": false,
+   "words": 89849
+  },
+  {
+   "party": "SF",
+   "quarter": "2010Q1",
+   "rate": 8.73,
+   "government": false,
+   "words": 201017
+  },
+  {
+   "party": "SF",
+   "quarter": "2010Q2",
+   "rate": 8.16,
+   "government": false,
+   "words": 352308
+  },
+  {
+   "party": "SF",
+   "quarter": "2010Q3",
+   "rate": 11.55,
+   "government": false,
+   "words": 16106
+  },
+  {
+   "party": "SF",
+   "quarter": "2010Q4",
+   "rate": 10.01,
+   "government": false,
+   "words": 183278
+  },
+  {
+   "party": "SF",
+   "quarter": "2011Q1",
+   "rate": 8.88,
+   "government": false,
+   "words": 192916
+  },
+  {
+   "party": "SF",
+   "quarter": "2011Q2",
+   "rate": 7.62,
+   "government": false,
+   "words": 190089
+  },
+  {
+   "party": "SF",
+   "quarter": "2011Q4",
+   "rate": 7.25,
+   "government": true,
+   "words": 91316
+  },
+  {
+   "party": "SF",
+   "quarter": "2012Q1",
+   "rate": 4.95,
+   "government": true,
+   "words": 103273
+  },
+  {
+   "party": "SF",
+   "quarter": "2012Q2",
+   "rate": 4.74,
+   "government": true,
+   "words": 124350
+  },
+  {
+   "party": "SF",
+   "quarter": "2012Q3",
+   "rate": 4.55,
+   "government": true,
+   "words": 18471
+  },
+  {
+   "party": "SF",
+   "quarter": "2012Q4",
+   "rate": 4.03,
+   "government": true,
+   "words": 84571
+  },
+  {
+   "party": "SF",
+   "quarter": "2013Q1",
+   "rate": 3.64,
+   "government": true,
+   "words": 74916
+  },
+  {
+   "party": "SF",
+   "quarter": "2013Q2",
+   "rate": 4.56,
+   "government": true,
+   "words": 108051
+  },
+  {
+   "party": "SF",
+   "quarter": "2013Q4",
+   "rate": 4.05,
+   "government": true,
+   "words": 79332
+  },
+  {
+   "party": "SF",
+   "quarter": "2014Q1",
+   "rate": 2.31,
+   "government": true,
+   "words": 15997
+  },
+  {
+   "party": "SF",
+   "quarter": "2014Q1",
+   "rate": 4.53,
+   "government": false,
+   "words": 34674
+  },
+  {
+   "party": "SF",
+   "quarter": "2014Q2",
+   "rate": 4.66,
+   "government": false,
+   "words": 115692
+  },
+  {
+   "party": "SF",
+   "quarter": "2014Q3",
+   "rate": 4.24,
+   "government": false,
+   "words": 5893
+  },
+  {
+   "party": "SF",
+   "quarter": "2014Q4",
+   "rate": 4.94,
+   "government": false,
+   "words": 113044
+  },
+  {
+   "party": "SF",
+   "quarter": "2015Q1",
+   "rate": 5.77,
+   "government": false,
+   "words": 114438
+  },
+  {
+   "party": "SF",
+   "quarter": "2015Q2",
+   "rate": 5.11,
+   "government": false,
+   "words": 117013
+  },
+  {
+   "party": "SF",
+   "quarter": "2015Q3",
+   "rate": 4.9,
+   "government": false,
+   "words": 10407
+  },
+  {
+   "party": "SF",
+   "quarter": "2015Q4",
+   "rate": 5.99,
+   "government": false,
+   "words": 118296
+  },
+  {
+   "party": "SF",
+   "quarter": "2016Q1",
+   "rate": 6.65,
+   "government": false,
+   "words": 99232
+  },
+  {
+   "party": "SF",
+   "quarter": "2016Q2",
+   "rate": 5.13,
+   "government": false,
+   "words": 171988
+  },
+  {
+   "party": "SF",
+   "quarter": "2016Q3",
+   "rate": 8.07,
+   "government": false,
+   "words": 3346
+  },
+  {
+   "party": "SF",
+   "quarter": "2016Q4",
+   "rate": 5.95,
+   "government": false,
+   "words": 63189
+  },
+  {
+   "party": "SF",
+   "quarter": "2016Q4",
+   "rate": 7.36,
+   "government": false,
+   "words": 47660
+  },
+  {
+   "party": "SF",
+   "quarter": "2017Q1",
+   "rate": 4.98,
+   "government": false,
+   "words": 103001
+  },
+  {
+   "party": "SF",
+   "quarter": "2017Q2",
+   "rate": 5.62,
+   "government": false,
+   "words": 170874
+  },
+  {
+   "party": "SF",
+   "quarter": "2017Q3",
+   "rate": 6.9,
+   "government": false,
+   "words": 5364
+  },
+  {
+   "party": "SF",
+   "quarter": "2017Q4",
+   "rate": 4.99,
+   "government": false,
+   "words": 93913
+  },
+  {
+   "party": "SF",
+   "quarter": "2018Q1",
+   "rate": 4.01,
+   "government": false,
+   "words": 73995
+  },
+  {
+   "party": "SF",
+   "quarter": "2018Q2",
+   "rate": 5.86,
+   "government": false,
+   "words": 103787
+  },
+  {
+   "party": "SF",
+   "quarter": "2018Q3",
+   "rate": 7.79,
+   "government": false,
+   "words": 5007
+  },
+  {
+   "party": "SF",
+   "quarter": "2018Q4",
+   "rate": 5.37,
+   "government": false,
+   "words": 128184
+  },
+  {
+   "party": "SF",
+   "quarter": "2019Q1",
+   "rate": 4.98,
+   "government": false,
+   "words": 101127
+  },
+  {
+   "party": "SF",
+   "quarter": "2019Q2",
+   "rate": 4.51,
+   "government": false,
+   "words": 59372
+  },
+  {
+   "party": "SF",
+   "quarter": "2019Q4",
+   "rate": 3.98,
+   "government": false,
+   "words": 99108
+  },
+  {
+   "party": "SF",
+   "quarter": "2020Q1",
+   "rate": 4.0,
+   "government": false,
+   "words": 65002
+  },
+  {
+   "party": "SF",
+   "quarter": "2020Q2",
+   "rate": 3.91,
+   "government": false,
+   "words": 128743
+  },
+  {
+   "party": "SF",
+   "quarter": "2020Q3",
+   "rate": 3.84,
+   "government": false,
+   "words": 8324
+  },
+  {
+   "party": "SF",
+   "quarter": "2020Q4",
+   "rate": 3.52,
+   "government": false,
+   "words": 165648
+  },
+  {
+   "party": "SF",
+   "quarter": "2021Q1",
+   "rate": 3.97,
+   "government": false,
+   "words": 114813
+  },
+  {
+   "party": "SF",
+   "quarter": "2021Q2",
+   "rate": 3.51,
+   "government": false,
+   "words": 231950
+  },
+  {
+   "party": "SF",
+   "quarter": "2021Q3",
+   "rate": 7.12,
+   "government": false,
+   "words": 15443
+  },
+  {
+   "party": "SF",
+   "quarter": "2021Q4",
+   "rate": 4.15,
+   "government": false,
+   "words": 136269
+  },
+  {
+   "party": "SF",
+   "quarter": "2022Q1",
+   "rate": 3.76,
+   "government": false,
+   "words": 95411
+  },
+  {
+   "party": "SF",
+   "quarter": "2022Q2",
+   "rate": 3.17,
+   "government": false,
+   "words": 168091
+  },
+  {
+   "party": "SF",
+   "quarter": "2022Q3",
+   "rate": 2.57,
+   "government": false,
+   "words": 12039
+  },
+  {
+   "party": "SF",
+   "quarter": "2022Q4",
+   "rate": 5.02,
+   "government": false,
+   "words": 14546
+  },
+  {
+   "party": "SF",
+   "quarter": "2022Q4",
+   "rate": 8.33,
+   "government": false,
+   "words": 5881
+  },
+  {
+   "party": "SF",
+   "quarter": "2023Q1",
+   "rate": 7.34,
+   "government": false,
+   "words": 110004
+  },
+  {
+   "party": "SF",
+   "quarter": "2023Q2",
+   "rate": 4.36,
+   "government": false,
+   "words": 226683
+  },
+  {
+   "party": "SF",
+   "quarter": "2023Q3",
+   "rate": 8.45,
+   "government": false,
+   "words": 7458
+  },
+  {
+   "party": "SF",
+   "quarter": "2023Q4",
+   "rate": 5.67,
+   "government": false,
+   "words": 142427
+  },
+  {
+   "party": "SF",
+   "quarter": "2024Q1",
+   "rate": 4.75,
+   "government": false,
+   "words": 117564
+  },
+  {
+   "party": "SF",
+   "quarter": "2024Q2",
+   "rate": 4.71,
+   "government": false,
+   "words": 224203
+  },
+  {
+   "party": "SF",
+   "quarter": "2024Q3",
+   "rate": 8.35,
+   "government": false,
+   "words": 6586
+  },
+  {
+   "party": "SF",
+   "quarter": "2024Q4",
+   "rate": 4.34,
+   "government": false,
+   "words": 141924
+  },
+  {
+   "party": "SF",
+   "quarter": "2025Q1",
+   "rate": 5.26,
+   "government": false,
+   "words": 128816
+  },
+  {
+   "party": "SF",
+   "quarter": "2025Q2",
+   "rate": 4.6,
+   "government": false,
+   "words": 176846
+  },
+  {
+   "party": "SF",
+   "quarter": "2025Q3",
+   "rate": 8.16,
+   "government": false,
+   "words": 7596
+  },
+  {
+   "party": "SF",
+   "quarter": "2025Q4",
+   "rate": 5.32,
+   "government": false,
+   "words": 121698
+  },
+  {
+   "party": "SF",
+   "quarter": "2026Q1",
+   "rate": 4.63,
+   "government": false,
+   "words": 67388
+  },
+  {
+   "party": "SF",
+   "quarter": "2026Q2",
+   "rate": 4.56,
+   "government": true,
+   "words": 12707
+  },
+  {
+   "party": "SF",
+   "quarter": "2026Q3",
+   "rate": 1.74,
+   "government": true,
+   "words": 16100
+  },
+  {
+   "party": "SIU",
+   "quarter": "2014Q2",
+   "rate": 8.33,
+   "government": false,
+   "words": 4681
+  },
+  {
+   "party": "SIU",
+   "quarter": "2015Q4",
+   "rate": 5.18,
+   "government": false,
+   "words": 10811
+  },
+  {
+   "party": "SIU",
+   "quarter": "2016Q2",
+   "rate": 6.11,
+   "government": false,
+   "words": 11950
+  },
+  {
+   "party": "SIU",
+   "quarter": "2019Q4",
+   "rate": 4.41,
+   "government": false,
+   "words": 8614
+  },
+  {
+   "party": "SIU",
+   "quarter": "2020Q2",
+   "rate": 2.78,
+   "government": false,
+   "words": 3237
+  },
+  {
+   "party": "SIU",
+   "quarter": "2020Q4",
+   "rate": 2.65,
+   "government": false,
+   "words": 5277
+  },
+  {
+   "party": "SIU",
+   "quarter": "2021Q2",
+   "rate": 1.91,
+   "government": false,
+   "words": 9956
+  },
+  {
+   "party": "SIU",
+   "quarter": "2021Q4",
+   "rate": 4.46,
+   "government": false,
+   "words": 7394
+  },
+  {
+   "party": "SIU",
+   "quarter": "2022Q2",
+   "rate": 2.05,
+   "government": false,
+   "words": 11206
+  },
+  {
+   "party": "SIU",
+   "quarter": "2023Q1",
+   "rate": 3.66,
+   "government": false,
+   "words": 8187
+  },
+  {
+   "party": "SIU",
+   "quarter": "2023Q2",
+   "rate": 1.84,
+   "government": false,
+   "words": 4345
+  },
+  {
+   "party": "SIU",
+   "quarter": "2023Q4",
+   "rate": 7.33,
+   "government": false,
+   "words": 6687
+  },
+  {
+   "party": "SIU",
+   "quarter": "2024Q2",
+   "rate": 4.01,
+   "government": false,
+   "words": 6242
+  },
+  {
+   "party": "SP",
+   "quarter": "2014Q2",
+   "rate": 11.01,
+   "government": false,
+   "words": 4996
+  },
+  {
+   "party": "SP",
+   "quarter": "2019Q4",
+   "rate": 12.35,
+   "government": false,
+   "words": 3725
+  },
+  {
+   "party": "SP",
+   "quarter": "2020Q4",
+   "rate": 7.23,
+   "government": false,
+   "words": 3875
+  },
+  {
+   "party": "SP",
+   "quarter": "2021Q2",
+   "rate": 6.34,
+   "government": false,
+   "words": 4576
+  },
+  {
+   "party": "SP",
+   "quarter": "2021Q4",
+   "rate": 7.81,
+   "government": false,
+   "words": 3967
+  },
+  {
+   "party": "SP",
+   "quarter": "2022Q2",
+   "rate": 3.45,
+   "government": false,
+   "words": 4640
+  },
+  {
+   "party": "SP",
+   "quarter": "2023Q1",
+   "rate": 8.75,
+   "government": false,
+   "words": 5603
+  },
+  {
+   "party": "SP",
+   "quarter": "2023Q2",
+   "rate": 3.97,
+   "government": false,
+   "words": 7810
+  },
+  {
+   "party": "SP",
+   "quarter": "2023Q4",
+   "rate": 6.04,
+   "government": false,
+   "words": 6959
+  },
+  {
+   "party": "SP",
+   "quarter": "2024Q2",
+   "rate": 3.9,
+   "government": false,
+   "words": 8461
+  },
+  {
+   "party": "SP",
+   "quarter": "2024Q4",
+   "rate": 3.24,
+   "government": false,
+   "words": 4323
+  },
+  {
+   "party": "SP",
+   "quarter": "2025Q2",
+   "rate": 6.39,
+   "government": false,
+   "words": 7510
+  },
+  {
+   "party": "T",
+   "quarter": "2011Q1",
+   "rate": 11.36,
+   "government": false,
+   "words": 4137
+  },
+  {
+   "party": "T",
+   "quarter": "2015Q4",
+   "rate": 6.39,
+   "government": false,
+   "words": 5944
+  },
+  {
+   "party": "T",
+   "quarter": "2016Q2",
+   "rate": 5.96,
+   "government": false,
+   "words": 9233
+  },
+  {
+   "party": "T",
+   "quarter": "2016Q4",
+   "rate": 5.22,
+   "government": false,
+   "words": 8809
+  },
+  {
+   "party": "T",
+   "quarter": "2016Q4",
+   "rate": 6.49,
+   "government": false,
+   "words": 6468
+  },
+  {
+   "party": "T",
+   "quarter": "2017Q2",
+   "rate": 2.92,
+   "government": false,
+   "words": 7186
+  },
+  {
+   "party": "T",
+   "quarter": "2017Q4",
+   "rate": 5.72,
+   "government": false,
+   "words": 5066
+  },
+  {
+   "party": "T",
+   "quarter": "2018Q2",
+   "rate": 2.49,
+   "government": false,
+   "words": 7224
+  },
+  {
+   "party": "T",
+   "quarter": "2018Q4",
+   "rate": 4.68,
+   "government": false,
+   "words": 8977
+  },
+  {
+   "party": "TF",
+   "quarter": "2010Q2",
+   "rate": 6.01,
+   "government": false,
+   "words": 4328
+  },
+  {
+   "party": "TF",
+   "quarter": "2010Q4",
+   "rate": 7.46,
+   "government": false,
+   "words": 5900
+  },
+  {
+   "party": "V",
+   "quarter": "2009Q4",
+   "rate": 4.47,
+   "government": true,
+   "words": 70496
+  },
+  {
+   "party": "V",
+   "quarter": "2010Q1",
+   "rate": 3.27,
+   "government": true,
+   "words": 143010
+  },
+  {
+   "party": "V",
+   "quarter": "2010Q2",
+   "rate": 3.64,
+   "government": true,
+   "words": 333260
+  },
+  {
+   "party": "V",
+   "quarter": "2010Q3",
+   "rate": 3.04,
+   "government": true,
+   "words": 17113
+  },
+  {
+   "party": "V",
+   "quarter": "2010Q4",
+   "rate": 2.79,
+   "government": true,
+   "words": 123857
+  },
+  {
+   "party": "V",
+   "quarter": "2011Q1",
+   "rate": 3.42,
+   "government": true,
+   "words": 161396
+  },
+  {
+   "party": "V",
+   "quarter": "2011Q2",
+   "rate": 3.74,
+   "government": true,
+   "words": 158929
+  },
+  {
+   "party": "V",
+   "quarter": "2011Q4",
+   "rate": 18.19,
+   "government": false,
+   "words": 296085
+  },
+  {
+   "party": "V",
+   "quarter": "2012Q1",
+   "rate": 15.09,
+   "government": false,
+   "words": 224324
+  },
+  {
+   "party": "V",
+   "quarter": "2012Q2",
+   "rate": 14.69,
+   "government": false,
+   "words": 273995
+  },
+  {
+   "party": "V",
+   "quarter": "2012Q3",
+   "rate": 13.43,
+   "government": false,
+   "words": 23223
+  },
+  {
+   "party": "V",
+   "quarter": "2012Q4",
+   "rate": 13.45,
+   "government": false,
+   "words": 248149
+  },
+  {
+   "party": "V",
+   "quarter": "2013Q1",
+   "rate": 13.07,
+   "government": false,
+   "words": 215708
+  },
+  {
+   "party": "V",
+   "quarter": "2013Q2",
+   "rate": 13.43,
+   "government": false,
+   "words": 260015
+  },
+  {
+   "party": "V",
+   "quarter": "2013Q4",
+   "rate": 13.9,
+   "government": false,
+   "words": 233615
+  },
+  {
+   "party": "V",
+   "quarter": "2014Q1",
+   "rate": 15.83,
+   "government": false,
+   "words": 64705
+  },
+  {
+   "party": "V",
+   "quarter": "2014Q1",
+   "rate": 11.81,
+   "government": false,
+   "words": 93851
+  },
+  {
+   "party": "V",
+   "quarter": "2014Q2",
+   "rate": 12.62,
+   "government": false,
+   "words": 231133
+  },
+  {
+   "party": "V",
+   "quarter": "2014Q3",
+   "rate": 17.91,
+   "government": false,
+   "words": 12118
+  },
+  {
+   "party": "V",
+   "quarter": "2014Q4",
+   "rate": 14.94,
+   "government": false,
+   "words": 222849
+  },
+  {
+   "party": "V",
+   "quarter": "2015Q1",
+   "rate": 14.05,
+   "government": false,
+   "words": 173715
+  },
+  {
+   "party": "V",
+   "quarter": "2015Q2",
+   "rate": 11.23,
+   "government": false,
+   "words": 201878
+  },
+  {
+   "party": "V",
+   "quarter": "2015Q3",
+   "rate": 4.08,
+   "government": true,
+   "words": 6379
+  },
+  {
+   "party": "V",
+   "quarter": "2015Q4",
+   "rate": 3.45,
+   "government": true,
+   "words": 131869
+  },
+  {
+   "party": "V",
+   "quarter": "2016Q1",
+   "rate": 3.44,
+   "government": true,
+   "words": 122941
+  },
+  {
+   "party": "V",
+   "quarter": "2016Q2",
+   "rate": 4.15,
+   "government": true,
+   "words": 157669
+  },
+  {
+   "party": "V",
+   "quarter": "2016Q3",
+   "rate": 3.23,
+   "government": true,
+   "words": 10209
+  },
+  {
+   "party": "V",
+   "quarter": "2016Q4",
+   "rate": 3.48,
+   "government": true,
+   "words": 75065
+  },
+  {
+   "party": "V",
+   "quarter": "2016Q4",
+   "rate": 3.76,
+   "government": true,
+   "words": 56101
+  },
+  {
+   "party": "V",
+   "quarter": "2017Q1",
+   "rate": 3.49,
+   "government": true,
+   "words": 131045
+  },
+  {
+   "party": "V",
+   "quarter": "2017Q2",
+   "rate": 4.05,
+   "government": true,
+   "words": 164015
+  },
+  {
+   "party": "V",
+   "quarter": "2017Q3",
+   "rate": 4.21,
+   "government": true,
+   "words": 12128
+  },
+  {
+   "party": "V",
+   "quarter": "2017Q4",
+   "rate": 3.82,
+   "government": true,
+   "words": 112137
+  },
+  {
+   "party": "V",
+   "quarter": "2018Q1",
+   "rate": 2.99,
+   "government": true,
+   "words": 76828
+  },
+  {
+   "party": "V",
+   "quarter": "2018Q2",
+   "rate": 3.55,
+   "government": true,
+   "words": 133021
+  },
+  {
+   "party": "V",
+   "quarter": "2018Q3",
+   "rate": 6.56,
+   "government": true,
+   "words": 9752
+  },
+  {
+   "party": "V",
+   "quarter": "2018Q4",
+   "rate": 3.88,
+   "government": true,
+   "words": 144688
+  },
+  {
+   "party": "V",
+   "quarter": "2019Q1",
+   "rate": 3.47,
+   "government": true,
+   "words": 110769
+  },
+  {
+   "party": "V",
+   "quarter": "2019Q2",
+   "rate": 3.45,
+   "government": true,
+   "words": 56272
+  },
+  {
+   "party": "V",
+   "quarter": "2019Q4",
+   "rate": 11.58,
+   "government": false,
+   "words": 218066
+  },
+  {
+   "party": "V",
+   "quarter": "2020Q1",
+   "rate": 9.75,
+   "government": false,
+   "words": 131568
+  },
+  {
+   "party": "V",
+   "quarter": "2020Q2",
+   "rate": 13.2,
+   "government": false,
+   "words": 256936
+  },
+  {
+   "party": "V",
+   "quarter": "2020Q3",
+   "rate": 11.05,
+   "government": false,
+   "words": 12846
+  },
+  {
+   "party": "V",
+   "quarter": "2020Q4",
+   "rate": 10.5,
+   "government": false,
+   "words": 278776
+  },
+  {
+   "party": "V",
+   "quarter": "2021Q1",
+   "rate": 9.58,
+   "government": false,
+   "words": 225463
+  },
+  {
+   "party": "V",
+   "quarter": "2021Q2",
+   "rate": 7.43,
+   "government": false,
+   "words": 287555
+  },
+  {
+   "party": "V",
+   "quarter": "2021Q3",
+   "rate": 12.08,
+   "government": false,
+   "words": 12001
+  },
+  {
+   "party": "V",
+   "quarter": "2021Q4",
+   "rate": 7.64,
+   "government": false,
+   "words": 170656
+  },
+  {
+   "party": "V",
+   "quarter": "2022Q1",
+   "rate": 6.98,
+   "government": false,
+   "words": 131037
+  },
+  {
+   "party": "V",
+   "quarter": "2022Q2",
+   "rate": 6.24,
+   "government": false,
+   "words": 228178
+  },
+  {
+   "party": "V",
+   "quarter": "2022Q3",
+   "rate": 6.98,
+   "government": false,
+   "words": 18922
+  },
+  {
+   "party": "V",
+   "quarter": "2022Q4",
+   "rate": 12.65,
+   "government": false,
+   "words": 18107
+  },
+  {
+   "party": "V",
+   "quarter": "2023Q1",
+   "rate": 4.06,
+   "government": true,
+   "words": 72620
+  },
+  {
+   "party": "V",
+   "quarter": "2023Q2",
+   "rate": 3.57,
+   "government": true,
+   "words": 145884
+  },
+  {
+   "party": "V",
+   "quarter": "2023Q3",
+   "rate": 6.15,
+   "government": true,
+   "words": 6502
+  },
+  {
+   "party": "V",
+   "quarter": "2023Q4",
+   "rate": 3.68,
+   "government": true,
+   "words": 96670
+  },
+  {
+   "party": "V",
+   "quarter": "2024Q1",
+   "rate": 3.38,
+   "government": true,
+   "words": 80361
+  },
+  {
+   "party": "V",
+   "quarter": "2024Q2",
+   "rate": 2.98,
+   "government": true,
+   "words": 140859
+  },
+  {
+   "party": "V",
+   "quarter": "2024Q3",
+   "rate": 3.01,
+   "government": true,
+   "words": 4991
+  },
+  {
+   "party": "V",
+   "quarter": "2024Q4",
+   "rate": 2.71,
+   "government": true,
+   "words": 106326
+  },
+  {
+   "party": "V",
+   "quarter": "2025Q1",
+   "rate": 2.91,
+   "government": true,
+   "words": 90704
+  },
+  {
+   "party": "V",
+   "quarter": "2025Q2",
+   "rate": 2.94,
+   "government": true,
+   "words": 138330
+  },
+  {
+   "party": "V",
+   "quarter": "2025Q3",
+   "rate": 4.6,
+   "government": true,
+   "words": 7824
+  },
+  {
+   "party": "V",
+   "quarter": "2025Q4",
+   "rate": 2.64,
+   "government": true,
+   "words": 91626
+  },
+  {
+   "party": "V",
+   "quarter": "2026Q1",
+   "rate": 2.75,
+   "government": true,
+   "words": 53735
+  },
+  {
+   "party": "V",
+   "quarter": "2026Q2",
+   "rate": 11.16,
+   "government": false,
+   "words": 15407
+  },
+  {
+   "party": "V",
+   "quarter": "2026Q3",
+   "rate": 8.81,
+   "government": false,
+   "words": 22594
+  }
+ ],
+ "within_party": {
+  "parties": [
+   {
+    "party": "KF",
+    "opposition_rate": 5.83,
+    "government_rate": 3.49,
+    "quarters": 67
+   },
+   {
+    "party": "LA",
+    "opposition_rate": 6.22,
+    "government_rate": 3.45,
+    "quarters": 67
+   },
+   {
+    "party": "RV",
+    "opposition_rate": 5.54,
+    "government_rate": 3.55,
+    "quarters": 65
+   },
+   {
+    "party": "S",
+    "opposition_rate": 10.79,
+    "government_rate": 4.27,
+    "quarters": 68
+   },
+   {
+    "party": "SF",
+    "opposition_rate": 5.8,
+    "government_rate": 4.22,
+    "quarters": 68
+   },
+   {
+    "party": "V",
+    "opposition_rate": 11.98,
+    "government_rate": 3.64,
+    "quarters": 67
+   }
+  ],
+  "mean_gap": 3.92,
+  "null_sd": 0.32,
+  "p": 0.0001999600079984003
+ },
+ "role_classifier": [
+  {
+   "window": "2009 KF+V",
+   "test_chunks": 3451,
+   "train_chunks": 14476,
+   "accuracy": 0.657,
+   "null_mean": 0.494,
+   "null_max": 0.523,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "ministerens",
+    "grønland",
+    "burde",
+    "bør",
+    "regeringen",
+    "færøerne",
+    "udvalgsbehandlingen",
+    "positive",
+    "hvorfor",
+    "gerne",
+    "udvalgsarbejdet",
+    "reelt",
+    "finansministeren"
+   ],
+   "government_words": [
+    "ordet",
+    "forslagsstillerne",
+    "beslutningsforslaget",
+    "derfor",
+    "redegjort",
+    "regeringsgrundlaget",
+    "min",
+    "netop",
+    "talerstolen",
+    "lovforslaget",
+    "dag",
+    "baggrund",
+    "initiativer",
+    "tror",
+    "spørgeren"
+   ]
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "test_chunks": 3436,
+   "train_chunks": 10918,
+   "accuracy": 0.642,
+   "null_mean": 0.499,
+   "null_max": 0.529,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "bør",
+    "positive",
+    "gerne",
+    "regeringen",
+    "burde",
+    "flertal",
+    "høringssvar",
+    "finansministeren",
+    "spørge",
+    "fordi",
+    "hvorfor",
+    "ministerens"
+   ],
+   "government_words": [
+    "ordet",
+    "forslagsstillerne",
+    "beslutningsforslaget",
+    "lovforslaget",
+    "initiativer",
+    "allerede",
+    "talerstolen",
+    "mig",
+    "baggrund",
+    "glad",
+    "dag",
+    "universiteterne",
+    "tror",
+    "styrker",
+    "min"
+   ]
+  },
+  {
+   "window": "2014 RV+S",
+   "test_chunks": 3262,
+   "train_chunks": 10903,
+   "accuracy": 0.66,
+   "null_mean": 0.502,
+   "null_max": 0.529,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "positive",
+    "burde",
+    "bør",
+    "gerne",
+    "udvalgsbehandlingen",
+    "ministerens",
+    "regeringen",
+    "færøerne",
+    "egentlig",
+    "tak",
+    "hvorfor",
+    "flertal"
+   ],
+   "government_words": [
+    "ordet",
+    "forslagsstillerne",
+    "beslutningsforslaget",
+    "lovforslaget",
+    "tror",
+    "allerede",
+    "initiativer",
+    "talerstolen",
+    "mig",
+    "forbedre",
+    "regeringsgrundlaget",
+    "konkret",
+    "udvalg",
+    "balance",
+    "glad"
+   ]
+  },
+  {
+   "window": "2015 V",
+   "test_chunks": 3374,
+   "train_chunks": 10411,
+   "accuracy": 0.659,
+   "null_mean": 0.499,
+   "null_max": 0.56,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "regeringen",
+    "burde",
+    "bør",
+    "færøerne",
+    "ministerens",
+    "positive",
+    "bare",
+    "gerne",
+    "hvorfor",
+    "finansministeren",
+    "grønlandske",
+    "spørge"
+   ],
+   "government_words": [
+    "ordet",
+    "forslagsstillerne",
+    "beslutningsforslaget",
+    "alle",
+    "spørgeren",
+    "allerede",
+    "oppositionen",
+    "min",
+    "initiativer",
+    "muligheder",
+    "talerstol",
+    "mig",
+    "tror",
+    "løbende",
+    "formand"
+   ]
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "test_chunks": 3686,
+   "train_chunks": 9935,
+   "accuracy": 0.658,
+   "null_mean": 0.505,
+   "null_max": 0.569,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "regeringen",
+    "burde",
+    "bør",
+    "færøerne",
+    "positive",
+    "ministerens",
+    "finansministeren",
+    "gerne",
+    "kun",
+    "bare",
+    "grønlandske",
+    "hvorfor"
+   ],
+   "government_words": [
+    "ordet",
+    "forslagsstillerne",
+    "allerede",
+    "oppositionen",
+    "alle",
+    "initiativer",
+    "synes",
+    "spørgeren",
+    "væk",
+    "beslutningsforslaget",
+    "formand",
+    "muligheder",
+    "fremover",
+    "løbende",
+    "mulighed"
+   ]
+  },
+  {
+   "window": "2019 S",
+   "test_chunks": 4058,
+   "train_chunks": 10360,
+   "accuracy": 0.638,
+   "null_mean": 0.491,
+   "null_max": 0.534,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "regeringen",
+    "finansministeren",
+    "hvorfor",
+    "ministerens",
+    "positive",
+    "burde",
+    "spørge",
+    "grønlandske",
+    "gerne",
+    "flygtninge",
+    "ældre",
+    "bør"
+   ],
+   "government_words": [
+    "ordet",
+    "allerede",
+    "forslagsstillerne",
+    "tror",
+    "netop",
+    "oppositionen",
+    "beslutningsforslag",
+    "heldigvis",
+    "alle",
+    "forbedre",
+    "mig",
+    "derfor",
+    "radikal",
+    "talerstolen",
+    "følger"
+   ]
+  },
+  {
+   "window": "2022 M+S+V",
+   "test_chunks": 4011,
+   "train_chunks": 13822,
+   "accuracy": 0.663,
+   "null_mean": 0.498,
+   "null_max": 0.533,
+   "opposition_words": [
+    "ministeren",
+    "statsministeren",
+    "grønland",
+    "regeringen",
+    "burde",
+    "finansministeren",
+    "ministerens",
+    "hvorfor",
+    "bør",
+    "positive",
+    "færøerne",
+    "flertal",
+    "grønlandske",
+    "kunne",
+    "ser"
+   ],
+   "government_words": [
+    "oppositionen",
+    "allerede",
+    "radikal",
+    "baggrund",
+    "heldigvis",
+    "beslutningsforslaget",
+    "derfor",
+    "naturligvis",
+    "forslagsstillerne",
+    "beslutningsforslag",
+    "således",
+    "tidspunkt",
+    "redegjort",
+    "spørgeren",
+    "tror"
+   ]
+  }
+ ],
+ "pattern": "\\b(?:\\w*minister\\w*|regering\\w*)\\b"
+}

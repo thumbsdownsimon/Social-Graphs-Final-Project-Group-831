@@ -1,0 +1,19 @@
+# Transcript names that differ from the Aktør name, mostly name changes.
+# Each was matched by first name, party and session against seated members (see docs/dataset.md).
+xml_name,person_id,aktoer_name
+Simon Emil Ammitzbøll,117,Simon Emil Ammitzbøll-Bille
+Lisbeth Bech Poulsen,219,Lisbeth Bech-Nielsen
+Mai Henriksen,189,Mai Mercado
+Peter Juel Jensen,180,Peter Juel-Jensen
+Ane Halsboe-Larsen,286,Ane Halsboe-Jørgensen
+Erika Lorentsen,10707,Erikanell Asmuss Lorentsen
+Kaare Dybvad,15787,Kaare Dybvad Bek
+Trine Mach,109,Trine Pertou Mach
+Peter Kofod Poulsen,15763,Peter Kofod
+Juliane Henningsen,6689,Juliane Henningsen Heilmann
+Marlene B. Lorentzen,86,Marlene Borst Hansen
+Aaja Chemnitz Larsen,15757,Aaja Chemnitz
+Charlotte Munch,20375,Charlotte Munch Pasler
+Peter Hummelgaard Thomsen,15776,Peter Hummelgaard
+Caroline Stage Olsen,20976,Caroline Stage
+Helle Osther Friedrichsen,16952,Helle Osther

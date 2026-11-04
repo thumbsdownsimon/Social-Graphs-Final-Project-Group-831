@@ -1,0 +1,124 @@
+[
+ {
+  "from": "2009-11-24",
+  "parties": [
+   "KF",
+   "V"
+  ],
+  "minister_counts": {
+   "V": 12,
+   "KF": 7,
+   "DD": 1
+  },
+  "single_minister_parties": [
+   "DD"
+  ],
+  "ministers_without_party": 0
+ },
+ {
+  "from": "2011-10-03",
+  "parties": [
+   "RV",
+   "S",
+   "SF"
+  ],
+  "minister_counts": {
+   "RV": 5,
+   "S": 9,
+   "SF": 5
+  },
+  "single_minister_parties": [],
+  "ministers_without_party": 3
+ },
+ {
+  "from": "2014-02-03",
+  "parties": [
+   "RV",
+   "S"
+  ],
+  "minister_counts": {
+   "S": 12,
+   "RV": 6
+  },
+  "single_minister_parties": [],
+  "ministers_without_party": 2
+ },
+ {
+  "from": "2015-06-28",
+  "parties": [
+   "V"
+  ],
+  "minister_counts": {
+   "V": 15,
+   "DD": 1
+  },
+  "single_minister_parties": [
+   "DD"
+  ],
+  "ministers_without_party": 1
+ },
+ {
+  "from": "2016-11-28",
+  "parties": [
+   "KF",
+   "LA",
+   "V"
+  ],
+  "minister_counts": {
+   "V": 12,
+   "LA": 6,
+   "KF": 3,
+   "DD": 1
+  },
+  "single_minister_parties": [
+   "DD"
+  ],
+  "ministers_without_party": 0
+ },
+ {
+  "from": "2019-06-27",
+  "parties": [
+   "S"
+  ],
+  "minister_counts": {
+   "S": 18
+  },
+  "single_minister_parties": [],
+  "ministers_without_party": 1
+ },
+ {
+  "from": "2022-12-15",
+  "parties": [
+   "M",
+   "S",
+   "V"
+  ],
+  "minister_counts": {
+   "V": 7,
+   "S": 10,
+   "M": 4
+  },
+  "single_minister_parties": [],
+  "ministers_without_party": 0
+ },
+ {
+  "from": "2026-06-03",
+  "parties": [
+   "M",
+   "RV",
+   "S",
+   "SF"
+  ],
+  "minister_counts": {
+   "S": 8,
+   "RV": 3,
+   "SF": 4,
+   "EL": 1,
+   "M": 3
+  },
+  "single_minister_parties": [
+   "EL"
+  ],
+  "ministers_without_party": 0
+ }
+]

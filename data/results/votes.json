@@ -1,0 +1,130 @@
+{
+ "rebels": [
+  {
+   "window": "2016 KF+LA+V",
+   "cast": 97922,
+   "rebel_votes": 55,
+   "rebel_rate": 0.00056,
+   "votes": 945,
+   "votes_with_a_rebel": 0.044,
+   "absent_share": 0.414
+  },
+  {
+   "window": "2019 S",
+   "cast": 153956,
+   "rebel_votes": 211,
+   "rebel_rate": 0.00137,
+   "votes": 1689,
+   "votes_with_a_rebel": 0.083,
+   "absent_share": 0.448
+  },
+  {
+   "window": "2022 M+S+V",
+   "cast": 153931,
+   "rebel_votes": 209,
+   "rebel_rate": 0.00136,
+   "votes": 1467,
+   "votes_with_a_rebel": 0.1,
+   "absent_share": 0.398
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "cast": 4405,
+   "rebel_votes": 15,
+   "rebel_rate": 0.00341,
+   "votes": 41,
+   "votes_with_a_rebel": 0.171,
+   "absent_share": 0.377
+  }
+ ],
+ "vote_network": {
+  "2016 KF+LA+V": {
+   "members": 191,
+   "contested_votes": 658,
+   "communities": 3,
+   "modularity": 0.368,
+   "seed_stability_nmi": 0.969,
+   "nmi_with_party": 0.678,
+   "null_within_party_shuffle_nmi": 0.678,
+   "community_parties": {
+    "0": [
+     "DF",
+     "KF",
+     "LA",
+     "V"
+    ],
+    "1": [
+     "ALT",
+     "EL",
+     "RV",
+     "SF"
+    ],
+    "2": [
+     "S"
+    ]
+   }
+  },
+  "2019 S": {
+   "members": 203,
+   "contested_votes": 1350,
+   "communities": 4,
+   "modularity": 0.476,
+   "seed_stability_nmi": 1.0,
+   "nmi_with_party": 0.71,
+   "null_within_party_shuffle_nmi": 0.746,
+   "community_parties": {
+    "0": [
+     "ALT",
+     "EL",
+     "RV",
+     "SF"
+    ],
+    "1": [
+     "S"
+    ],
+    "2": [
+     "KF",
+     "LA",
+     "UFG",
+     "V"
+    ],
+    "3": [
+     "DD",
+     "DF",
+     "NB",
+     "UFG"
+    ]
+   }
+  },
+  "2022 M+S+V": {
+   "members": 210,
+   "contested_votes": 1200,
+   "communities": 3,
+   "modularity": 0.225,
+   "seed_stability_nmi": 0.992,
+   "nmi_with_party": 0.6,
+   "null_within_party_shuffle_nmi": 0.669,
+   "community_parties": {
+    "0": [
+     "M",
+     "S",
+     "UFG",
+     "V"
+    ],
+    "1": [
+     "ALT",
+     "EL",
+     "RV",
+     "SF"
+    ],
+    "2": [
+     "DD",
+     "DF",
+     "KF",
+     "LA"
+    ]
+   }
+  }
+ },
+ "votes_covered": 4142
+}

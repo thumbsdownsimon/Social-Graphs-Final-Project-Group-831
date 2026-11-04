@@ -1,0 +1,9678 @@
+{
+ "corpus": {
+  "backbench_turns": 310441,
+  "speakers": 600,
+  "words": 63332638,
+  "per_window": {
+   "2009 KF+V": 8018815,
+   "2011 RV+S+SF": 8714302,
+   "2014 RV+S": 4836346,
+   "2015 V": 5220950,
+   "2016 KF+LA+V": 9987217,
+   "2019 S": 12736985,
+   "2022 M+S+V": 13353405,
+   "2026 M+RV+S+SF": 464618
+  }
+ },
+ "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "truncation": {
+  "chunks_checked": 3000,
+  "encoder_limit": 128,
+  "share_truncated": 0.0,
+  "median_word_pieces": 85.0
+ },
+ "speaker_debate_vectors": 41439,
+ "accuracy": [
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-KF",
+   "speakers_a": 26,
+   "speakers_b": 19,
+   "chunks": 837,
+   "accuracy": 0.624
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-RV",
+   "speakers_a": 26,
+   "speakers_b": 12,
+   "chunks": 709,
+   "accuracy": 0.601
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-S",
+   "speakers_a": 26,
+   "speakers_b": 47,
+   "chunks": 1344,
+   "accuracy": 0.675,
+   "null_mean": 0.501,
+   "null_max": 0.558
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-SF",
+   "speakers_a": 26,
+   "speakers_b": 29,
+   "chunks": 1031,
+   "accuracy": 0.656
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-V",
+   "speakers_a": 26,
+   "speakers_b": 43,
+   "chunks": 1223,
+   "accuracy": 0.639,
+   "null_mean": 0.49,
+   "null_max": 0.585
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-RV",
+   "speakers_a": 19,
+   "speakers_b": 12,
+   "chunks": 572,
+   "accuracy": 0.585
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-S",
+   "speakers_a": 19,
+   "speakers_b": 47,
+   "chunks": 1207,
+   "accuracy": 0.698
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-SF",
+   "speakers_a": 19,
+   "speakers_b": 29,
+   "chunks": 894,
+   "accuracy": 0.66
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-V",
+   "speakers_a": 19,
+   "speakers_b": 43,
+   "chunks": 1086,
+   "accuracy": 0.531,
+   "null_mean": 0.491,
+   "null_max": 0.559
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-S",
+   "speakers_a": 12,
+   "speakers_b": 47,
+   "chunks": 1079,
+   "accuracy": 0.588,
+   "null_mean": 0.486,
+   "null_max": 0.529
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-SF",
+   "speakers_a": 12,
+   "speakers_b": 29,
+   "chunks": 766,
+   "accuracy": 0.568,
+   "null_mean": 0.479,
+   "null_max": 0.561
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-V",
+   "speakers_a": 12,
+   "speakers_b": 43,
+   "chunks": 958,
+   "accuracy": 0.535
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "S-SF",
+   "speakers_a": 47,
+   "speakers_b": 29,
+   "chunks": 1401,
+   "accuracy": 0.483,
+   "null_mean": 0.492,
+   "null_max": 0.54
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "S-V",
+   "speakers_a": 47,
+   "speakers_b": 43,
+   "chunks": 1593,
+   "accuracy": 0.718,
+   "null_mean": 0.486,
+   "null_max": 0.538
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "SF-V",
+   "speakers_a": 29,
+   "speakers_b": 43,
+   "chunks": 1280,
+   "accuracy": 0.646,
+   "null_mean": 0.486,
+   "null_max": 0.542
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-EL",
+   "speakers_a": 23,
+   "speakers_b": 12,
+   "chunks": 693,
+   "accuracy": 0.596
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-KF",
+   "speakers_a": 23,
+   "speakers_b": 11,
+   "chunks": 643,
+   "accuracy": 0.593
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-LA",
+   "speakers_a": 23,
+   "speakers_b": 11,
+   "chunks": 639,
+   "accuracy": 0.616
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-RV",
+   "speakers_a": 23,
+   "speakers_b": 18,
+   "chunks": 778,
+   "accuracy": 0.691
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-S",
+   "speakers_a": 23,
+   "speakers_b": 38,
+   "chunks": 1127,
+   "accuracy": 0.678,
+   "null_mean": 0.498,
+   "null_max": 0.564
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-SF",
+   "speakers_a": 23,
+   "speakers_b": 21,
+   "chunks": 805,
+   "accuracy": 0.694
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-V",
+   "speakers_a": 23,
+   "speakers_b": 49,
+   "chunks": 1381,
+   "accuracy": 0.612,
+   "null_mean": 0.487,
+   "null_max": 0.554
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-KF",
+   "speakers_a": 12,
+   "speakers_b": 11,
+   "chunks": 430,
+   "accuracy": 0.623
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-LA",
+   "speakers_a": 12,
+   "speakers_b": 11,
+   "chunks": 426,
+   "accuracy": 0.582
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-RV",
+   "speakers_a": 12,
+   "speakers_b": 18,
+   "chunks": 565,
+   "accuracy": 0.65
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-S",
+   "speakers_a": 12,
+   "speakers_b": 38,
+   "chunks": 914,
+   "accuracy": 0.619,
+   "null_mean": 0.488,
+   "null_max": 0.52
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-SF",
+   "speakers_a": 12,
+   "speakers_b": 21,
+   "chunks": 592,
+   "accuracy": 0.609
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-V",
+   "speakers_a": 12,
+   "speakers_b": 49,
+   "chunks": 1168,
+   "accuracy": 0.561
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-LA",
+   "speakers_a": 11,
+   "speakers_b": 11,
+   "chunks": 376,
+   "accuracy": 0.534
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-RV",
+   "speakers_a": 11,
+   "speakers_b": 18,
+   "chunks": 515,
+   "accuracy": 0.621
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-S",
+   "speakers_a": 11,
+   "speakers_b": 38,
+   "chunks": 864,
+   "accuracy": 0.583
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-SF",
+   "speakers_a": 11,
+   "speakers_b": 21,
+   "chunks": 542,
+   "accuracy": 0.57
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-V",
+   "speakers_a": 11,
+   "speakers_b": 49,
+   "chunks": 1118,
+   "accuracy": 0.516,
+   "null_mean": 0.49,
+   "null_max": 0.546
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-RV",
+   "speakers_a": 11,
+   "speakers_b": 18,
+   "chunks": 511,
+   "accuracy": 0.573
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-S",
+   "speakers_a": 11,
+   "speakers_b": 38,
+   "chunks": 860,
+   "accuracy": 0.577
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-SF",
+   "speakers_a": 11,
+   "speakers_b": 21,
+   "chunks": 538,
+   "accuracy": 0.576
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-V",
+   "speakers_a": 11,
+   "speakers_b": 49,
+   "chunks": 1114,
+   "accuracy": 0.577,
+   "null_mean": 0.498,
+   "null_max": 0.548
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-S",
+   "speakers_a": 18,
+   "speakers_b": 38,
+   "chunks": 999,
+   "accuracy": 0.529,
+   "null_mean": 0.484,
+   "null_max": 0.574
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-SF",
+   "speakers_a": 18,
+   "speakers_b": 21,
+   "chunks": 677,
+   "accuracy": 0.462,
+   "null_mean": 0.46,
+   "null_max": 0.548
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-V",
+   "speakers_a": 18,
+   "speakers_b": 49,
+   "chunks": 1253,
+   "accuracy": 0.683
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "S-SF",
+   "speakers_a": 38,
+   "speakers_b": 21,
+   "chunks": 1026,
+   "accuracy": 0.472,
+   "null_mean": 0.482,
+   "null_max": 0.549
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "S-V",
+   "speakers_a": 38,
+   "speakers_b": 49,
+   "chunks": 1602,
+   "accuracy": 0.693,
+   "null_mean": 0.482,
+   "null_max": 0.534
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "SF-V",
+   "speakers_a": 21,
+   "speakers_b": 49,
+   "chunks": 1280,
+   "accuracy": 0.696,
+   "null_mean": 0.486,
+   "null_max": 0.536
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-EL",
+   "speakers_a": 25,
+   "speakers_b": 14,
+   "chunks": 721,
+   "accuracy": 0.55
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-KF",
+   "speakers_a": 25,
+   "speakers_b": 10,
+   "chunks": 654,
+   "accuracy": 0.605
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-LA",
+   "speakers_a": 25,
+   "speakers_b": 10,
+   "chunks": 655,
+   "accuracy": 0.58
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-RV",
+   "speakers_a": 25,
+   "speakers_b": 15,
+   "chunks": 755,
+   "accuracy": 0.713
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-S",
+   "speakers_a": 25,
+   "speakers_b": 37,
+   "chunks": 1090,
+   "accuracy": 0.705,
+   "null_mean": 0.491,
+   "null_max": 0.533
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-SF",
+   "speakers_a": 25,
+   "speakers_b": 15,
+   "chunks": 768,
+   "accuracy": 0.652
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-V",
+   "speakers_a": 25,
+   "speakers_b": 47,
+   "chunks": 1311,
+   "accuracy": 0.631,
+   "null_mean": 0.494,
+   "null_max": 0.547
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-KF",
+   "speakers_a": 14,
+   "speakers_b": 10,
+   "chunks": 439,
+   "accuracy": 0.603
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-LA",
+   "speakers_a": 14,
+   "speakers_b": 10,
+   "chunks": 440,
+   "accuracy": 0.501
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-RV",
+   "speakers_a": 14,
+   "speakers_b": 15,
+   "chunks": 540,
+   "accuracy": 0.646
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-S",
+   "speakers_a": 14,
+   "speakers_b": 37,
+   "chunks": 875,
+   "accuracy": 0.58,
+   "null_mean": 0.484,
+   "null_max": 0.524
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-SF",
+   "speakers_a": 14,
+   "speakers_b": 15,
+   "chunks": 553,
+   "accuracy": 0.496
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-V",
+   "speakers_a": 14,
+   "speakers_b": 47,
+   "chunks": 1096,
+   "accuracy": 0.599
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-LA",
+   "speakers_a": 10,
+   "speakers_b": 10,
+   "chunks": 373,
+   "accuracy": 0.542
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-RV",
+   "speakers_a": 10,
+   "speakers_b": 15,
+   "chunks": 473,
+   "accuracy": 0.511
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-S",
+   "speakers_a": 10,
+   "speakers_b": 37,
+   "chunks": 808,
+   "accuracy": 0.546
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-SF",
+   "speakers_a": 10,
+   "speakers_b": 15,
+   "chunks": 486,
+   "accuracy": 0.486
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-V",
+   "speakers_a": 10,
+   "speakers_b": 47,
+   "chunks": 1029,
+   "accuracy": 0.512,
+   "null_mean": 0.5,
+   "null_max": 0.533
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-RV",
+   "speakers_a": 10,
+   "speakers_b": 15,
+   "chunks": 474,
+   "accuracy": 0.633
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-S",
+   "speakers_a": 10,
+   "speakers_b": 37,
+   "chunks": 809,
+   "accuracy": 0.532
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-SF",
+   "speakers_a": 10,
+   "speakers_b": 15,
+   "chunks": 487,
+   "accuracy": 0.479
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-V",
+   "speakers_a": 10,
+   "speakers_b": 47,
+   "chunks": 1030,
+   "accuracy": 0.583,
+   "null_mean": 0.493,
+   "null_max": 0.589
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-S",
+   "speakers_a": 15,
+   "speakers_b": 37,
+   "chunks": 909,
+   "accuracy": 0.53,
+   "null_mean": 0.496,
+   "null_max": 0.542
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-SF",
+   "speakers_a": 15,
+   "speakers_b": 15,
+   "chunks": 587,
+   "accuracy": 0.456,
+   "null_mean": 0.461,
+   "null_max": 0.556
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-V",
+   "speakers_a": 15,
+   "speakers_b": 47,
+   "chunks": 1130,
+   "accuracy": 0.628
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "S-SF",
+   "speakers_a": 37,
+   "speakers_b": 15,
+   "chunks": 922,
+   "accuracy": 0.533,
+   "null_mean": 0.484,
+   "null_max": 0.536
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "S-V",
+   "speakers_a": 37,
+   "speakers_b": 47,
+   "chunks": 1465,
+   "accuracy": 0.661,
+   "null_mean": 0.497,
+   "null_max": 0.559
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "SF-V",
+   "speakers_a": 15,
+   "speakers_b": 47,
+   "chunks": 1143,
+   "accuracy": 0.621,
+   "null_mean": 0.492,
+   "null_max": 0.55
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-DF",
+   "speakers_a": 11,
+   "speakers_b": 37,
+   "chunks": 865,
+   "accuracy": 0.604
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-EL",
+   "speakers_a": 11,
+   "speakers_b": 19,
+   "chunks": 559,
+   "accuracy": 0.601
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-LA",
+   "speakers_a": 11,
+   "speakers_b": 15,
+   "chunks": 510,
+   "accuracy": 0.597
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-RV",
+   "speakers_a": 11,
+   "speakers_b": 11,
+   "chunks": 428,
+   "accuracy": 0.633
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-S",
+   "speakers_a": 11,
+   "speakers_b": 52,
+   "chunks": 1101,
+   "accuracy": 0.626
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-SF",
+   "speakers_a": 11,
+   "speakers_b": 9,
+   "chunks": 373,
+   "accuracy": 0.544
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-V",
+   "speakers_a": 11,
+   "speakers_b": 22,
+   "chunks": 625,
+   "accuracy": 0.67
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-EL",
+   "speakers_a": 37,
+   "speakers_b": 19,
+   "chunks": 984,
+   "accuracy": 0.59
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-LA",
+   "speakers_a": 37,
+   "speakers_b": 15,
+   "chunks": 935,
+   "accuracy": 0.614
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-RV",
+   "speakers_a": 37,
+   "speakers_b": 11,
+   "chunks": 853,
+   "accuracy": 0.59
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-S",
+   "speakers_a": 37,
+   "speakers_b": 52,
+   "chunks": 1526,
+   "accuracy": 0.657,
+   "null_mean": 0.479,
+   "null_max": 0.541
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-SF",
+   "speakers_a": 37,
+   "speakers_b": 9,
+   "chunks": 798,
+   "accuracy": 0.492
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-V",
+   "speakers_a": 37,
+   "speakers_b": 22,
+   "chunks": 1050,
+   "accuracy": 0.615,
+   "null_mean": 0.49,
+   "null_max": 0.527
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-LA",
+   "speakers_a": 19,
+   "speakers_b": 15,
+   "chunks": 629,
+   "accuracy": 0.679
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-RV",
+   "speakers_a": 19,
+   "speakers_b": 11,
+   "chunks": 547,
+   "accuracy": 0.593
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-S",
+   "speakers_a": 19,
+   "speakers_b": 52,
+   "chunks": 1220,
+   "accuracy": 0.598,
+   "null_mean": 0.498,
+   "null_max": 0.54
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-SF",
+   "speakers_a": 19,
+   "speakers_b": 9,
+   "chunks": 492,
+   "accuracy": 0.445
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-V",
+   "speakers_a": 19,
+   "speakers_b": 22,
+   "chunks": 744,
+   "accuracy": 0.689
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-RV",
+   "speakers_a": 15,
+   "speakers_b": 11,
+   "chunks": 498,
+   "accuracy": 0.611
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-S",
+   "speakers_a": 15,
+   "speakers_b": 52,
+   "chunks": 1171,
+   "accuracy": 0.599
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-SF",
+   "speakers_a": 15,
+   "speakers_b": 9,
+   "chunks": 443,
+   "accuracy": 0.456
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-V",
+   "speakers_a": 15,
+   "speakers_b": 22,
+   "chunks": 695,
+   "accuracy": 0.515,
+   "null_mean": 0.48,
+   "null_max": 0.579
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-S",
+   "speakers_a": 11,
+   "speakers_b": 52,
+   "chunks": 1089,
+   "accuracy": 0.578,
+   "null_mean": 0.494,
+   "null_max": 0.526
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-SF",
+   "speakers_a": 11,
+   "speakers_b": 9,
+   "chunks": 361,
+   "accuracy": 0.432,
+   "null_mean": 0.47,
+   "null_max": 0.545
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-V",
+   "speakers_a": 11,
+   "speakers_b": 22,
+   "chunks": 613,
+   "accuracy": 0.618
+  },
+  {
+   "window": "2015 V",
+   "pair": "S-SF",
+   "speakers_a": 52,
+   "speakers_b": 9,
+   "chunks": 1034,
+   "accuracy": 0.471,
+   "null_mean": 0.496,
+   "null_max": 0.526
+  },
+  {
+   "window": "2015 V",
+   "pair": "S-V",
+   "speakers_a": 52,
+   "speakers_b": 22,
+   "chunks": 1286,
+   "accuracy": 0.528,
+   "null_mean": 0.495,
+   "null_max": 0.53
+  },
+  {
+   "window": "2015 V",
+   "pair": "SF-V",
+   "speakers_a": 9,
+   "speakers_b": 22,
+   "chunks": 558,
+   "accuracy": 0.488,
+   "null_mean": 0.468,
+   "null_max": 0.529
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-DF",
+   "speakers_a": 13,
+   "speakers_b": 39,
+   "chunks": 951,
+   "accuracy": 0.658
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-EL",
+   "speakers_a": 13,
+   "speakers_b": 21,
+   "chunks": 652,
+   "accuracy": 0.575
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-KF",
+   "speakers_a": 13,
+   "speakers_b": 9,
+   "chunks": 410,
+   "accuracy": 0.705
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-LA",
+   "speakers_a": 13,
+   "speakers_b": 11,
+   "chunks": 426,
+   "accuracy": 0.659
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-RV",
+   "speakers_a": 13,
+   "speakers_b": 13,
+   "chunks": 499,
+   "accuracy": 0.576
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-S",
+   "speakers_a": 13,
+   "speakers_b": 48,
+   "chunks": 1163,
+   "accuracy": 0.599
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-SF",
+   "speakers_a": 13,
+   "speakers_b": 10,
+   "chunks": 407,
+   "accuracy": 0.493
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-V",
+   "speakers_a": 13,
+   "speakers_b": 29,
+   "chunks": 780,
+   "accuracy": 0.668
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-EL",
+   "speakers_a": 39,
+   "speakers_b": 21,
+   "chunks": 1115,
+   "accuracy": 0.599
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-KF",
+   "speakers_a": 39,
+   "speakers_b": 9,
+   "chunks": 873,
+   "accuracy": 0.677
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-LA",
+   "speakers_a": 39,
+   "speakers_b": 11,
+   "chunks": 889,
+   "accuracy": 0.61
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-RV",
+   "speakers_a": 39,
+   "speakers_b": 13,
+   "chunks": 962,
+   "accuracy": 0.621
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-S",
+   "speakers_a": 39,
+   "speakers_b": 48,
+   "chunks": 1626,
+   "accuracy": 0.658,
+   "null_mean": 0.497,
+   "null_max": 0.547
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-SF",
+   "speakers_a": 39,
+   "speakers_b": 10,
+   "chunks": 870,
+   "accuracy": 0.535
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-V",
+   "speakers_a": 39,
+   "speakers_b": 29,
+   "chunks": 1243,
+   "accuracy": 0.656,
+   "null_mean": 0.492,
+   "null_max": 0.541
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-KF",
+   "speakers_a": 21,
+   "speakers_b": 9,
+   "chunks": 574,
+   "accuracy": 0.719
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-LA",
+   "speakers_a": 21,
+   "speakers_b": 11,
+   "chunks": 590,
+   "accuracy": 0.588
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-RV",
+   "speakers_a": 21,
+   "speakers_b": 13,
+   "chunks": 663,
+   "accuracy": 0.57
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-S",
+   "speakers_a": 21,
+   "speakers_b": 48,
+   "chunks": 1327,
+   "accuracy": 0.572,
+   "null_mean": 0.489,
+   "null_max": 0.536
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-SF",
+   "speakers_a": 21,
+   "speakers_b": 10,
+   "chunks": 571,
+   "accuracy": 0.502
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-V",
+   "speakers_a": 21,
+   "speakers_b": 29,
+   "chunks": 944,
+   "accuracy": 0.659
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-LA",
+   "speakers_a": 9,
+   "speakers_b": 11,
+   "chunks": 348,
+   "accuracy": 0.618
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-RV",
+   "speakers_a": 9,
+   "speakers_b": 13,
+   "chunks": 421,
+   "accuracy": 0.668
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-S",
+   "speakers_a": 9,
+   "speakers_b": 48,
+   "chunks": 1085,
+   "accuracy": 0.61
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-SF",
+   "speakers_a": 9,
+   "speakers_b": 10,
+   "chunks": 329,
+   "accuracy": 0.66
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-V",
+   "speakers_a": 9,
+   "speakers_b": 29,
+   "chunks": 702,
+   "accuracy": 0.606,
+   "null_mean": 0.487,
+   "null_max": 0.53
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-RV",
+   "speakers_a": 11,
+   "speakers_b": 13,
+   "chunks": 437,
+   "accuracy": 0.621
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-S",
+   "speakers_a": 11,
+   "speakers_b": 48,
+   "chunks": 1101,
+   "accuracy": 0.55
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-SF",
+   "speakers_a": 11,
+   "speakers_b": 10,
+   "chunks": 345,
+   "accuracy": 0.424
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-V",
+   "speakers_a": 11,
+   "speakers_b": 29,
+   "chunks": 718,
+   "accuracy": 0.554,
+   "null_mean": 0.485,
+   "null_max": 0.574
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-S",
+   "speakers_a": 13,
+   "speakers_b": 48,
+   "chunks": 1174,
+   "accuracy": 0.536,
+   "null_mean": 0.483,
+   "null_max": 0.52
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-SF",
+   "speakers_a": 13,
+   "speakers_b": 10,
+   "chunks": 418,
+   "accuracy": 0.455,
+   "null_mean": 0.455,
+   "null_max": 0.535
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-V",
+   "speakers_a": 13,
+   "speakers_b": 29,
+   "chunks": 791,
+   "accuracy": 0.598
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "S-SF",
+   "speakers_a": 48,
+   "speakers_b": 10,
+   "chunks": 1082,
+   "accuracy": 0.508,
+   "null_mean": 0.49,
+   "null_max": 0.56
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "S-V",
+   "speakers_a": 48,
+   "speakers_b": 29,
+   "chunks": 1455,
+   "accuracy": 0.584,
+   "null_mean": 0.482,
+   "null_max": 0.541
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "SF-V",
+   "speakers_a": 10,
+   "speakers_b": 29,
+   "chunks": 699,
+   "accuracy": 0.57,
+   "null_mean": 0.478,
+   "null_max": 0.543
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-DD",
+   "speakers_a": 11,
+   "speakers_b": 13,
+   "chunks": 176,
+   "accuracy": 0.652
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-DF",
+   "speakers_a": 11,
+   "speakers_b": 22,
+   "chunks": 506,
+   "accuracy": 0.636
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-EL",
+   "speakers_a": 11,
+   "speakers_b": 19,
+   "chunks": 434,
+   "accuracy": 0.538
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-KF",
+   "speakers_a": 11,
+   "speakers_b": 20,
+   "chunks": 496,
+   "accuracy": 0.518
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-LA",
+   "speakers_a": 11,
+   "speakers_b": 9,
+   "chunks": 194,
+   "accuracy": 0.589
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-RV",
+   "speakers_a": 11,
+   "speakers_b": 23,
+   "chunks": 542,
+   "accuracy": 0.5
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-S",
+   "speakers_a": 11,
+   "speakers_b": 40,
+   "chunks": 838,
+   "accuracy": 0.525
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-SF",
+   "speakers_a": 11,
+   "speakers_b": 20,
+   "chunks": 490,
+   "accuracy": 0.513
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-V",
+   "speakers_a": 11,
+   "speakers_b": 47,
+   "chunks": 1007,
+   "accuracy": 0.524
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-DF",
+   "speakers_a": 13,
+   "speakers_b": 22,
+   "chunks": 450,
+   "accuracy": 0.572
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-EL",
+   "speakers_a": 13,
+   "speakers_b": 19,
+   "chunks": 378,
+   "accuracy": 0.574
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-KF",
+   "speakers_a": 13,
+   "speakers_b": 20,
+   "chunks": 440,
+   "accuracy": 0.6
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-LA",
+   "speakers_a": 13,
+   "speakers_b": 9,
+   "chunks": 138,
+   "accuracy": 0.479
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-RV",
+   "speakers_a": 13,
+   "speakers_b": 23,
+   "chunks": 486,
+   "accuracy": 0.646
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-S",
+   "speakers_a": 13,
+   "speakers_b": 40,
+   "chunks": 782,
+   "accuracy": 0.589
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-SF",
+   "speakers_a": 13,
+   "speakers_b": 20,
+   "chunks": 434,
+   "accuracy": 0.639
+  },
+  {
+   "window": "2019 S",
+   "pair": "DD-V",
+   "speakers_a": 13,
+   "speakers_b": 47,
+   "chunks": 951,
+   "accuracy": 0.562
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-EL",
+   "speakers_a": 22,
+   "speakers_b": 19,
+   "chunks": 708,
+   "accuracy": 0.597
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-KF",
+   "speakers_a": 22,
+   "speakers_b": 20,
+   "chunks": 770,
+   "accuracy": 0.64
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-LA",
+   "speakers_a": 22,
+   "speakers_b": 9,
+   "chunks": 468,
+   "accuracy": 0.537
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-RV",
+   "speakers_a": 22,
+   "speakers_b": 23,
+   "chunks": 816,
+   "accuracy": 0.648
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-S",
+   "speakers_a": 22,
+   "speakers_b": 40,
+   "chunks": 1112,
+   "accuracy": 0.698,
+   "null_mean": 0.491,
+   "null_max": 0.539
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-SF",
+   "speakers_a": 22,
+   "speakers_b": 20,
+   "chunks": 764,
+   "accuracy": 0.701
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-V",
+   "speakers_a": 22,
+   "speakers_b": 47,
+   "chunks": 1281,
+   "accuracy": 0.621,
+   "null_mean": 0.487,
+   "null_max": 0.524
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-KF",
+   "speakers_a": 19,
+   "speakers_b": 20,
+   "chunks": 698,
+   "accuracy": 0.643
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-LA",
+   "speakers_a": 19,
+   "speakers_b": 9,
+   "chunks": 396,
+   "accuracy": 0.478
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-RV",
+   "speakers_a": 19,
+   "speakers_b": 23,
+   "chunks": 744,
+   "accuracy": 0.591
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-S",
+   "speakers_a": 19,
+   "speakers_b": 40,
+   "chunks": 1040,
+   "accuracy": 0.598,
+   "null_mean": 0.487,
+   "null_max": 0.526
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-SF",
+   "speakers_a": 19,
+   "speakers_b": 20,
+   "chunks": 692,
+   "accuracy": 0.583
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-V",
+   "speakers_a": 19,
+   "speakers_b": 47,
+   "chunks": 1209,
+   "accuracy": 0.632
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-LA",
+   "speakers_a": 20,
+   "speakers_b": 9,
+   "chunks": 458,
+   "accuracy": 0.539
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-RV",
+   "speakers_a": 20,
+   "speakers_b": 23,
+   "chunks": 806,
+   "accuracy": 0.593
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-S",
+   "speakers_a": 20,
+   "speakers_b": 40,
+   "chunks": 1102,
+   "accuracy": 0.676
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-SF",
+   "speakers_a": 20,
+   "speakers_b": 20,
+   "chunks": 754,
+   "accuracy": 0.514
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-V",
+   "speakers_a": 20,
+   "speakers_b": 47,
+   "chunks": 1271,
+   "accuracy": 0.616,
+   "null_mean": 0.485,
+   "null_max": 0.529
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-RV",
+   "speakers_a": 9,
+   "speakers_b": 23,
+   "chunks": 504,
+   "accuracy": 0.567
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-S",
+   "speakers_a": 9,
+   "speakers_b": 40,
+   "chunks": 800,
+   "accuracy": 0.521
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-SF",
+   "speakers_a": 9,
+   "speakers_b": 20,
+   "chunks": 452,
+   "accuracy": 0.549
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-V",
+   "speakers_a": 9,
+   "speakers_b": 47,
+   "chunks": 969,
+   "accuracy": 0.501,
+   "null_mean": 0.492,
+   "null_max": 0.519
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-S",
+   "speakers_a": 23,
+   "speakers_b": 40,
+   "chunks": 1148,
+   "accuracy": 0.591,
+   "null_mean": 0.486,
+   "null_max": 0.563
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-SF",
+   "speakers_a": 23,
+   "speakers_b": 20,
+   "chunks": 800,
+   "accuracy": 0.509,
+   "null_mean": 0.493,
+   "null_max": 0.558
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-V",
+   "speakers_a": 23,
+   "speakers_b": 47,
+   "chunks": 1317,
+   "accuracy": 0.572
+  },
+  {
+   "window": "2019 S",
+   "pair": "S-SF",
+   "speakers_a": 40,
+   "speakers_b": 20,
+   "chunks": 1096,
+   "accuracy": 0.61,
+   "null_mean": 0.491,
+   "null_max": 0.555
+  },
+  {
+   "window": "2019 S",
+   "pair": "S-V",
+   "speakers_a": 40,
+   "speakers_b": 47,
+   "chunks": 1613,
+   "accuracy": 0.627,
+   "null_mean": 0.489,
+   "null_max": 0.532
+  },
+  {
+   "window": "2019 S",
+   "pair": "SF-V",
+   "speakers_a": 20,
+   "speakers_b": 47,
+   "chunks": 1265,
+   "accuracy": 0.628,
+   "null_mean": 0.491,
+   "null_max": 0.549
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-DD",
+   "speakers_a": 10,
+   "speakers_b": 18,
+   "chunks": 543,
+   "accuracy": 0.693
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-EL",
+   "speakers_a": 10,
+   "speakers_b": 13,
+   "chunks": 443,
+   "accuracy": 0.539
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-KF",
+   "speakers_a": 10,
+   "speakers_b": 17,
+   "chunks": 517,
+   "accuracy": 0.63
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-LA",
+   "speakers_a": 10,
+   "speakers_b": 18,
+   "chunks": 546,
+   "accuracy": 0.595
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-M",
+   "speakers_a": 10,
+   "speakers_b": 21,
+   "chunks": 569,
+   "accuracy": 0.618
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-S",
+   "speakers_a": 10,
+   "speakers_b": 49,
+   "chunks": 1069,
+   "accuracy": 0.59
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-SF",
+   "speakers_a": 10,
+   "speakers_b": 20,
+   "chunks": 596,
+   "accuracy": 0.562
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-V",
+   "speakers_a": 10,
+   "speakers_b": 24,
+   "chunks": 648,
+   "accuracy": 0.712
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-EL",
+   "speakers_a": 18,
+   "speakers_b": 13,
+   "chunks": 586,
+   "accuracy": 0.631
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-KF",
+   "speakers_a": 18,
+   "speakers_b": 17,
+   "chunks": 660,
+   "accuracy": 0.582
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-LA",
+   "speakers_a": 18,
+   "speakers_b": 18,
+   "chunks": 689,
+   "accuracy": 0.514
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-M",
+   "speakers_a": 18,
+   "speakers_b": 21,
+   "chunks": 712,
+   "accuracy": 0.714
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-S",
+   "speakers_a": 18,
+   "speakers_b": 49,
+   "chunks": 1212,
+   "accuracy": 0.668
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-SF",
+   "speakers_a": 18,
+   "speakers_b": 20,
+   "chunks": 739,
+   "accuracy": 0.642
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-V",
+   "speakers_a": 18,
+   "speakers_b": 24,
+   "chunks": 791,
+   "accuracy": 0.632
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-KF",
+   "speakers_a": 13,
+   "speakers_b": 17,
+   "chunks": 560,
+   "accuracy": 0.651
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-LA",
+   "speakers_a": 13,
+   "speakers_b": 18,
+   "chunks": 589,
+   "accuracy": 0.526
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-M",
+   "speakers_a": 13,
+   "speakers_b": 21,
+   "chunks": 612,
+   "accuracy": 0.712
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-S",
+   "speakers_a": 13,
+   "speakers_b": 49,
+   "chunks": 1112,
+   "accuracy": 0.61,
+   "null_mean": 0.494,
+   "null_max": 0.568
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-SF",
+   "speakers_a": 13,
+   "speakers_b": 20,
+   "chunks": 639,
+   "accuracy": 0.459
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-V",
+   "speakers_a": 13,
+   "speakers_b": 24,
+   "chunks": 691,
+   "accuracy": 0.703
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-LA",
+   "speakers_a": 17,
+   "speakers_b": 18,
+   "chunks": 663,
+   "accuracy": 0.558
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-M",
+   "speakers_a": 17,
+   "speakers_b": 21,
+   "chunks": 686,
+   "accuracy": 0.64
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-S",
+   "speakers_a": 17,
+   "speakers_b": 49,
+   "chunks": 1186,
+   "accuracy": 0.621
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-SF",
+   "speakers_a": 17,
+   "speakers_b": 20,
+   "chunks": 713,
+   "accuracy": 0.613
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-V",
+   "speakers_a": 17,
+   "speakers_b": 24,
+   "chunks": 765,
+   "accuracy": 0.626,
+   "null_mean": 0.487,
+   "null_max": 0.531
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-M",
+   "speakers_a": 18,
+   "speakers_b": 21,
+   "chunks": 715,
+   "accuracy": 0.633
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-S",
+   "speakers_a": 18,
+   "speakers_b": 49,
+   "chunks": 1215,
+   "accuracy": 0.608
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-SF",
+   "speakers_a": 18,
+   "speakers_b": 20,
+   "chunks": 742,
+   "accuracy": 0.532
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-V",
+   "speakers_a": 18,
+   "speakers_b": 24,
+   "chunks": 794,
+   "accuracy": 0.652,
+   "null_mean": 0.479,
+   "null_max": 0.574
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-S",
+   "speakers_a": 21,
+   "speakers_b": 49,
+   "chunks": 1238,
+   "accuracy": 0.563,
+   "null_mean": 0.496,
+   "null_max": 0.536
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-SF",
+   "speakers_a": 21,
+   "speakers_b": 20,
+   "chunks": 765,
+   "accuracy": 0.685
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-V",
+   "speakers_a": 21,
+   "speakers_b": 24,
+   "chunks": 817,
+   "accuracy": 0.637,
+   "null_mean": 0.481,
+   "null_max": 0.617
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "S-SF",
+   "speakers_a": 49,
+   "speakers_b": 20,
+   "chunks": 1265,
+   "accuracy": 0.607,
+   "null_mean": 0.48,
+   "null_max": 0.526
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "S-V",
+   "speakers_a": 49,
+   "speakers_b": 24,
+   "chunks": 1317,
+   "accuracy": 0.525,
+   "null_mean": 0.493,
+   "null_max": 0.543
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "SF-V",
+   "speakers_a": 20,
+   "speakers_b": 24,
+   "chunks": 844,
+   "accuracy": 0.667,
+   "null_mean": 0.488,
+   "null_max": 0.534
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-DF",
+   "speakers_a": 9,
+   "speakers_b": 16,
+   "chunks": 339,
+   "accuracy": 0.515
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-KF",
+   "speakers_a": 9,
+   "speakers_b": 11,
+   "chunks": 242,
+   "accuracy": 0.56
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-LA",
+   "speakers_a": 9,
+   "speakers_b": 13,
+   "chunks": 245,
+   "accuracy": 0.55
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-M",
+   "speakers_a": 9,
+   "speakers_b": 8,
+   "chunks": 223,
+   "accuracy": 0.47
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-RV",
+   "speakers_a": 9,
+   "speakers_b": 8,
+   "chunks": 204,
+   "accuracy": 0.571
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-S",
+   "speakers_a": 9,
+   "speakers_b": 17,
+   "chunks": 292,
+   "accuracy": 0.545
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-SF",
+   "speakers_a": 9,
+   "speakers_b": 11,
+   "chunks": 251,
+   "accuracy": 0.547
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-V",
+   "speakers_a": 9,
+   "speakers_b": 14,
+   "chunks": 280,
+   "accuracy": 0.484
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-KF",
+   "speakers_a": 16,
+   "speakers_b": 11,
+   "chunks": 283,
+   "accuracy": 0.569
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-LA",
+   "speakers_a": 16,
+   "speakers_b": 13,
+   "chunks": 286,
+   "accuracy": 0.504
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-M",
+   "speakers_a": 16,
+   "speakers_b": 8,
+   "chunks": 264,
+   "accuracy": 0.465
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-RV",
+   "speakers_a": 16,
+   "speakers_b": 8,
+   "chunks": 245,
+   "accuracy": 0.592
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-S",
+   "speakers_a": 16,
+   "speakers_b": 17,
+   "chunks": 333,
+   "accuracy": 0.486,
+   "null_mean": 0.445,
+   "null_max": 0.564
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-SF",
+   "speakers_a": 16,
+   "speakers_b": 11,
+   "chunks": 292,
+   "accuracy": 0.567
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-V",
+   "speakers_a": 16,
+   "speakers_b": 14,
+   "chunks": 321,
+   "accuracy": 0.493,
+   "null_mean": 0.459,
+   "null_max": 0.567
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-LA",
+   "speakers_a": 11,
+   "speakers_b": 13,
+   "chunks": 189,
+   "accuracy": 0.39
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-M",
+   "speakers_a": 11,
+   "speakers_b": 8,
+   "chunks": 167,
+   "accuracy": 0.414
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-RV",
+   "speakers_a": 11,
+   "speakers_b": 8,
+   "chunks": 148,
+   "accuracy": 0.334
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-S",
+   "speakers_a": 11,
+   "speakers_b": 17,
+   "chunks": 236,
+   "accuracy": 0.477
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-SF",
+   "speakers_a": 11,
+   "speakers_b": 11,
+   "chunks": 195,
+   "accuracy": 0.514
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-V",
+   "speakers_a": 11,
+   "speakers_b": 14,
+   "chunks": 224,
+   "accuracy": 0.402,
+   "null_mean": 0.434,
+   "null_max": 0.594
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-M",
+   "speakers_a": 13,
+   "speakers_b": 8,
+   "chunks": 170,
+   "accuracy": 0.521
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-RV",
+   "speakers_a": 13,
+   "speakers_b": 8,
+   "chunks": 151,
+   "accuracy": 0.592
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-S",
+   "speakers_a": 13,
+   "speakers_b": 17,
+   "chunks": 239,
+   "accuracy": 0.511
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-SF",
+   "speakers_a": 13,
+   "speakers_b": 11,
+   "chunks": 198,
+   "accuracy": 0.61
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-V",
+   "speakers_a": 13,
+   "speakers_b": 14,
+   "chunks": 227,
+   "accuracy": 0.445,
+   "null_mean": 0.423,
+   "null_max": 0.546
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-RV",
+   "speakers_a": 8,
+   "speakers_b": 8,
+   "chunks": 129,
+   "accuracy": 0.472
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-S",
+   "speakers_a": 8,
+   "speakers_b": 17,
+   "chunks": 217,
+   "accuracy": 0.362,
+   "null_mean": 0.446,
+   "null_max": 0.528
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-SF",
+   "speakers_a": 8,
+   "speakers_b": 11,
+   "chunks": 176,
+   "accuracy": 0.31
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-V",
+   "speakers_a": 8,
+   "speakers_b": 14,
+   "chunks": 205,
+   "accuracy": 0.369,
+   "null_mean": 0.443,
+   "null_max": 0.528
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-S",
+   "speakers_a": 8,
+   "speakers_b": 17,
+   "chunks": 198,
+   "accuracy": 0.42,
+   "null_mean": 0.434,
+   "null_max": 0.536
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-SF",
+   "speakers_a": 8,
+   "speakers_b": 11,
+   "chunks": 157,
+   "accuracy": 0.352,
+   "null_mean": 0.428,
+   "null_max": 0.615
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-V",
+   "speakers_a": 8,
+   "speakers_b": 14,
+   "chunks": 186,
+   "accuracy": 0.399
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "S-SF",
+   "speakers_a": 17,
+   "speakers_b": 11,
+   "chunks": 245,
+   "accuracy": 0.444,
+   "null_mean": 0.461,
+   "null_max": 0.621
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "S-V",
+   "speakers_a": 17,
+   "speakers_b": 14,
+   "chunks": 274,
+   "accuracy": 0.425,
+   "null_mean": 0.462,
+   "null_max": 0.589
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "SF-V",
+   "speakers_a": 11,
+   "speakers_b": 14,
+   "chunks": 233,
+   "accuracy": 0.363,
+   "null_mean": 0.454,
+   "null_max": 0.56
+  }
+ ],
+ "accuracy_changes": [
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-KF",
+   "relation": "other_change",
+   "before": 0.624,
+   "after": 0.593,
+   "change": -0.031
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-RV",
+   "relation": "other_change",
+   "before": 0.601,
+   "after": 0.691,
+   "change": 0.09
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": 0.675,
+   "after": 0.678,
+   "change": 0.003
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-SF",
+   "relation": "other_change",
+   "before": 0.656,
+   "after": 0.694,
+   "change": 0.038
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.639,
+   "after": 0.612,
+   "change": -0.027
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": 0.585,
+   "after": 0.621,
+   "change": 0.036
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": 0.698,
+   "after": 0.583,
+   "change": -0.115
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.66,
+   "after": 0.57,
+   "change": -0.09
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-V",
+   "relation": "split",
+   "before": 0.531,
+   "after": 0.516,
+   "change": -0.015
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-S",
+   "relation": "both_entered",
+   "before": 0.588,
+   "after": 0.529,
+   "change": -0.059
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-SF",
+   "relation": "both_entered",
+   "before": 0.568,
+   "after": 0.462,
+   "change": -0.106
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.535,
+   "after": 0.683,
+   "change": 0.148
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "S-SF",
+   "relation": "both_entered",
+   "before": 0.483,
+   "after": 0.472,
+   "change": -0.011
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.718,
+   "after": 0.693,
+   "change": -0.025
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.646,
+   "after": 0.696,
+   "change": 0.05
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": 0.596,
+   "after": 0.55,
+   "change": -0.046
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-KF",
+   "relation": "unchanged",
+   "before": 0.593,
+   "after": 0.605,
+   "change": 0.012
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": 0.616,
+   "after": 0.58,
+   "change": -0.036
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": 0.691,
+   "after": 0.713,
+   "change": 0.022
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": 0.678,
+   "after": 0.705,
+   "change": 0.027
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-SF",
+   "relation": "other_change",
+   "before": 0.694,
+   "after": 0.652,
+   "change": -0.042
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-V",
+   "relation": "unchanged",
+   "before": 0.612,
+   "after": 0.631,
+   "change": 0.019
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-KF",
+   "relation": "unchanged",
+   "before": 0.623,
+   "after": 0.603,
+   "change": -0.02
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": 0.582,
+   "after": 0.501,
+   "change": -0.081
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": 0.65,
+   "after": 0.646,
+   "change": -0.004
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": 0.619,
+   "after": 0.58,
+   "change": -0.039
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-SF",
+   "relation": "other_change",
+   "before": 0.609,
+   "after": 0.496,
+   "change": -0.113
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-V",
+   "relation": "unchanged",
+   "before": 0.561,
+   "after": 0.599,
+   "change": 0.038
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": 0.534,
+   "after": 0.542,
+   "change": 0.008
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-RV",
+   "relation": "unchanged",
+   "before": 0.621,
+   "after": 0.511,
+   "change": -0.11
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": 0.583,
+   "after": 0.546,
+   "change": -0.037
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.57,
+   "after": 0.486,
+   "change": -0.084
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-V",
+   "relation": "unchanged",
+   "before": 0.516,
+   "after": 0.512,
+   "change": -0.004
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-RV",
+   "relation": "unchanged",
+   "before": 0.573,
+   "after": 0.633,
+   "change": 0.06
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": 0.577,
+   "after": 0.532,
+   "change": -0.045
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": 0.576,
+   "after": 0.479,
+   "change": -0.097
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-V",
+   "relation": "unchanged",
+   "before": 0.577,
+   "after": 0.583,
+   "change": 0.006
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-S",
+   "relation": "unchanged",
+   "before": 0.529,
+   "after": 0.53,
+   "change": 0.001
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-SF",
+   "relation": "split",
+   "before": 0.462,
+   "after": 0.456,
+   "change": -0.006
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-V",
+   "relation": "unchanged",
+   "before": 0.683,
+   "after": 0.628,
+   "change": -0.055
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "S-SF",
+   "relation": "split",
+   "before": 0.472,
+   "after": 0.533,
+   "change": 0.061
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "S-V",
+   "relation": "unchanged",
+   "before": 0.693,
+   "after": 0.661,
+   "change": -0.032
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.696,
+   "after": 0.621,
+   "change": -0.075
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": 0.55,
+   "after": 0.59,
+   "change": 0.04
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": 0.58,
+   "after": 0.614,
+   "change": 0.034
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-RV",
+   "relation": "other_change",
+   "before": 0.713,
+   "after": 0.59,
+   "change": -0.123
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": 0.705,
+   "after": 0.657,
+   "change": -0.048
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": 0.652,
+   "after": 0.492,
+   "change": -0.16
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.631,
+   "after": 0.615,
+   "change": -0.016
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": 0.501,
+   "after": 0.679,
+   "change": 0.178
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-RV",
+   "relation": "other_change",
+   "before": 0.646,
+   "after": 0.593,
+   "change": -0.053
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-S",
+   "relation": "other_change",
+   "before": 0.58,
+   "after": 0.598,
+   "change": 0.018
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.496,
+   "after": 0.445,
+   "change": -0.051
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": 0.599,
+   "after": 0.689,
+   "change": 0.09
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": 0.633,
+   "after": 0.611,
+   "change": -0.022
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": 0.532,
+   "after": 0.599,
+   "change": 0.067
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-SF",
+   "relation": "unchanged",
+   "before": 0.479,
+   "after": 0.456,
+   "change": -0.023
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": 0.583,
+   "after": 0.515,
+   "change": -0.068
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-S",
+   "relation": "split",
+   "before": 0.53,
+   "after": 0.578,
+   "change": 0.048
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-SF",
+   "relation": "other_change",
+   "before": 0.456,
+   "after": 0.432,
+   "change": -0.024
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.628,
+   "after": 0.618,
+   "change": -0.01
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "S-SF",
+   "relation": "other_change",
+   "before": 0.533,
+   "after": 0.471,
+   "change": -0.062
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.661,
+   "after": 0.528,
+   "change": -0.133
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.621,
+   "after": 0.488,
+   "change": -0.133
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-DF",
+   "relation": "unchanged",
+   "before": 0.604,
+   "after": 0.658,
+   "change": 0.054
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": 0.601,
+   "after": 0.575,
+   "change": -0.026
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-LA",
+   "relation": "other_change",
+   "before": 0.597,
+   "after": 0.659,
+   "change": 0.062
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-RV",
+   "relation": "unchanged",
+   "before": 0.633,
+   "after": 0.576,
+   "change": -0.057
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-S",
+   "relation": "unchanged",
+   "before": 0.626,
+   "after": 0.599,
+   "change": -0.027
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": 0.544,
+   "after": 0.493,
+   "change": -0.051
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-V",
+   "relation": "unchanged",
+   "before": 0.67,
+   "after": 0.668,
+   "change": -0.002
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": 0.59,
+   "after": 0.599,
+   "change": 0.009
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-LA",
+   "relation": "other_change",
+   "before": 0.614,
+   "after": 0.61,
+   "change": -0.004
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": 0.59,
+   "after": 0.621,
+   "change": 0.031
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": 0.657,
+   "after": 0.658,
+   "change": 0.001
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": 0.492,
+   "after": 0.535,
+   "change": 0.043
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-V",
+   "relation": "unchanged",
+   "before": 0.615,
+   "after": 0.656,
+   "change": 0.041
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-LA",
+   "relation": "other_change",
+   "before": 0.679,
+   "after": 0.588,
+   "change": -0.091
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": 0.593,
+   "after": 0.57,
+   "change": -0.023
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": 0.598,
+   "after": 0.572,
+   "change": -0.026
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.445,
+   "after": 0.502,
+   "change": 0.057
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-V",
+   "relation": "unchanged",
+   "before": 0.689,
+   "after": 0.659,
+   "change": -0.03
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": 0.611,
+   "after": 0.621,
+   "change": 0.01
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": 0.599,
+   "after": 0.55,
+   "change": -0.049
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": 0.456,
+   "after": 0.424,
+   "change": -0.032
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-V",
+   "relation": "joined",
+   "before": 0.515,
+   "after": 0.554,
+   "change": 0.039
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-S",
+   "relation": "unchanged",
+   "before": 0.578,
+   "after": 0.536,
+   "change": -0.042
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-SF",
+   "relation": "unchanged",
+   "before": 0.432,
+   "after": 0.455,
+   "change": 0.023
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-V",
+   "relation": "unchanged",
+   "before": 0.618,
+   "after": 0.598,
+   "change": -0.02
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "S-SF",
+   "relation": "unchanged",
+   "before": 0.471,
+   "after": 0.508,
+   "change": 0.037
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "S-V",
+   "relation": "unchanged",
+   "before": 0.528,
+   "after": 0.584,
+   "change": 0.056
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "SF-V",
+   "relation": "unchanged",
+   "before": 0.488,
+   "after": 0.57,
+   "change": 0.082
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-DF",
+   "relation": "unchanged",
+   "before": 0.658,
+   "after": 0.636,
+   "change": -0.022
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": 0.575,
+   "after": 0.538,
+   "change": -0.037
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-KF",
+   "relation": "other_change",
+   "before": 0.705,
+   "after": 0.518,
+   "change": -0.187
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-LA",
+   "relation": "other_change",
+   "before": 0.659,
+   "after": 0.589,
+   "change": -0.07
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-RV",
+   "relation": "unchanged",
+   "before": 0.576,
+   "after": 0.5,
+   "change": -0.076
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-S",
+   "relation": "other_change",
+   "before": 0.599,
+   "after": 0.525,
+   "change": -0.074
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": 0.493,
+   "after": 0.513,
+   "change": 0.02
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-V",
+   "relation": "other_change",
+   "before": 0.668,
+   "after": 0.524,
+   "change": -0.144
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": 0.599,
+   "after": 0.597,
+   "change": -0.002
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-KF",
+   "relation": "other_change",
+   "before": 0.677,
+   "after": 0.64,
+   "change": -0.037
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-LA",
+   "relation": "other_change",
+   "before": 0.61,
+   "after": 0.537,
+   "change": -0.073
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": 0.621,
+   "after": 0.648,
+   "change": 0.027
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": 0.658,
+   "after": 0.698,
+   "change": 0.04
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": 0.535,
+   "after": 0.701,
+   "change": 0.166
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.656,
+   "after": 0.621,
+   "change": -0.035
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-KF",
+   "relation": "other_change",
+   "before": 0.719,
+   "after": 0.643,
+   "change": -0.076
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-LA",
+   "relation": "other_change",
+   "before": 0.588,
+   "after": 0.478,
+   "change": -0.11
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": 0.57,
+   "after": 0.591,
+   "change": 0.021
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-S",
+   "relation": "other_change",
+   "before": 0.572,
+   "after": 0.598,
+   "change": 0.026
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.502,
+   "after": 0.583,
+   "change": 0.081
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": 0.659,
+   "after": 0.632,
+   "change": -0.027
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-LA",
+   "relation": "split",
+   "before": 0.618,
+   "after": 0.539,
+   "change": -0.079
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": 0.668,
+   "after": 0.593,
+   "change": -0.075
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": 0.61,
+   "after": 0.676,
+   "change": 0.066
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.66,
+   "after": 0.514,
+   "change": -0.146
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-V",
+   "relation": "split",
+   "before": 0.606,
+   "after": 0.616,
+   "change": 0.01
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": 0.621,
+   "after": 0.567,
+   "change": -0.054
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": 0.55,
+   "after": 0.521,
+   "change": -0.029
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": 0.424,
+   "after": 0.549,
+   "change": 0.125
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-V",
+   "relation": "split",
+   "before": 0.554,
+   "after": 0.501,
+   "change": -0.053
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-S",
+   "relation": "other_change",
+   "before": 0.536,
+   "after": 0.591,
+   "change": 0.055
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-SF",
+   "relation": "unchanged",
+   "before": 0.455,
+   "after": 0.509,
+   "change": 0.054
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.598,
+   "after": 0.572,
+   "change": -0.026
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "S-SF",
+   "relation": "other_change",
+   "before": 0.508,
+   "after": 0.61,
+   "change": 0.102
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.584,
+   "after": 0.627,
+   "change": 0.043
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.57,
+   "after": 0.628,
+   "change": 0.058
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-DD",
+   "relation": "unchanged",
+   "before": 0.652,
+   "after": 0.693,
+   "change": 0.041
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": 0.538,
+   "after": 0.539,
+   "change": 0.001
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-KF",
+   "relation": "unchanged",
+   "before": 0.518,
+   "after": 0.63,
+   "change": 0.112
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-LA",
+   "relation": "unchanged",
+   "before": 0.589,
+   "after": 0.595,
+   "change": 0.006
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-S",
+   "relation": "unchanged",
+   "before": 0.525,
+   "after": 0.59,
+   "change": 0.065
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": 0.513,
+   "after": 0.562,
+   "change": 0.049
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-V",
+   "relation": "other_change",
+   "before": 0.524,
+   "after": 0.712,
+   "change": 0.188
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-EL",
+   "relation": "unchanged",
+   "before": 0.574,
+   "after": 0.631,
+   "change": 0.057
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-KF",
+   "relation": "unchanged",
+   "before": 0.6,
+   "after": 0.582,
+   "change": -0.018
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-LA",
+   "relation": "unchanged",
+   "before": 0.479,
+   "after": 0.514,
+   "change": 0.035
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-S",
+   "relation": "unchanged",
+   "before": 0.589,
+   "after": 0.668,
+   "change": 0.079
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-SF",
+   "relation": "unchanged",
+   "before": 0.639,
+   "after": 0.642,
+   "change": 0.003
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DD-V",
+   "relation": "other_change",
+   "before": 0.562,
+   "after": 0.632,
+   "change": 0.07
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-KF",
+   "relation": "unchanged",
+   "before": 0.643,
+   "after": 0.651,
+   "change": 0.008
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": 0.478,
+   "after": 0.526,
+   "change": 0.048
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": 0.598,
+   "after": 0.61,
+   "change": 0.012
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.583,
+   "after": 0.459,
+   "change": -0.124
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": 0.632,
+   "after": 0.703,
+   "change": 0.071
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": 0.539,
+   "after": 0.558,
+   "change": 0.019
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": 0.676,
+   "after": 0.621,
+   "change": -0.055
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-SF",
+   "relation": "unchanged",
+   "before": 0.514,
+   "after": 0.613,
+   "change": 0.099
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-V",
+   "relation": "other_change",
+   "before": 0.616,
+   "after": 0.626,
+   "change": 0.01
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": 0.521,
+   "after": 0.608,
+   "change": 0.087
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-SF",
+   "relation": "unchanged",
+   "before": 0.549,
+   "after": 0.532,
+   "change": -0.017
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": 0.501,
+   "after": 0.652,
+   "change": 0.151
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "S-SF",
+   "relation": "unchanged",
+   "before": 0.61,
+   "after": 0.607,
+   "change": -0.003
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "S-V",
+   "relation": "joined",
+   "before": 0.627,
+   "after": 0.525,
+   "change": -0.102
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.628,
+   "after": 0.667,
+   "change": 0.039
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-KF",
+   "relation": "unchanged",
+   "before": 0.582,
+   "after": 0.56,
+   "change": -0.022
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-LA",
+   "relation": "unchanged",
+   "before": 0.514,
+   "after": 0.55,
+   "change": 0.036
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-M",
+   "relation": "unchanged",
+   "before": 0.714,
+   "after": 0.47,
+   "change": -0.244
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-S",
+   "relation": "unchanged",
+   "before": 0.668,
+   "after": 0.545,
+   "change": -0.123
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-SF",
+   "relation": "other_change",
+   "before": 0.642,
+   "after": 0.547,
+   "change": -0.095
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-V",
+   "relation": "other_change",
+   "before": 0.632,
+   "after": 0.484,
+   "change": -0.148
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": 0.558,
+   "after": 0.39,
+   "change": -0.168
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-M",
+   "relation": "unchanged",
+   "before": 0.64,
+   "after": 0.414,
+   "change": -0.226
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": 0.621,
+   "after": 0.477,
+   "change": -0.144
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.613,
+   "after": 0.514,
+   "change": -0.099
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-V",
+   "relation": "other_change",
+   "before": 0.626,
+   "after": 0.402,
+   "change": -0.224
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-M",
+   "relation": "unchanged",
+   "before": 0.633,
+   "after": 0.521,
+   "change": -0.112
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": 0.608,
+   "after": 0.511,
+   "change": -0.097
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": 0.532,
+   "after": 0.61,
+   "change": 0.078
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": 0.652,
+   "after": 0.445,
+   "change": -0.207
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-S",
+   "relation": "unchanged",
+   "before": 0.563,
+   "after": 0.362,
+   "change": -0.201
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-SF",
+   "relation": "joined",
+   "before": 0.685,
+   "after": 0.31,
+   "change": -0.375
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-V",
+   "relation": "split",
+   "before": 0.637,
+   "after": 0.369,
+   "change": -0.268
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "S-SF",
+   "relation": "joined",
+   "before": 0.607,
+   "after": 0.444,
+   "change": -0.163
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "S-V",
+   "relation": "split",
+   "before": 0.525,
+   "after": 0.425,
+   "change": -0.1
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.667,
+   "after": 0.363,
+   "change": -0.304
+  }
+ ],
+ "same_debate": [
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-EL",
+   "debates": 537,
+   "similarity": 0.6795,
+   "null": 0.6952,
+   "excess": -0.0157,
+   "se": 0.0048
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-KF",
+   "debates": 612,
+   "similarity": 0.7199,
+   "null": 0.7044,
+   "excess": 0.0155,
+   "se": 0.0044
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-LA",
+   "debates": 171,
+   "similarity": 0.6927,
+   "null": 0.6914,
+   "excess": 0.0012,
+   "se": 0.0071
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-RV",
+   "debates": 594,
+   "similarity": 0.6942,
+   "null": 0.7041,
+   "excess": -0.0098,
+   "se": 0.0047
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-S",
+   "debates": 695,
+   "similarity": 0.6927,
+   "null": 0.6968,
+   "excess": -0.0041,
+   "se": 0.0042
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-SF",
+   "debates": 653,
+   "similarity": 0.6976,
+   "null": 0.6987,
+   "excess": -0.0011,
+   "se": 0.0042
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "DF-V",
+   "debates": 645,
+   "similarity": 0.7298,
+   "null": 0.7052,
+   "excess": 0.0247,
+   "se": 0.0042
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-KF",
+   "debates": 478,
+   "similarity": 0.6799,
+   "null": 0.7016,
+   "excess": -0.0217,
+   "se": 0.0051
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-LA",
+   "debates": 146,
+   "similarity": 0.6817,
+   "null": 0.6916,
+   "excess": -0.0099,
+   "se": 0.0085
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-RV",
+   "debates": 483,
+   "similarity": 0.6901,
+   "null": 0.6986,
+   "excess": -0.0085,
+   "se": 0.0048
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-S",
+   "debates": 564,
+   "similarity": 0.6948,
+   "null": 0.6934,
+   "excess": 0.0014,
+   "se": 0.0044
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-SF",
+   "debates": 536,
+   "similarity": 0.7072,
+   "null": 0.6946,
+   "excess": 0.0126,
+   "se": 0.0045
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "EL-V",
+   "debates": 509,
+   "similarity": 0.6846,
+   "null": 0.7009,
+   "excess": -0.0162,
+   "se": 0.0045
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-LA",
+   "debates": 162,
+   "similarity": 0.7079,
+   "null": 0.6933,
+   "excess": 0.0146,
+   "se": 0.0071
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-RV",
+   "debates": 547,
+   "similarity": 0.6973,
+   "null": 0.7077,
+   "excess": -0.0104,
+   "se": 0.0048
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-S",
+   "debates": 611,
+   "similarity": 0.7006,
+   "null": 0.7048,
+   "excess": -0.0042,
+   "se": 0.0043
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-SF",
+   "debates": 578,
+   "similarity": 0.7077,
+   "null": 0.7077,
+   "excess": 0.0,
+   "se": 0.0042
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "KF-V",
+   "debates": 606,
+   "similarity": 0.7413,
+   "null": 0.7069,
+   "excess": 0.0344,
+   "se": 0.0042
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "LA-RV",
+   "debates": 164,
+   "similarity": 0.6998,
+   "null": 0.6923,
+   "excess": 0.0074,
+   "se": 0.0078
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "LA-S",
+   "debates": 171,
+   "similarity": 0.689,
+   "null": 0.6921,
+   "excess": -0.0031,
+   "se": 0.0085
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "LA-SF",
+   "debates": 165,
+   "similarity": 0.6923,
+   "null": 0.6928,
+   "excess": -0.0005,
+   "se": 0.0081
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "LA-V",
+   "debates": 166,
+   "similarity": 0.6998,
+   "null": 0.6971,
+   "excess": 0.0027,
+   "se": 0.0076
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-S",
+   "debates": 625,
+   "similarity": 0.7046,
+   "null": 0.7028,
+   "excess": 0.0018,
+   "se": 0.0039
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-SF",
+   "debates": 597,
+   "similarity": 0.7058,
+   "null": 0.7038,
+   "excess": 0.0019,
+   "se": 0.0045
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "RV-V",
+   "debates": 576,
+   "similarity": 0.6993,
+   "null": 0.7061,
+   "excess": -0.0068,
+   "se": 0.0047
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "S-SF",
+   "debates": 704,
+   "similarity": 0.7134,
+   "null": 0.6969,
+   "excess": 0.0165,
+   "se": 0.004
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "S-V",
+   "debates": 650,
+   "similarity": 0.7081,
+   "null": 0.7066,
+   "excess": 0.0015,
+   "se": 0.0043
+  },
+  {
+   "window": "2009 KF+V",
+   "pair": "SF-V",
+   "debates": 614,
+   "similarity": 0.7094,
+   "null": 0.7076,
+   "excess": 0.0019,
+   "se": 0.0041
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-EL",
+   "debates": 551,
+   "similarity": 0.692,
+   "null": 0.702,
+   "excess": -0.01,
+   "se": 0.0047
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-KF",
+   "debates": 503,
+   "similarity": 0.6993,
+   "null": 0.7072,
+   "excess": -0.0079,
+   "se": 0.0045
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-LA",
+   "debates": 584,
+   "similarity": 0.6946,
+   "null": 0.7019,
+   "excess": -0.0073,
+   "se": 0.0043
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-RV",
+   "debates": 491,
+   "similarity": 0.7231,
+   "null": 0.7124,
+   "excess": 0.0107,
+   "se": 0.0046
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-S",
+   "debates": 567,
+   "similarity": 0.7125,
+   "null": 0.7103,
+   "excess": 0.0023,
+   "se": 0.0043
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-SF",
+   "debates": 496,
+   "similarity": 0.7199,
+   "null": 0.7112,
+   "excess": 0.0087,
+   "se": 0.0045
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "DF-V",
+   "debates": 659,
+   "similarity": 0.7038,
+   "null": 0.6968,
+   "excess": 0.007,
+   "se": 0.0041
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-KF",
+   "debates": 443,
+   "similarity": 0.6943,
+   "null": 0.7077,
+   "excess": -0.0133,
+   "se": 0.005
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-LA",
+   "debates": 515,
+   "similarity": 0.6871,
+   "null": 0.704,
+   "excess": -0.017,
+   "se": 0.0046
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-RV",
+   "debates": 442,
+   "similarity": 0.7085,
+   "null": 0.7082,
+   "excess": 0.0004,
+   "se": 0.005
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-S",
+   "debates": 510,
+   "similarity": 0.7081,
+   "null": 0.712,
+   "excess": -0.0039,
+   "se": 0.0045
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-SF",
+   "debates": 450,
+   "similarity": 0.7126,
+   "null": 0.7088,
+   "excess": 0.0038,
+   "se": 0.0048
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "EL-V",
+   "debates": 553,
+   "similarity": 0.6921,
+   "null": 0.7041,
+   "excess": -0.012,
+   "se": 0.0043
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-LA",
+   "debates": 482,
+   "similarity": 0.6925,
+   "null": 0.71,
+   "excess": -0.0175,
+   "se": 0.0048
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-RV",
+   "debates": 422,
+   "similarity": 0.7128,
+   "null": 0.7108,
+   "excess": 0.0021,
+   "se": 0.0051
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-S",
+   "debates": 477,
+   "similarity": 0.7027,
+   "null": 0.7108,
+   "excess": -0.0082,
+   "se": 0.0048
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-SF",
+   "debates": 423,
+   "similarity": 0.7097,
+   "null": 0.7116,
+   "excess": -0.0019,
+   "se": 0.0052
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "KF-V",
+   "debates": 507,
+   "similarity": 0.7129,
+   "null": 0.7086,
+   "excess": 0.0043,
+   "se": 0.0046
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-RV",
+   "debates": 477,
+   "similarity": 0.7066,
+   "null": 0.7083,
+   "excess": -0.0017,
+   "se": 0.0048
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-S",
+   "debates": 541,
+   "similarity": 0.7023,
+   "null": 0.7121,
+   "excess": -0.0098,
+   "se": 0.0046
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-SF",
+   "debates": 481,
+   "similarity": 0.7048,
+   "null": 0.7094,
+   "excess": -0.0046,
+   "se": 0.0048
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "LA-V",
+   "debates": 583,
+   "similarity": 0.6949,
+   "null": 0.7065,
+   "excess": -0.0116,
+   "se": 0.0045
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-S",
+   "debates": 485,
+   "similarity": 0.7456,
+   "null": 0.7116,
+   "excess": 0.034,
+   "se": 0.0046
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-SF",
+   "debates": 437,
+   "similarity": 0.7513,
+   "null": 0.7091,
+   "excess": 0.0422,
+   "se": 0.0049
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "RV-V",
+   "debates": 496,
+   "similarity": 0.7313,
+   "null": 0.7123,
+   "excess": 0.019,
+   "se": 0.0047
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "S-SF",
+   "debates": 493,
+   "similarity": 0.7422,
+   "null": 0.7107,
+   "excess": 0.0315,
+   "se": 0.0049
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "S-V",
+   "debates": 572,
+   "similarity": 0.7318,
+   "null": 0.7128,
+   "excess": 0.019,
+   "se": 0.0045
+  },
+  {
+   "window": "2011 RV+S+SF",
+   "pair": "SF-V",
+   "debates": 499,
+   "similarity": 0.722,
+   "null": 0.7104,
+   "excess": 0.0116,
+   "se": 0.0046
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-EL",
+   "debates": 569,
+   "similarity": 0.7066,
+   "null": 0.7158,
+   "excess": -0.0091,
+   "se": 0.0044
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-LA",
+   "debates": 573,
+   "similarity": 0.7068,
+   "null": 0.7193,
+   "excess": -0.0125,
+   "se": 0.0043
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-RV",
+   "debates": 496,
+   "similarity": 0.7276,
+   "null": 0.7261,
+   "excess": 0.0015,
+   "se": 0.0045
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-S",
+   "debates": 575,
+   "similarity": 0.7243,
+   "null": 0.7234,
+   "excess": 0.0009,
+   "se": 0.0043
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-V",
+   "debates": 635,
+   "similarity": 0.7258,
+   "null": 0.7104,
+   "excess": 0.0154,
+   "se": 0.0043
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-LA",
+   "debates": 531,
+   "similarity": 0.7022,
+   "null": 0.7191,
+   "excess": -0.0169,
+   "se": 0.0045
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-RV",
+   "debates": 465,
+   "similarity": 0.7122,
+   "null": 0.7237,
+   "excess": -0.0114,
+   "se": 0.0046
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-S",
+   "debates": 533,
+   "similarity": 0.7154,
+   "null": 0.7226,
+   "excess": -0.0072,
+   "se": 0.0044
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-V",
+   "debates": 573,
+   "similarity": 0.7072,
+   "null": 0.7165,
+   "excess": -0.0093,
+   "se": 0.0045
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-RV",
+   "debates": 481,
+   "similarity": 0.7184,
+   "null": 0.725,
+   "excess": -0.0066,
+   "se": 0.0045
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-S",
+   "debates": 544,
+   "similarity": 0.7165,
+   "null": 0.725,
+   "excess": -0.0085,
+   "se": 0.0041
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-V",
+   "debates": 574,
+   "similarity": 0.7172,
+   "null": 0.7184,
+   "excess": -0.0012,
+   "se": 0.0041
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-S",
+   "debates": 495,
+   "similarity": 0.7627,
+   "null": 0.7254,
+   "excess": 0.0373,
+   "se": 0.0041
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-V",
+   "debates": 497,
+   "similarity": 0.7491,
+   "null": 0.7234,
+   "excess": 0.0257,
+   "se": 0.0044
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "S-V",
+   "debates": 578,
+   "similarity": 0.7489,
+   "null": 0.7234,
+   "excess": 0.0255,
+   "se": 0.004
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-KF",
+   "debates": 473,
+   "similarity": 0.7157,
+   "null": 0.7174,
+   "excess": -0.0018,
+   "se": 0.0048
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "DF-SF",
+   "debates": 577,
+   "similarity": 0.7147,
+   "null": 0.7178,
+   "excess": -0.0031,
+   "se": 0.0044
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-KF",
+   "debates": 437,
+   "similarity": 0.696,
+   "null": 0.7166,
+   "excess": -0.0206,
+   "se": 0.0049
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "EL-SF",
+   "debates": 538,
+   "similarity": 0.719,
+   "null": 0.7187,
+   "excess": 0.0003,
+   "se": 0.0045
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-LA",
+   "debates": 458,
+   "similarity": 0.7144,
+   "null": 0.7184,
+   "excess": -0.004,
+   "se": 0.0044
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-RV",
+   "debates": 398,
+   "similarity": 0.7292,
+   "null": 0.7229,
+   "excess": 0.0063,
+   "se": 0.0051
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-S",
+   "debates": 450,
+   "similarity": 0.7242,
+   "null": 0.7221,
+   "excess": 0.0021,
+   "se": 0.0046
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-SF",
+   "debates": 446,
+   "similarity": 0.7128,
+   "null": 0.7183,
+   "excess": -0.0055,
+   "se": 0.0046
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "KF-V",
+   "debates": 477,
+   "similarity": 0.7306,
+   "null": 0.7168,
+   "excess": 0.0138,
+   "se": 0.0046
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "LA-SF",
+   "debates": 539,
+   "similarity": 0.7098,
+   "null": 0.7196,
+   "excess": -0.0098,
+   "se": 0.0043
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "RV-SF",
+   "debates": 476,
+   "similarity": 0.7359,
+   "null": 0.7253,
+   "excess": 0.0106,
+   "se": 0.0047
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "S-SF",
+   "debates": 542,
+   "similarity": 0.7414,
+   "null": 0.7256,
+   "excess": 0.0158,
+   "se": 0.0043
+  },
+  {
+   "window": "2014 RV+S",
+   "pair": "SF-V",
+   "debates": 581,
+   "similarity": 0.7213,
+   "null": 0.717,
+   "excess": 0.0042,
+   "se": 0.0042
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-DF",
+   "debates": 512,
+   "similarity": 0.7057,
+   "null": 0.7125,
+   "excess": -0.0068,
+   "se": 0.0046
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-EL",
+   "debates": 520,
+   "similarity": 0.7115,
+   "null": 0.7093,
+   "excess": 0.0022,
+   "se": 0.0043
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-KF",
+   "debates": 326,
+   "similarity": 0.6954,
+   "null": 0.7088,
+   "excess": -0.0133,
+   "se": 0.0058
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-LA",
+   "debates": 499,
+   "similarity": 0.707,
+   "null": 0.7143,
+   "excess": -0.0073,
+   "se": 0.0046
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-RV",
+   "debates": 427,
+   "similarity": 0.7175,
+   "null": 0.7117,
+   "excess": 0.0058,
+   "se": 0.005
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-S",
+   "debates": 517,
+   "similarity": 0.7233,
+   "null": 0.7151,
+   "excess": 0.0083,
+   "se": 0.0044
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-SF",
+   "debates": 445,
+   "similarity": 0.7209,
+   "null": 0.7116,
+   "excess": 0.0093,
+   "se": 0.0047
+  },
+  {
+   "window": "2015 V",
+   "pair": "ALT-V",
+   "debates": 502,
+   "similarity": 0.7208,
+   "null": 0.7145,
+   "excess": 0.0063,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-EL",
+   "debates": 534,
+   "similarity": 0.7057,
+   "null": 0.7091,
+   "excess": -0.0034,
+   "se": 0.0044
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-KF",
+   "debates": 329,
+   "similarity": 0.7012,
+   "null": 0.7102,
+   "excess": -0.009,
+   "se": 0.0057
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-LA",
+   "debates": 508,
+   "similarity": 0.7167,
+   "null": 0.7136,
+   "excess": 0.0032,
+   "se": 0.0047
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-RV",
+   "debates": 427,
+   "similarity": 0.706,
+   "null": 0.7116,
+   "excess": -0.0056,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-S",
+   "debates": 549,
+   "similarity": 0.7267,
+   "null": 0.706,
+   "excess": 0.0207,
+   "se": 0.0044
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-SF",
+   "debates": 459,
+   "similarity": 0.6991,
+   "null": 0.7047,
+   "excess": -0.0056,
+   "se": 0.0049
+  },
+  {
+   "window": "2015 V",
+   "pair": "DF-V",
+   "debates": 506,
+   "similarity": 0.7402,
+   "null": 0.7145,
+   "excess": 0.0257,
+   "se": 0.0045
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-KF",
+   "debates": 332,
+   "similarity": 0.6934,
+   "null": 0.7079,
+   "excess": -0.0145,
+   "se": 0.0053
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-LA",
+   "debates": 507,
+   "similarity": 0.7004,
+   "null": 0.7119,
+   "excess": -0.0114,
+   "se": 0.0045
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-RV",
+   "debates": 434,
+   "similarity": 0.7051,
+   "null": 0.7117,
+   "excess": -0.0067,
+   "se": 0.0047
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-S",
+   "debates": 540,
+   "similarity": 0.7213,
+   "null": 0.7073,
+   "excess": 0.014,
+   "se": 0.0042
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-SF",
+   "debates": 457,
+   "similarity": 0.7189,
+   "null": 0.7086,
+   "excess": 0.0103,
+   "se": 0.0045
+  },
+  {
+   "window": "2015 V",
+   "pair": "EL-V",
+   "debates": 509,
+   "similarity": 0.7162,
+   "null": 0.7137,
+   "excess": 0.0024,
+   "se": 0.0046
+  },
+  {
+   "window": "2015 V",
+   "pair": "KF-LA",
+   "debates": 328,
+   "similarity": 0.7144,
+   "null": 0.7113,
+   "excess": 0.0032,
+   "se": 0.0059
+  },
+  {
+   "window": "2015 V",
+   "pair": "KF-RV",
+   "debates": 281,
+   "similarity": 0.704,
+   "null": 0.7108,
+   "excess": -0.0067,
+   "se": 0.0062
+  },
+  {
+   "window": "2015 V",
+   "pair": "KF-S",
+   "debates": 329,
+   "similarity": 0.708,
+   "null": 0.7097,
+   "excess": -0.0017,
+   "se": 0.006
+  },
+  {
+   "window": "2015 V",
+   "pair": "KF-SF",
+   "debates": 287,
+   "similarity": 0.6888,
+   "null": 0.7086,
+   "excess": -0.0198,
+   "se": 0.0061
+  },
+  {
+   "window": "2015 V",
+   "pair": "KF-V",
+   "debates": 318,
+   "similarity": 0.7142,
+   "null": 0.7102,
+   "excess": 0.004,
+   "se": 0.0059
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-RV",
+   "debates": 415,
+   "similarity": 0.7048,
+   "null": 0.7144,
+   "excess": -0.0096,
+   "se": 0.005
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-S",
+   "debates": 508,
+   "similarity": 0.7192,
+   "null": 0.7137,
+   "excess": 0.0055,
+   "se": 0.0045
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-SF",
+   "debates": 432,
+   "similarity": 0.7027,
+   "null": 0.7115,
+   "excess": -0.0089,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "LA-V",
+   "debates": 496,
+   "similarity": 0.7293,
+   "null": 0.7161,
+   "excess": 0.0132,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-S",
+   "debates": 431,
+   "similarity": 0.7221,
+   "null": 0.7121,
+   "excess": 0.01,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-SF",
+   "debates": 378,
+   "similarity": 0.7101,
+   "null": 0.7109,
+   "excess": -0.0008,
+   "se": 0.0052
+  },
+  {
+   "window": "2015 V",
+   "pair": "RV-V",
+   "debates": 418,
+   "similarity": 0.7174,
+   "null": 0.7138,
+   "excess": 0.0036,
+   "se": 0.005
+  },
+  {
+   "window": "2015 V",
+   "pair": "S-SF",
+   "debates": 462,
+   "similarity": 0.7086,
+   "null": 0.7085,
+   "excess": 0.0002,
+   "se": 0.0048
+  },
+  {
+   "window": "2015 V",
+   "pair": "S-V",
+   "debates": 512,
+   "similarity": 0.7538,
+   "null": 0.7161,
+   "excess": 0.0377,
+   "se": 0.0049
+  },
+  {
+   "window": "2015 V",
+   "pair": "SF-V",
+   "debates": 432,
+   "similarity": 0.704,
+   "null": 0.7136,
+   "excess": -0.0095,
+   "se": 0.0051
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-DF",
+   "debates": 580,
+   "similarity": 0.6987,
+   "null": 0.7124,
+   "excess": -0.0137,
+   "se": 0.0042
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-EL",
+   "debates": 561,
+   "similarity": 0.7008,
+   "null": 0.7125,
+   "excess": -0.0117,
+   "se": 0.0049
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-KF",
+   "debates": 319,
+   "similarity": 0.6972,
+   "null": 0.718,
+   "excess": -0.0208,
+   "se": 0.006
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-LA",
+   "debates": 539,
+   "similarity": 0.7008,
+   "null": 0.7156,
+   "excess": -0.0148,
+   "se": 0.0047
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-RV",
+   "debates": 467,
+   "similarity": 0.7024,
+   "null": 0.7111,
+   "excess": -0.0088,
+   "se": 0.0045
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-S",
+   "debates": 585,
+   "similarity": 0.7007,
+   "null": 0.7136,
+   "excess": -0.0129,
+   "se": 0.0049
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-SF",
+   "debates": 469,
+   "similarity": 0.7005,
+   "null": 0.7127,
+   "excess": -0.0122,
+   "se": 0.0052
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "ALT-V",
+   "debates": 563,
+   "similarity": 0.7116,
+   "null": 0.7163,
+   "excess": -0.0047,
+   "se": 0.0045
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-EL",
+   "debates": 608,
+   "similarity": 0.7005,
+   "null": 0.7085,
+   "excess": -0.008,
+   "se": 0.0047
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-KF",
+   "debates": 329,
+   "similarity": 0.7329,
+   "null": 0.7184,
+   "excess": 0.0146,
+   "se": 0.0058
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-LA",
+   "debates": 569,
+   "similarity": 0.7192,
+   "null": 0.716,
+   "excess": 0.0031,
+   "se": 0.004
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-RV",
+   "debates": 491,
+   "similarity": 0.7016,
+   "null": 0.7142,
+   "excess": -0.0126,
+   "se": 0.0045
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-S",
+   "debates": 645,
+   "similarity": 0.7172,
+   "null": 0.7049,
+   "excess": 0.0124,
+   "se": 0.0044
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-SF",
+   "debates": 492,
+   "similarity": 0.7031,
+   "null": 0.711,
+   "excess": -0.0079,
+   "se": 0.0047
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "DF-V",
+   "debates": 595,
+   "similarity": 0.7304,
+   "null": 0.7173,
+   "excess": 0.0132,
+   "se": 0.004
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-KF",
+   "debates": 320,
+   "similarity": 0.7218,
+   "null": 0.7211,
+   "excess": 0.0006,
+   "se": 0.0057
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-LA",
+   "debates": 547,
+   "similarity": 0.7099,
+   "null": 0.716,
+   "excess": -0.0061,
+   "se": 0.0045
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-RV",
+   "debates": 480,
+   "similarity": 0.7075,
+   "null": 0.7144,
+   "excess": -0.007,
+   "se": 0.0048
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-S",
+   "debates": 618,
+   "similarity": 0.7155,
+   "null": 0.7083,
+   "excess": 0.0072,
+   "se": 0.0045
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-SF",
+   "debates": 478,
+   "similarity": 0.7147,
+   "null": 0.7134,
+   "excess": 0.0013,
+   "se": 0.0051
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "EL-V",
+   "debates": 580,
+   "similarity": 0.7188,
+   "null": 0.7161,
+   "excess": 0.0028,
+   "se": 0.0044
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-LA",
+   "debates": 314,
+   "similarity": 0.7413,
+   "null": 0.7186,
+   "excess": 0.0227,
+   "se": 0.0063
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-RV",
+   "debates": 267,
+   "similarity": 0.7122,
+   "null": 0.7185,
+   "excess": -0.0063,
+   "se": 0.0066
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-S",
+   "debates": 332,
+   "similarity": 0.7458,
+   "null": 0.7228,
+   "excess": 0.023,
+   "se": 0.0058
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-SF",
+   "debates": 273,
+   "similarity": 0.7117,
+   "null": 0.717,
+   "excess": -0.0054,
+   "se": 0.0062
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "KF-V",
+   "debates": 330,
+   "similarity": 0.7432,
+   "null": 0.7206,
+   "excess": 0.0226,
+   "se": 0.006
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-RV",
+   "debates": 454,
+   "similarity": 0.7077,
+   "null": 0.7168,
+   "excess": -0.0091,
+   "se": 0.0048
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-S",
+   "debates": 567,
+   "similarity": 0.7276,
+   "null": 0.7181,
+   "excess": 0.0095,
+   "se": 0.0044
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-SF",
+   "debates": 449,
+   "similarity": 0.7082,
+   "null": 0.7164,
+   "excess": -0.0082,
+   "se": 0.0049
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "LA-V",
+   "debates": 566,
+   "similarity": 0.7423,
+   "null": 0.7155,
+   "excess": 0.0268,
+   "se": 0.0041
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-S",
+   "debates": 491,
+   "similarity": 0.7104,
+   "null": 0.7144,
+   "excess": -0.004,
+   "se": 0.005
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-SF",
+   "debates": 402,
+   "similarity": 0.7165,
+   "null": 0.7124,
+   "excess": 0.0042,
+   "se": 0.0051
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "RV-V",
+   "debates": 477,
+   "similarity": 0.7151,
+   "null": 0.7171,
+   "excess": -0.0019,
+   "se": 0.0047
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "S-SF",
+   "debates": 499,
+   "similarity": 0.7188,
+   "null": 0.7102,
+   "excess": 0.0086,
+   "se": 0.0049
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "S-V",
+   "debates": 602,
+   "similarity": 0.7531,
+   "null": 0.717,
+   "excess": 0.0362,
+   "se": 0.0041
+  },
+  {
+   "window": "2016 KF+LA+V",
+   "pair": "SF-V",
+   "debates": 472,
+   "similarity": 0.7182,
+   "null": 0.7164,
+   "excess": 0.0018,
+   "se": 0.0047
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-EL",
+   "debates": 539,
+   "similarity": 0.6959,
+   "null": 0.6914,
+   "excess": 0.0046,
+   "se": 0.0048
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-KF",
+   "debates": 550,
+   "similarity": 0.6914,
+   "null": 0.6897,
+   "excess": 0.0017,
+   "se": 0.0047
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-LA",
+   "debates": 275,
+   "similarity": 0.6463,
+   "null": 0.6835,
+   "excess": -0.0372,
+   "se": 0.0072
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-NB",
+   "debates": 461,
+   "similarity": 0.6709,
+   "null": 0.6869,
+   "excess": -0.016,
+   "se": 0.0053
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-RV",
+   "debates": 514,
+   "similarity": 0.6843,
+   "null": 0.6882,
+   "excess": -0.0039,
+   "se": 0.005
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-S",
+   "debates": 578,
+   "similarity": 0.7085,
+   "null": 0.7013,
+   "excess": 0.0072,
+   "se": 0.0044
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-SF",
+   "debates": 580,
+   "similarity": 0.6987,
+   "null": 0.6919,
+   "excess": 0.0068,
+   "se": 0.0043
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-V",
+   "debates": 632,
+   "similarity": 0.7085,
+   "null": 0.6894,
+   "excess": 0.0191,
+   "se": 0.0042
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-KF",
+   "debates": 480,
+   "similarity": 0.6924,
+   "null": 0.6891,
+   "excess": 0.0033,
+   "se": 0.0048
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-LA",
+   "debates": 258,
+   "similarity": 0.6473,
+   "null": 0.6841,
+   "excess": -0.0368,
+   "se": 0.007
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-NB",
+   "debates": 401,
+   "similarity": 0.6659,
+   "null": 0.6884,
+   "excess": -0.0225,
+   "se": 0.0057
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-RV",
+   "debates": 457,
+   "similarity": 0.7015,
+   "null": 0.691,
+   "excess": 0.0106,
+   "se": 0.0051
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-S",
+   "debates": 510,
+   "similarity": 0.7162,
+   "null": 0.6977,
+   "excess": 0.0185,
+   "se": 0.0046
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-SF",
+   "debates": 506,
+   "similarity": 0.7182,
+   "null": 0.6938,
+   "excess": 0.0244,
+   "se": 0.0045
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-V",
+   "debates": 539,
+   "similarity": 0.7022,
+   "null": 0.6916,
+   "excess": 0.0106,
+   "se": 0.0045
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-LA",
+   "debates": 254,
+   "similarity": 0.6523,
+   "null": 0.6807,
+   "excess": -0.0284,
+   "se": 0.0074
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-NB",
+   "debates": 413,
+   "similarity": 0.6704,
+   "null": 0.6861,
+   "excess": -0.0157,
+   "se": 0.0058
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-RV",
+   "debates": 461,
+   "similarity": 0.6921,
+   "null": 0.6907,
+   "excess": 0.0014,
+   "se": 0.005
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-S",
+   "debates": 519,
+   "similarity": 0.7152,
+   "null": 0.6982,
+   "excess": 0.0171,
+   "se": 0.0045
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-SF",
+   "debates": 517,
+   "similarity": 0.7001,
+   "null": 0.6897,
+   "excess": 0.0104,
+   "se": 0.0044
+  },
+  {
+   "window": "2019 S",
+   "pair": "KF-V",
+   "debates": 553,
+   "similarity": 0.7254,
+   "null": 0.6884,
+   "excess": 0.037,
+   "se": 0.0044
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-NB",
+   "debates": 241,
+   "similarity": 0.6497,
+   "null": 0.6814,
+   "excess": -0.0317,
+   "se": 0.0084
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-RV",
+   "debates": 246,
+   "similarity": 0.6476,
+   "null": 0.6821,
+   "excess": -0.0345,
+   "se": 0.0079
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-S",
+   "debates": 260,
+   "similarity": 0.6529,
+   "null": 0.6939,
+   "excess": -0.0409,
+   "se": 0.008
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-SF",
+   "debates": 259,
+   "similarity": 0.6542,
+   "null": 0.6815,
+   "excess": -0.0273,
+   "se": 0.0072
+  },
+  {
+   "window": "2019 S",
+   "pair": "LA-V",
+   "debates": 277,
+   "similarity": 0.6605,
+   "null": 0.6824,
+   "excess": -0.0219,
+   "se": 0.007
+  },
+  {
+   "window": "2019 S",
+   "pair": "NB-RV",
+   "debates": 402,
+   "similarity": 0.6573,
+   "null": 0.6851,
+   "excess": -0.0278,
+   "se": 0.0059
+  },
+  {
+   "window": "2019 S",
+   "pair": "NB-S",
+   "debates": 438,
+   "similarity": 0.6725,
+   "null": 0.6966,
+   "excess": -0.0241,
+   "se": 0.0058
+  },
+  {
+   "window": "2019 S",
+   "pair": "NB-SF",
+   "debates": 436,
+   "similarity": 0.662,
+   "null": 0.6863,
+   "excess": -0.0243,
+   "se": 0.0058
+  },
+  {
+   "window": "2019 S",
+   "pair": "NB-V",
+   "debates": 457,
+   "similarity": 0.6726,
+   "null": 0.6895,
+   "excess": -0.0169,
+   "se": 0.0054
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-S",
+   "debates": 485,
+   "similarity": 0.7139,
+   "null": 0.6977,
+   "excess": 0.0162,
+   "se": 0.0049
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-SF",
+   "debates": 493,
+   "similarity": 0.7135,
+   "null": 0.6898,
+   "excess": 0.0237,
+   "se": 0.0049
+  },
+  {
+   "window": "2019 S",
+   "pair": "RV-V",
+   "debates": 512,
+   "similarity": 0.7075,
+   "null": 0.6911,
+   "excess": 0.0164,
+   "se": 0.0045
+  },
+  {
+   "window": "2019 S",
+   "pair": "S-SF",
+   "debates": 550,
+   "similarity": 0.736,
+   "null": 0.6994,
+   "excess": 0.0366,
+   "se": 0.0045
+  },
+  {
+   "window": "2019 S",
+   "pair": "S-V",
+   "debates": 583,
+   "similarity": 0.7458,
+   "null": 0.7002,
+   "excess": 0.0456,
+   "se": 0.0041
+  },
+  {
+   "window": "2019 S",
+   "pair": "SF-V",
+   "debates": 583,
+   "similarity": 0.714,
+   "null": 0.6921,
+   "excess": 0.0219,
+   "se": 0.0044
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-DF",
+   "debates": 158,
+   "similarity": 0.6448,
+   "null": 0.6646,
+   "excess": -0.0198,
+   "se": 0.0095
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-EL",
+   "debates": 145,
+   "similarity": 0.6734,
+   "null": 0.6718,
+   "excess": 0.0016,
+   "se": 0.0104
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-KF",
+   "debates": 133,
+   "similarity": 0.6527,
+   "null": 0.6619,
+   "excess": -0.0092,
+   "se": 0.0102
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-LA",
+   "debates": 119,
+   "similarity": 0.6076,
+   "null": 0.6652,
+   "excess": -0.0576,
+   "se": 0.0116
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-RV",
+   "debates": 139,
+   "similarity": 0.6699,
+   "null": 0.6703,
+   "excess": -0.0004,
+   "se": 0.0106
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-S",
+   "debates": 137,
+   "similarity": 0.6796,
+   "null": 0.6863,
+   "excess": -0.0067,
+   "se": 0.0088
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-SF",
+   "debates": 146,
+   "similarity": 0.6797,
+   "null": 0.6648,
+   "excess": 0.0149,
+   "se": 0.0097
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-V",
+   "debates": 157,
+   "similarity": 0.6597,
+   "null": 0.6684,
+   "excess": -0.0087,
+   "se": 0.0094
+  },
+  {
+   "window": "2019 S",
+   "pair": "ALT-NB",
+   "debates": 125,
+   "similarity": 0.6105,
+   "null": 0.6617,
+   "excess": -0.0512,
+   "se": 0.0125
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-KD",
+   "debates": 47,
+   "similarity": 0.6472,
+   "null": 0.6711,
+   "excess": -0.024,
+   "se": 0.0145
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-KD",
+   "debates": 40,
+   "similarity": 0.6447,
+   "null": 0.6727,
+   "excess": -0.028,
+   "se": 0.0168
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-KF",
+   "debates": 40,
+   "similarity": 0.6536,
+   "null": 0.6724,
+   "excess": -0.0188,
+   "se": 0.0176
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-NB",
+   "debates": 36,
+   "similarity": 0.6224,
+   "null": 0.6689,
+   "excess": -0.0466,
+   "se": 0.0218
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-S",
+   "debates": 42,
+   "similarity": 0.6376,
+   "null": 0.6743,
+   "excess": -0.0367,
+   "se": 0.0182
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-SF",
+   "debates": 49,
+   "similarity": 0.645,
+   "null": 0.6744,
+   "excess": -0.0294,
+   "se": 0.0163
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-V",
+   "debates": 50,
+   "similarity": 0.6644,
+   "null": 0.6765,
+   "excess": -0.0121,
+   "se": 0.0136
+  },
+  {
+   "window": "2019 S",
+   "pair": "KD-RV",
+   "debates": 33,
+   "similarity": 0.6408,
+   "null": 0.6616,
+   "excess": -0.0208,
+   "se": 0.0193
+  },
+  {
+   "window": "2019 S",
+   "pair": "DF-FG",
+   "debates": 34,
+   "similarity": 0.6166,
+   "null": 0.6523,
+   "excess": -0.0357,
+   "se": 0.0242
+  },
+  {
+   "window": "2019 S",
+   "pair": "EL-FG",
+   "debates": 30,
+   "similarity": 0.6757,
+   "null": 0.6593,
+   "excess": 0.0163,
+   "se": 0.0216
+  },
+  {
+   "window": "2019 S",
+   "pair": "FG-V",
+   "debates": 33,
+   "similarity": 0.6538,
+   "null": 0.6592,
+   "excess": -0.0054,
+   "se": 0.0206
+  },
+  {
+   "window": "2019 S",
+   "pair": "FG-SF",
+   "debates": 31,
+   "similarity": 0.6726,
+   "null": 0.6596,
+   "excess": 0.013,
+   "se": 0.0226
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-DF",
+   "debates": 445,
+   "similarity": 0.6833,
+   "null": 0.6929,
+   "excess": -0.0096,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-EL",
+   "debates": 398,
+   "similarity": 0.695,
+   "null": 0.6894,
+   "excess": 0.0056,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-SF",
+   "debates": 511,
+   "similarity": 0.7092,
+   "null": 0.702,
+   "excess": 0.0072,
+   "se": 0.005
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-EL",
+   "debates": 341,
+   "similarity": 0.6739,
+   "null": 0.6903,
+   "excess": -0.0164,
+   "se": 0.0064
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-SF",
+   "debates": 417,
+   "similarity": 0.6708,
+   "null": 0.7008,
+   "excess": -0.03,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-SF",
+   "debates": 380,
+   "similarity": 0.7086,
+   "null": 0.6981,
+   "excess": 0.0105,
+   "se": 0.006
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-DD",
+   "debates": 274,
+   "similarity": 0.6856,
+   "null": 0.6845,
+   "excess": 0.001,
+   "se": 0.0065
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-DF",
+   "debates": 229,
+   "similarity": 0.6567,
+   "null": 0.6864,
+   "excess": -0.0297,
+   "se": 0.0083
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-EL",
+   "debates": 220,
+   "similarity": 0.6933,
+   "null": 0.6795,
+   "excess": 0.0138,
+   "se": 0.0078
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-KF",
+   "debates": 244,
+   "similarity": 0.6997,
+   "null": 0.6983,
+   "excess": 0.0014,
+   "se": 0.0075
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-LA",
+   "debates": 268,
+   "similarity": 0.6891,
+   "null": 0.6941,
+   "excess": -0.005,
+   "se": 0.0067
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-M",
+   "debates": 235,
+   "similarity": 0.7023,
+   "null": 0.7006,
+   "excess": 0.0017,
+   "se": 0.0072
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-NB",
+   "debates": 49,
+   "similarity": 0.6206,
+   "null": 0.6795,
+   "excess": -0.0589,
+   "se": 0.0154
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-RV",
+   "debates": 177,
+   "similarity": 0.6973,
+   "null": 0.6881,
+   "excess": 0.0092,
+   "se": 0.0082
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-S",
+   "debates": 257,
+   "similarity": 0.7042,
+   "null": 0.7015,
+   "excess": 0.0027,
+   "se": 0.0069
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-SF",
+   "debates": 266,
+   "similarity": 0.6959,
+   "null": 0.6965,
+   "excess": -0.0006,
+   "se": 0.0066
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "ALT-V",
+   "debates": 251,
+   "similarity": 0.7049,
+   "null": 0.7071,
+   "excess": -0.0022,
+   "se": 0.0072
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-KF",
+   "debates": 461,
+   "similarity": 0.7179,
+   "null": 0.701,
+   "excess": 0.0168,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-LA",
+   "debates": 523,
+   "similarity": 0.7073,
+   "null": 0.6993,
+   "excess": 0.008,
+   "se": 0.0049
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-M",
+   "debates": 454,
+   "similarity": 0.7234,
+   "null": 0.7083,
+   "excess": 0.0151,
+   "se": 0.0053
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-NB",
+   "debates": 91,
+   "similarity": 0.6488,
+   "null": 0.6896,
+   "excess": -0.0408,
+   "se": 0.012
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-RV",
+   "debates": 332,
+   "similarity": 0.6763,
+   "null": 0.6896,
+   "excess": -0.0133,
+   "se": 0.0062
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-S",
+   "debates": 509,
+   "similarity": 0.7274,
+   "null": 0.7089,
+   "excess": 0.0185,
+   "se": 0.005
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DD-V",
+   "debates": 500,
+   "similarity": 0.7365,
+   "null": 0.7104,
+   "excess": 0.026,
+   "se": 0.005
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-KF",
+   "debates": 379,
+   "similarity": 0.6798,
+   "null": 0.6985,
+   "excess": -0.0187,
+   "se": 0.006
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-LA",
+   "debates": 429,
+   "similarity": 0.6803,
+   "null": 0.6991,
+   "excess": -0.0188,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-M",
+   "debates": 371,
+   "similarity": 0.6838,
+   "null": 0.7076,
+   "excess": -0.0239,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-NB",
+   "debates": 80,
+   "similarity": 0.6527,
+   "null": 0.6829,
+   "excess": -0.0302,
+   "se": 0.0129
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-RV",
+   "debates": 277,
+   "similarity": 0.6623,
+   "null": 0.6866,
+   "excess": -0.0243,
+   "se": 0.0067
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-S",
+   "debates": 419,
+   "similarity": 0.6866,
+   "null": 0.7064,
+   "excess": -0.0198,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "DF-V",
+   "debates": 408,
+   "similarity": 0.6901,
+   "null": 0.7095,
+   "excess": -0.0194,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-KF",
+   "debates": 343,
+   "similarity": 0.6979,
+   "null": 0.6978,
+   "excess": 0.0001,
+   "se": 0.0062
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-LA",
+   "debates": 386,
+   "similarity": 0.6911,
+   "null": 0.6978,
+   "excess": -0.0068,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-M",
+   "debates": 335,
+   "similarity": 0.6922,
+   "null": 0.7068,
+   "excess": -0.0146,
+   "se": 0.0065
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-NB",
+   "debates": 75,
+   "similarity": 0.6558,
+   "null": 0.6842,
+   "excess": -0.0284,
+   "se": 0.0149
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-RV",
+   "debates": 253,
+   "similarity": 0.6885,
+   "null": 0.6854,
+   "excess": 0.0031,
+   "se": 0.0073
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-S",
+   "debates": 372,
+   "similarity": 0.7062,
+   "null": 0.7081,
+   "excess": -0.0019,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "EL-V",
+   "debates": 364,
+   "similarity": 0.7086,
+   "null": 0.7091,
+   "excess": -0.0005,
+   "se": 0.0058
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-LA",
+   "debates": 456,
+   "similarity": 0.7092,
+   "null": 0.7032,
+   "excess": 0.006,
+   "se": 0.0053
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-M",
+   "debates": 397,
+   "similarity": 0.7162,
+   "null": 0.709,
+   "excess": 0.0072,
+   "se": 0.0061
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-NB",
+   "debates": 77,
+   "similarity": 0.6422,
+   "null": 0.6803,
+   "excess": -0.0381,
+   "se": 0.0135
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-RV",
+   "debates": 292,
+   "similarity": 0.6916,
+   "null": 0.6944,
+   "excess": -0.0028,
+   "se": 0.007
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-S",
+   "debates": 449,
+   "similarity": 0.7287,
+   "null": 0.709,
+   "excess": 0.0198,
+   "se": 0.0054
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-SF",
+   "debates": 444,
+   "similarity": 0.718,
+   "null": 0.7067,
+   "excess": 0.0112,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "KF-V",
+   "debates": 440,
+   "similarity": 0.7291,
+   "null": 0.7102,
+   "excess": 0.0189,
+   "se": 0.0055
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-M",
+   "debates": 449,
+   "similarity": 0.7159,
+   "null": 0.7096,
+   "excess": 0.0064,
+   "se": 0.0053
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-NB",
+   "debates": 91,
+   "similarity": 0.6446,
+   "null": 0.6955,
+   "excess": -0.0509,
+   "se": 0.0126
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-RV",
+   "debates": 329,
+   "similarity": 0.6861,
+   "null": 0.6914,
+   "excess": -0.0053,
+   "se": 0.0062
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-S",
+   "debates": 502,
+   "similarity": 0.7185,
+   "null": 0.7102,
+   "excess": 0.0082,
+   "se": 0.0049
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-SF",
+   "debates": 496,
+   "similarity": 0.7045,
+   "null": 0.7079,
+   "excess": -0.0034,
+   "se": 0.005
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "LA-V",
+   "debates": 493,
+   "similarity": 0.721,
+   "null": 0.7114,
+   "excess": 0.0096,
+   "se": 0.0052
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-NB",
+   "debates": 83,
+   "similarity": 0.637,
+   "null": 0.695,
+   "excess": -0.0581,
+   "se": 0.0117
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-RV",
+   "debates": 291,
+   "similarity": 0.698,
+   "null": 0.7021,
+   "excess": -0.0041,
+   "se": 0.0068
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-S",
+   "debates": 453,
+   "similarity": 0.7508,
+   "null": 0.711,
+   "excess": 0.0398,
+   "se": 0.0054
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-SF",
+   "debates": 440,
+   "similarity": 0.7199,
+   "null": 0.7127,
+   "excess": 0.0072,
+   "se": 0.0057
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "M-V",
+   "debates": 448,
+   "similarity": 0.7445,
+   "null": 0.7109,
+   "excess": 0.0336,
+   "se": 0.0057
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "NB-RV",
+   "debates": 73,
+   "similarity": 0.6335,
+   "null": 0.6845,
+   "excess": -0.0509,
+   "se": 0.0133
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "NB-S",
+   "debates": 90,
+   "similarity": 0.6306,
+   "null": 0.6949,
+   "excess": -0.0643,
+   "se": 0.0113
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "NB-SF",
+   "debates": 88,
+   "similarity": 0.6496,
+   "null": 0.6947,
+   "excess": -0.0451,
+   "se": 0.0123
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "NB-V",
+   "debates": 87,
+   "similarity": 0.6434,
+   "null": 0.6947,
+   "excess": -0.0513,
+   "se": 0.012
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "RV-S",
+   "debates": 321,
+   "similarity": 0.7,
+   "null": 0.6993,
+   "excess": 0.0007,
+   "se": 0.0061
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "RV-SF",
+   "debates": 322,
+   "similarity": 0.6918,
+   "null": 0.6921,
+   "excess": -0.0003,
+   "se": 0.0063
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "RV-V",
+   "debates": 313,
+   "similarity": 0.7037,
+   "null": 0.7008,
+   "excess": 0.0029,
+   "se": 0.0065
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "S-SF",
+   "debates": 492,
+   "similarity": 0.7337,
+   "null": 0.7131,
+   "excess": 0.0205,
+   "se": 0.0046
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "S-V",
+   "debates": 499,
+   "similarity": 0.7659,
+   "null": 0.7124,
+   "excess": 0.0535,
+   "se": 0.0047
+  },
+  {
+   "window": "2022 M+S+V",
+   "pair": "SF-V",
+   "debates": 487,
+   "similarity": 0.7361,
+   "null": 0.7125,
+   "excess": 0.0236,
+   "se": 0.0047
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-DF",
+   "debates": 40,
+   "similarity": 0.6672,
+   "null": 0.6738,
+   "excess": -0.0066,
+   "se": 0.0179
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-KF",
+   "debates": 36,
+   "similarity": 0.744,
+   "null": 0.6893,
+   "excess": 0.0548,
+   "se": 0.0155
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-LA",
+   "debates": 38,
+   "similarity": 0.6557,
+   "null": 0.6886,
+   "excess": -0.0329,
+   "se": 0.0201
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-M",
+   "debates": 35,
+   "similarity": 0.6662,
+   "null": 0.69,
+   "excess": -0.0238,
+   "se": 0.0175
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-RV",
+   "debates": 36,
+   "similarity": 0.6588,
+   "null": 0.6915,
+   "excess": -0.0327,
+   "se": 0.0161
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-S",
+   "debates": 35,
+   "similarity": 0.6831,
+   "null": 0.6916,
+   "excess": -0.0085,
+   "se": 0.0171
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-SF",
+   "debates": 36,
+   "similarity": 0.6779,
+   "null": 0.6884,
+   "excess": -0.0106,
+   "se": 0.0182
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DD-V",
+   "debates": 41,
+   "similarity": 0.6926,
+   "null": 0.6732,
+   "excess": 0.0193,
+   "se": 0.0158
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-KF",
+   "debates": 36,
+   "similarity": 0.7186,
+   "null": 0.6908,
+   "excess": 0.0279,
+   "se": 0.0185
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-LA",
+   "debates": 38,
+   "similarity": 0.7042,
+   "null": 0.6866,
+   "excess": 0.0176,
+   "se": 0.019
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-M",
+   "debates": 35,
+   "similarity": 0.7022,
+   "null": 0.7034,
+   "excess": -0.0012,
+   "se": 0.0166
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-RV",
+   "debates": 36,
+   "similarity": 0.6823,
+   "null": 0.6961,
+   "excess": -0.0139,
+   "se": 0.0203
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-S",
+   "debates": 36,
+   "similarity": 0.7179,
+   "null": 0.693,
+   "excess": 0.0248,
+   "se": 0.0198
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-SF",
+   "debates": 36,
+   "similarity": 0.6907,
+   "null": 0.6957,
+   "excess": -0.005,
+   "se": 0.0174
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "DF-V",
+   "debates": 41,
+   "similarity": 0.6945,
+   "null": 0.677,
+   "excess": 0.0174,
+   "se": 0.0201
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-LA",
+   "debates": 36,
+   "similarity": 0.7262,
+   "null": 0.693,
+   "excess": 0.0333,
+   "se": 0.0169
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-M",
+   "debates": 35,
+   "similarity": 0.7227,
+   "null": 0.6982,
+   "excess": 0.0245,
+   "se": 0.0218
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-RV",
+   "debates": 36,
+   "similarity": 0.716,
+   "null": 0.7014,
+   "excess": 0.0147,
+   "se": 0.022
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-S",
+   "debates": 35,
+   "similarity": 0.749,
+   "null": 0.704,
+   "excess": 0.045,
+   "se": 0.0202
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-SF",
+   "debates": 36,
+   "similarity": 0.7161,
+   "null": 0.694,
+   "excess": 0.0221,
+   "se": 0.0193
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "KF-V",
+   "debates": 37,
+   "similarity": 0.7455,
+   "null": 0.6937,
+   "excess": 0.0518,
+   "se": 0.0178
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-M",
+   "debates": 35,
+   "similarity": 0.6855,
+   "null": 0.7069,
+   "excess": -0.0215,
+   "se": 0.0198
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-RV",
+   "debates": 36,
+   "similarity": 0.6633,
+   "null": 0.6994,
+   "excess": -0.0362,
+   "se": 0.019
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-S",
+   "debates": 35,
+   "similarity": 0.6927,
+   "null": 0.696,
+   "excess": -0.0032,
+   "se": 0.0186
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-SF",
+   "debates": 36,
+   "similarity": 0.6888,
+   "null": 0.6915,
+   "excess": -0.0027,
+   "se": 0.0168
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "LA-V",
+   "debates": 39,
+   "similarity": 0.7073,
+   "null": 0.6885,
+   "excess": 0.0188,
+   "se": 0.019
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-RV",
+   "debates": 36,
+   "similarity": 0.7157,
+   "null": 0.6966,
+   "excess": 0.019,
+   "se": 0.0183
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-S",
+   "debates": 35,
+   "similarity": 0.7371,
+   "null": 0.7049,
+   "excess": 0.0322,
+   "se": 0.0188
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-SF",
+   "debates": 36,
+   "similarity": 0.7348,
+   "null": 0.6953,
+   "excess": 0.0395,
+   "se": 0.0165
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "M-V",
+   "debates": 36,
+   "similarity": 0.7237,
+   "null": 0.6992,
+   "excess": 0.0245,
+   "se": 0.0165
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-S",
+   "debates": 36,
+   "similarity": 0.7319,
+   "null": 0.698,
+   "excess": 0.0338,
+   "se": 0.0159
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-SF",
+   "debates": 37,
+   "similarity": 0.7225,
+   "null": 0.6992,
+   "excess": 0.0233,
+   "se": 0.0173
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "RV-V",
+   "debates": 37,
+   "similarity": 0.696,
+   "null": 0.6998,
+   "excess": -0.0038,
+   "se": 0.0185
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "S-SF",
+   "debates": 36,
+   "similarity": 0.7606,
+   "null": 0.6925,
+   "excess": 0.0681,
+   "se": 0.0158
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "S-V",
+   "debates": 36,
+   "similarity": 0.7452,
+   "null": 0.6981,
+   "excess": 0.0472,
+   "se": 0.0162
+  },
+  {
+   "window": "2026 M+RV+S+SF",
+   "pair": "SF-V",
+   "debates": 37,
+   "similarity": 0.7208,
+   "null": 0.6917,
+   "excess": 0.0291,
+   "se": 0.0139
+  }
+ ],
+ "same_debate_changes": [
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": -0.0157,
+   "after": -0.01,
+   "change": 0.0057
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-KF",
+   "relation": "other_change",
+   "before": 0.0155,
+   "after": -0.0079,
+   "change": -0.0234
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": 0.0012,
+   "after": -0.0073,
+   "change": -0.0085
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-RV",
+   "relation": "other_change",
+   "before": -0.0098,
+   "after": 0.0107,
+   "change": 0.0205
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": -0.0041,
+   "after": 0.0023,
+   "change": 0.0064
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-SF",
+   "relation": "other_change",
+   "before": -0.0011,
+   "after": 0.0087,
+   "change": 0.0098
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.0247,
+   "after": 0.007,
+   "change": -0.0177
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-KF",
+   "relation": "other_change",
+   "before": -0.0217,
+   "after": -0.0133,
+   "change": 0.0084
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": -0.0099,
+   "after": -0.017,
+   "change": -0.0071
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-RV",
+   "relation": "other_change",
+   "before": -0.0085,
+   "after": 0.0004,
+   "change": 0.0089
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-S",
+   "relation": "other_change",
+   "before": 0.0014,
+   "after": -0.0039,
+   "change": -0.0053
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-SF",
+   "relation": "other_change",
+   "before": 0.0126,
+   "after": 0.0038,
+   "change": -0.0088
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": -0.0162,
+   "after": -0.012,
+   "change": 0.0042
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-LA",
+   "relation": "other_change",
+   "before": 0.0146,
+   "after": -0.0175,
+   "change": -0.0321
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": -0.0104,
+   "after": 0.0021,
+   "change": 0.0125
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": -0.0042,
+   "after": -0.0082,
+   "change": -0.004
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.0,
+   "after": -0.0019,
+   "change": -0.0019
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "KF-V",
+   "relation": "split",
+   "before": 0.0344,
+   "after": 0.0043,
+   "change": -0.0301
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": 0.0074,
+   "after": -0.0017,
+   "change": -0.0091
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": -0.0031,
+   "after": -0.0098,
+   "change": -0.0067
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": -0.0005,
+   "after": -0.0046,
+   "change": -0.0041
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": 0.0027,
+   "after": -0.0116,
+   "change": -0.0143
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-S",
+   "relation": "both_entered",
+   "before": 0.0018,
+   "after": 0.034,
+   "change": 0.0322
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-SF",
+   "relation": "both_entered",
+   "before": 0.0019,
+   "after": 0.0422,
+   "change": 0.0403
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": -0.0068,
+   "after": 0.019,
+   "change": 0.0258
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "S-SF",
+   "relation": "both_entered",
+   "before": 0.0165,
+   "after": 0.0315,
+   "change": 0.015
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.0015,
+   "after": 0.019,
+   "change": 0.0175
+  },
+  {
+   "transition": "2011-10-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0019,
+   "after": 0.0116,
+   "change": 0.0097
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": -0.01,
+   "after": -0.0091,
+   "change": 0.0009
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-KF",
+   "relation": "unchanged",
+   "before": -0.0079,
+   "after": -0.0018,
+   "change": 0.0061
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": -0.0073,
+   "after": -0.0125,
+   "change": -0.0052
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": 0.0107,
+   "after": 0.0015,
+   "change": -0.0092
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": 0.0023,
+   "after": 0.0009,
+   "change": -0.0014
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-SF",
+   "relation": "other_change",
+   "before": 0.0087,
+   "after": -0.0031,
+   "change": -0.0118
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "DF-V",
+   "relation": "unchanged",
+   "before": 0.007,
+   "after": 0.0154,
+   "change": 0.0084
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-KF",
+   "relation": "unchanged",
+   "before": -0.0133,
+   "after": -0.0206,
+   "change": -0.0073
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": -0.017,
+   "after": -0.0169,
+   "change": 0.0001
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": 0.0004,
+   "after": -0.0114,
+   "change": -0.0118
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": -0.0039,
+   "after": -0.0072,
+   "change": -0.0033
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-SF",
+   "relation": "other_change",
+   "before": 0.0038,
+   "after": 0.0003,
+   "change": -0.0035
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "EL-V",
+   "relation": "unchanged",
+   "before": -0.012,
+   "after": -0.0093,
+   "change": 0.0027
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": -0.0175,
+   "after": -0.004,
+   "change": 0.0135
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-RV",
+   "relation": "unchanged",
+   "before": 0.0021,
+   "after": 0.0063,
+   "change": 0.0042
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": -0.0082,
+   "after": 0.0021,
+   "change": 0.0103
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": -0.0019,
+   "after": -0.0055,
+   "change": -0.0036
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "KF-V",
+   "relation": "unchanged",
+   "before": 0.0043,
+   "after": 0.0138,
+   "change": 0.0095
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-RV",
+   "relation": "unchanged",
+   "before": -0.0017,
+   "after": -0.0066,
+   "change": -0.0049
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": -0.0098,
+   "after": -0.0085,
+   "change": 0.0013
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": -0.0046,
+   "after": -0.0098,
+   "change": -0.0052
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "LA-V",
+   "relation": "unchanged",
+   "before": -0.0116,
+   "after": -0.0012,
+   "change": 0.0104
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-S",
+   "relation": "unchanged",
+   "before": 0.034,
+   "after": 0.0373,
+   "change": 0.0033
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-SF",
+   "relation": "split",
+   "before": 0.0422,
+   "after": 0.0106,
+   "change": -0.0316
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "RV-V",
+   "relation": "unchanged",
+   "before": 0.019,
+   "after": 0.0257,
+   "change": 0.0067
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "S-SF",
+   "relation": "split",
+   "before": 0.0315,
+   "after": 0.0158,
+   "change": -0.0157
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "S-V",
+   "relation": "unchanged",
+   "before": 0.019,
+   "after": 0.0255,
+   "change": 0.0065
+  },
+  {
+   "transition": "2014-02-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0116,
+   "after": 0.0042,
+   "change": -0.0074
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": -0.0091,
+   "after": -0.0034,
+   "change": 0.0057
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": -0.0125,
+   "after": 0.0032,
+   "change": 0.0157
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-RV",
+   "relation": "other_change",
+   "before": 0.0015,
+   "after": -0.0056,
+   "change": -0.0071
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": 0.0009,
+   "after": 0.0207,
+   "change": 0.0198
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.0154,
+   "after": 0.0257,
+   "change": 0.0103
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": -0.0169,
+   "after": -0.0114,
+   "change": 0.0055
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-RV",
+   "relation": "other_change",
+   "before": -0.0114,
+   "after": -0.0067,
+   "change": 0.0047
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-S",
+   "relation": "other_change",
+   "before": -0.0072,
+   "after": 0.014,
+   "change": 0.0212
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": -0.0093,
+   "after": 0.0024,
+   "change": 0.0117
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": -0.0066,
+   "after": -0.0096,
+   "change": -0.003
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": -0.0085,
+   "after": 0.0055,
+   "change": 0.014
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": -0.0012,
+   "after": 0.0132,
+   "change": 0.0144
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-S",
+   "relation": "split",
+   "before": 0.0373,
+   "after": 0.01,
+   "change": -0.0273
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.0257,
+   "after": 0.0036,
+   "change": -0.0221
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.0255,
+   "after": 0.0377,
+   "change": 0.0122
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-KF",
+   "relation": "unchanged",
+   "before": -0.0018,
+   "after": -0.009,
+   "change": -0.0072
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": -0.0031,
+   "after": -0.0056,
+   "change": -0.0025
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-KF",
+   "relation": "unchanged",
+   "before": -0.0206,
+   "after": -0.0145,
+   "change": 0.0061
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.0003,
+   "after": 0.0103,
+   "change": 0.01
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": -0.004,
+   "after": 0.0032,
+   "change": 0.0072
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": 0.0063,
+   "after": -0.0067,
+   "change": -0.013
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": 0.0021,
+   "after": -0.0017,
+   "change": -0.0038
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "KF-SF",
+   "relation": "unchanged",
+   "before": -0.0055,
+   "after": -0.0198,
+   "change": -0.0143
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "KF-V",
+   "relation": "other_change",
+   "before": 0.0138,
+   "after": 0.004,
+   "change": -0.0098
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "LA-SF",
+   "relation": "unchanged",
+   "before": -0.0098,
+   "after": -0.0089,
+   "change": 0.0009
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "RV-SF",
+   "relation": "other_change",
+   "before": 0.0106,
+   "after": -0.0008,
+   "change": -0.0114
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "S-SF",
+   "relation": "other_change",
+   "before": 0.0158,
+   "after": 0.0002,
+   "change": -0.0156
+  },
+  {
+   "transition": "2015-06-28",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0042,
+   "after": -0.0095,
+   "change": -0.0137
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-DF",
+   "relation": "unchanged",
+   "before": -0.0068,
+   "after": -0.0137,
+   "change": -0.0069
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": 0.0022,
+   "after": -0.0117,
+   "change": -0.0139
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-KF",
+   "relation": "other_change",
+   "before": -0.0133,
+   "after": -0.0208,
+   "change": -0.0075
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-LA",
+   "relation": "other_change",
+   "before": -0.0073,
+   "after": -0.0148,
+   "change": -0.0075
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-RV",
+   "relation": "unchanged",
+   "before": 0.0058,
+   "after": -0.0088,
+   "change": -0.0146
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-S",
+   "relation": "unchanged",
+   "before": 0.0083,
+   "after": -0.0129,
+   "change": -0.0212
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": 0.0093,
+   "after": -0.0122,
+   "change": -0.0215
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "ALT-V",
+   "relation": "unchanged",
+   "before": 0.0063,
+   "after": -0.0047,
+   "change": -0.011
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": -0.0034,
+   "after": -0.008,
+   "change": -0.0046
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-KF",
+   "relation": "other_change",
+   "before": -0.009,
+   "after": 0.0146,
+   "change": 0.0236
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-LA",
+   "relation": "other_change",
+   "before": 0.0032,
+   "after": 0.0031,
+   "change": -0.0001
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": -0.0056,
+   "after": -0.0126,
+   "change": -0.007
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": 0.0207,
+   "after": 0.0124,
+   "change": -0.0083
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": -0.0056,
+   "after": -0.0079,
+   "change": -0.0023
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "DF-V",
+   "relation": "unchanged",
+   "before": 0.0257,
+   "after": 0.0132,
+   "change": -0.0125
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-KF",
+   "relation": "other_change",
+   "before": -0.0145,
+   "after": 0.0006,
+   "change": 0.0151
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-LA",
+   "relation": "other_change",
+   "before": -0.0114,
+   "after": -0.0061,
+   "change": 0.0053
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": -0.0067,
+   "after": -0.007,
+   "change": -0.0003
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": 0.014,
+   "after": 0.0072,
+   "change": -0.0068
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.0103,
+   "after": 0.0013,
+   "change": -0.009
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "EL-V",
+   "relation": "unchanged",
+   "before": 0.0024,
+   "after": 0.0028,
+   "change": 0.0004
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "KF-LA",
+   "relation": "both_entered",
+   "before": 0.0032,
+   "after": 0.0227,
+   "change": 0.0195
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": -0.0067,
+   "after": -0.0063,
+   "change": 0.0004
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": -0.0017,
+   "after": 0.023,
+   "change": 0.0247
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": -0.0198,
+   "after": -0.0054,
+   "change": 0.0144
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "KF-V",
+   "relation": "joined",
+   "before": 0.004,
+   "after": 0.0226,
+   "change": 0.0186
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": -0.0096,
+   "after": -0.0091,
+   "change": 0.0005
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": 0.0055,
+   "after": 0.0095,
+   "change": 0.004
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": -0.0089,
+   "after": -0.0082,
+   "change": 0.0007
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "LA-V",
+   "relation": "joined",
+   "before": 0.0132,
+   "after": 0.0268,
+   "change": 0.0136
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-S",
+   "relation": "unchanged",
+   "before": 0.01,
+   "after": -0.004,
+   "change": -0.014
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-SF",
+   "relation": "unchanged",
+   "before": -0.0008,
+   "after": 0.0042,
+   "change": 0.005
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "RV-V",
+   "relation": "unchanged",
+   "before": 0.0036,
+   "after": -0.0019,
+   "change": -0.0055
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "S-SF",
+   "relation": "unchanged",
+   "before": 0.0002,
+   "after": 0.0086,
+   "change": 0.0084
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "S-V",
+   "relation": "unchanged",
+   "before": 0.0377,
+   "after": 0.0362,
+   "change": -0.0015
+  },
+  {
+   "transition": "2016-11-28",
+   "pair": "SF-V",
+   "relation": "unchanged",
+   "before": -0.0095,
+   "after": 0.0018,
+   "change": 0.0113
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-DF",
+   "relation": "unchanged",
+   "before": -0.0137,
+   "after": -0.0198,
+   "change": -0.0061
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": -0.0117,
+   "after": 0.0016,
+   "change": 0.0133
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-KF",
+   "relation": "other_change",
+   "before": -0.0208,
+   "after": -0.0092,
+   "change": 0.0116
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-LA",
+   "relation": "other_change",
+   "before": -0.0148,
+   "after": -0.0576,
+   "change": -0.0428
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-RV",
+   "relation": "unchanged",
+   "before": -0.0088,
+   "after": -0.0004,
+   "change": 0.0084
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-S",
+   "relation": "other_change",
+   "before": -0.0129,
+   "after": -0.0067,
+   "change": 0.0062
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": -0.0122,
+   "after": 0.0149,
+   "change": 0.0271
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "ALT-V",
+   "relation": "other_change",
+   "before": -0.0047,
+   "after": -0.0087,
+   "change": -0.004
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": -0.008,
+   "after": 0.0046,
+   "change": 0.0126
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-KF",
+   "relation": "other_change",
+   "before": 0.0146,
+   "after": 0.0017,
+   "change": -0.0129
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-LA",
+   "relation": "other_change",
+   "before": 0.0031,
+   "after": -0.0372,
+   "change": -0.0403
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": -0.0126,
+   "after": -0.0039,
+   "change": 0.0087
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-S",
+   "relation": "other_change",
+   "before": 0.0124,
+   "after": 0.0072,
+   "change": -0.0052
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": -0.0079,
+   "after": 0.0068,
+   "change": 0.0147
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.0132,
+   "after": 0.0191,
+   "change": 0.0059
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-KF",
+   "relation": "other_change",
+   "before": 0.0006,
+   "after": 0.0033,
+   "change": 0.0027
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-LA",
+   "relation": "other_change",
+   "before": -0.0061,
+   "after": -0.0368,
+   "change": -0.0307
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": -0.007,
+   "after": 0.0106,
+   "change": 0.0176
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-S",
+   "relation": "other_change",
+   "before": 0.0072,
+   "after": 0.0185,
+   "change": 0.0113
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.0013,
+   "after": 0.0244,
+   "change": 0.0231
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": 0.0028,
+   "after": 0.0106,
+   "change": 0.0078
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-LA",
+   "relation": "split",
+   "before": 0.0227,
+   "after": -0.0284,
+   "change": -0.0511
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": -0.0063,
+   "after": 0.0014,
+   "change": 0.0077
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-S",
+   "relation": "other_change",
+   "before": 0.023,
+   "after": 0.0171,
+   "change": -0.0059
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": -0.0054,
+   "after": 0.0104,
+   "change": 0.0158
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "KF-V",
+   "relation": "split",
+   "before": 0.0226,
+   "after": 0.037,
+   "change": 0.0144
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": -0.0091,
+   "after": -0.0345,
+   "change": -0.0254
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-S",
+   "relation": "other_change",
+   "before": 0.0095,
+   "after": -0.0409,
+   "change": -0.0504
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": -0.0082,
+   "after": -0.0273,
+   "change": -0.0191
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "LA-V",
+   "relation": "split",
+   "before": 0.0268,
+   "after": -0.0219,
+   "change": -0.0487
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-S",
+   "relation": "other_change",
+   "before": -0.004,
+   "after": 0.0162,
+   "change": 0.0202
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-SF",
+   "relation": "unchanged",
+   "before": 0.0042,
+   "after": 0.0237,
+   "change": 0.0195
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": -0.0019,
+   "after": 0.0164,
+   "change": 0.0183
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "S-SF",
+   "relation": "other_change",
+   "before": 0.0086,
+   "after": 0.0366,
+   "change": 0.028
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "S-V",
+   "relation": "other_change",
+   "before": 0.0362,
+   "after": 0.0456,
+   "change": 0.0094
+  },
+  {
+   "transition": "2019-06-27",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0018,
+   "after": 0.0219,
+   "change": 0.0201
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-EL",
+   "relation": "unchanged",
+   "before": 0.0046,
+   "after": -0.0164,
+   "change": -0.021
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-KF",
+   "relation": "unchanged",
+   "before": 0.0017,
+   "after": -0.0187,
+   "change": -0.0204
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": -0.0372,
+   "after": -0.0188,
+   "change": 0.0184
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-NB",
+   "relation": "unchanged",
+   "before": -0.016,
+   "after": -0.0302,
+   "change": -0.0142
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-RV",
+   "relation": "unchanged",
+   "before": -0.0039,
+   "after": -0.0243,
+   "change": -0.0204
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": 0.0072,
+   "after": -0.0198,
+   "change": -0.027
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-SF",
+   "relation": "unchanged",
+   "before": 0.0068,
+   "after": -0.03,
+   "change": -0.0368
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": 0.0191,
+   "after": -0.0194,
+   "change": -0.0385
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-KF",
+   "relation": "unchanged",
+   "before": 0.0033,
+   "after": 0.0001,
+   "change": -0.0032
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-LA",
+   "relation": "unchanged",
+   "before": -0.0368,
+   "after": -0.0068,
+   "change": 0.03
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-NB",
+   "relation": "unchanged",
+   "before": -0.0225,
+   "after": -0.0284,
+   "change": -0.0059
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-RV",
+   "relation": "unchanged",
+   "before": 0.0106,
+   "after": 0.0031,
+   "change": -0.0075
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-S",
+   "relation": "unchanged",
+   "before": 0.0185,
+   "after": -0.0019,
+   "change": -0.0204
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-SF",
+   "relation": "unchanged",
+   "before": 0.0244,
+   "after": 0.0105,
+   "change": -0.0139
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "EL-V",
+   "relation": "other_change",
+   "before": 0.0106,
+   "after": -0.0005,
+   "change": -0.0111
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": -0.0284,
+   "after": 0.006,
+   "change": 0.0344
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-NB",
+   "relation": "unchanged",
+   "before": -0.0157,
+   "after": -0.0381,
+   "change": -0.0224
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-RV",
+   "relation": "unchanged",
+   "before": 0.0014,
+   "after": -0.0028,
+   "change": -0.0042
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": 0.0171,
+   "after": 0.0198,
+   "change": 0.0027
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-SF",
+   "relation": "unchanged",
+   "before": 0.0104,
+   "after": 0.0112,
+   "change": 0.0008
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "KF-V",
+   "relation": "other_change",
+   "before": 0.037,
+   "after": 0.0189,
+   "change": -0.0181
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-NB",
+   "relation": "unchanged",
+   "before": -0.0317,
+   "after": -0.0509,
+   "change": -0.0192
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-RV",
+   "relation": "unchanged",
+   "before": -0.0345,
+   "after": -0.0053,
+   "change": 0.0292
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": -0.0409,
+   "after": 0.0082,
+   "change": 0.0491
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-SF",
+   "relation": "unchanged",
+   "before": -0.0273,
+   "after": -0.0034,
+   "change": 0.0239
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": -0.0219,
+   "after": 0.0096,
+   "change": 0.0315
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "NB-RV",
+   "relation": "unchanged",
+   "before": -0.0278,
+   "after": -0.0509,
+   "change": -0.0231
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "NB-S",
+   "relation": "unchanged",
+   "before": -0.0241,
+   "after": -0.0643,
+   "change": -0.0402
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "NB-SF",
+   "relation": "unchanged",
+   "before": -0.0243,
+   "after": -0.0451,
+   "change": -0.0208
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "NB-V",
+   "relation": "other_change",
+   "before": -0.0169,
+   "after": -0.0513,
+   "change": -0.0344
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "RV-S",
+   "relation": "unchanged",
+   "before": 0.0162,
+   "after": 0.0007,
+   "change": -0.0155
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "RV-SF",
+   "relation": "unchanged",
+   "before": 0.0237,
+   "after": -0.0003,
+   "change": -0.024
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.0164,
+   "after": 0.0029,
+   "change": -0.0135
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "S-SF",
+   "relation": "unchanged",
+   "before": 0.0366,
+   "after": 0.0205,
+   "change": -0.0161
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "S-V",
+   "relation": "joined",
+   "before": 0.0456,
+   "after": 0.0535,
+   "change": 0.0079
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0219,
+   "after": 0.0236,
+   "change": 0.0017
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-DF",
+   "relation": "unchanged",
+   "before": -0.0198,
+   "after": -0.0297,
+   "change": -0.0099
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-EL",
+   "relation": "unchanged",
+   "before": 0.0016,
+   "after": 0.0138,
+   "change": 0.0122
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-KF",
+   "relation": "unchanged",
+   "before": -0.0092,
+   "after": 0.0014,
+   "change": 0.0106
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-LA",
+   "relation": "unchanged",
+   "before": -0.0576,
+   "after": -0.005,
+   "change": 0.0526
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-RV",
+   "relation": "unchanged",
+   "before": -0.0004,
+   "after": 0.0092,
+   "change": 0.0096
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-S",
+   "relation": "unchanged",
+   "before": -0.0067,
+   "after": 0.0027,
+   "change": 0.0094
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-SF",
+   "relation": "unchanged",
+   "before": 0.0149,
+   "after": -0.0006,
+   "change": -0.0155
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-V",
+   "relation": "other_change",
+   "before": -0.0087,
+   "after": -0.0022,
+   "change": 0.0065
+  },
+  {
+   "transition": "2022-12-15",
+   "pair": "ALT-NB",
+   "relation": "unchanged",
+   "before": -0.0512,
+   "after": -0.0589,
+   "change": -0.0077
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-DF",
+   "relation": "unchanged",
+   "before": -0.0096,
+   "after": -0.0066,
+   "change": 0.003
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-SF",
+   "relation": "other_change",
+   "before": 0.0072,
+   "after": -0.0106,
+   "change": -0.0178
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-SF",
+   "relation": "other_change",
+   "before": -0.03,
+   "after": -0.005,
+   "change": 0.025
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-KF",
+   "relation": "unchanged",
+   "before": 0.0168,
+   "after": 0.0548,
+   "change": 0.038
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-LA",
+   "relation": "unchanged",
+   "before": 0.008,
+   "after": -0.0329,
+   "change": -0.0409
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-M",
+   "relation": "unchanged",
+   "before": 0.0151,
+   "after": -0.0238,
+   "change": -0.0389
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-RV",
+   "relation": "other_change",
+   "before": -0.0133,
+   "after": -0.0327,
+   "change": -0.0194
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-S",
+   "relation": "unchanged",
+   "before": 0.0185,
+   "after": -0.0085,
+   "change": -0.027
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DD-V",
+   "relation": "other_change",
+   "before": 0.026,
+   "after": 0.0193,
+   "change": -0.0067
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-KF",
+   "relation": "unchanged",
+   "before": -0.0187,
+   "after": 0.0279,
+   "change": 0.0466
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-LA",
+   "relation": "unchanged",
+   "before": -0.0188,
+   "after": 0.0176,
+   "change": 0.0364
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-M",
+   "relation": "unchanged",
+   "before": -0.0239,
+   "after": -0.0012,
+   "change": 0.0227
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-RV",
+   "relation": "other_change",
+   "before": -0.0243,
+   "after": -0.0139,
+   "change": 0.0104
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-S",
+   "relation": "unchanged",
+   "before": -0.0198,
+   "after": 0.0248,
+   "change": 0.0446
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "DF-V",
+   "relation": "other_change",
+   "before": -0.0194,
+   "after": 0.0174,
+   "change": 0.0368
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-LA",
+   "relation": "unchanged",
+   "before": 0.006,
+   "after": 0.0333,
+   "change": 0.0273
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-M",
+   "relation": "unchanged",
+   "before": 0.0072,
+   "after": 0.0245,
+   "change": 0.0173
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-RV",
+   "relation": "other_change",
+   "before": -0.0028,
+   "after": 0.0147,
+   "change": 0.0175
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-S",
+   "relation": "unchanged",
+   "before": 0.0198,
+   "after": 0.045,
+   "change": 0.0252
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-SF",
+   "relation": "other_change",
+   "before": 0.0112,
+   "after": 0.0221,
+   "change": 0.0109
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "KF-V",
+   "relation": "other_change",
+   "before": 0.0189,
+   "after": 0.0518,
+   "change": 0.0329
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-M",
+   "relation": "unchanged",
+   "before": 0.0064,
+   "after": -0.0215,
+   "change": -0.0279
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-RV",
+   "relation": "other_change",
+   "before": -0.0053,
+   "after": -0.0362,
+   "change": -0.0309
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-S",
+   "relation": "unchanged",
+   "before": 0.0082,
+   "after": -0.0032,
+   "change": -0.0114
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-SF",
+   "relation": "other_change",
+   "before": -0.0034,
+   "after": -0.0027,
+   "change": 0.0007
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "LA-V",
+   "relation": "other_change",
+   "before": 0.0096,
+   "after": 0.0188,
+   "change": 0.0092
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-RV",
+   "relation": "joined",
+   "before": -0.0041,
+   "after": 0.019,
+   "change": 0.0231
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-S",
+   "relation": "unchanged",
+   "before": 0.0398,
+   "after": 0.0322,
+   "change": -0.0076
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-SF",
+   "relation": "joined",
+   "before": 0.0072,
+   "after": 0.0395,
+   "change": 0.0323
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "M-V",
+   "relation": "split",
+   "before": 0.0336,
+   "after": 0.0245,
+   "change": -0.0091
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "RV-S",
+   "relation": "joined",
+   "before": 0.0007,
+   "after": 0.0338,
+   "change": 0.0331
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "RV-SF",
+   "relation": "both_entered",
+   "before": -0.0003,
+   "after": 0.0233,
+   "change": 0.0236
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "RV-V",
+   "relation": "other_change",
+   "before": 0.0029,
+   "after": -0.0038,
+   "change": -0.0067
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "S-SF",
+   "relation": "joined",
+   "before": 0.0205,
+   "after": 0.0681,
+   "change": 0.0476
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "S-V",
+   "relation": "split",
+   "before": 0.0535,
+   "after": 0.0472,
+   "change": -0.0063
+  },
+  {
+   "transition": "2026-06-03",
+   "pair": "SF-V",
+   "relation": "other_change",
+   "before": 0.0236,
+   "after": 0.0291,
+   "change": 0.0055
+  }
+ ],
+ "distinctive_words_S_vs_V": {
+  "2009 KF+V": {
+   "V": [
+    [
+     "socialdemokratiske",
+     -14.7
+    ],
+    [
+     "ønsker",
+     -14.2
+    ],
+    [
+     "lovforslaget",
+     -14.2
+    ],
+    [
+     "beslutningsforslaget",
+     -13.5
+    ],
+    [
+     "fortsat",
+     -12.6
+    ],
+    [
+     "sikrer",
+     -12.1
+    ],
+    [
+     "dermed",
+     -11.9
+    ],
+    [
+     "udlændinge",
+     -11.9
+    ],
+    [
+     "fokus",
+     -11.7
+    ],
+    [
+     "initiativer",
+     -11.4
+    ],
+    [
+     "oppositionen",
+     -11.4
+    ],
+    [
+     "lovforslag",
+     -11.3
+    ],
+    [
+     "forslagsstillerne",
+     -11.3
+    ],
+    [
+     "således",
+     -10.9
+    ],
+    [
+     "mulighed",
+     -10.7
+    ],
+    [
+     "støtte",
+     -10.7
+    ],
+    [
+     "minutter",
+     -10.2
+    ],
+    [
+     "opholdstilladelse",
+     -10.1
+    ],
+    [
+     "offentlige",
+     -10.0
+    ],
+    [
+     "dette",
+     -9.9
+    ]
+   ],
+   "S": [
+    [
+     "ministeren",
+     46.3
+    ],
+    [
+     "regeringen",
+     23.9
+    ],
+    [
+     "her",
+     17.8
+    ],
+    [
+     "statsministeren",
+     15.1
+    ],
+    [
+     "skattelettelser",
+     14.1
+    ],
+    [
+     "siger",
+     14.0
+    ],
+    [
+     "regeringens",
+     13.3
+    ],
+    [
+     "ministerens",
+     13.3
+    ],
+    [
+     "finansministeren",
+     13.0
+    ],
+    [
+     "mennesker",
+     12.5
+    ],
+    [
+     "besparelser",
+     12.2
+    ],
+    [
+     "konservative",
+     11.7
+    ],
+    [
+     "der",
+     11.4
+    ],
+    [
+     "børn",
+     11.4
+    ],
+    [
+     "spørgsmål",
+     11.0
+    ],
+    [
+     "gerne",
+     10.7
+    ],
+    [
+     "hvorfor",
+     10.5
+    ],
+    [
+     "rigtig",
+     10.4
+    ],
+    [
+     "virkeligheden",
+     10.3
+    ],
+    [
+     "var",
+     10.3
+    ]
+   ]
+  },
+  "2011 RV+S+SF": {
+   "V": [
+    [
+     "ministeren",
+     -47.4
+    ],
+    [
+     "regeringen",
+     -31.9
+    ],
+    [
+     "statsministeren",
+     -21.0
+    ],
+    [
+     "justitsministeren",
+     -17.8
+    ],
+    [
+     "skatteministeren",
+     -16.8
+    ],
+    [
+     "set",
+     -16.6
+    ],
+    [
+     "man",
+     -16.0
+    ],
+    [
+     "spørge",
+     -15.2
+    ],
+    [
+     "ministerens",
+     -14.7
+    ],
+    [
+     "regeringens",
+     -14.5
+    ],
+    [
+     "ikke",
+     -14.4
+    ],
+    [
+     "spørgsmål",
+     -13.8
+    ],
+    [
+     "finansministeren",
+     -13.7
+    ],
+    [
+     "svar",
+     -13.3
+    ],
+    [
+     "tak",
+     -12.2
+    ],
+    [
+     "men",
+     -11.6
+    ],
+    [
+     "kunne",
+     -11.1
+    ],
+    [
+     "afgifter",
+     -10.7
+    ],
+    [
+     "skatter",
+     -10.7
+    ],
+    [
+     "forstå",
+     -10.7
+    ]
+   ],
+   "S": [
+    [
+     "rigtig",
+     23.1
+    ],
+    [
+     "mennesker",
+     18.0
+    ],
+    [
+     "også",
+     16.9
+    ],
+    [
+     "vores",
+     15.3
+    ],
+    [
+     "uddannelse",
+     14.3
+    ],
+    [
+     "folk",
+     14.1
+    ],
+    [
+     "vigtigt",
+     13.3
+    ],
+    [
+     "alle",
+     13.0
+    ],
+    [
+     "børn",
+     12.9
+    ],
+    [
+     "bedre",
+     12.2
+    ],
+    [
+     "virkeligheden",
+     12.2
+    ],
+    [
+     "sikrer",
+     12.1
+    ],
+    [
+     "dem",
+     12.1
+    ],
+    [
+     "danmark",
+     11.8
+    ],
+    [
+     "her",
+     11.6
+    ],
+    [
+     "socialdemokratisk",
+     11.3
+    ],
+    [
+     "nulvækst",
+     10.8
+    ],
+    [
+     "alliances",
+     10.7
+    ],
+    [
+     "borgerlige",
+     10.7
+    ],
+    [
+     "allerede",
+     10.7
+    ]
+   ]
+  },
+  "2014 RV+S": {
+   "V": [
+    [
+     "ministeren",
+     -35.3
+    ],
+    [
+     "regeringen",
+     -24.8
+    ],
+    [
+     "statsministeren",
+     -14.7
+    ],
+    [
+     "regeringens",
+     -12.7
+    ],
+    [
+     "ministerens",
+     -11.6
+    ],
+    [
+     "spørge",
+     -11.5
+    ],
+    [
+     "finansministeren",
+     -10.6
+    ],
+    [
+     "var",
+     -10.1
+    ],
+    [
+     "tak",
+     -10.0
+    ],
+    [
+     "man",
+     -9.5
+    ],
+    [
+     "justitsministeren",
+     -9.3
+    ],
+    [
+     "spørgsmålet",
+     -8.4
+    ],
+    [
+     "ikke",
+     -8.0
+    ],
+    [
+     "skatteministeren",
+     -7.7
+    ],
+    [
+     "nok",
+     -7.5
+    ],
+    [
+     "asylansøgere",
+     -7.4
+    ],
+    [
+     "kunne",
+     -7.4
+    ],
+    [
+     "spørger",
+     -7.3
+    ],
+    [
+     "set",
+     -7.3
+    ],
+    [
+     "men",
+     -7.2
+    ]
+   ],
+   "S": [
+    [
+     "vores",
+     14.7
+    ],
+    [
+     "skal",
+     14.1
+    ],
+    [
+     "ordfører",
+     13.4
+    ],
+    [
+     "rigtig",
+     12.7
+    ],
+    [
+     "også",
+     12.0
+    ],
+    [
+     "her",
+     11.9
+    ],
+    [
+     "nulvækst",
+     11.0
+    ],
+    [
+     "vigtigt",
+     10.2
+    ],
+    [
+     "børn",
+     9.9
+    ],
+    [
+     "social",
+     9.7
+    ],
+    [
+     "uddannelse",
+     8.9
+    ],
+    [
+     "liberal",
+     8.8
+    ],
+    [
+     "dumping",
+     8.8
+    ],
+    [
+     "allerede",
+     8.6
+    ],
+    [
+     "deres",
+     8.4
+    ],
+    [
+     "alliances",
+     8.4
+    ],
+    [
+     "socialdemokraternes",
+     8.2
+    ],
+    [
+     "socialdemokratisk",
+     8.1
+    ],
+    [
+     "både",
+     7.6
+    ],
+    [
+     "kampen",
+     7.6
+    ]
+   ]
+  },
+  "2015 V": {
+   "V": [
+    [
+     "danmark",
+     -10.6
+    ],
+    [
+     "jeg",
+     -10.0
+    ],
+    [
+     "således",
+     -9.9
+    ],
+    [
+     "dette",
+     -8.7
+    ],
+    [
+     "naturligvis",
+     -8.2
+    ],
+    [
+     "lovforslaget",
+     -8.0
+    ],
+    [
+     "glæder",
+     -7.9
+    ],
+    [
+     "job",
+     -7.5
+    ],
+    [
+     "ordførere",
+     -7.4
+    ],
+    [
+     "allerede",
+     -7.0
+    ],
+    [
+     "derudover",
+     -6.7
+    ],
+    [
+     "lande",
+     -6.3
+    ],
+    [
+     "tidligere",
+     -6.3
+    ],
+    [
+     "syrien",
+     -6.3
+    ],
+    [
+     "forhåbentlig",
+     -6.3
+    ],
+    [
+     "europol",
+     -6.2
+    ],
+    [
+     "kontanthjælp",
+     -6.2
+    ],
+    [
+     "isil",
+     -6.0
+    ],
+    [
+     "attraktivt",
+     -6.0
+    ],
+    [
+     "foregående",
+     -6.0
+    ]
+   ],
+   "S": [
+    [
+     "ministeren",
+     29.8
+    ],
+    [
+     "regeringen",
+     14.3
+    ],
+    [
+     "her",
+     11.1
+    ],
+    [
+     "finansministeren",
+     10.9
+    ],
+    [
+     "ministerens",
+     10.5
+    ],
+    [
+     "siger",
+     10.3
+    ],
+    [
+     "statsministeren",
+     9.2
+    ],
+    [
+     "regeringens",
+     9.1
+    ],
+    [
+     "han",
+     8.1
+    ],
+    [
+     "socialdemokratisk",
+     8.1
+    ],
+    [
+     "skatteministeren",
+     7.5
+    ],
+    [
+     "spørgsmål",
+     7.4
+    ],
+    [
+     "svar",
+     7.2
+    ],
+    [
+     "spørgsmålet",
+     6.4
+    ],
+    [
+     "handler",
+     6.3
+    ],
+    [
+     "dumping",
+     6.3
+    ],
+    [
+     "gerne",
+     6.3
+    ],
+    [
+     "der",
+     6.2
+    ],
+    [
+     "vil",
+     6.2
+    ],
+    [
+     "dem",
+     6.2
+    ]
+   ]
+  },
+  "2016 KF+LA+V": {
+   "V": [
+    [
+     "jeg",
+     -20.3
+    ],
+    [
+     "hilse",
+     -13.1
+    ],
+    [
+     "netop",
+     -12.5
+    ],
+    [
+     "mig",
+     -12.2
+    ],
+    [
+     "ordet",
+     -12.1
+    ],
+    [
+     "støtter",
+     -11.8
+    ],
+    [
+     "ordførere",
+     -11.8
+    ],
+    [
+     "danmark",
+     -11.6
+    ],
+    [
+     "glæder",
+     -11.2
+    ],
+    [
+     "således",
+     -11.0
+    ],
+    [
+     "tidligere",
+     -10.7
+    ],
+    [
+     "beslutningsforslaget",
+     -10.6
+    ],
+    [
+     "forslaget",
+     -10.1
+    ],
+    [
+     "naturligvis",
+     -9.7
+    ],
+    [
+     "sags",
+     -9.6
+    ],
+    [
+     "folkeparti",
+     -9.4
+    ],
+    [
+     "understrege",
+     -9.3
+    ],
+    [
+     "allerede",
+     -9.1
+    ],
+    [
+     "sikrer",
+     -9.1
+    ],
+    [
+     "danske",
+     -9.0
+    ]
+   ],
+   "S": [
+    [
+     "ministeren",
+     45.0
+    ],
+    [
+     "regeringen",
+     21.0
+    ],
+    [
+     "her",
+     15.0
+    ],
+    [
+     "der",
+     13.6
+    ],
+    [
+     "ministerens",
+     13.5
+    ],
+    [
+     "vil",
+     12.8
+    ],
+    [
+     "finansministeren",
+     11.9
+    ],
+    [
+     "siger",
+     11.4
+    ],
+    [
+     "statsministeren",
+     11.3
+    ],
+    [
+     "regeringens",
+     10.8
+    ],
+    [
+     "svar",
+     10.3
+    ],
+    [
+     "gerne",
+     9.5
+    ],
+    [
+     "diskussion",
+     9.4
+    ],
+    [
+     "skatteministeren",
+     9.3
+    ],
+    [
+     "han",
+     9.1
+    ],
+    [
+     "høre",
+     8.9
+    ],
+    [
+     "spørgsmål",
+     8.9
+    ],
+    [
+     "hun",
+     8.7
+    ],
+    [
+     "spørge",
+     8.6
+    ],
+    [
+     "spørgsmålet",
+     8.4
+    ]
+   ]
+  },
+  "2019 S": {
+   "V": [
+    [
+     "ministeren",
+     -49.5
+    ],
+    [
+     "regeringen",
+     -24.6
+    ],
+    [
+     "statsministeren",
+     -16.2
+    ],
+    [
+     "man",
+     -14.8
+    ],
+    [
+     "ministerens",
+     -14.3
+    ],
+    [
+     "regeringens",
+     -13.9
+    ],
+    [
+     "spørge",
+     -13.8
+    ],
+    [
+     "svar",
+     -13.2
+    ],
+    [
+     "tak",
+     -13.2
+    ],
+    [
+     "bare",
+     -13.0
+    ],
+    [
+     "hvorfor",
+     -11.8
+    ],
+    [
+     "siger",
+     -11.7
+    ],
+    [
+     "socialdemokratiske",
+     -11.5
+    ],
+    [
+     "svaret",
+     -11.3
+    ],
+    [
+     "gerne",
+     -10.8
+    ],
+    [
+     "forstå",
+     -10.6
+    ],
+    [
+     "spørgsmål",
+     -10.4
+    ],
+    [
+     "frie",
+     -10.1
+    ],
+    [
+     "hvornår",
+     -9.9
+    ],
+    [
+     "fald",
+     -9.6
+    ]
+   ],
+   "S": [
+    [
+     "foreslås",
+     16.5
+    ],
+    [
+     "vores",
+     12.6
+    ],
+    [
+     "derudover",
+     11.4
+    ],
+    [
+     "folk",
+     11.0
+    ],
+    [
+     "som",
+     10.7
+    ],
+    [
+     "folketinget",
+     10.6
+    ],
+    [
+     "med",
+     10.4
+    ],
+    [
+     "borgerlige",
+     10.4
+    ],
+    [
+     "velfærden",
+     10.3
+    ],
+    [
+     "mulighed",
+     10.1
+    ],
+    [
+     "synes",
+     10.1
+    ],
+    [
+     "selvfølgelig",
+     9.9
+    ],
+    [
+     "virkeligheden",
+     9.7
+    ],
+    [
+     "forslagsstillerne",
+     9.6
+    ],
+    [
+     "personer",
+     9.3
+    ],
+    [
+     "lovforslaget",
+     9.1
+    ],
+    [
+     "samtidig",
+     9.1
+    ],
+    [
+     "ordning",
+     9.0
+    ],
+    [
+     "diskutere",
+     9.0
+    ],
+    [
+     "samarbejde",
+     8.8
+    ]
+   ]
+  },
+  "2022 M+S+V": {
+   "V": [
+    [
+     "sags",
+     -10.6
+    ],
+    [
+     "sige",
+     -10.1
+    ],
+    [
+     "jeg",
+     -10.0
+    ],
+    [
+     "pågældende",
+     -8.8
+    ],
+    [
+     "virksomheder",
+     -8.8
+    ],
+    [
+     "ikke",
+     -8.5
+    ],
+    [
+     "håber",
+     -8.1
+    ],
+    [
+     "skal",
+     -8.1
+    ],
+    [
+     "altså",
+     -8.0
+    ],
+    [
+     "fat",
+     -7.8
+    ],
+    [
+     "private",
+     -7.7
+    ],
+    [
+     "skyld",
+     -7.7
+    ],
+    [
+     "bedre",
+     -7.7
+    ],
+    [
+     "også",
+     -7.7
+    ],
+    [
+     "fald",
+     -7.7
+    ],
+    [
+     "ordfører",
+     -7.6
+    ],
+    [
+     "allerede",
+     -7.4
+    ],
+    [
+     "osv",
+     -7.3
+    ],
+    [
+     "kan",
+     -7.2
+    ],
+    [
+     "glimrende",
+     -7.1
+    ]
+   ],
+   "S": [
+    [
+     "ordføreren",
+     20.0
+    ],
+    [
+     "som",
+     11.6
+    ],
+    [
+     "diskussion",
+     10.8
+    ],
+    [
+     "handler",
+     9.9
+    ],
+    [
+     "mennesker",
+     9.7
+    ],
+    [
+     "enormt",
+     9.5
+    ],
+    [
+     "ordførerens",
+     9.0
+    ],
+    [
+     "vedtagelse",
+     8.3
+    ],
+    [
+     "her",
+     8.2
+    ],
+    [
+     "parti",
+     7.9
+    ],
+    [
+     "socialdemokratisk",
+     7.6
+    ],
+    [
+     "formand",
+     7.5
+    ],
+    [
+     "spørge",
+     7.1
+    ],
+    [
+     "virkeligheden",
+     7.1
+    ],
+    [
+     "herinde",
+     6.8
+    ],
+    [
+     "udenrigsministeren",
+     6.8
+    ],
+    [
+     "arnepensionen",
+     6.7
+    ],
+    [
+     "folketinget",
+     6.6
+    ],
+    [
+     "partier",
+     6.6
+    ],
+    [
+     "konkret",
+     6.5
+    ]
+   ]
+  },
+  "2026 M+RV+S+SF": {
+   "V": [
+    [
+     "ministeren",
+     -8.7
+    ],
+    [
+     "regeringen",
+     -5.1
+    ],
+    [
+     "grønne",
+     -4.7
+    ],
+    [
+     "frugt",
+     -3.7
+    ],
+    [
+     "tak",
+     -3.6
+    ],
+    [
+     "fald",
+     -3.5
+    ],
+    [
+     "positivt",
+     -3.4
+    ],
+    [
+     "hvert",
+     -3.4
+    ],
+    [
+     "loven",
+     -3.3
+    ],
+    [
+     "sikre",
+     -3.3
+    ],
+    [
+     "miljø",
+     -3.2
+    ],
+    [
+     "statsministeren",
+     -3.2
+    ],
+    [
+     "ordet",
+     -3.2
+    ],
+    [
+     "balance",
+     -3.1
+    ],
+    [
+     "forbindelse",
+     -3.1
+    ],
+    [
+     "pct",
+     -3.0
+    ],
+    [
+     "lad",
+     -3.0
+    ],
+    [
+     "rent",
+     -2.9
+    ],
+    [
+     "trepart",
+     -2.9
+    ],
+    [
+     "øvrigt",
+     -2.8
+    ]
+   ],
+   "S": [
+    [
+     "det",
+     6.1
+    ],
+    [
+     "ordføreren",
+     4.6
+    ],
+    [
+     "danmark",
+     4.5
+    ],
+    [
+     "tydeligt",
+     4.2
+    ],
+    [
+     "som",
+     4.1
+    ],
+    [
+     "klart",
+     3.7
+    ],
+    [
+     "politik",
+     3.6
+    ],
+    [
+     "blå",
+     3.5
+    ],
+    [
+     "partier",
+     3.5
+    ],
+    [
+     "simpelt",
+     3.4
+    ],
+    [
+     "hinanden",
+     3.4
+    ],
+    [
+     "siger",
+     3.4
+    ],
+    [
+     "fra",
+     3.2
+    ],
+    [
+     "vigtigt",
+     3.1
+    ],
+    [
+     "sådan",
+     3.1
+    ],
+    [
+     "lande",
+     2.9
+    ],
+    [
+     "handler",
+     2.9
+    ],
+    [
+     "eneste",
+     2.8
+    ],
+    [
+     "andre",
+     2.8
+    ],
+    [
+     "her",
+     2.7
+    ]
+   ]
+  }
+ }
+}

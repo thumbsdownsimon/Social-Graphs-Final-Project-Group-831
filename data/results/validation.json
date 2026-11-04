@@ -1,0 +1,87 @@
+{
+ "checks": [
+  {
+   "check": "toy: observed party matrix",
+   "passed": true,
+   "detail": "[[0.0, 3.0], [2.0, 0.0]]"
+  },
+  {
+   "check": "toy: null spreads edges across cells",
+   "passed": true,
+   "detail": "[[0.6, 1.79], [0.79, 0.6]]"
+  },
+  {
+   "check": "assortativity matches networkx",
+   "passed": true,
+   "detail": "-0.0526 vs -0.0526"
+  },
+  {
+   "check": "status: S+V into government together",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "status: pair leaves together",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "status: both outside before and after",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "vote parser: new format",
+   "passed": true,
+   "detail": "{'for': {'S', 'SF'}, 'imod': {'V'}, 'hverken': set()}"
+  },
+  {
+   "check": "vote parser: old format",
+   "passed": true,
+   "detail": "{'for': {'S', 'RV'}, 'imod': {'DF', 'V'}, 'hverken': set()}"
+  },
+  {
+   "check": "vote parser: list ending in og",
+   "passed": true,
+   "detail": "{'for': {'M', 'S', 'V'}, 'imod': {'SF', 'DD'}, 'hverken': {'DF'}}"
+  },
+  {
+   "check": "vote parser: named member with initial",
+   "passed": true,
+   "detail": "{'for': {'NB', 'SF', 'LA'}, 'imod': {'M', 'S', 'V'}, 'hverken': {'DD'}}"
+  },
+  {
+   "check": "vote parser: tally format has no parties",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "S-V backbench challenges recounted from raw XML",
+   "passed": true,
+   "detail": "raw {'before': 321, 'after': 10} vs pipeline {'before': 321, 'after': 8}"
+  },
+  {
+   "check": "S-V agreement 2022-26: member votes vs vote summaries",
+   "passed": true,
+   "detail": "member votes 1.0000 on 1467 votes vs summaries 1.0 on 1557"
+  }
+ ],
+ "recounts": {
+  "s_v_challenges": {
+   "raw_xml": {
+    "before": 321,
+    "after": 10
+   },
+   "pipeline": {
+    "before": 321,
+    "after": 8
+   }
+  },
+  "s_v_votes": {
+   "from_member_votes": 1.0,
+   "votes": 1467,
+   "from_summaries": 1.0,
+   "summaries_n": 1557
+  }
+ }
+}

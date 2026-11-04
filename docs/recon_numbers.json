@@ -1,0 +1,2000 @@
+{
+ "note": "Sampled reconnaissance only, seed 831. See docs/data_recon.md.",
+ "totals": {
+  "Aktør": 18429,
+  "AktørAktør": 169577,
+  "Periode": 163,
+  "Afstemning": 10536,
+  "Stemme": 1840932,
+  "Sag": 99806,
+  "Sagstrin": 225754,
+  "SagAktør": 426948,
+  "Dokument": 1021465,
+  "Fil": 692193,
+  "Møde": 14048,
+  "Dagsordenspunkt": 34702,
+  "Emneord": 49252,
+  "EmneordSag": 276491
+ },
+ "api_behaviour": {
+  "expand_stemme_rows_returned": 100,
+  "stemme_rows_for_same_vote": 179,
+  "top_1000_rows_returned": 100
+ },
+ "text_fields": {
+  "sag_lovforslag": {
+   "rows": 5340,
+   "resume_nonempty": 5306,
+   "resume_ne_null_matches": 5340
+  },
+  "sag_beslutningsforslag": {
+   "rows": 3928,
+   "resume_nonempty": 3890,
+   "resume_ne_null_matches": 3928
+  },
+  "sag_par20": {
+   "rows": 58599,
+   "resume_nonempty": 128,
+   "resume_ne_null_matches": 58599
+  }
+ },
+ "votes_by_session": [
+  {
+   "periodeid": 20,
+   "kode": "20041",
+   "titel": "2004-05 (1. samling)",
+   "votes": 294,
+   "types": {
+    "1": 90,
+    "3": 14,
+    "4": 190
+   }
+  },
+  {
+   "periodeid": 21,
+   "kode": "20042",
+   "titel": "2004-05 (2. samling)",
+   "votes": 318,
+   "types": {
+    "1": 193,
+    "3": 20,
+    "4": 105
+   }
+  },
+  {
+   "periodeid": 22,
+   "kode": "20051",
+   "titel": "2005-06",
+   "votes": 448,
+   "types": {
+    "3": 39,
+    "1": 272,
+    "4": 137
+   }
+  },
+  {
+   "periodeid": 23,
+   "kode": "20061",
+   "titel": "2006-07",
+   "votes": 499,
+   "types": {
+    "3": 41,
+    "1": 250,
+    "4": 208
+   }
+  },
+  {
+   "periodeid": 24,
+   "kode": "20071",
+   "titel": "2007-08 (1. samling)",
+   "votes": 4,
+   "types": {
+    "3": 2,
+    "1": 2
+   }
+  },
+  {
+   "periodeid": 25,
+   "kode": "20072",
+   "titel": "2007-08 (2. samling)",
+   "votes": 407,
+   "types": {
+    "3": 38,
+    "1": 228,
+    "4": 141
+   }
+  },
+  {
+   "periodeid": 26,
+   "kode": "20081",
+   "titel": "2008-09",
+   "votes": 451,
+   "types": {
+    "3": 34,
+    "4": 142,
+    "1": 275
+   }
+  },
+  {
+   "periodeid": 27,
+   "kode": "20091",
+   "titel": "2009-10",
+   "votes": 467,
+   "types": {
+    "3": 37,
+    "1": 270,
+    "4": 160
+   }
+  },
+  {
+   "periodeid": 28,
+   "kode": "20101",
+   "titel": "2010-11 (1. samling)",
+   "votes": 453,
+   "types": {
+    "3": 35,
+    "1": 242,
+    "4": 176
+   }
+  },
+  {
+   "periodeid": 29,
+   "kode": "20102",
+   "titel": "2010-11 (2. samling)",
+   "votes": 1,
+   "types": {
+    "1": 1
+   }
+  },
+  {
+   "periodeid": 30,
+   "kode": "20111",
+   "titel": "2011-12",
+   "votes": 404,
+   "types": {
+    "3": 39,
+    "1": 227,
+    "4": 138
+   }
+  },
+  {
+   "periodeid": 31,
+   "kode": "20121",
+   "titel": "2012-13",
+   "votes": 517,
+   "types": {
+    "3": 44,
+    "1": 274,
+    "4": 199
+   }
+  },
+  {
+   "periodeid": 32,
+   "kode": "20131",
+   "titel": "2013-14",
+   "votes": 402,
+   "types": {
+    "2": 1,
+    "1": 330,
+    "3": 35,
+    "4": 36
+   }
+  },
+  {
+   "periodeid": 35,
+   "kode": "20141",
+   "titel": "2014-15 (1. samling)",
+   "votes": 403,
+   "types": {
+    "3": 33,
+    "2": 4,
+    "1": 223,
+    "4": 143
+   }
+  },
+  {
+   "periodeid": 138,
+   "kode": "20142",
+   "titel": "2014-15 (2. samling)",
+   "votes": 14,
+   "types": {
+    "1": 9,
+    "2": 3,
+    "4": 2
+   }
+  },
+  {
+   "periodeid": 139,
+   "kode": "20151",
+   "titel": "2015-16",
+   "votes": 574,
+   "types": {
+    "2": 6,
+    "3": 48,
+    "1": 266,
+    "4": 254
+   }
+  },
+  {
+   "periodeid": 144,
+   "kode": "20161",
+   "titel": "2016-17",
+   "votes": 488,
+   "types": {
+    "3": 62,
+    "1": 273,
+    "4": 153
+   }
+  },
+  {
+   "periodeid": 146,
+   "kode": "20171",
+   "titel": "2017-18",
+   "votes": 494,
+   "types": {
+    "3": 45,
+    "4": 143,
+    "1": 306
+   }
+  },
+  {
+   "periodeid": 148,
+   "kode": "20181",
+   "titel": "2018-19 (1. samling)",
+   "votes": 449,
+   "types": {
+    "3": 43,
+    "1": 268,
+    "4": 138
+   }
+  },
+  {
+   "periodeid": 150,
+   "kode": "20182",
+   "titel": "2018-19 (2. samling)",
+   "votes": 4,
+   "types": {
+    "1": 4
+   }
+  },
+  {
+   "periodeid": 151,
+   "kode": "20191",
+   "titel": "2019-20",
+   "votes": 473,
+   "types": {
+    "3": 62,
+    "1": 295,
+    "4": 116
+   }
+  },
+  {
+   "periodeid": 153,
+   "kode": "20201",
+   "titel": "2020-21",
+   "votes": 736,
+   "types": {
+    "3": 88,
+    "1": 432,
+    "4": 216
+   }
+  },
+  {
+   "periodeid": 155,
+   "kode": "20211",
+   "titel": "2021-22",
+   "votes": 624,
+   "types": {
+    "3": 77,
+    "1": 327,
+    "4": 220
+   }
+  },
+  {
+   "periodeid": 157,
+   "kode": "20221",
+   "titel": "2022-23 (1. samling)",
+   "votes": 1,
+   "types": {
+    "3": 1
+   }
+  },
+  {
+   "periodeid": 158,
+   "kode": "20222",
+   "titel": "2022-23 (2. samling)",
+   "votes": 355,
+   "types": {
+    "1": 205,
+    "4": 138,
+    "3": 12
+   }
+  },
+  {
+   "periodeid": 160,
+   "kode": "20231",
+   "titel": "2023-24",
+   "votes": 556,
+   "types": {
+    "3": 33,
+    "1": 338,
+    "4": 185
+   }
+  },
+  {
+   "periodeid": 163,
+   "kode": "20241",
+   "titel": "2024-25",
+   "votes": 466,
+   "types": {
+    "3": 34,
+    "1": 358,
+    "4": 74
+   }
+  },
+  {
+   "periodeid": 165,
+   "kode": "20251",
+   "titel": "2025-26 (1. samling)",
+   "votes": 192,
+   "types": {
+    "3": 10,
+    "1": 103,
+    "4": 79
+   }
+  },
+  {
+   "periodeid": 167,
+   "kode": "20252",
+   "titel": "2025-26 (2. samling)",
+   "votes": 41,
+   "types": {
+    "1": 39,
+    "3": 1,
+    "4": 1
+   }
+  },
+  {
+   "periodeid": 168,
+   "kode": "20261",
+   "titel": "2026-27",
+   "votes": 1,
+   "types": {
+    "3": 1
+   }
+  }
+ ],
+ "votes_unmapped_to_plenary_meeting": 0,
+ "persons": {
+  "person_actors": 3414,
+  "duplicate_names": {
+   "finn sørensen": 2,
+   "peter christensen": 2,
+   "kim andersen (udpeget af v)": 2,
+   "thomas jensen": 2,
+   "kirsten hermansen": 4,
+   "pernille boye koch": 2,
+   "thomas søndergaard sarup": 2,
+   "lars emil johansen": 2,
+   "kamilla kjelgaard": 2,
+   "dennis barndorph sichlau": 2,
+   "niels andersen": 3,
+   "nina berrig": 2,
+   "ove jensen": 2,
+   "thomas fich": 2,
+   "lars jørgensen": 2,
+   "tina bostrup": 2,
+   "jesper schaumburg-müller": 2,
+   "signe agertoft hansen": 2,
+   "karen margrethe stevns": 2,
+   "ingrid rasmussen": 2,
+   "hans peter baadsgaard": 2,
+   "svend aage fauerholdt": 2,
+   "annebeth runge gjessing": 2,
+   "kirsten jensen": 2,
+   "ebba strange": 2,
+   "carl holst": 2,
+   "jørgen jørgensen": 2,
+   "poul nielsen": 2,
+   "peter nielsen": 2,
+   "iris madsen": 2,
+   "jens frandsen": 2,
+   "jane alrø sørensen": 2,
+   "torben lund": 2,
+   "christina elisabeth ringvard": 2,
+   "frank pedersen": 2,
+   "kurt hansen": 2,
+   "søren jensen": 3,
+   "niels ravn": 2,
+   "helge larsen": 2,
+   "knud nielsen": 2,
+   "svend andersen": 2,
+   "jørgen jensen": 2,
+   "jens peter jensen": 2,
+   "carl nielsen": 2,
+   "henning rasmussen": 2,
+   "asger jensen": 2,
+   "peter larsen": 2,
+   "anders storgaard": 2,
+   "erik hansen": 2,
+   "malte larsen": 2,
+   "lasse ægidius qvist": 2,
+   "anders sinkjær-rasmussen": 2,
+   "rikke abildgaard ryberg": 2,
+   "zahra nazish hussain": 2
+  },
+  "biografi_nonempty": 2020
+ },
+ "debate_xml": [
+  {
+   "session": "20091",
+   "files": 109,
+   "mb": 90.5,
+   "speeches": 1547,
+   "words": 153775,
+   "with_name": 1544,
+   "name_matches_aktoer": 1442,
+   "with_party": 1296,
+   "with_case": 581,
+   "with_start_time": 1547,
+   "chair": 809,
+   "chair_words": 6715,
+   "chair_announces_short_remark": 82,
+   "speaker_changes_in_debate": 730,
+   "mentions": 497,
+   "mentions_resolved_exact": 421,
+   "status": {
+    "Typeset": 1547
+   },
+   "top_roles": {
+    "formand": 808,
+    "medlem": 483,
+    "minister": 248,
+    "MødeSlut": 3,
+    "": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20101",
+   "files": 108,
+   "mb": 64.6,
+   "speeches": 1387,
+   "words": 163737,
+   "with_name": 1385,
+   "name_matches_aktoer": 1305,
+   "with_party": 1239,
+   "with_case": 989,
+   "with_start_time": 1387,
+   "chair": 726,
+   "chair_words": 7229,
+   "chair_announces_short_remark": 118,
+   "mentions": 530,
+   "mentions_resolved_exact": 417,
+   "speaker_changes_in_debate": 654,
+   "status": {
+    "Typeset": 1387
+   },
+   "top_roles": {
+    "formand": 726,
+    "medlem": 509,
+    "minister": 146,
+    "MødeSlut": 3,
+    "": 2
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20102",
+   "files": 2,
+   "mb": 0.0,
+   "speeches": 18,
+   "words": 1986,
+   "with_name": 18,
+   "name_matches_aktoer": 15,
+   "with_party": 16,
+   "with_case": 5,
+   "with_start_time": 18,
+   "chair": 14,
+   "chair_words": 1222,
+   "chair_announces_short_remark": 0,
+   "speaker_changes_in_debate": 2,
+   "status": {
+    "Typeset": 18
+   },
+   "top_roles": {
+    "midlertidig formand": 9,
+    "formand": 3,
+    "MødeSlut": 2,
+    "aldersformanden": 2,
+    "medlem": 1
+   },
+   "sampled_files": 2
+  },
+  {
+   "session": "20111",
+   "files": 102,
+   "mb": 71.1,
+   "speeches": 1800,
+   "words": 167988,
+   "with_name": 1797,
+   "name_matches_aktoer": 1738,
+   "with_party": 1577,
+   "with_case": 1125,
+   "with_start_time": 1800,
+   "chair": 938,
+   "chair_words": 9244,
+   "chair_announces_short_remark": 152,
+   "speaker_changes_in_debate": 853,
+   "mentions": 442,
+   "mentions_resolved_exact": 384,
+   "status": {
+    "Typeset": 1800
+   },
+   "top_roles": {
+    "formand": 938,
+    "medlem": 635,
+    "minister": 220,
+    "": 3,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20121",
+   "files": 111,
+   "mb": 63.6,
+   "speeches": 1428,
+   "words": 163179,
+   "with_name": 1425,
+   "name_matches_aktoer": 1364,
+   "with_party": 1258,
+   "with_case": 902,
+   "with_start_time": 1428,
+   "chair": 731,
+   "chair_words": 6857,
+   "chair_announces_short_remark": 114,
+   "speaker_changes_in_debate": 682,
+   "mentions": 421,
+   "mentions_resolved_exact": 343,
+   "status": {
+    "Typeset": 1428
+   },
+   "top_roles": {
+    "formand": 731,
+    "medlem": 521,
+    "minister": 167,
+    "Pause": 3,
+    "": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20131",
+   "files": 109,
+   "mb": 56.9,
+   "speeches": 1104,
+   "words": 127410,
+   "with_name": 1104,
+   "name_matches_aktoer": 1063,
+   "with_party": 1043,
+   "with_case": 1094,
+   "with_start_time": 1104,
+   "chair": 579,
+   "chair_words": 6078,
+   "chair_announces_short_remark": 89,
+   "mentions": 199,
+   "mentions_resolved_exact": 151,
+   "speaker_changes_in_debate": 519,
+   "status": {
+    "Typeset": 1104
+   },
+   "top_roles": {
+    "formand": 579,
+    "medlem": 460,
+    "minister": 61,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20141",
+   "files": 98,
+   "mb": 55.2,
+   "speeches": 1980,
+   "words": 189398,
+   "with_name": 1979,
+   "name_matches_aktoer": 1872,
+   "with_party": 1793,
+   "with_case": 1444,
+   "with_start_time": 1980,
+   "chair": 1020,
+   "chair_words": 9592,
+   "chair_announces_short_remark": 111,
+   "speaker_changes_in_debate": 954,
+   "mentions": 415,
+   "mentions_resolved_exact": 344,
+   "status": {
+    "Typeset": 1980
+   },
+   "top_roles": {
+    "formand": 1020,
+    "medlem": 769,
+    "minister": 186,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20142",
+   "files": 6,
+   "mb": 1.7,
+   "speeches": 836,
+   "words": 81392,
+   "with_name": 836,
+   "name_matches_aktoer": 776,
+   "with_party": 793,
+   "with_case": 816,
+   "with_start_time": 836,
+   "chair": 434,
+   "chair_words": 8541,
+   "chair_announces_short_remark": 147,
+   "mentions": 80,
+   "mentions_resolved_exact": 71,
+   "speaker_changes_in_debate": 398,
+   "status": {
+    "Typeset": 836
+   },
+   "top_roles": {
+    "formand": 428,
+    "medlem": 361,
+    "minister": 37,
+    "midlertidig formand": 6,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20151",
+   "files": 112,
+   "mb": 80.8,
+   "speeches": 1178,
+   "words": 131597,
+   "with_name": 1177,
+   "name_matches_aktoer": 1113,
+   "with_party": 1099,
+   "with_case": 1167,
+   "with_start_time": 1178,
+   "chair": 600,
+   "chair_words": 6187,
+   "chair_announces_short_remark": 138,
+   "mentions": 167,
+   "mentions_resolved_exact": 124,
+   "speaker_changes_in_debate": 569,
+   "status": {
+    "Typeset": 1178
+   },
+   "top_roles": {
+    "formand": 600,
+    "medlem": 495,
+    "minister": 78,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20161",
+   "files": 113,
+   "mb": 78.2,
+   "speeches": 1845,
+   "words": 193749,
+   "with_name": 1843,
+   "name_matches_aktoer": 1744,
+   "with_party": 1645,
+   "with_case": 1326,
+   "with_start_time": 1845,
+   "chair": 957,
+   "chair_words": 10349,
+   "chair_announces_short_remark": 120,
+   "mentions": 213,
+   "mentions_resolved_exact": 165,
+   "speaker_changes_in_debate": 879,
+   "status": {
+    "Typeset": 1845
+   },
+   "top_roles": {
+    "formand": 957,
+    "medlem": 684,
+    "minister": 185,
+    "fungerende minister": 13,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20171",
+   "files": 108,
+   "mb": 60.6,
+   "speeches": 812,
+   "words": 95843,
+   "with_name": 812,
+   "name_matches_aktoer": 770,
+   "with_party": 763,
+   "with_case": 802,
+   "with_start_time": 812,
+   "chair": 424,
+   "chair_words": 4796,
+   "chair_announces_short_remark": 58,
+   "speaker_changes_in_debate": 384,
+   "mentions": 117,
+   "mentions_resolved_exact": 96,
+   "status": {
+    "Typeset": 812
+   },
+   "top_roles": {
+    "formand": 424,
+    "medlem": 335,
+    "minister": 49,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20181",
+   "files": 93,
+   "mb": 57.5,
+   "speeches": 450,
+   "words": 80119,
+   "with_name": 450,
+   "name_matches_aktoer": 410,
+   "with_party": 434,
+   "with_case": 427,
+   "with_start_time": 450,
+   "chair": 243,
+   "chair_words": 10416,
+   "chair_announces_short_remark": 40,
+   "speaker_changes_in_debate": 202,
+   "mentions": 75,
+   "mentions_resolved_exact": 45,
+   "status": {
+    "Typeset": 450
+   },
+   "top_roles": {
+    "formand": 239,
+    "medlem": 187,
+    "minister": 16,
+    "aldersformanden": 4,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20182",
+   "files": 8,
+   "mb": 0.3,
+   "speeches": 48,
+   "words": 7599,
+   "with_tingdok": 45,
+   "with_name": 48,
+   "name_matches_aktoer": 45,
+   "with_party": 45,
+   "with_case": 33,
+   "with_start_time": 48,
+   "chair": 30,
+   "chair_words": 1842,
+   "chair_announces_short_remark": 5,
+   "speaker_changes_in_debate": 15,
+   "status": {
+    "Typeset": 48
+   },
+   "top_roles": {
+    "formand": 30,
+    "medlem": 12,
+    "MødeSlut": 3,
+    "minister": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20191",
+   "files": 151,
+   "mb": 82.4,
+   "speeches": 1047,
+   "words": 104669,
+   "with_tingdok": 1044,
+   "with_name": 1047,
+   "name_matches_aktoer": 1031,
+   "with_party": 991,
+   "with_case": 1036,
+   "with_start_time": 1047,
+   "chair": 579,
+   "chair_words": 9756,
+   "chair_announces_short_remark": 158,
+   "mentions": 274,
+   "mentions_resolved_exact": 229,
+   "speaker_changes_in_debate": 463,
+   "status": {
+    "Typeset": 1047
+   },
+   "top_roles": {
+    "formand": 579,
+    "medlem": 409,
+    "minister": 56,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20201",
+   "files": 138,
+   "mb": 99.6,
+   "speeches": 1029,
+   "words": 107021,
+   "with_tingdok": 1025,
+   "with_name": 1029,
+   "name_matches_aktoer": 1025,
+   "with_party": 970,
+   "with_case": 1020,
+   "with_start_time": 1029,
+   "chair": 525,
+   "chair_words": 6595,
+   "chair_announces_short_remark": 179,
+   "speaker_changes_in_debate": 500,
+   "mentions": 149,
+   "mentions_resolved_exact": 135,
+   "status": {
+    "Typeset": 1029
+   },
+   "top_roles": {
+    "formand": 525,
+    "medlem": 441,
+    "minister": 49,
+    "fungerende minister": 10,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20211",
+   "files": 135,
+   "mb": 70.0,
+   "speeches": 1009,
+   "words": 114710,
+   "with_tingdok": 1005,
+   "with_name": 1009,
+   "name_matches_aktoer": 1005,
+   "with_party": 923,
+   "with_case": 875,
+   "with_start_time": 1009,
+   "chair": 533,
+   "chair_words": 8256,
+   "chair_announces_short_remark": 108,
+   "speaker_changes_in_debate": 473,
+   "mentions": 103,
+   "mentions_resolved_exact": 98,
+   "status": {
+    "Typeset": 1009
+   },
+   "top_roles": {
+    "formand": 533,
+    "medlem": 386,
+    "minister": 86,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20221",
+   "files": 3,
+   "mb": 2.2,
+   "speeches": 1622,
+   "words": 141910,
+   "with_tingdok": 1616,
+   "with_name": 1621,
+   "name_matches_aktoer": 1609,
+   "with_party": 1581,
+   "with_case": 1606,
+   "with_start_time": 1622,
+   "chair": 813,
+   "chair_words": 12605,
+   "chair_announces_short_remark": 110,
+   "mentions": 452,
+   "mentions_resolved_exact": 407,
+   "speaker_changes_in_debate": 805,
+   "status": {
+    "Typeset": 1622
+   },
+   "top_roles": {
+    "formand": 809,
+    "medlem": 763,
+    "minister": 40,
+    "aldersformanden": 4,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20222",
+   "files": 73,
+   "mb": 56.9,
+   "speeches": 2264,
+   "words": 222067,
+   "with_tingdok": 2260,
+   "with_name": 2264,
+   "name_matches_aktoer": 2238,
+   "with_party": 2152,
+   "with_case": 2152,
+   "with_start_time": 2264,
+   "chair": 1144,
+   "chair_words": 10192,
+   "chair_announces_short_remark": 249,
+   "speaker_changes_in_debate": 1111,
+   "mentions": 240,
+   "mentions_resolved_exact": 211,
+   "status": {
+    "Typeset": 2264
+   },
+   "top_roles": {
+    "formand": 1144,
+    "medlem": 1004,
+    "minister": 112,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20231",
+   "files": 106,
+   "mb": 82.7,
+   "speeches": 1041,
+   "words": 104859,
+   "with_tingdok": 1025,
+   "with_name": 1028,
+   "name_matches_aktoer": 1022,
+   "with_party": 954,
+   "with_case": 924,
+   "with_start_time": 1041,
+   "chair": 547,
+   "chair_words": 8804,
+   "chair_announces_short_remark": 148,
+   "speaker_changes_in_debate": 476,
+   "mentions": 73,
+   "mentions_resolved_exact": 69,
+   "status": {
+    "Typeset": 1041
+   },
+   "top_roles": {
+    "formand": 547,
+    "medlem": 404,
+    "minister": 74,
+    "": 13,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20241",
+   "files": 112,
+   "mb": 85.0,
+   "speeches": 340,
+   "words": 40603,
+   "with_tingdok": 337,
+   "with_name": 340,
+   "name_matches_aktoer": 337,
+   "with_party": 320,
+   "with_case": 328,
+   "with_start_time": 340,
+   "chair": 176,
+   "chair_words": 2434,
+   "chair_announces_short_remark": 74,
+   "speaker_changes_in_debate": 161,
+   "mentions": 20,
+   "mentions_resolved_exact": 16,
+   "status": {
+    "Typeset": 340
+   },
+   "top_roles": {
+    "formand": 176,
+    "medlem": 141,
+    "minister": 20,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20251",
+   "files": 57,
+   "mb": 35.8,
+   "speeches": 1238,
+   "words": 141792,
+   "with_tingdok": 1233,
+   "with_name": 1237,
+   "name_matches_aktoer": 1233,
+   "with_party": 1134,
+   "with_case": 1046,
+   "with_start_time": 1238,
+   "chair": 634,
+   "chair_words": 7188,
+   "chair_announces_short_remark": 129,
+   "speaker_changes_in_debate": 598,
+   "mentions": 94,
+   "mentions_resolved_exact": 84,
+   "status": {
+    "Proofed": 979,
+    "Typeset": 259
+   },
+   "top_roles": {
+    "formand": 634,
+    "medlem": 496,
+    "minister": 103,
+    "MødeSlut": 3,
+    "Pause": 1
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20252",
+   "files": 24,
+   "mb": 10.1,
+   "speeches": 1520,
+   "words": 138050,
+   "with_tingdok": 1510,
+   "with_name": 1515,
+   "name_matches_aktoer": 1510,
+   "with_party": 1338,
+   "with_case": 926,
+   "with_start_time": 1520,
+   "chair": 792,
+   "chair_words": 8140,
+   "chair_announces_short_remark": 69,
+   "speaker_changes_in_debate": 718,
+   "mentions": 223,
+   "mentions_resolved_exact": 202,
+   "status": {
+    "Proofed": 1515,
+    "Typeset": 5
+   },
+   "top_roles": {
+    "formand": 792,
+    "medlem": 541,
+    "minister": 171,
+    "fungerende minister": 6,
+    "": 5
+   },
+   "sampled_files": 3
+  },
+  {
+   "session": "20261",
+   "files": 11,
+   "mb": 8.2,
+   "speeches": 542,
+   "words": 59235,
+   "with_tingdok": 539,
+   "with_name": 542,
+   "name_matches_aktoer": 539,
+   "with_party": 429,
+   "with_case": 116,
+   "with_start_time": 542,
+   "chair": 291,
+   "chair_words": 9069,
+   "chair_announces_short_remark": 39,
+   "speaker_changes_in_debate": 248,
+   "mentions": 27,
+   "mentions_resolved_exact": 26,
+   "status": {
+    "Proofed": 15,
+    "Typeset": 3,
+    "Released": 524
+   },
+   "top_roles": {
+    "formand": 286,
+    "medlem": 140,
+    "minister": 108,
+    "aldersformanden": 5,
+    "MødeSlut": 3
+   },
+   "sampled_files": 3
+  }
+ ],
+ "tingdok_ids": {
+  "distinct": 298,
+  "with_more_than_one_name": {
+   "100629": [
+    "jeppe kofod",
+    "lars løkke rasmussen"
+   ],
+   "525272": [
+    "kaare dybvad bek",
+    "mattias tesfaye",
+    "morten bødskov"
+   ],
+   "106936": [
+    "louise elholm",
+    "louise schack elholm"
+   ],
+   "100650": [
+    "ane halsboe-jørgensen",
+    "jeppe bruus",
+    "morten bødskov"
+   ],
+   "519118": [
+    "lisbeth bech poulsen",
+    "lisbeth bech-nielsen"
+   ],
+   "526953": [
+    "mattias tesfaye",
+    "pernille rosenkrantz-theil"
+   ],
+   "527771": [
+    "benny engelbrecht",
+    "thomas danielsen"
+   ],
+   "521336": [
+    "christina egelund",
+    "jesper petersen"
+   ],
+   "527696": [
+    "jacob jensen",
+    "rasmus prehn"
+   ],
+   "528557": [
+    "helene brydensholt",
+    "helene liliendahl brydensholt"
+   ],
+   "100469": [
+    "ane halsboe-jørgensen",
+    "kaare dybvad bek"
+   ],
+   "528580": [
+    "charlotte munch",
+    "charlotte munch pasler"
+   ],
+   "100632": [
+    "nicolai wammen",
+    "peter hummelgaard"
+   ],
+   "526947": [
+    "lars aagaard",
+    "samira nawa"
+   ]
+  }
+ },
+ "mention_examples": [
+  {
+   "speaker": "eva kjer hansen",
+   "mention": "Kristen Touborgs",
+   "session": "20091"
+  },
+  {
+   "speaker": "kristian jensen",
+   "mention": "Mette Gjerskov",
+   "session": "20091"
+  },
+  {
+   "speaker": "brian mikkelsen",
+   "mention": "Jesper Langballe",
+   "session": "20091"
+  },
+  {
+   "speaker": "inger støjberg",
+   "mention": "Bjarne Laustsen",
+   "session": "20091"
+  },
+  {
+   "speaker": "søren gade",
+   "mention": "Frank Aaen",
+   "session": "20091"
+  },
+  {
+   "speaker": "troels lund poulsen",
+   "mention": "Flemming Møller Mortensens",
+   "session": "20091"
+  },
+  {
+   "speaker": "lykke friis",
+   "mention": "Per Clausen",
+   "session": "20091"
+  },
+  {
+   "speaker": "henrik høegh",
+   "mention": "Bjarne Laustsen",
+   "session": "20101"
+  },
+  {
+   "speaker": "kim andersen",
+   "mention": "Simon Emil Ammitzbøll",
+   "session": "20101"
+  },
+  {
+   "speaker": "simon emil ammitzbøll",
+   "mention": "Kim Andersen",
+   "session": "20101"
+  },
+  {
+   "speaker": "john dyrby paulsen",
+   "mention": "Jesper Langballe",
+   "session": "20101"
+  },
+  {
+   "speaker": "john dyrby paulsen",
+   "mention": "Jesper Langballe",
+   "session": "20101"
+  }
+ ],
+ "membership": {
+  "party_group_actors": 508,
+  "rows": 5673,
+  "rows_with_null_start": 801,
+  "members_per_session": {
+   "20": 181,
+   "21": 176,
+   "22": 191,
+   "23": 186,
+   "24": 170,
+   "25": 178,
+   "26": 182,
+   "27": 189,
+   "28": 180,
+   "29": 157,
+   "30": 171,
+   "31": 183,
+   "32": 180,
+   "35": 176,
+   "138": 158,
+   "139": 180,
+   "144": 173,
+   "146": 185,
+   "148": 169,
+   "150": 146,
+   "151": 160,
+   "153": 163,
+   "155": 159,
+   "157": 147,
+   "158": 196,
+   "160": 210,
+   "163": 205,
+   "165": 191,
+   "167": 191,
+   "168": 183
+  }
+ },
+ "party_switchers": {
+  "people_with_any_membership": 782,
+  "people_changing_party": 56,
+  "of_which_via_UFG": 28,
+  "recent_histories": {
+   "Bent Bøgsted": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD"
+   ],
+   "Kristian Thulesen Dahl": [
+    "20191:DF",
+    "20201:DF",
+    "20211:UFG"
+   ],
+   "Jens Rohde": [
+    "20191:RV",
+    "20201:KD",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Lars Løkke Rasmussen": [
+    "20191:V",
+    "20201:UFG",
+    "20211:M",
+    "20221:M",
+    "20222:M",
+    "20231:M",
+    "20241:M",
+    "20251:M",
+    "20252:M",
+    "20261:M"
+   ],
+   "Pernille Rosenkrantz-Theil": [
+    "20191:S",
+    "20201:S",
+    "20211:S",
+    "20221:S",
+    "20222:S",
+    "20231:S",
+    "20241:S"
+   ],
+   "Naser Khader": [
+    "20191:KF",
+    "20201:UFG",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Hans Kristian Skibby": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD",
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Søren Espersen": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD",
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD"
+   ],
+   "Morten Messerschmidt": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DF",
+    "20221:DF",
+    "20222:DF",
+    "20231:DF",
+    "20241:DF",
+    "20251:DF",
+    "20252:DF",
+    "20261:DF"
+   ],
+   "Simon Emil Ammitzbøll-Bille": [
+    "20191:UFG",
+    "20201:UFG",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Dennis Flydtkjær": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD",
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Astrid Krag": [
+    "20191:S",
+    "20201:S",
+    "20211:S",
+    "20221:S",
+    "20222:S",
+    "20231:S",
+    "20241:S",
+    "20251:S"
+   ],
+   "Liselott Blixt": [
+    "20191:DF",
+    "20201:DF",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Marlene Harpsøe": [
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Ida Auken": [
+    "20191:RV",
+    "20201:S",
+    "20211:S",
+    "20221:S",
+    "20222:S",
+    "20231:S",
+    "20241:S",
+    "20251:S",
+    "20252:S",
+    "20261:S"
+   ],
+   "Uffe Elbæk": [
+    "20191:UFG",
+    "20201:UFG",
+    "20211:FG",
+    "20221:ALT"
+   ],
+   "Marie Krarup": [
+    "20191:DF",
+    "20201:DF",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Karina Adsbøl": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD",
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Preben Bang Henriksen": [
+    "20191:V",
+    "20201:V",
+    "20211:V",
+    "20221:V",
+    "20222:V",
+    "20231:V",
+    "20241:V",
+    "20251:V",
+    "20252:V",
+    "20261:UFG"
+   ],
+   "Jakob Engel-Schmidt": [
+    "20222:M",
+    "20231:M",
+    "20241:M",
+    "20251:M",
+    "20252:M",
+    "20261:M"
+   ],
+   "Lise Bech": [
+    "20191:DF",
+    "20201:DF",
+    "20211:DD",
+    "20221:DD",
+    "20222:DD",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD"
+   ],
+   "Britt Bager": [
+    "20191:V",
+    "20201:KF",
+    "20211:KF",
+    "20221:KF"
+   ],
+   "Marcus Knuth": [
+    "20191:KF",
+    "20201:KF",
+    "20211:KF",
+    "20221:KF",
+    "20252:KF",
+    "20261:KF"
+   ],
+   "Christina Egelund": [
+    "20252:M"
+   ],
+   "Rasmus Nordqvist": [
+    "20191:UFG",
+    "20201:SF",
+    "20211:SF",
+    "20221:SF"
+   ],
+   "Orla Østerby": [
+    "20191:KF",
+    "20201:UFG",
+    "20211:UFG",
+    "20221:UFG"
+   ],
+   "Sikandar Siddique": [
+    "20191:UFG",
+    "20201:UFG",
+    "20211:FG",
+    "20221:FG"
+   ],
+   "Susanne Zimmer": [
+    "20191:UFG",
+    "20201:UFG",
+    "20211:FG",
+    "20221:FG"
+   ],
+   "Pernille Vermund": [
+    "20191:NB",
+    "20201:NB",
+    "20211:NB",
+    "20221:NB",
+    "20222:NB",
+    "20231:UFG",
+    "20241:LA",
+    "20251:LA",
+    "20252:LA",
+    "20261:LA"
+   ],
+   "Lars Boje Mathiesen": [
+    "20191:NB",
+    "20201:NB",
+    "20211:NB",
+    "20221:NB",
+    "20222:UFG",
+    "20231:UFG",
+    "20241:BP",
+    "20251:BP",
+    "20252:BP",
+    "20261:BP"
+   ],
+   "Mette Thiesen": [
+    "20191:NB",
+    "20201:NB",
+    "20211:NB",
+    "20221:NB",
+    "20222:UFG",
+    "20231:DF",
+    "20241:DF",
+    "20251:DF",
+    "20252:DF",
+    "20261:DF"
+   ],
+   "Gitte Willumsen": [
+    "20191:V",
+    "20211:KF",
+    "20221:KF"
+   ],
+   "Susan Kronborg": [
+    "20201:RV",
+    "20211:RV",
+    "20221:RV",
+    "20252:M",
+    "20261:M"
+   ],
+   "Mads Fuglede": [
+    "20222:V",
+    "20231:DD",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Christian Friis Bach": [
+    "20222:RV",
+    "20231:RV",
+    "20241:V",
+    "20251:V"
+   ],
+   "Mikkel Bjørn": [
+    "20222:NB",
+    "20231:DF",
+    "20241:DF",
+    "20251:DF",
+    "20252:DF",
+    "20261:DF"
+   ],
+   "Peter Seier Christensen": [
+    "20222:NB",
+    "20231:UFG",
+    "20241:UFG",
+    "20251:UFG"
+   ],
+   "Kim Edberg Andersen": [
+    "20222:NB",
+    "20231:UFG",
+    "20241:DD",
+    "20251:DD",
+    "20252:DD",
+    "20261:DD"
+   ],
+   "Karin Liltorp": [
+    "20222:M",
+    "20231:M",
+    "20241:UFG",
+    "20251:ALT"
+   ],
+   "Jeppe Søe": [
+    "20222:M",
+    "20231:UFG",
+    "20241:UFG",
+    "20251:UFG"
+   ],
+   "Mike Villa Fonseca": [
+    "20222:M",
+    "20231:UFG",
+    "20241:UFG",
+    "20251:UFG"
+   ],
+   "Aki-Matilda Høegh-Dam": [
+    "20222:SIU",
+    "20231:SIU",
+    "20241:N",
+    "20251:N"
+   ]
+  }
+ },
+ "cosponsorship_sample": {
+  "2019-20": {
+   "beslutningsforslag": 185,
+   "sampled": 30,
+   "mean_proposers": 4.633333333333334,
+   "share_with_zero_proposers": 0.03333333333333333,
+   "share_multi_party": 0.16666666666666666,
+   "lovforslag": 251,
+   "paragraf20_questions": 1880
+  },
+  "2022-23": {
+   "beslutningsforslag": 122,
+   "sampled": 30,
+   "mean_proposers": 5.3,
+   "share_with_zero_proposers": 0.0,
+   "share_multi_party": 0.4666666666666667,
+   "lovforslag": 146,
+   "paragraf20_questions": 865
+  },
+  "2024-25": {
+   "beslutningsforslag": 184,
+   "sampled": 30,
+   "mean_proposers": 5.466666666666667,
+   "share_with_zero_proposers": 0.0,
+   "share_multi_party": 0.2,
+   "lovforslag": 262,
+   "paragraf20_questions": 1565
+  }
+ },
+ "party_line_sample": [
+  {
+   "kode": "20041",
+   "titel": "2004-05 (1. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.4100558659217877,
+   "cast_without_party_lookup": 0.054924242424242424
+  },
+  {
+   "kode": "20042",
+   "titel": "2004-05 (2. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.85,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.0004597701149425287,
+   "absent_share": 0.3924581005586592,
+   "cast_without_party_lookup": 0.08
+  },
+  {
+   "kode": "20051",
+   "titel": "2005-06",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.1,
+   "rebel_share_of_cast": 0.002273760800363802,
+   "absent_share": 0.3857541899441341,
+   "cast_without_party_lookup": 0.07730786721236926
+  },
+  {
+   "kode": "20061",
+   "titel": "2006-07",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.7,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.0004553734061930783,
+   "absent_share": 0.3865921787709497,
+   "cast_without_party_lookup": 0.07422586520947176
+  },
+  {
+   "kode": "20071",
+   "titel": "2007-08 (1. samling)",
+   "sampled_votes": 4,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 1.0,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.41620111731843573,
+   "cast_without_party_lookup": 0.08851674641148326
+  },
+  {
+   "kode": "20072",
+   "titel": "2007-08 (2. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 178,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.8,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.0009111617312072893,
+   "absent_share": 0.38567030506577105,
+   "cast_without_party_lookup": 0.0774487471526196
+  },
+  {
+   "kode": "20081",
+   "titel": "2008-09",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.41396648044692735,
+   "cast_without_party_lookup": 0.08007626310772165
+  },
+  {
+   "kode": "20091",
+   "titel": "2009-10",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.8,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.002786809103576405,
+   "absent_share": 0.3986033519553073,
+   "cast_without_party_lookup": 0.07570831398049234
+  },
+  {
+   "kode": "20101",
+   "titel": "2010-11 (1. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 176,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.85,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.3899916130835896,
+   "cast_without_party_lookup": 0.08249312557286893
+  },
+  {
+   "kode": "20102",
+   "titel": "2010-11 (2. samling)",
+   "sampled_votes": 1,
+   "rows_per_vote_min": 144,
+   "rows_per_vote_max": 144,
+   "share_contested": 0.0,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.0,
+   "cast_without_party_lookup": 0.125
+  },
+  {
+   "kode": "20111",
+   "titel": "2011-12",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.85,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0013914656771799629,
+   "absent_share": 0.39776536312849164,
+   "cast_without_party_lookup": 0.10667903525046382
+  },
+  {
+   "kode": "20121",
+   "titel": "2012-13",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.7,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.0009225092250922509,
+   "absent_share": 0.394413407821229,
+   "cast_without_party_lookup": 0.10009225092250923
+  },
+  {
+   "kode": "20131",
+   "titel": "2013-14",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.002819548872180451,
+   "absent_share": 0.40558659217877097,
+   "cast_without_party_lookup": 0.10714285714285714
+  },
+  {
+   "kode": "20141",
+   "titel": "2014-15 (1. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.00045829514207149406,
+   "absent_share": 0.3905027932960894,
+   "cast_without_party_lookup": 0.09349220898258478
+  },
+  {
+   "kode": "20142",
+   "titel": "2014-15 (2. samling)",
+   "sampled_votes": 14,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.6428571428571429,
+   "share_votes_with_any_rebel": 0.07142857142857142,
+   "rebel_share_of_cast": 0.0006830601092896175,
+   "absent_share": 0.4158020750199521,
+   "cast_without_party_lookup": 0.12295081967213115
+  },
+  {
+   "kode": "20151",
+   "titel": "2015-16",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.95,
+   "share_votes_with_any_rebel": 0.3,
+   "rebel_share_of_cast": 0.002777777777777778,
+   "absent_share": 0.39664804469273746,
+   "cast_without_party_lookup": 0.12268518518518519
+  },
+  {
+   "kode": "20161",
+   "titel": "2016-17",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 180,
+   "share_contested": 0.8,
+   "share_votes_with_any_rebel": 0.05,
+   "rebel_share_of_cast": 0.00046882325363338024,
+   "absent_share": 0.40502092050209204,
+   "cast_without_party_lookup": 0.10829817158931083
+  },
+  {
+   "kode": "20171",
+   "titel": "2017-18",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.41480446927374304,
+   "cast_without_party_lookup": 0.11694510739856802
+  },
+  {
+   "kode": "20181",
+   "titel": "2018-19 (1. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.9,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0023730422401518746,
+   "absent_share": 0.41145251396648047,
+   "cast_without_party_lookup": 0.10868533459895587
+  },
+  {
+   "kode": "20182",
+   "titel": "2018-19 (2. samling)",
+   "sampled_votes": 4,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.0,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.3254189944134078,
+   "cast_without_party_lookup": 0.18426501035196688
+  },
+  {
+   "kode": "20191",
+   "titel": "2019-20",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 0,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.5,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.4064245810055866,
+   "cast_without_party_lookup": 0.17647058823529413
+  },
+  {
+   "kode": "20201",
+   "titel": "2020-21",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.8,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0015641293013555788,
+   "absent_share": 0.4642458100558659,
+   "cast_without_party_lookup": 0.16371220020855057
+  },
+  {
+   "kode": "20211",
+   "titel": "2021-22",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.9,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.001993024414549078,
+   "absent_share": 0.4393854748603352,
+   "cast_without_party_lookup": 0.18086696562032886
+  },
+  {
+   "kode": "20221",
+   "titel": "2022-23 (1. samling)",
+   "sampled_votes": 1,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 1.0,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.41899441340782123,
+   "cast_without_party_lookup": 0.18269230769230768
+  },
+  {
+   "kode": "20222",
+   "titel": "2022-23 (2. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.8,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0018042399639152007,
+   "absent_share": 0.3807262569832402,
+   "cast_without_party_lookup": 0.0
+  },
+  {
+   "kode": "20231",
+   "titel": "2023-24",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 178,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.85,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.002793296089385475,
+   "absent_share": 0.39983235540653816,
+   "cast_without_party_lookup": 0.0
+  },
+  {
+   "kode": "20241",
+   "titel": "2024-25",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 0,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0024236548715462916,
+   "absent_share": 0.3934137018523964,
+   "cast_without_party_lookup": 0.0
+  },
+  {
+   "kode": "20251",
+   "titel": "2025-26 (1. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 0,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.1,
+   "rebel_share_of_cast": 0.001092896174863388,
+   "absent_share": 0.43202979515828677,
+   "cast_without_party_lookup": 0.0
+  },
+  {
+   "kode": "20252",
+   "titel": "2025-26 (2. samling)",
+   "sampled_votes": 20,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 0.75,
+   "share_votes_with_any_rebel": 0.15,
+   "rebel_share_of_cast": 0.0018099547511312218,
+   "absent_share": 0.38268156424581007,
+   "cast_without_party_lookup": 0.0
+  },
+  {
+   "kode": "20261",
+   "titel": "2026-27",
+   "sampled_votes": 1,
+   "rows_per_vote_min": 179,
+   "rows_per_vote_max": 179,
+   "share_contested": 1.0,
+   "share_votes_with_any_rebel": 0.0,
+   "rebel_share_of_cast": 0.0,
+   "absent_share": 0.3687150837988827,
+   "cast_without_party_lookup": 0.0
+  }
+ ]
+}

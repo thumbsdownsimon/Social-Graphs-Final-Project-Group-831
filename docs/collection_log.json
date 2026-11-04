@@ -1,0 +1,58 @@
+{
+ "tables": {
+  "finished_utc": "2026-11-04T13:22:18+00:00",
+  "sessions_in_scope": 22,
+  "persons": 3414,
+  "party_groups": 391,
+  "memberships": 4173,
+  "minister_roles": 961,
+  "minister_titles": 212,
+  "plenary_meetings": 2618,
+  "votes_all_sessions": 10536
+ },
+ "debates": {
+  "finished_utc": "2026-11-04T13:22:19+00:00",
+  "sessions": 22,
+  "files": 1878,
+  "megabytes": 1205.9,
+  "fetched_this_run": 0,
+  "already_cached": 1878,
+  "per_session": {
+   "20091": 109,
+   "20101": 108,
+   "20102": 2,
+   "20111": 102,
+   "20121": 111,
+   "20131": 109,
+   "20141": 98,
+   "20142": 6,
+   "20151": 112,
+   "20161": 113,
+   "20171": 108,
+   "20181": 93,
+   "20182": 8,
+   "20191": 151,
+   "20201": 138,
+   "20211": 135,
+   "20221": 3,
+   "20222": 73,
+   "20231": 106,
+   "20241": 112,
+   "20251": 57,
+   "20252": 24
+  }
+ },
+ "votes": {
+  "finished_utc": "2026-11-04T13:25:37+00:00",
+  "first_session": "20171",
+  "last_session": "20252",
+  "votes": 4391,
+  "rows": 741402,
+  "votes_without_rows": 249
+ },
+ "committees": {
+  "finished_utc": "2026-11-04T13:25:50+00:00",
+  "committees": 511,
+  "memberships": 21316
+ }
+}

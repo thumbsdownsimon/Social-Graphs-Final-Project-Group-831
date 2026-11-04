@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossing the Aisle</title>
+<meta name="description" content="When parties enter government together, do their members stop arguing, and do they start sounding alike? Votes, floor challenges and language in the Danish Parliament, 2009-2026.">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="wlf">
+
+<div class="wlf-masthead">
+  <div class="wlf-masthead-inner">
+    <a class="wlf-brand" href="#top">CROSSING THE AISLE
+      <small>Final project &middot; 02805 &middot; DTU</small>
+    </a>
+    <nav class="wlf-nav">
+      <a href="#evidence">Evidence</a>
+      <a href="#explore">Explore</a>
+      <a href="#methods">Methods</a>
+      <a href="https://github.com/thumbsdownsimon/Social-Graphs-Final-Project-Group-831">Source</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wlf-main" id="top">
+
+  <section class="hero">
+    <div class="wlf-case-no">The question</div>
+    <p class="question">When a change of government makes parties vote together, do their members' floor challenges and language follow?</p>
+    <div class="wlf-case-no">The finding</div>
+    <h1 id="finding">When parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</h1>
+  </section>
+
+  <div class="pending" id="label-banner" hidden>
+    <span class="wlf-stamp">Validation pending</span>
+    <p id="label-banner-text"></p>
+  </div>
+
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong data-n="challengePairs"></strong><span>party pairs that joined or split moved the expected way in challenges</span></div>
+    <div class="stat"><strong data-n="svBefore"></strong><span>S&ndash;V challenges before they governed together (2019&ndash;22; <span data-n="svBeforeExpected"></span> expected by chance)</span></div>
+    <div class="stat"><strong data-n="svAfter"></strong><span>S&ndash;V challenges while they did (2022&ndash;26; <span data-n="svAfterExpected"></span> expected by chance)</span></div>
+    <div class="stat"><strong data-n="rebelRate"></strong><span>of member votes went against their party, 2019&ndash;26</span></div>
+  </div>
+
+  <section>
+    <h2>The short version</h2>
+    <p>Danish members almost never vote against their party, so individual votes say little about them. The floor is different. After most speeches, other members can call a <em>kort bemærkning</em>, a short remark aimed at whoever holds the floor. Those calls are recorded in the transcripts, which gives a directed network of who challenges whom: <span data-n="edges"></span> challenges across <span data-n="members"></span> members since 2009.</p>
+    <p>We followed that network, the votes and the language across <span data-n="formations"></span> changes of government. Parties that enter government together stop challenging each other, and parties that split start again, including when we follow only the same members across the change. The language result is more mixed: similarity in the same debate shifts modestly in the expected direction, a classifier's ability to tell parties apart does not reliably change, and much of the clearest difference is the vocabulary of being in opposition.</p>
+  </section>
+
+  <hr class="wlf-hr">
+  <h2 id="evidence">The evidence</h2>
+
+  <!-- ===== Figure 1 ===== -->
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1 &middot; How fast</div>
+    <h3>Votes and challenges change together, at the moment of formation</h3>
+    <div class="controls"><label for="event-select">Event</label><select id="event-select"></select></div>
+    <div id="fig-timeline-votes" class="chart"></div>
+    <div id="fig-timeline-challenges" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> top, the share of votes on which the two parties took the same side, per quarter. Bottom, challenges between their members per quarter. <strong>Compared with:</strong> the challenges expected if the floor speaker were shuffled among speakers in the same debate, keeping how many challenges each member made and received in that debate's pool. <strong>What to see:</strong> the bars drop below the expected line right at the dashed line when parties join, and recover when they split.</p>
+      <p class="check"><strong>Check:</strong> the S&ndash;V counts were recounted from the raw XML with separate code: <span data-n="recount"></span>. Votes were checked against individual member votes: <span data-n="recountVotes"></span>. <strong>Misses:</strong> quiet quarters (summers, election periods) are noisy, and this says nothing about what is said in the remaining challenges. "Within a quarter or two" is a reading of these six timelines, not a formal test.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-timeline" class="table-wrap"></div></details>
+  </figure>
+
+  <!-- ===== Figure 2 ===== -->
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 2 &middot; Against the null</div>
+    <h3>Across six formations, challenges are the clearest signal, and language is weaker</h3>
+    <div class="legend" id="legend-layers"></div>
+    <div id="fig-layers" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> each dot is one party pair at one change of government. Position is how far that pair's change stands from pairs whose relation did not change at the same formation, in units of their spread, with right meaning "closer". <strong>Compared with:</strong> the grey dots, those unchanged pairs, which act as a placebo for anything that shifted the whole chamber. <strong>What to see:</strong> blue dots to the right and red to the left, most sharply for challenges.</p>
+      <p class="check"><strong>Check:</strong> a permutation test shuffles which pairs count as joined or split within each formation (<span data-n="permutations"></span> shuffles). Challenges also hold among backbenchers only (<span data-n="backbench"></span>) and following the same members across the change (<span data-n="panel"></span>). <strong>Misses:</strong> rows use different units, so compare each row with its own grey dots, not row with row. Only 2022 joined former main rivals, so S&ndash;V alone is one case: there, similarity barely moved (<span data-n="svSimilarity"></span> placebo units). 2026 is left out because its window is too thin.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-layers" class="table-wrap"></div></details>
+  </figure>
+
+  <!-- ===== Figure 3 ===== -->
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 3 &middot; What language does change</div>
+    <h3>The clearest language signal is the vocabulary of being in opposition</h3>
+    <div class="legend" id="legend-role"></div>
+    <div id="fig-role" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> words addressing the government (<em>minister&hellip;</em>, <em>regering&hellip;</em>) per 1,000 words of S and V backbench speech, per quarter. The bars on top mark when each party held ministers. <strong>Compared with:</strong> the same party while in office. <strong>What to see:</strong> each line is high while its party is out of government, and the two swap at each formation.</p>
+      <p class="check"><strong>Check:</strong> shuffling government status within each party gives a mean gap of 0 &plusmn; <span data-n="roleNull"></span>; the real gap is <span data-n="roleGap"></span> words per 1,000. As a second method, a classifier trained on other governments separates government from opposition on a government and speakers it never saw: accuracy <span data-n="roleClassifier"></span>, against about 0.50 with shuffled labels. <strong>Misses:</strong> counting words cannot tell an attack from a polite question, and we did not test whether this vocabulary explains the similarity shift in Figure 2.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show classifier results</summary><div id="table-role" class="table-wrap"></div></details>
+  </figure>
+
+  <!-- ===== Figure 4 ===== -->
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 4 &middot; The whole chamber</div>
+    <h3>Who challenges whom, against chance</h3>
+    <div class="controls"><label for="matrix-select">Government</label><select id="matrix-select"></select></div>
+    <div class="legend" id="legend-matrix"></div>
+    <div id="fig-matrix" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> challenges from each row party to each column party, as a ratio to what the same-debate shuffle expects. Government parties are marked &#9733;. <strong>Compared with:</strong> 1 (grey) means as often as chance. Cells expecting under 5 challenges are left blank. <strong>What to see:</strong> pale or blue blocks where government parties meet each other, and a blue diagonal: members rarely challenge their own party.</p>
+      <p class="check"><strong>Check:</strong> assortativity by party is <span data-n="assortParty"></span> and by government side <span data-n="assortSide"></span> in this period; shuffling labels across members gives <span data-n="assortNull"></span>. Negative means members challenge across lines more than chance. <strong>Misses:</strong> challenges are not all hostile. How many are is what the hand-labeled tone sheet is meant to show.</p>
+    </figcaption>
+  </figure>
+
+  <hr class="wlf-hr">
+
+  <!-- ===== Figure 5 ===== -->
+  <figure class="wlf-card fig" id="explore">
+    <div class="wlf-case-no">Figure 5 &middot; Explore the members</div>
+    <h3>The network is organised by policy area, not party</h3>
+    <div class="controls">
+      <label for="net-window">Government</label><select id="net-window"></select>
+      <label for="net-party">Party</label><select id="net-party"></select>
+      <label for="net-member">Member</label><input id="net-member" list="member-list" placeholder="Type a name"><datalist id="member-list"></datalist>
+    </div>
+    <div class="legend" id="legend-net"></div>
+    <div class="net-layout">
+      <div id="fig-network" class="chart"></div>
+      <aside id="member-panel" class="member-panel" aria-live="polite"><p class="wlf-muted">Click a member to see who they challenged most and who challenged them.</p></aside>
+    </div>
+    <figcaption>
+      <p><strong>Plotted:</strong> members linked by the disparity-filter backbone of their challenges (&alpha; = 0.05, so <span data-n="backboneEdges"></span> of <span data-n="allEdges"></span> linked pairs are kept, and the largest connected part is drawn, <span data-n="membersDrawn"></span> members; search finds the rest). Layout comes after filtering; colour shows government or opposition. <strong>What to see:</strong> this drawing is for exploring, not evidence. The evidence is the numbers below it.</p>
+      <p class="check"><strong>Check:</strong> Louvain communities reach modularity <span data-n="modularity"></span> against <span data-n="modularityNull"></span> for a rewired network, and are stable between seeds (NMI <span data-n="stability"></span>), yet barely match party (NMI <span data-n="nmiParty"></span>). <span data-n="committeeShare"></span> of challenges are between members sharing a committee, against <span data-n="committeeNull"></span> under the shuffle. <strong>Misses:</strong> the topic words below were read by us, not tested, and most members sit on many committees, so that check is not a sharp one.</p>
+    </figcaption>
+    <details class="table-view" open><summary>What each community debates</summary><div id="table-communities" class="table-wrap"></div></details>
+  </figure>
+
+  <hr class="wlf-hr">
+
+  <section id="methods">
+    <h2>Why votes alone are not enough</h2>
+    <p>Individual votes carry almost no signal: <span data-n="rebelRate"></span> of cast votes in <span data-n="rebelWindow"></span> went against the member's party majority. Communities in the member vote network match party with NMI <span data-n="voteNmi"></span>, and shuffling each member's votes within their own party gives about the same (<span data-n="voteNull"></span>), so member votes add nothing beyond party. Party-level alignment is what moves, and it moves mechanically: parties in one government vote together. That is why the votes set up the question rather than answer it.</p>
+
+    <h2>Data</h2>
+    <div class="table-wrap" id="table-data"></div>
+    <p>Debate text starts in session 2009-10. Sessions end at 2025-26; 2026-27 has only just begun. Party positions come from vote summaries from about 2010 on, since older summaries give only totals. Biographies were never downloaded, since they hold birth dates, contact details and family information we do not need. Details and known biases are in <a href="docs/dataset.md">docs/dataset.md</a>, and traps in the API are in <a href="docs/data_recon.md">docs/data_recon.md</a>.</p>
+
+    <h2>Limitations</h2>
+    <ul class="limits">
+      <li><strong>Few events.</strong> Six formations, and party pairs within one are not independent. Only 2022 joined two former main rivals, and the 2026 government is too recent to test.</li>
+      <li><strong>The network is rule-based.</strong> An edge means the chair called a short remark and another member spoke next. Later short remarks announced differently are missed, and spoken question time is not included. <span id="precision-text"></span></li>
+      <li><strong>A challenge is not always hostile.</strong> We count who addresses whom, not tone, until the hand labels are in. Fewer challenges could also reflect what gets negotiated in private, which this data cannot see.</li>
+      <li><strong>"Government" is not the whole alignment.</strong> Support parties outside government count as opposition here, though they often vote with it.</li>
+      <li><strong>Language methods disagree.</strong> Same-debate similarity shows a shift; the party classifier does not (<span data-n="classifierResult"></span>). We report both.</li>
+      <li><strong>Absence is not a position.</strong> About <span data-n="absent"></span> of vote rows are absences. We did not verify why, and never treat them as disagreement. <span data-n="noRows"></span> votes since 2017 have no individual rows at all.</li>
+      <li><strong>Party labels.</strong> Ministers have no party in the transcripts, so theirs comes from memberships, sometimes the nearest session. Party in the transcript and in memberships agree on nearly every turn, but both come from Folketinget's own records, so that is a weak check.</li>
+    </ul>
+
+    <h2>Provisional and final transcripts</h2>
+    <p>Folketinget publishes transcripts in provisional form and revises them without marking the changes. Its terms require us to say which is which. Each speech carries a status field whose values are not officially documented. We treat <code>Typeset</code> as final and everything else as provisional; that mapping is our inference, based on nearly all older turns being <code>Typeset</code>. Under it, <span data-n="provisional"></span> of turns are provisional, mostly in 2025-26. They may change.</p>
+    <details class="table-view"><summary>Status by session</summary><div id="table-status" class="table-wrap"></div></details>
+
+    <h2>How we checked our own work</h2>
+    <p>An AI agent wrote much of the code and ran the analysis. Every place it touched a result, and how we checked it, is in <a href="AI_METHODS.md">AI_METHODS.md</a>. <span data-n="validationPassed"></span> automated checks pass, including recounts from the raw XML with separate code. Those checks caught two real parsing bugs along the way, which are documented there.</p>
+    <details class="table-view"><summary>Automated checks</summary><div id="table-validation" class="table-wrap"></div></details>
+
+    <h2>Reproduce it</h2>
+    <pre><code>python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python tools\run_all.py</code></pre>
+    <p class="wlf-muted">Downloads are throttled and cached, so a first run takes several hours and later runs reuse the cache. Windows paths shown; on macOS or Linux use <code>.venv/bin/</code>.</p>
+
+    <h2>Source and credit</h2>
+    <p><strong>Source: Folketinget</strong>, through its open data service at <a href="https://oda.ft.dk/">oda.ft.dk</a> and the transcripts it publishes there, collected 4 November 2026. Folketinget has not endorsed, supported or reviewed this project. The site shows names of public officials in their public roles and no transcript text.</p>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Blondel, Guillaume, Lambiotte, Lefebvre (2008). Fast unfolding of communities in large networks. <em>J. Stat. Mech.</em>, P10008. <a href="https://doi.org/10.1088/1742-5468/2008/10/P10008">doi</a></li>
+      <li>Monroe, Colaresi, Quinn (2008). Fightin' Words: Lexical Feature Selection and Evaluation for Identifying the Content of Political Conflict. <em>Political Analysis</em> 16, 372&ndash;403. <a href="https://doi.org/10.1093/pan/mpn018">doi</a></li>
+      <li>Newman (2003). Mixing patterns in networks. <em>Phys. Rev. E</em> 67, 026126. <a href="https://doi.org/10.1103/PhysRevE.67.026126">doi</a></li>
+      <li>Peterson, Spirling (2018). Classification Accuracy as a Substantive Quantity of Interest: Measuring Polarization in Westminster Systems. <em>Political Analysis</em> 26, 120&ndash;128. <a href="https://doi.org/10.1017/pan.2017.39">doi</a></li>
+      <li>Proksch, Slapin (2015). <em>The Politics of Parliamentary Debate: Parties, Rebels and Representation</em>. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139680752">doi</a></li>
+      <li>Reimers, Gurevych (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. <em>Proc. EMNLP-IJCNLP</em>, 3980&ndash;3990. <a href="https://doi.org/10.18653/v1/D19-1410">doi</a></li>
+      <li>Serrano, Bogu&ntilde;&aacute;, Vespignani (2009). Extracting the multiscale backbone of complex weighted networks. <em>PNAS</em> 106, 6483&ndash;6488. <a href="https://doi.org/10.1073/pnas.0808904106">doi</a></li>
+    </ol>
+
+    <h2>Group 831</h2>
+    <div class="roster">
+      <div class="agent"><strong>Christian Colberg</strong><span>s224343</span></div>
+      <div class="agent"><strong>Yuen Yi Hui</strong><span>s226465</span></div>
+      <div class="agent"><strong>Simon Jonsson</strong><span>s224331</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wlf-footer">
+  02805 Social Graphs and Interactions &middot; Technical University of Denmark &middot; Data source: Folketinget
+</footer>
+
+<div id="tooltip" class="tooltip" role="status" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
