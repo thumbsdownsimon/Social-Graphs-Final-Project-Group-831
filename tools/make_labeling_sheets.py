@@ -132,7 +132,8 @@ README = """# Hand labeling
 The group fills these in; no model or agent may do it. Label each row without looking at the
 other labels, and have a second person label `challenge_stance` so we can report agreement
 (save their copy as `challenge_stance_second.csv`). Save as CSV (UTF-8). Then run
-`python tools/check_labels.py`.
+`python tools/check_labels.py`. Use exactly `yes`/`no` or `hostile`/`neutral`/`friendly`; anything
+else stops the script and names the row.
 
 | Sheet | Label column | What to decide |
 |---|---|---|

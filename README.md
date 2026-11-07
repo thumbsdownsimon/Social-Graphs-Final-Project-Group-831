@@ -133,7 +133,7 @@ Fill in `labeling/*.csv` following `labeling/README.md`, saving as UTF-8 CSV und
 .venv\Scripts\python tools\export_site.py
 ```
 
-The banner clears once all four sheets are scored. To keep the notebook in step, also run `tools\make_notebook.py`.
+The banner clears once every row of all four sheets is labeled, including the second labeler's `challenge_stance`. To keep the notebook in step, also run `tools\make_notebook.py`.
 
 ## What is left to do
 
