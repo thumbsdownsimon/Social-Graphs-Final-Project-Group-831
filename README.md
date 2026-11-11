@@ -6,6 +6,9 @@ What parties are most loyal? And loyalty means following the paties agenda even 
 Language processing: 
 What sentiment do they use in their challenges. Can challenges be used to find out what (hidden) motives party or member might have. By looking at sentiment in the challenges we would look at overall themes and overall discourse certain parties utilies. Is one party much more emotional than another? Is one parety more rational than another? 
 
+Conclusion:
+Can we define a new party that should be made based on how they talk, vote and agenda. 
+
 **Question:** when a change of government makes parties vote together, do their members' floor challenges and language follow?
 
 **Finding:** when parties enter government together, challenges between their members fall about 3-fold relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.

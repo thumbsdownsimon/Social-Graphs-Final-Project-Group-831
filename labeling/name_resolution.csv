@@ -37,13 +37,13 @@
 20161,Carl Holst,V,medlem,15765,Carl Holst,exact_seated,yes
 20131,Søren Espersen,DF,medlem,34,Søren Espersen,exact_seated,yes
 20161,Uffe Elbæk,ALT,medlem,225,Uffe Elbæk,exact_seated,yes
-20161,Malte Larsen,S,medlem,16351,Malte Larsen,exact_seated,
+20161,Malte Larsen,S,medlem,16351,Malte Larsen,exact_seated,yes
 20121,Manu Sareen,RV,minister,231,Manu Sareen,exact_seated,yes
 20191,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,yes
 20151,Finn Sørensen,EL,medlem,87,Finn Sørensen,exact_seated,yes
 20171,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,yes
-20252,Malte Larsen,S,medlem,16351,Malte Larsen,exact_party,
-20252,Malte Larsen,DF,medlem,21376,Malte Larsen,exact_party,
+20252,Malte Larsen,S,medlem,16351,Malte Larsen,exact_party,yes
+20252,Malte Larsen,DF,medlem,21376,Malte Larsen,exact_party,yes
 20161,Daniel Toft Jakobsen,S,medlem,366,Daniel Toft Jakobsen,exact,yes
 20111,Anne-Mette Winther Christiansen,V,medlem,259,Anne-Mette Winther Christiansen (udpeget af V),exact,yes
 20241,Morten Dahlin,V,minister,18696,Morten Dahlin,exact,yes
@@ -52,7 +52,7 @@
 20161,Jakob Ellemann-Jensen,V,medlem,207,Jakob Ellemann-Jensen,exact,yes
 20171,Laura Lindahl,LA,medlem,1504,Laura Lindahl,exact,yes
 20111,Helle Thorning-Schmidt,,minister,144,Helle Thorning-Schmidt,exact,yes
-20201,Mona Juul,KF,medlem,18713,Mona Juul,exact,yes
+20201,Mona Juul,KF,medlem,18713,Mona Juul,exact,yes 
 20091,Helle Thorning-Schmidt,S,medlem,144,Helle Thorning-Schmidt,exact,yes
 20141,Joachim B. Olsen,LA,medlem,111,Joachim B. Olsen,exact,yes
 20151,Søren Gade,V,medlem,1845,Søren Gade,exact,yes
