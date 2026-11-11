@@ -1,13 +1,13 @@
 # Crossing the Aisle
-
+ 
 Problem statement:
-What parties are most loyal? And loyalty means following the paties agenda even though you might go against it personally. What parties are most loyal to their left/right wings. Nodes would be party memebers and edges would be votes where they agree. 
-
-Language processing: 
-What sentiment do they use in their challenges. Can challenges be used to find out what (hidden) motives party or member might have. By looking at sentiment in the challenges we would look at overall themes and overall discourse certain parties utilies. Is one party much more emotional than another? Is one parety more rational than another? 
-
+Members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. We ask: can we find distinct archetypes of members in the Danish parliament from how they vote, debate and talk? We build a challenge network for 2009–2026. Nodes are members, and a directed edge goes from a member who makes a short remark to the member holding the floor. We combine each member's position in this network with their voting record and party history. We define a set of archetypes from these measures, such as the attack dog, the lightning rod, the defector and the negative Nancy. Then we test whether these roles really exist, or whether clustering the members finds different ones.
+ 
+Language processing:
+We measure the tone of every challenge as hostile, neutral or friendly, using a sentiment score checked against hand labels. This gives each member a profile: how negative their challenges are, how emotional or argumentative their language is, and whether their hostility is aimed at the other bloc, at their own side or at the government. We ask: are some archetypes defined by tone, like the negative Nancy, and others by network position alone, like the lightning rod? We also find the most distinctive words for each archetype, to show how an attack dog talks compared with a bridge builder.
+ 
 Conclusion:
-Can we define a new party that should be made based on how they talk, vote and agenda. 
+We conclude whether the Danish parliament can be described by a small set of archetypes, and how they are spread across parties. Does each party have its own attack dog and its own lightning rod, or are some parties made up mostly of one type? We also ask whether members change archetype over time, for example when their party enters government or when they become ministers.
 
 **Question:** when a change of government makes parties vote together, do their members' floor challenges and language follow?
 
