@@ -1,58 +1,58 @@
 ﻿session,name_in_transcript,party_used,role,matched_person_id,matched_name,method,same_person_yes_no
-20142,Lisbeth Bech Poulsen,SF,medlem,219,Lisbeth Bech-Nielsen,alias,
-20111,Marlene B. Lorentzen,RV,medlem,86,Marlene Borst Hansen,alias,
-20181,Peter Hummelgaard Thomsen,S,medlem,15776,Peter Hummelgaard,alias,
-20191,Peter Hummelgaard Thomsen,S,minister,15776,Peter Hummelgaard,alias,
-20151,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,
-20101,Peter Juel Jensen,V,medlem,180,Peter Juel-Jensen,alias,
-20141,Simon Emil Ammitzbøll,LA,medlem,117,Simon Emil Ammitzbøll-Bille,alias,
-20191,Lisbeth Bech Poulsen,SF,medlem,219,Lisbeth Bech-Nielsen,alias,
-20141,Peter Juel Jensen,V,medlem,180,Peter Juel-Jensen,alias,
-20171,Kaare Dybvad,S,medlem,15787,Kaare Dybvad Bek,alias,
-20181,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,
-20222,Charlotte Munch,DD,medlem,20375,Charlotte Munch Pasler,alias,
-20211,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,
-20211,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20231,Helene Liliendahl Brydensholt,ALT,medlem,20352,Helene Brydensholt,tokens_seated,
-20161,Roger Matthisen,ALT,medlem,15799,Roger Courage Matthisen,tokens_seated,
-20151,Roger Matthisen,ALT,medlem,15799,Roger Courage Matthisen,tokens_seated,
-20131,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20231,Louise Schack Elholm,V,minister,93,Louise Elholm,tokens_seated,
-20191,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20161,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20171,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20222,Helene Liliendahl Brydensholt,ALT,medlem,20352,Helene Brydensholt,tokens_seated,
-20111,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20141,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20121,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20181,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20201,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,
-20222,Søren Espersen,DD,medlem,34,Søren Espersen,exact_seated,
-20091,Kim Andersen,V,medlem,126,Kim Andersen (udpeget af V),exact_seated,
-20251,Søren Espersen,DD,medlem,34,Søren Espersen,exact_seated,
-20121,Pernille Boye Koch,RV,medlem,276,Pernille Boye Koch,exact_seated,
-20111,Kim Andersen,V,medlem,126,Kim Andersen (udpeget af V),exact_seated,
-20111,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,
-20091,Line Barfod,EL,medlem,856,Line Barfod,exact_seated,
-20161,Carl Holst,V,medlem,15765,Carl Holst,exact_seated,
-20131,Søren Espersen,DF,medlem,34,Søren Espersen,exact_seated,
-20161,Uffe Elbæk,ALT,medlem,225,Uffe Elbæk,exact_seated,
-20161,Malte Larsen,S,medlem,16351,Malte Larsen,exact_seated,
-20121,Manu Sareen,RV,minister,231,Manu Sareen,exact_seated,
-20191,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,
-20151,Finn Sørensen,EL,medlem,87,Finn Sørensen,exact_seated,
-20171,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,
-20252,Malte Larsen,S,medlem,16351,Malte Larsen,exact_party,
-20252,Malte Larsen,DF,medlem,21376,Malte Larsen,exact_party,
-20161,Daniel Toft Jakobsen,S,medlem,366,Daniel Toft Jakobsen,exact,
-20111,Anne-Mette Winther Christiansen,V,medlem,259,Anne-Mette Winther Christiansen (udpeget af V),exact,
-20241,Morten Dahlin,V,minister,18696,Morten Dahlin,exact,
-20231,Torsten Gejl,ALT,medlem,15775,Torsten Gejl,exact,
-20091,Doris Jakobsen,SIU,medlem,294,Doris Jakobsen,exact,
-20161,Jakob Ellemann-Jensen,V,medlem,207,Jakob Ellemann-Jensen,exact,
-20171,Laura Lindahl,LA,medlem,1504,Laura Lindahl,exact,
-20111,Helle Thorning-Schmidt,,minister,144,Helle Thorning-Schmidt,exact,
-20201,Mona Juul,KF,medlem,18713,Mona Juul,exact,
-20091,Helle Thorning-Schmidt,S,medlem,144,Helle Thorning-Schmidt,exact,
-20141,Joachim B. Olsen,LA,medlem,111,Joachim B. Olsen,exact,
-20151,Søren Gade,V,medlem,1845,Søren Gade,exact,
+20142,Lisbeth Bech Poulsen,SF,medlem,219,Lisbeth Bech-Nielsen,alias,yes
+20111,Marlene B. Lorentzen,RV,medlem,86,Marlene Borst Hansen,alias,yes
+20181,Peter Hummelgaard Thomsen,S,medlem,15776,Peter Hummelgaard,alias,yes
+20191,Peter Hummelgaard Thomsen,S,minister,15776,Peter Hummelgaard,alias,yes
+20151,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,yes
+20101,Peter Juel Jensen,V,medlem,180,Peter Juel-Jensen,alias,yes
+20141,Simon Emil Ammitzbøll,LA,medlem,117,Simon Emil Ammitzbøll-Bille,alias,yes
+20191,Lisbeth Bech Poulsen,SF,medlem,219,Lisbeth Bech-Nielsen,alias,yes
+20141,Peter Juel Jensen,V,medlem,180,Peter Juel-Jensen,alias,yes
+20171,Kaare Dybvad,S,medlem,15787,Kaare Dybvad Bek,alias,yes
+20181,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,yes
+20222,Charlotte Munch,DD,medlem,20375,Charlotte Munch Pasler,alias,yes
+20211,Aaja Chemnitz Larsen,IA,medlem,15757,Aaja Chemnitz,alias,yes
+20211,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20231,Helene Liliendahl Brydensholt,ALT,medlem,20352,Helene Brydensholt,tokens_seated,yes
+20161,Roger Matthisen,ALT,medlem,15799,Roger Courage Matthisen,tokens_seated,yes
+20151,Roger Matthisen,ALT,medlem,15799,Roger Courage Matthisen,tokens_seated,yes
+20131,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20231,Louise Schack Elholm,V,minister,93,Louise Elholm,tokens_seated,yes
+20191,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20161,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20171,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20222,Helene Liliendahl Brydensholt,ALT,medlem,20352,Helene Brydensholt,tokens_seated,yes
+20111,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20141,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20121,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20181,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20201,Louise Schack Elholm,V,medlem,93,Louise Elholm,tokens_seated,yes
+20222,Søren Espersen,DD,medlem,34,Søren Espersen,exact_seated,yes
+20091,Kim Andersen,V,medlem,126,Kim Andersen (udpeget af V),exact_seated,yes
+20251,Søren Espersen,DD,medlem,34,Søren Espersen,exact_seated,yes
+20121,Pernille Boye Koch,RV,medlem,276,Pernille Boye Koch,exact_seated,yes
+20111,Kim Andersen,V,medlem,126,Kim Andersen (udpeget af V),exact_seated,yes
+20111,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,yes
+20091,Line Barfod,EL,medlem,856,Line Barfod,exact_seated,yes
+20161,Carl Holst,V,medlem,15765,Carl Holst,exact_seated,yes
+20131,Søren Espersen,DF,medlem,34,Søren Espersen,exact_seated,yes
+20161,Uffe Elbæk,ALT,medlem,225,Uffe Elbæk,exact_seated,yes
+20161,Malte Larsen,S,medlem,16351,Malte Larsen,exact_seated,yes
+20121,Manu Sareen,RV,minister,231,Manu Sareen,exact_seated,yes
+20191,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,yes
+20151,Finn Sørensen,EL,medlem,87,Finn Sørensen,exact_seated,yes
+20171,Thomas Jensen,S,medlem,201,Thomas Jensen,exact_seated,yes
+20252,Malte Larsen,S,medlem,16351,Malte Larsen,exact_party,yes
+20252,Malte Larsen,DF,medlem,21376,Malte Larsen,exact_party,yes
+20161,Daniel Toft Jakobsen,S,medlem,366,Daniel Toft Jakobsen,exact,yes
+20111,Anne-Mette Winther Christiansen,V,medlem,259,Anne-Mette Winther Christiansen (udpeget af V),exact,yes
+20241,Morten Dahlin,V,minister,18696,Morten Dahlin,exact,yes
+20231,Torsten Gejl,ALT,medlem,15775,Torsten Gejl,exact,yes
+20091,Doris Jakobsen,SIU,medlem,294,Doris Jakobsen,exact,yes
+20161,Jakob Ellemann-Jensen,V,medlem,207,Jakob Ellemann-Jensen,exact,yes
+20171,Laura Lindahl,LA,medlem,1504,Laura Lindahl,exact,yes
+20111,Helle Thorning-Schmidt,,minister,144,Helle Thorning-Schmidt,exact,yes
+20201,Mona Juul,KF,medlem,18713,Mona Juul,exact,yes 
+20091,Helle Thorning-Schmidt,S,medlem,144,Helle Thorning-Schmidt,exact,yes
+20141,Joachim B. Olsen,LA,medlem,111,Joachim B. Olsen,exact,yes
+20151,Søren Gade,V,medlem,1845,Søren Gade,exact,yes

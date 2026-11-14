@@ -1,4 +1,13 @@
 # Crossing the Aisle
+ 
+Problem statement:
+Members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. We ask: can we find distinct archetypes of members in the Danish parliament from how they vote, debate and talk? We build a challenge network for 2009–2026. Nodes are members, and a directed edge goes from a member who makes a short remark to the member holding the floor. We combine each member's position in this network with their voting record and party history. We define a set of archetypes from these measures, such as the attack dog, the lightning rod, the defector and the negative Nancy. Then we test whether these roles really exist, or whether clustering the members finds different ones.
+ 
+Language processing:
+We measure the tone of every challenge as hostile, neutral or friendly, using a sentiment score checked against hand labels. This gives each member a profile: how negative their challenges are, how emotional or argumentative their language is, and whether their hostility is aimed at the other bloc, at their own side or at the government. We ask: are some archetypes defined by tone, like the negative Nancy, and others by network position alone, like the lightning rod? We also find the most distinctive words for each archetype, to show how an attack dog talks compared with a bridge builder.
+ 
+Conclusion:
+We conclude whether the Danish parliament can be described by a small set of archetypes, and how they are spread across parties. Does each party have its own attack dog and its own lightning rod, or are some parties made up mostly of one type? We also ask whether members change archetype over time, for example when their party enters government or when they become ministers.
 
 **Question:** when a change of government makes parties vote together, do their members' floor challenges and language follow?
 
@@ -133,7 +142,7 @@ Fill in `labeling/*.csv` following `labeling/README.md`, saving as UTF-8 CSV und
 .venv\Scripts\python tools\export_site.py
 ```
 
-The banner clears once all four sheets are scored. To keep the notebook in step, also run `tools\make_notebook.py`.
+The banner clears once every row of all four sheets is labeled, including the second labeler's `challenge_stance`. To keep the notebook in step, also run `tools\make_notebook.py`.
 
 ## What is left to do
 
