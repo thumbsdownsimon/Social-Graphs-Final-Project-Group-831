@@ -1,0 +1,2192 @@
+{
+ "settings": {
+  "shuffles": 500,
+  "null_group": "debate",
+  "seed": 831,
+  "min_edges": 15,
+  "min_run": 3,
+  "role_thresholds": {
+   "top": 0.8,
+   "upper_half": 0.5,
+   "attack_balance": 0.3333333333333333,
+   "z": 2.0,
+   "cross_side_share": 0.8,
+   "own_side_share": 0.3,
+   "min_minister_in": 10
+  }
+ },
+ "graphs": {
+  "2009 KF+V": {
+   "nodes": 196,
+   "pairs": 3285,
+   "challenges": 8329,
+   "density": 0.0859,
+   "reciprocity": 0.399,
+   "party_assortativity": -0.159,
+   "share_cross_side": 0.666,
+   "share_same_party": 0.0029
+  },
+  "2011 RV+S+SF": {
+   "nodes": 199,
+   "pairs": 3495,
+   "challenges": 8095,
+   "density": 0.0887,
+   "reciprocity": 0.388,
+   "party_assortativity": -0.144,
+   "share_cross_side": 0.721,
+   "share_same_party": 0.0022
+  },
+  "2014 RV+S": {
+   "nodes": 194,
+   "pairs": 2028,
+   "challenges": 3623,
+   "density": 0.0542,
+   "reciprocity": 0.331,
+   "party_assortativity": -0.137,
+   "share_cross_side": 0.589,
+   "share_same_party": 0.0022
+  },
+  "2015 V": {
+   "nodes": 193,
+   "pairs": 1783,
+   "challenges": 3142,
+   "density": 0.0481,
+   "reciprocity": 0.322,
+   "party_assortativity": -0.119,
+   "share_cross_side": 0.384,
+   "share_same_party": 0.0038
+  },
+  "2016 KF+LA+V": {
+   "nodes": 210,
+   "pairs": 2297,
+   "challenges": 4443,
+   "density": 0.0523,
+   "reciprocity": 0.331,
+   "party_assortativity": -0.125,
+   "share_cross_side": 0.577,
+   "share_same_party": 0.0009
+  },
+  "2019 S": {
+   "nodes": 224,
+   "pairs": 4111,
+   "challenges": 8237,
+   "density": 0.0823,
+   "reciprocity": 0.387,
+   "party_assortativity": -0.094,
+   "share_cross_side": 0.422,
+   "share_same_party": 0.0034
+  },
+  "2022 M+S+V": {
+   "nodes": 223,
+   "pairs": 4379,
+   "challenges": 8477,
+   "density": 0.0885,
+   "reciprocity": 0.357,
+   "party_assortativity": -0.081,
+   "share_cross_side": 0.624,
+   "share_same_party": 0.0028
+  },
+  "2026 M+RV+S+SF": {
+   "nodes": 97,
+   "pairs": 210,
+   "challenges": 245,
+   "density": 0.0226,
+   "reciprocity": 0.067,
+   "party_assortativity": -0.079,
+   "share_cross_side": 0.608,
+   "share_same_party": 0.0
+  },
+  "all": {
+   "nodes": 571,
+   "pairs": 18020,
+   "challenges": 44591,
+   "density": 0.0554,
+   "reciprocity": 0.433,
+   "party_assortativity": -0.101,
+   "share_cross_side": 0.588,
+   "share_same_party": 0.0026
+  }
+ },
+ "role_counts": {
+  "2009 KF+V": {
+   "attack_dog": 9,
+   "lightning_rod": 21,
+   "minister_rod": 3,
+   "bridge_builder": 9,
+   "friendly_fire": 0,
+   "defector": 1,
+   "eligible": 174
+  },
+  "2011 RV+S+SF": {
+   "attack_dog": 3,
+   "lightning_rod": 21,
+   "minister_rod": 2,
+   "bridge_builder": 8,
+   "friendly_fire": 0,
+   "defector": 2,
+   "eligible": 173
+  },
+  "2014 RV+S": {
+   "attack_dog": 1,
+   "lightning_rod": 20,
+   "minister_rod": 2,
+   "bridge_builder": 9,
+   "friendly_fire": 1,
+   "defector": 2,
+   "eligible": 145
+  },
+  "2015 V": {
+   "attack_dog": 0,
+   "lightning_rod": 16,
+   "minister_rod": 3,
+   "bridge_builder": 10,
+   "friendly_fire": 2,
+   "defector": 2,
+   "eligible": 125
+  },
+  "2016 KF+LA+V": {
+   "attack_dog": 3,
+   "lightning_rod": 14,
+   "minister_rod": 2,
+   "bridge_builder": 7,
+   "friendly_fire": 2,
+   "defector": 2,
+   "eligible": 147
+  },
+  "2019 S": {
+   "attack_dog": 1,
+   "lightning_rod": 21,
+   "minister_rod": 2,
+   "bridge_builder": 16,
+   "friendly_fire": 0,
+   "defector": 20,
+   "eligible": 178
+  },
+  "2022 M+S+V": {
+   "attack_dog": 3,
+   "lightning_rod": 23,
+   "minister_rod": 3,
+   "bridge_builder": 13,
+   "friendly_fire": 1,
+   "defector": 14,
+   "eligible": 182
+  },
+  "2026 M+RV+S+SF": {
+   "attack_dog": 0,
+   "lightning_rod": 1,
+   "minister_rod": 1,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 0,
+   "eligible": 6
+  },
+  "all": {
+   "attack_dog": 10,
+   "lightning_rod": 35,
+   "minister_rod": 8,
+   "bridge_builder": 28,
+   "friendly_fire": 1,
+   "defector": 39,
+   "eligible": 439
+  }
+ },
+ "roles_by_party_all": [
+  {
+   "party": "ALT",
+   "members": 21,
+   "eligible": 15,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "DD",
+   "members": 8,
+   "eligible": 6,
+   "attack_dog": 1,
+   "lightning_rod": 1,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 1
+  },
+  {
+   "party": "DF",
+   "members": 55,
+   "eligible": 43,
+   "attack_dog": 2,
+   "lightning_rod": 3,
+   "minister_rod": 0,
+   "bridge_builder": 3,
+   "friendly_fire": 0,
+   "defector": 11
+  },
+  {
+   "party": "EL",
+   "members": 38,
+   "eligible": 30,
+   "attack_dog": 3,
+   "lightning_rod": 3,
+   "minister_rod": 0,
+   "bridge_builder": 1,
+   "friendly_fire": 0,
+   "defector": 1
+  },
+  {
+   "party": "IA",
+   "members": 6,
+   "eligible": 2,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 1,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "JF",
+   "members": 2,
+   "eligible": 1,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "KD",
+   "members": 2,
+   "eligible": 2,
+   "attack_dog": 0,
+   "lightning_rod": 2,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "KF",
+   "members": 51,
+   "eligible": 40,
+   "attack_dog": 0,
+   "lightning_rod": 2,
+   "minister_rod": 2,
+   "bridge_builder": 2,
+   "friendly_fire": 1,
+   "defector": 1
+  },
+  {
+   "party": "LA",
+   "members": 33,
+   "eligible": 26,
+   "attack_dog": 0,
+   "lightning_rod": 4,
+   "minister_rod": 0,
+   "bridge_builder": 2,
+   "friendly_fire": 0,
+   "defector": 1
+  },
+  {
+   "party": "M",
+   "members": 21,
+   "eligible": 16,
+   "attack_dog": 0,
+   "lightning_rod": 8,
+   "minister_rod": 0,
+   "bridge_builder": 1,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "N",
+   "members": 1,
+   "eligible": 0,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "NB",
+   "members": 4,
+   "eligible": 4,
+   "attack_dog": 0,
+   "lightning_rod": 2,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 3
+  },
+  {
+   "party": "RV",
+   "members": 51,
+   "eligible": 37,
+   "attack_dog": 1,
+   "lightning_rod": 1,
+   "minister_rod": 0,
+   "bridge_builder": 3,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "S",
+   "members": 109,
+   "eligible": 84,
+   "attack_dog": 0,
+   "lightning_rod": 3,
+   "minister_rod": 5,
+   "bridge_builder": 6,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "SF",
+   "members": 53,
+   "eligible": 43,
+   "attack_dog": 2,
+   "lightning_rod": 2,
+   "minister_rod": 0,
+   "bridge_builder": 5,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "SIU",
+   "members": 6,
+   "eligible": 3,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 2
+  },
+  {
+   "party": "SP",
+   "members": 2,
+   "eligible": 2,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "T",
+   "members": 3,
+   "eligible": 2,
+   "attack_dog": 0,
+   "lightning_rod": 0,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 0
+  },
+  {
+   "party": "UFG",
+   "members": 11,
+   "eligible": 9,
+   "attack_dog": 0,
+   "lightning_rod": 1,
+   "minister_rod": 0,
+   "bridge_builder": 0,
+   "friendly_fire": 0,
+   "defector": 5
+  },
+  {
+   "party": "V",
+   "members": 94,
+   "eligible": 74,
+   "attack_dog": 1,
+   "lightning_rod": 3,
+   "minister_rod": 1,
+   "bridge_builder": 4,
+   "friendly_fire": 0,
+   "defector": 4
+  }
+ ],
+ "roles_by_party": {
+  "2009 KF+V": [
+   {
+    "party": "DF",
+    "members": 25,
+    "eligible": 23,
+    "attack_dog": 0,
+    "lightning_rod": 5,
+    "minister_rod": 0,
+    "bridge_builder": 5,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 4,
+    "eligible": 4,
+    "attack_dog": 4,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 2,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KD",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "KF",
+    "members": 22,
+    "eligible": 19,
+    "attack_dog": 0,
+    "lightning_rod": 4,
+    "minister_rod": 1,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 3,
+    "eligible": 3,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 11,
+    "eligible": 11,
+    "attack_dog": 1,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "S",
+    "members": 46,
+    "eligible": 38,
+    "attack_dog": 2,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 27,
+    "eligible": 26,
+    "attack_dog": 2,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SIU",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SP",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "T",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 2,
+    "eligible": 2,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "V",
+    "members": 50,
+    "eligible": 46,
+    "attack_dog": 0,
+    "lightning_rod": 8,
+    "minister_rod": 2,
+    "bridge_builder": 3,
+    "friendly_fire": 0,
+    "defector": 0
+   }
+  ],
+  "2011 RV+S+SF": [
+   {
+    "party": "DF",
+    "members": 23,
+    "eligible": 22,
+    "attack_dog": 2,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 12,
+    "eligible": 12,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 2,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 10,
+    "eligible": 9,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 10,
+    "eligible": 8,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 22,
+    "eligible": 19,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "S",
+    "members": 46,
+    "eligible": 41,
+    "attack_dog": 0,
+    "lightning_rod": 4,
+    "minister_rod": 1,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 23,
+    "eligible": 17,
+    "attack_dog": 0,
+    "lightning_rod": 6,
+    "minister_rod": 1,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "SIU",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SP",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "V",
+    "members": 48,
+    "eligible": 41,
+    "attack_dog": 1,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   }
+  ],
+  "2014 RV+S": [
+   {
+    "party": "DF",
+    "members": 23,
+    "eligible": 21,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 14,
+    "eligible": 12,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 2,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 9,
+    "eligible": 8,
+    "attack_dog": 1,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 10,
+    "eligible": 7,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 22,
+    "eligible": 15,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "S",
+    "members": 49,
+    "eligible": 37,
+    "attack_dog": 0,
+    "lightning_rod": 5,
+    "minister_rod": 2,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "SF",
+    "members": 15,
+    "eligible": 11,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 1,
+    "defector": 0
+   },
+   {
+    "party": "SIU",
+    "members": 2,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SP",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "V",
+    "members": 45,
+    "eligible": 32,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   }
+  ],
+  "2015 V": [
+   {
+    "party": "ALT",
+    "members": 10,
+    "eligible": 8,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "DF",
+    "members": 36,
+    "eligible": 20,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 3,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 17,
+    "eligible": 15,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 7,
+    "eligible": 5,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 14,
+    "eligible": 11,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 10,
+    "eligible": 7,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "S",
+    "members": 49,
+    "eligible": 17,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 1,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 8,
+    "eligible": 7,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SIU",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "T",
+    "members": 2,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "V",
+    "members": 37,
+    "eligible": 31,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 3,
+    "bridge_builder": 1,
+    "friendly_fire": 1,
+    "defector": 0
+   }
+  ],
+  "2016 KF+LA+V": [
+   {
+    "party": "ALT",
+    "members": 12,
+    "eligible": 8,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "DF",
+    "members": 37,
+    "eligible": 24,
+    "attack_dog": 1,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 21,
+    "eligible": 18,
+    "attack_dog": 1,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 11,
+    "eligible": 9,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 2,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 16,
+    "eligible": 14,
+    "attack_dog": 0,
+    "lightning_rod": 4,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 13,
+    "eligible": 9,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "S",
+    "members": 46,
+    "eligible": 27,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 2,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 8,
+    "eligible": 7,
+    "attack_dog": 1,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "T",
+    "members": 2,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "V",
+    "members": 41,
+    "eligible": 28,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   }
+  ],
+  "2019 S": [
+   {
+    "party": "ALT",
+    "members": 4,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "DF",
+    "members": 22,
+    "eligible": 17,
+    "attack_dog": 1,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 8
+   },
+   {
+    "party": "EL",
+    "members": 19,
+    "eligible": 15,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "IA",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 2,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KD",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "KF",
+    "members": 19,
+    "eligible": 17,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 2
+   },
+   {
+    "party": "LA",
+    "members": 5,
+    "eligible": 3,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "M",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "NB",
+    "members": 5,
+    "eligible": 4,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 20,
+    "eligible": 18,
+    "attack_dog": 0,
+    "lightning_rod": 3,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "S",
+    "members": 55,
+    "eligible": 46,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 2,
+    "bridge_builder": 6,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "SF",
+    "members": 19,
+    "eligible": 15,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "SIU",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SP",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 5,
+    "eligible": 4,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 5
+   },
+   {
+    "party": "V",
+    "members": 44,
+    "eligible": 33,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   }
+  ],
+  "2022 M+S+V": [
+   {
+    "party": "ALT",
+    "members": 8,
+    "eligible": 6,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "DD",
+    "members": 17,
+    "eligible": 15,
+    "attack_dog": 1,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 4
+   },
+   {
+    "party": "DF",
+    "members": 7,
+    "eligible": 7,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "EL",
+    "members": 12,
+    "eligible": 11,
+    "attack_dog": 1,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "JF",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 17,
+    "eligible": 12,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 1,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 18,
+    "eligible": 16,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "M",
+    "members": 20,
+    "eligible": 17,
+    "attack_dog": 0,
+    "lightning_rod": 7,
+    "minister_rod": 0,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 2
+   },
+   {
+    "party": "N",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "NB",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "RV",
+    "members": 7,
+    "eligible": 7,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 3,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "S",
+    "members": 58,
+    "eligible": 42,
+    "attack_dog": 0,
+    "lightning_rod": 2,
+    "minister_rod": 2,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 20,
+    "eligible": 18,
+    "attack_dog": 1,
+    "lightning_rod": 2,
+    "minister_rod": 0,
+    "bridge_builder": 1,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SIU",
+    "members": 2,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 1
+   },
+   {
+    "party": "SP",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 4,
+    "eligible": 3,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 3
+   },
+   {
+    "party": "V",
+    "members": 28,
+    "eligible": 23,
+    "attack_dog": 0,
+    "lightning_rod": 4,
+    "minister_rod": 1,
+    "bridge_builder": 2,
+    "friendly_fire": 0,
+    "defector": 1
+   }
+  ],
+  "2026 M+RV+S+SF": [
+   {
+    "party": "ALT",
+    "members": 4,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 1,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "BP",
+    "members": 1,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "DD",
+    "members": 8,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "DF",
+    "members": 13,
+    "eligible": 1,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "EL",
+    "members": 6,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "IA",
+    "members": 1,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "KF",
+    "members": 9,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "LA",
+    "members": 6,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "M",
+    "members": 5,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "RV",
+    "members": 6,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "S",
+    "members": 17,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 1,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "SF",
+    "members": 8,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "UFG",
+    "members": 3,
+    "eligible": 2,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   },
+   {
+    "party": "V",
+    "members": 10,
+    "eligible": 0,
+    "attack_dog": 0,
+    "lightning_rod": 0,
+    "minister_rod": 0,
+    "bridge_builder": 0,
+    "friendly_fire": 0,
+    "defector": 0
+   }
+  ]
+ },
+ "top_members_all": {
+  "attack_dog": [
+   {
+    "person": 856,
+    "name": "Line Barfod",
+    "party": "EL",
+    "out_rate": 2.2994
+   },
+   {
+    "person": 667,
+    "name": "Søren Egge Rasmussen",
+    "party": "EL",
+    "out_rate": 0.6354
+   },
+   {
+    "person": 20373,
+    "name": "Susie Jessen",
+    "party": "DD",
+    "out_rate": 0.4545
+   },
+   {
+    "person": 3088,
+    "name": "Bente Dahl",
+    "party": "RV",
+    "out_rate": 0.4145
+   },
+   {
+    "person": 162,
+    "name": "Karina Adsbøl",
+    "party": "DF",
+    "out_rate": 0.3964
+   },
+   {
+    "person": 48,
+    "name": "Peter Skaarup",
+    "party": "DF",
+    "out_rate": 0.3866
+   },
+   {
+    "person": 147,
+    "name": "Johanne Schmidt-Nielsen",
+    "party": "EL",
+    "out_rate": 0.383
+   },
+   {
+    "person": 81,
+    "name": "Mads Rørvig",
+    "party": "V",
+    "out_rate": 0.3792
+   },
+   {
+    "person": 1258,
+    "name": "Nanna Westerby",
+    "party": "SF",
+    "out_rate": 0.3077
+   },
+   {
+    "person": 1883,
+    "name": "Anne Grete Holmsgaard (udpeget af SF)",
+    "party": "SF",
+    "out_rate": 0.2992
+   }
+  ],
+  "lightning_rod": [
+   {
+    "person": 71,
+    "name": "Tom Behnke",
+    "party": "KF",
+    "in_rate_backbench": 0.5354
+   },
+   {
+    "person": 20356,
+    "name": "Mikkel Bjørn",
+    "party": "DF",
+    "in_rate_backbench": 0.5
+   },
+   {
+    "person": 20415,
+    "name": "Mohammad Rona",
+    "party": "M",
+    "in_rate_backbench": 0.4778
+   },
+   {
+    "person": 20379,
+    "name": "Tobias Grotkjær Elmstrøm",
+    "party": "M",
+    "in_rate_backbench": 0.4756
+   },
+   {
+    "person": 20355,
+    "name": "Kim Edberg Andersen",
+    "party": "DD",
+    "in_rate_backbench": 0.4381
+   },
+   {
+    "person": 1378,
+    "name": "Per Ørum Jørgensen",
+    "party": "KD",
+    "in_rate_backbench": 0.4295
+   },
+   {
+    "person": 18716,
+    "name": "Rasmus Stoklund",
+    "party": "S",
+    "in_rate_backbench": 0.4109
+   },
+   {
+    "person": 20377,
+    "name": "Henrik Frandsen",
+    "party": "M",
+    "in_rate_backbench": 0.3791
+   },
+   {
+    "person": 20798,
+    "name": "Mads Olsen",
+    "party": "SF",
+    "in_rate_backbench": 0.3774
+   },
+   {
+    "person": 20841,
+    "name": "Lars Arne Christensen",
+    "party": "M",
+    "in_rate_backbench": 0.375
+   }
+  ],
+  "minister_rod": [
+   {
+    "person": 149,
+    "name": "Lars Barfoed",
+    "party": "KF",
+    "in_rate_minister": 1.4172
+   },
+   {
+    "person": 15770,
+    "name": "Mattias Tesfaye",
+    "party": "S",
+    "in_rate_minister": 0.5422
+   },
+   {
+    "person": 15776,
+    "name": "Peter Hummelgaard",
+    "party": "S",
+    "in_rate_minister": 0.5275
+   },
+   {
+    "person": 15784,
+    "name": "Søren Pape Poulsen",
+    "party": "KF",
+    "in_rate_minister": 0.4449
+   },
+   {
+    "person": 182,
+    "name": "Inger Støjberg",
+    "party": "V",
+    "in_rate_minister": 0.4251
+   },
+   {
+    "person": 15787,
+    "name": "Kaare Dybvad Bek",
+    "party": "S",
+    "in_rate_minister": 0.4132
+   },
+   {
+    "person": 351,
+    "name": "Sophie Hæstorp Andersen",
+    "party": "S",
+    "in_rate_minister": 0.3952
+   },
+   {
+    "person": 172,
+    "name": "Pernille Rosenkrantz-Theil",
+    "party": "S",
+    "in_rate_minister": 0.3681
+   }
+  ],
+  "bridge_builder": [
+   {
+    "person": 18699,
+    "name": "Christoffer Aagaard Melson",
+    "party": "V",
+    "participation": 0.9098
+   },
+   {
+    "person": 18726,
+    "name": "Stinus Lindgreen",
+    "party": "RV",
+    "participation": 0.9019
+   },
+   {
+    "person": 20381,
+    "name": "Karin Liltorp",
+    "party": "M",
+    "participation": 0.9007
+   },
+   {
+    "person": 15757,
+    "name": "Aaja Chemnitz",
+    "party": "IA",
+    "participation": 0.8989
+   },
+   {
+    "person": 18725,
+    "name": "Samira Nawa",
+    "party": "RV",
+    "participation": 0.8959
+   },
+   {
+    "person": 18717,
+    "name": "Bjørn Brandenborg",
+    "party": "S",
+    "participation": 0.8956
+   },
+   {
+    "person": 18718,
+    "name": "Anders Kronborg",
+    "party": "S",
+    "participation": 0.8923
+   },
+   {
+    "person": 18695,
+    "name": "Kim Valentin",
+    "party": "V",
+    "participation": 0.8918
+   },
+   {
+    "person": 18720,
+    "name": "Camilla Fabricius",
+    "party": "S",
+    "participation": 0.8904
+   },
+   {
+    "person": 109,
+    "name": "Trine Pertou Mach",
+    "party": "EL",
+    "participation": 0.8896
+   }
+  ],
+  "friendly_fire": [
+   {
+    "person": 20369,
+    "name": "Helle Bonnesen",
+    "party": "KF",
+    "z_own_side": 2.1428
+   }
+  ],
+  "defector": [
+   {
+    "person": 225,
+    "name": "Uffe Elbæk",
+    "party": "UFG",
+    "switches_in_window": 4.0
+   },
+   {
+    "person": 15758,
+    "name": "Aleqa Hammond",
+    "party": "SIU",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 82,
+    "name": "Hans Kristian Skibby",
+    "party": "DF",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 162,
+    "name": "Karina Adsbøl",
+    "party": "DF",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 145,
+    "name": "Lars Løkke Rasmussen",
+    "party": "V",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 152,
+    "name": "Ida Auken",
+    "party": "RV",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 182,
+    "name": "Inger Støjberg",
+    "party": "V",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 18721,
+    "name": "Mette Thiesen",
+    "party": "NB",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 18724,
+    "name": "Lars Boje Mathiesen",
+    "party": "NB",
+    "switches_in_window": 2.0
+   },
+   {
+    "person": 20355,
+    "name": "Kim Edberg Andersen",
+    "party": "DD",
+    "switches_in_window": 2.0
+   }
+  ]
+ },
+ "transitions": {
+  "attack_dog": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 4,
+    "kept": 0,
+    "gained": 0
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 1,
+    "kept": 0,
+    "gained": 0
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 0
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 7,
+    "kept": 0,
+    "gained": 8
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 1
+   }
+  },
+  "lightning_rod": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 8,
+    "kept": 2,
+    "gained": 7
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 4,
+    "kept": 0,
+    "gained": 13
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 15,
+    "kept": 4,
+    "gained": 6
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 52,
+    "kept": 12,
+    "gained": 27
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 8,
+    "kept": 1,
+    "gained": 5
+   }
+  },
+  "minister_rod": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 9
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 0
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 0
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 3,
+    "kept": 0,
+    "gained": 3
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 8,
+    "kept": 0,
+    "gained": 0
+   }
+  },
+  "bridge_builder": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 4,
+    "kept": 0,
+    "gained": 0
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 2,
+    "kept": 0,
+    "gained": 3
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 5,
+    "kept": 0,
+    "gained": 5
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 42,
+    "kept": 3,
+    "gained": 20
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 2
+   }
+  },
+  "friendly_fire": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 2,
+    "kept": 0,
+    "gained": 0
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 0
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 1
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 3,
+    "kept": 0,
+    "gained": 2
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 1
+   }
+  },
+  "defector": {
+   "became_minister": {
+    "pairs": 63,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 0
+   },
+   "entered_government": {
+    "pairs": 69,
+    "had_role": 0,
+    "kept": 0,
+    "gained": 3
+   },
+   "left_government": {
+    "pairs": 61,
+    "had_role": 1,
+    "kept": 0,
+    "gained": 2
+   },
+   "no_change": {
+    "pairs": 381,
+    "had_role": 11,
+    "kept": 1,
+    "gained": 14
+   },
+   "stopped_minister": {
+    "pairs": 52,
+    "had_role": 1,
+    "kept": 0,
+    "gained": 4
+   }
+  }
+ },
+ "pending_roles": [
+  "negative_nancy"
+ ]
+}

@@ -1,60 +1,196 @@
-# Crossing the Aisle
- 
-Problem statement:
-Members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. We ask: can we find distinct archetypes of members in the Danish parliament from how they vote, debate and talk? We build a challenge network for 2009–2026. Nodes are members, and a directed edge goes from a member who makes a short remark to the member holding the floor. We combine each member's position in this network with their voting record and party history. We define a set of archetypes from these measures, such as the attack dog, the lightning rod, the defector and the negative Nancy. Then we test whether these roles really exist, or whether clustering the members finds different ones.
- 
-Language processing:
-We measure the tone of every challenge as hostile, neutral or friendly, using a sentiment score checked against hand labels. This gives each member a profile: how negative their challenges are, how emotional or argumentative their language is, and whether their hostility is aimed at the other bloc, at their own side or at the government. We ask: are some archetypes defined by tone, like the negative Nancy, and others by network position alone, like the lightning rod? We also find the most distinctive words for each archetype, to show how an attack dog talks compared with a bridge builder.
- 
-Conclusion:
-We conclude whether the Danish parliament can be described by a small set of archetypes, and how they are spread across parties. Does each party have its own attack dog and its own lightning rod, or are some parties made up mostly of one type? We also ask whether members change archetype over time, for example when their party enters government or when they become ministers.
+# Archetypes of the Danish Parliament
 
-**Question:** when a change of government makes parties vote together, do their members' floor challenges and language follow?
-
-**Finding:** when parties enter government together, challenges between their members fall about 3-fold relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.
-
-**Status: preliminary.** The group's hand labels are not done, so the challenge rule's accuracy and the tone of challenges are unvalidated. The site shows a "Validation pending" banner until the labels are scored. See [What is left to do](#what-is-left-to-do).
+**Question:** members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. Can we find distinct archetypes of members in Folketinget, 2009–2026, from how they vote, debate and talk?
 
 Final project for DTU 02805 Social Graphs and Interactions, group 831: Christian Colberg (s224343), Yuen Yi Hui (s226465), Simon Jonsson (s224331).
 
 **Data source: Folketinget**, through [oda.ft.dk](https://oda.ft.dk/). Folketinget has not endorsed or reviewed this project.
 
+> The project started from an earlier question ("Crossing the Aisle": do floor challenges follow changes of government?). Its pipeline in `tools/` still runs, and it builds the shared data that this project reads. See [Rebuilding the shared data](#rebuilding-the-shared-data).
+
+**Status:** the network layer (layer 1 below) is being built. The language, voting and clustering layers are planned.
+
+## Problem statement
+
+### Network
+
+Members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. We ask: can we find distinct archetypes of members in the Danish parliament from how they vote, debate and talk? We build a challenge network for 2009–2026. Nodes are members, and a directed edge goes from a member who makes a short remark to the member holding the floor. We combine each member's position in this network with their voting record and party history. We define a set of archetypes from these measures, such as the attack dog, the lightning rod, the defector and the negative Nancy. Then we test whether these roles really exist, or whether clustering the members finds different ones.
+
+### Language processing
+
+We measure the tone of every challenge as hostile, neutral or friendly, using a sentiment score checked against hand labels. This gives each member a profile: how negative their challenges are, how emotional or argumentative their language is, and whether their hostility is aimed at the other bloc, at their own side or at the government. We ask: are some archetypes defined by tone, like the negative Nancy, and others by network position alone, like the lightning rod? We also find the most distinctive words for each archetype, to show how an attack dog talks compared with a bridge builder.
+
+### Conclusion
+
+We conclude whether the Danish parliament can be described by a small set of archetypes, and how they are spread across parties. Does each party have its own attack dog and its own lightning rod, or are some parties made up mostly of one type? We also ask whether members change archetype over time, for example when their party enters government or when they become ministers.
+
 ## Contents
 
-- [Results](#results)
-- [How the project works](#how-the-project-works)
+- [Problem statement](#problem-statement)
+- [The plan in one picture](#the-plan-in-one-picture)
+- [The challenge network](#the-challenge-network)
+- [Layer 1: network measures](#layer-1-network-measures)
+- [Party history and defectors](#party-history-and-defectors)
+- [Archetypes defined by rules](#archetypes-defined-by-rules)
+- [Nulls: is a role more than chance?](#nulls-is-a-role-more-than-chance)
+- [First results of layer 1](#first-results-of-layer-1)
+- [Planned layers](#planned-layers)
+- [Code layout](#code-layout)
 - [How to run it](#how-to-run-it)
-- [What is left to do](#what-is-left-to-do)
-- [Project history](#project-history)
-- [Where things are](#where-things-are)
+- [Known limitations](#known-limitations)
 
-## Results
+## The plan in one picture
 
-Each row compares party pairs that entered government together or split with pairs whose relation did not change at the same formation, across six formations from 2011 to 2022.
+```
+ oda.ft.dk ──► tools/collect.py ──► tools/build_dataset.py ──► data/challenges.parquet
+ (existing pipeline, unchanged)                               data/party_positions.parquet
+                                                              data/governments.json
+                                                                       │
+ ┌─────────────────────────────── archetypes/ ─────────────────────────┴──────────────┐
+ │ data.py      clean edges, party history, switches, windows, blocs, edge labels     │
+ │ graphs.py    one weighted directed graph per government window, plus one overall   │
+ │ metrics.py   per member × window: activity, targeting, receiving, structure        │  layer 1
+ │ nulls.py     degree-preserving shuffles → z-scores for every targeting share       │  (today)
+ │ roles.py     rule-based archetypes (attack dog, lightning rod, ...)                │
+ │ run_network.py  writes data/archetypes/*.parquet and data/results/archetypes_*.json│
+ ├────────────────────────────────────────────────────────────────────────────────────┤
+ │ tone.py      hostile / neutral / friendly per challenge, checked on hand labels    │  layer 2
+ │ words.py     distinctive words per archetype                                       │  (planned)
+ │ votes.py     rebel rate and absence per member × window (2017+)                    │  layer 3
+ │ cluster.py   unsupervised clusters on all features; compare with the rule roles    │  layer 4
+ └────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-| Measure | Moved as expected | p (one-sided) |
-|---|---:|---:|
-| Floor challenges | 14 of 14 pairs | < 0.0001 |
-| Challenges, backbenchers only | 14 of 14 pairs | < 0.0001 |
-| Challenges, same members before and after | 10 of 10 pairs | < 0.0001 |
-| Votes on contested items | 13 of 14 pairs | < 0.0001 |
-| Language: similarity within the same debate | 13 of 14 pairs | < 0.0001 |
-| Language: telling two parties apart by classifier | 3 of 8 pairs | 0.12 |
+Every layer adds columns to one table, **one row per member per government window**. The rule-based roles and the clustering both read that table. That is how we test whether the hand-defined archetypes actually exist.
 
-- **Clearest case:** S and V challenged each other 623 times before governing together (489 expected by chance) and 22 times during (135 expected).
-- **Votes set up the question:** only about 0.14% of member votes went against the member's party in 2019–26, and member votes add nothing beyond party.
-- **Language is mixed:** the two language methods disagree, and S–V similarity barely moved in 2022 after rising for years beforehand. The clearest signal is the vocabulary of being in opposition: words like `ministeren` and `regeringen`.
-- **Communities:** the challenge network has clear communities that barely match party. Their debate topics read like policy areas, but that is our reading of title words with weak quantitative support.
+**Unit of analysis.** A *window* is the time between two government formations (`data/governments.json`, eight windows from Nov 2009 to 2026). Working per window means a member can change archetype when their party enters government or when they become a minister. Every measure is also computed once over the whole period (`window = "all"`).
 
-Limitations are listed on the site and in `docs/dataset.md`. The main ones are few events, a rule-based network whose accuracy is not yet hand-checked, and no measure of tone yet.
+## The challenge network
 
-## How the project works
+After a speech, the chair can give the floor to another member for a *kort bemærkning*, a short remark aimed at whoever holds the floor. `tools/build_dataset.py` reads these from the transcripts. The rule is: a member's turn, then a chair turn announcing a short remark, then a different member.
 
-### The idea
+- **Nodes:** members (Aktør person ids).
+- **Edges:** directed, **challenger → member holding the floor**, weighted by the number of challenges.
+- **Edge attributes** added in `archetypes/data.py`: the window, both parties, both blocs, whether each side is in government at that date, and whether the floor holder is a minister.
+- **Size:** 45,529 challenges among 573 people, Oct 2009 – Sep 2026.
 
-Danish members almost never vote against their party, so a member-level voting network mostly recovers the parties. The floor is different. After a speech, the chair can call a member for a *kort bemærkning*, a short remark aimed at whoever holds the floor. Reading those calls from the transcripts gives a directed network of who challenges whom, which we compare with votes and language across changes of government.
+Edges from before the first formation in our data (24 Nov 2009), or with an unresolved party (`UFG` aside), are dropped, as in the earlier project.
 
-### Where the data comes from
+### Labels attached to each edge
+
+| Label | Meaning |
+|---|---|
+| `same_party` | challenger and floor holder in the same party on that date |
+| `cross_bloc` | one in red, one in blue (see the bloc map below); undefined if either is centre, North Atlantic or independent |
+| `cross_side` | one in government, one in opposition. Ministers count as government. |
+| `own_side` | allies: same party, both in government, or both in opposition **and** in the same main bloc. EL challenging DF while both are in opposition is neither `cross_side` nor `own_side`. |
+| `at_government` | the floor holder is a minister or in a government party |
+
+**Blocs** (an assumption, set in `archetypes/config.py`): red = S, SF, RV, EL, ALT, FG. Blue = V, KF, DF, LA, NB, DD, BP, KD. Centre = M. North Atlantic = IA, SIU, SP, T, TF, JF, NQ, N. `UFG` (independent) has no bloc. The government/opposition side comes from the data, so `cross_side` is our main "aimed at the other side" measure, with `cross_bloc` as a check.
+
+## Layer 1: network measures
+
+`archetypes/metrics.py` computes each measure per member and window.
+
+| Group | Measure | What it is for |
+|---|---|---|
+| Activity | `out_w`, `in_w` | challenges made and received |
+| | `out_rate`, `in_rate` | the same per sitting day while the member was active (exposure, see limitations) |
+| | `in_w_backbench`, `in_rate_backbench` | challenges received while **not** a minister, because ministers are challenged by default |
+| | `attack_balance` | (out − in) / (out + in): +1 only attacks, −1 only attacked |
+| Targeting (out-edges) | `share_cross_side`, `share_own_side`, `share_cross_bloc`, `share_own_party`, `share_at_government` | who their challenges hit |
+| | `target_entropy`, `top_target_share` | many targets, or one fixation |
+| Receiving (in-edges) | `in_share_cross_side`, `in_n_parties`, `in_party_diversity` | attacked by one camp or by everyone |
+| Structure | `pagerank_in` | challenged by members who are themselves challenged a lot |
+| | `hub`, `authority` (HITS) | good attacker vs good target, mutually defined |
+| | `betweenness` | sits on paths between otherwise separate groups |
+| | `participation` | spread of the member's edges over parties (participation coefficient, 0 = one party, → 1 = all parties equally) |
+| | `reciprocity` | share of partners who are challenged in both directions |
+| Status | `party`, `in_government`, `was_minister`, `minister_share` | for the conclusion: do roles move with office? |
+
+## Party history and defectors
+
+Party labels in the transcript are reliable for members but not for ministers. The tag is missing and the old builder fills it from the nearest session. That put Inger Støjberg in DD (founded 2022) as a minister in 2009. So `archetypes/data.py`:
+
+1. Builds each member's **party runs** from their own non-minister turns, sorted by date. It drops runs shorter than `MIN_RUN` appearances, which are treated as noise.
+2. Records a **switch** wherever two consecutive runs differ, including moves to and from `UFG` (independent). Known renames, such as `TF` → `T`, are not switches.
+3. Re-labels ministers' edges with the party run active on that date.
+
+This gives `data/archetypes/party_history.parquet` and `party_switches.parquet`. The first run finds 53 switches by 39 members, for example DF → DD in 2022, V → UFG → M (Løkke) and ALT → FG. A switch is dated by the first appearance in the new party, which can lag the real date by weeks.
+
+## Archetypes defined by rules
+
+`archetypes/roles.py` assigns roles within each window. It only considers members with at least `MIN_EDGES` challenges in either direction, and uses percentiles within the window, so a busy session does not create more attack dogs. A member can hold several roles or none.
+
+| Archetype | Rule (network layer) | Needs language? |
+|---|---|---|
+| **Attack dog** | top 20% `out_rate`, `attack_balance` ≥ 1/3, and `share_cross_side` above the null (z ≥ 2) or ≥ 0.8 | no, tone sharpens it |
+| **Lightning rod** | top 20% `in_rate_backbench`, and top 50% `in_party_diversity`: attacked a lot, by many parties | no |
+| **Minister rod** | the same, for challenges received as minister, ranked among ministers | no |
+| **Bridge builder** | top 20% `participation`, top 50% `reciprocity`, `|attack_balance|` < 1/3 | **yes**: needs friendly tone to tell bridging from brawling |
+| **Friendly fire** | `share_own_side` above the null (z ≥ 2) and ≥ 0.3: challenges their allies | tone tells critic from ally |
+| **Defector** | at least one party switch in the window (or in the career, at member level) | no |
+| **Negative Nancy** | mostly hostile challenges | **yes**, layer 2; empty until then |
+
+The thresholds are in `archetypes/config.py`, so they are in one place and easy to vary. Part of the analysis is to check that the roles survive moderate changes to them.
+
+## Nulls: is a role more than chance?
+
+A member challenging the opposition might just reflect who speaks in the debates they join. `archetypes/nulls.py` therefore shuffles the floor side of the edges:
+
+- **Within each debate** (default): keeps how often each member challenges, and who held the floor in each debate. Only "who challenged whom inside a debate" is randomized.
+- **Within the window** (looser): keeps each member's in- and out-degree, which is a directed configuration model.
+
+For each targeting share it reports the observed count, the null mean and SD, `z`, and a one-sided empirical p (`N_SHUFFLES` = 500). Self-loops the shuffle creates are dropped from both the count and the total. The same is done on the receiving side by shuffling challengers, for `in_share_cross_side`.
+
+## First results of layer 1
+
+These come from the first full run (500 shuffles, null within debates), 11 Nov 2026. The thresholds have not been tuned yet.
+
+- **Data used:** 44,591 labeled challenges among 571 members. 53 party switches by 39 members. Each window has 125–182 members with at least 15 challenges; the Jun–Sep 2026 window has only 6.
+- **Roles per window:** lightning rod 14–23, bridge builder 7–16, attack dog 0–9, minister rod 2–3, friendly fire 0–2. Defectors cluster in 2019–22 (the DF exodus to DD, the NB break-up and the ALT/FG split).
+- **Attack dog is rare.** Prolific challengers are mostly spokespeople who are also challenged a lot, so few reach `attack_balance` ≥ 1/3. This needs a group decision: loosen the balance condition, or keep "attack dog" for genuinely one-way attackers.
+- **Friendly fire barely survives the within-debate null.** 77 member-windows have `share_own_side` ≥ 0.3, but only 6 have z ≥ 2. Most own-side challenges happen in debates where the floor holder is an ally anyway.
+- **Roles are not stable across windows.** Of 7 attack dogs whose office did not change, none kept the role in the next window. For lightning rods it was 12 of 52. Either roles really are situational, or the rules sit too close to noise. The sensitivity check and the clustering (layer 4) should tell these apart.
+
+## Planned layers
+
+- **Layer 2, tone** (`tone.py`, `words.py`). Score every challenge as hostile / neutral / friendly with a Danish sentiment score (AFINN-da is already a dependency), checked against `labeling/challenge_stance.csv`. Per member: share hostile, mean intensity, and hostility aimed at the other bloc / own side / government. Distinctive words per archetype (TF-IDF or log-odds). This needs `data-raw/derived/speeches.parquet`, which holds the text.
+- **Layer 3, votes** (`votes.py`). Rebel rate and absence per member and window, from member votes (2017–18 onward only), reusing `tools/analyze_votes.py:member_votes`.
+- **Layer 4, clustering** (`cluster.py`). Standardize the member × window table, cluster it (Gaussian mixture or k-means, choosing *k* by silhouette/BIC), and compare with the rule roles: contingency table, adjusted Rand index, and which features separate each cluster.
+- **Conclusion.** Roles by party (does each party have its own attack dog?), and role transitions between consecutive windows, split by entering/leaving government and becoming a minister. `run_network.py` already writes a first version of both from the network layer.
+
+## Code layout
+
+| Path | What |
+|---|---|
+| `archetypes/config.py` | paths, seed, blocs, renames, thresholds |
+| `archetypes/data.py` | loading, cleaning, party runs, switches, windows, edge labels |
+| `archetypes/graphs.py` | building weighted directed graphs per window |
+| `archetypes/metrics.py` | node measures → member × window table |
+| `archetypes/nulls.py` | shuffles and z-scores |
+| `archetypes/roles.py` | rule-based archetypes, role tables by party, transitions |
+| `archetypes/run_network.py` | runs layer 1 end to end |
+| `tests/test_network.py` | toy graphs with answers worked out by hand |
+| `data/archetypes/` | outputs (parquet) |
+| `data/results/archetypes_network.json` | summary for the notebook and site |
+
+## How to run it
+
+The network layer only needs the committed `data/` folder, so `data-raw/` is not required.
+
+```
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python -m archetypes.run_network
+.venv\Scripts\python tests\test_network.py
+```
+
+`run_network` takes about 75 seconds with 500 shuffles. Use `--shuffles 50` for a quick run, or `--null-group window` for the looser null. The tests also run under `pytest`.
+
+### Rebuilding the shared data
+
+The committed `data/` is built by the pipeline in `tools/`, from these sources:
 
 | Data | Source | Scope | Size |
 |---|---|---|---|
@@ -65,162 +201,33 @@ Danish members almost never vote against their party, so a member-level voting n
 | Minister roles | `AktørAktør` | Used to derive governments | 961 rows |
 | Committee memberships | `AktørAktør` | Per session | 21,316 rows |
 
-Biographies were never downloaded, because they hold birth dates, contact details and family information we do not need.
-
-Downloads are throttled to at most one API request per half second and one FTP file per second. Every API response is cached in `data-raw/`, so reruns do not hit the service again. `docs/collection_log.json` records what was collected, when and how many records.
-
-### What each step does
-
-`tools/run_all.py` runs these in order and stops at the first failure.
-
-| # | Script | What it does | Writes |
-|---|---|---|---|
-| 1 | `collect.py` | Downloads tables, debate XML, member votes and committees | `data-raw/`, `docs/collection_log.json` |
-| 2 | `build_dataset.py` | Parses speeches, resolves names to people, assigns parties, extracts challenges, parses party positions, derives governments | `data-raw/derived/speeches.parquet`, `data/*.parquet`, `data/governments.json`, `docs/dataset_numbers.json` |
-| 3 | `make_labeling_sheets.py` | Draws the samples for hand labeling; never overwrites an existing sheet | `labeling/*.csv` |
-| 4 | `analyze_network.py` | Party mixing against nulls, assortativity, communities, changes at each formation, quarterly timelines | `data/results/network.json` |
-| 5 | `analyze_votes.py` | Rebel rates and the member vote network | `data/results/votes.json` |
-| 6 | `analyze_language.py` | Party classifier, sentence embeddings within debates, distinctive words | `data/results/language.json` |
-| 7 | `analyze_role.py` | Opposition vocabulary and a government/opposition classifier | `data/results/role.json` |
-| 8 | `summarize.py` | Puts all layers on a common placebo scale, with permutation tests | `data/results/summary.json` |
-| 9 | `check_labels.py` | Scores the group's hand labels | `data/results/label_checks.json` |
-| 10 | `validate.py` | Toy-case tests and independent recounts; stops the run if any check fails | `data/results/validation.json` |
-| 11 | `export_site.py` | Gathers everything the site draws | `data/site.json` |
-| 12 | `make_notebook.py` | Writes and runs the results notebook | `notebooks/analysis.ipynb` |
-
-Two more scripts are not part of the pipeline: `recon_oda.py` and `recon_feasibility.py` produced the first look at the data in `docs/data_recon.md`, and `progress.py` shows live progress of a run.
-
-### The key modeling decisions
-
-- **A challenge edge:** a member's turn, then a chair turn announcing a short remark (not "no short remarks"), then a different member.
-- **Speakers to people:** by name, because `tingdokID` in the XML is not a person id. Name changes are in `data/name_aliases.csv`.
-- **Party:** the transcript's tag first, then the session's membership, then the nearest session. Ministers have no tag.
-- **Governments:** parties holding at least two ministers on a date. A "window" is the time between two formations.
-- **The nulls:** challenges are compared with shuffling the floor speaker, which keeps how many challenges each member made and received. A stricter version shuffles within each debate.
-- **The placebo:** at each formation, pairs that joined or split are compared with pairs whose relation did not change. Relation labels are shuffled within formations for the p-values.
-- **Language:** backbench speech only, with names of people and parties removed. Text goes through `paraphrase-multilingual-MiniLM-L12-v2` in 60-word chunks, because 90-word chunks were silently truncated.
-
-`AI_METHODS.md` gives what each measure captures, what it misses, how it was checked and the result.
-
-## How to run it
-
-### View the site
+Downloads are throttled to one API request per half second and one FTP file per second, and every response is cached in `data-raw/`, so reruns do not hit the service again. `docs/collection_log.json` records what was collected and when. How the tables are joined, and the known biases, are in `docs/dataset.md`.
 
 ```
-python -m http.server
-```
-
-Run that in the repo folder and open `http://localhost:8000`. The site is `index.html`, `assets/` and `data/site.json`, with no build step.
-
-### Rerun everything
-
-```
-python -m venv .venv
-.venv\Scripts\pip install -r requirements.txt
 .venv\Scripts\python tools\run_all.py
 ```
 
-Commands are for Windows; on macOS or Linux use `.venv/bin/`. A first run downloads everything and takes several hours. A rerun with the downloads and embeddings saved took under an hour on a 16-core CPU. The downloads can be stopped at any time; rerunning skips what is already saved. A run from a completely empty `data-raw/` has not been tested.
+This runs `collect.py` (downloads), `build_dataset.py` (speeches, people, parties, challenges, governments) and the rest of `tools/` in order, stopping at the first failure. A first run takes several hours; it can be stopped at any time and resumes from what is saved. To rerun one download step: `tools\collect.py tables`, `debates`, `votes` or `committees`. To watch a run, write it to a log (`... run_all.py > run_all.log 2>&1`) and run `tools\progress.py run_all.log` in another window.
 
-To rerun just one download step, use `tools\collect.py tables`, `debates`, `votes` or `committees`.
+Steps 4–12 of `run_all.py` (`analyze_*.py`, `summarize.py`, `export_site.py`, `make_notebook.py`) belong to the earlier question: do floor challenges follow changes of government? They still drive the current site and notebook.
 
-To watch a run:
+### Hand labels
 
-```
-.venv\Scripts\python tools\run_all.py > run_all.log 2>&1
-.venv\Scripts\python tools\progress.py run_all.log
-```
+The sheets in `labeling/` must be labeled by the group, not by a model; instructions are in `labeling/README.md`. A second person labels `challenge_stance` separately, as `challenge_stance_second.csv`, so agreement can be reported.
 
-Run the second command in another window.
+| Sheet | Rows | What you decide |
+|---|---:|---|
+| `challenge_precision` | 60 | Is this edge really a challenge to the speaker holding the floor? |
+| `challenge_missed` | 60 | Did the rule miss a challenge here? |
+| `challenge_stance` | 60 | Is the tone hostile, neutral or friendly? Also the check for the tone layer. |
+| `name_resolution` | 57 | Is this the same person? |
 
-### Score the hand labels
+Save as UTF-8 CSV under the same names, then run `tools\check_labels.py`. Set in advance: if the challenge rule is under 90% precise, the network is not reliable enough to use.
 
-Fill in `labeling/*.csv` following `labeling/README.md`, saving as UTF-8 CSV under the same names. Then:
+## Known limitations
 
-```
-.venv\Scripts\python tools\check_labels.py
-.venv\Scripts\python tools\export_site.py
-```
-
-The banner clears once every row of all four sheets is labeled, including the second labeler's `challenge_stance`. To keep the notebook in step, also run `tools\make_notebook.py`.
-
-## What is left to do
-
-1. **Label the four sheets in `labeling/`.** No model may do this. A second person labels `challenge_stance` separately and saves it as `challenge_stance_second.csv`, so we can report agreement.
-
-   | Sheet | Rows | What you decide |
-   |---|---:|---|
-   | `challenge_precision` | 60 | Is this edge really a challenge to the speaker holding the floor? |
-   | `challenge_missed` | 60 | Did the rule miss a challenge here? |
-   | `challenge_stance` | 60 | Is the tone hostile, neutral or friendly? |
-   | `name_resolution` | 57 | Is this the same person? |
-
-   If the challenge rule scores under 90% precise, that is the abandon condition set in advance. The fallback project is the party-switcher question, which uses the same data.
-2. **Read what the agent interpreted.** That means the claim that communities are policy areas, the aliases in `data/name_aliases.csv`, and the 2026 government's parties, which come from the data alone. Update the site and `AI_METHODS.md` if you disagree.
-3. **Publish.** Enable GitHub Pages under Settings → Pages → `main`, root folder. The repo may need to be public for that. Then check the site and its links live.
-4. **Write the exam hand-in.** The paper, three slides and reflection are due Fri 27 Nov 2026, with presentations on 2 Dec. The reference list needs a proper literature search, in particular on Danish parliamentary debate and voting.
-5. **Make sure everyone can explain the code.** The presentation tests this, and any group member can be asked.
-
-## Project history
-
-All of this happened on 4 November 2026 unless noted. An AI agent (Claude Code) did the work below under the group's direction. Times are in UTC.
-
-### 1. Orientation
-The agent read the group's go-nuts site (`colberg00.github.io`) for its theme and reusable methods. The project brief named that repo as the place to work, and the first scripts went there. The group pointed out that this repo is the project's home, so everything was moved here and the go-nuts repo was left as it was. Only the theme file and the group's student ids were reused.
-
-### 2. Reconnaissance (09:17–09:38)
-The agent probed the API and FTP server, documented in `docs/data_recon.md`. It found:
-- Debate XML exists for every sitting since 2009, with speaker, party, role and timestamps.
-- Only about 0.13% of cast votes in a sample were rebel votes, so the seed idea of a member voting network would mostly recover parties.
-- The API has silent traps. A missing `$` returns every row, `$expand=Stemme` cuts off at 100 rows, and `resume ne null` matches empty text. The brief's claim that an invalid filter returns everything was wrong as stated: it returns HTTP 400.
-- `www.ft.dk` blocks scripts, so the terms were first read from an archived copy. The group then confirmed the current text from the live page.
-
-The first version of the challenge rule was wrong on 4 of 6 examples, because it matched "there are no short remarks". It was tightened before moving on.
-
-### 3. Choosing the question
-The agent proposed three candidates: this one, predicting party switches from language, and co-sponsorship topics. The group chose this one and decided the site lives in this repo's Pages, with names and student ids. The group makes all commits.
-
-### 4. Building the dataset (09:52–11:49, plus committees later)
-Debates were widened from the proposed 2017 start to 2009, which added the 2011 and 2015 formations as comparison events at no API cost. Downloads were paused twice while the group moved between buildings, and resumed from the saved data without losing any. Committee memberships were added later to test what the network communities mean.
-
-Problems found and fixed while building:
-- One source file, `20222_M62`, is malformed at the source. It is read with a recovering parser and logged.
-- Names needed an alias table, because of name changes such as Mai Henriksen to Mai Mercado.
-- Minister records needed cleaning. Some were never closed, and party lookups could go stale. After fixes, the derived formation dates match the actual ones through 2022.
-- Labeling sheets were drawn three times from stale data, because a failed build did not stop the next command. Those unlabeled sheets were deleted and redrawn from the full corpus.
-
-### 5. Analysis
-The network analysis came first, and the challenge result was strong straight away. Then:
-- A cross-check failed and led the agent to read the raw vote text, which exposed **two real parser bugs**: lists ending in "og" created fake parties, and names with initials cut off the parties after them. Headline S–V numbers had looked fine. Both were fixed, and the build now fails if parsing produces many non-party tokens. The cross-check was replaced with a truly independent one using individual member votes.
-- A truncation check found **38% of 90-word chunks were cut off silently** by the encoder. Chunks were shortened to 60 words, which gave 0.0% truncated in a sample of 3,000.
-- The language run was also slowed by a very large regex for removing names, which was rewritten.
-- The agent first told the group language "barely" tracks government changes. A formal test showed that was too strong across formations, because similarity moved the expected way for 13 of 14 pairs. It was corrected. The S–V case in 2022 is the weak one.
-
-### 6. The site
-Five figures were built, each with its check beside it, then tested in a browser at desktop and phone widths. Testing caught several things:
-- The headline's "5-fold" mixed joins and splits. For parties entering together, the sentence it describes, the median is about 3-fold, so the headline was corrected.
-- Small disconnected fragments squashed the network drawing, so only the largest connected part of the backbone is drawn and search finds everyone else.
-- Quarters spanning a formation were counted twice in Figure 3, and smoothed lines implied detail that was not there. Both were fixed.
-- The page claimed every older transcript was `Typeset`, which the data contradicted. The wording was corrected.
-
-### 7. Reproduction check
-The full pipeline ran with the one documented command, using saved downloads. Comparing outputs showed rows in a different order, plus one tiny numeric change it caused (7.26 to 7.25). Rows are now sorted, and two consecutive reruns of the analysis steps gave identical numbers, apart from the order of parties inside three check descriptions.
-
-## Where things are
-
-| Path | What |
-|---|---|
-| `index.html`, `assets/` | The site |
-| `AI_METHODS.md` | Where an agent or model touched a result, and how it was checked |
-| `docs/dataset.md` | What is in the data, and known biases |
-| `docs/data_recon.md` | First look at the API, with its traps |
-| `docs/collection_log.json`, `docs/dataset_numbers.json` | What was collected, and the counts from the build |
-| `notebooks/analysis.ipynb` | Results and hand-validation cells |
-| `labeling/` | Sheets for the group's hand labels, with instructions |
-| `tools/` | The pipeline |
-| `data/` | Compact derived data and results (committed) |
-| `data-raw/` | Raw downloads and speech text (not committed; rebuilt by `collect.py`) |
-
-## Terms of use
-
-Folketinget's terms allow free use, including publication. They require crediting Folketinget, not implying endorsement, not using its logo, complying with Danish law, deleting withdrawn data, not straining the service, and telling readers whether a transcript is provisional or final. The status field is undocumented, so we treat `Typeset` as final and everything else as provisional, which is our inference. The site shows no transcript text.
+- **Exposure.** Without the speech text we only see floor holders who were challenged, not every speech. Rates are therefore per sitting day between a member's first and last appearance in the window. With `data-raw/derived/speeches.parquet`, exposure can become "floor turns", and `in_rate` should then be read per speech.
+- **Ministers** receive about 20% of all challenges, but make almost none. That is why the lightning rod uses backbench challenges and minister rods are ranked separately.
+- **The challenge rule** is not hand-validated yet (`labeling/challenge_precision.csv`). Below 90% precision, the network layer is unreliable.
+- **Blocs** are a fixed map, but RV and M have moved between camps. `cross_side` (government vs opposition, from the data) is the safer measure.
+- **Short windows** (Jun–Sep 2026) have few edges. Roles there are mostly empty by construction.
