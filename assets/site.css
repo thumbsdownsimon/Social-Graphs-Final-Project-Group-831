@@ -95,3 +95,20 @@ pre{ background: #241e18; color: #f1e6c8; padding: .8rem 1rem; border-radius: va
   .net-layout{ grid-template-columns: 1fr; }
   .member-panel{ border-left: none; border-top: 1px solid var(--line); padding: .7rem 0 0; max-height: none; }
 }
+
+/* ---------- Part 1: archetypes (draft) ---------- */
+.status-card{ margin: 1.4rem 0; }
+.status-table td:nth-child(2){ font-weight: 700; }
+.words-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: .4rem 1.6rem; }
+.words-grid h4{ margin: .3rem 0; font-size: .95rem; }
+.word-row{ display: grid; grid-template-columns: 9rem 1fr; align-items: center; gap: .5rem; font-size: .88rem; min-height: 1.35rem; }
+.word-row .bar{ height: .7rem; border-radius: 0 4px 4px 0; background: var(--blue-tack); }
+.arch-chip{ display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; margin-right: .35rem; vertical-align: -1px; border: 1px solid rgba(43,38,34,.5); }
+table.data td.count{ text-align: center; cursor: default; }
+table.data td.count.has{ font-weight: 700; }
+.chart .dot{ stroke: #fcf8ee; stroke-width: 1px; }
+.chart .dot.dim{ opacity: .15; }
+.chart .dot.hit{ stroke: var(--ink); stroke-width: 2px; }
+.status-table td, #arch-rules td, #arch-clusters td{ white-space: normal; min-width: 7rem; }
+#fig-arch-profiles{ overflow-x: auto; }
+#fig-arch-profiles svg{ min-width: 640px; }

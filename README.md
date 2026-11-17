@@ -82,6 +82,7 @@ Downloads are throttled to at most one API request per half second and one FTP f
 | 5 | `analyze_votes.py` | Rebel rates and the member vote network | `data/results/votes.json` |
 | 6 | `analyze_language.py` | Party classifier, sentence embeddings within debates, distinctive words | `data/results/language.json` |
 | 7 | `analyze_role.py` | Opposition vocabulary and a government/opposition classifier | `data/results/role.json` |
+| 7b | `analyze_archetypes.py` | **Draft, new problem statement.** Member profiles (network, AFINN tone, votes, party history), rule-based archetypes, k-means clusters, distinctive words, archetypes per party and over time | `data/results/archetypes.json`, `data-raw/derived/challenge_tone_*.parquet` |
 | 8 | `summarize.py` | Puts all layers on a common placebo scale, with permutation tests | `data/results/summary.json` |
 | 9 | `check_labels.py` | Scores the group's hand labels | `data/results/label_checks.json` |
 | 10 | `validate.py` | Toy-case tests and independent recounts; stops the run if any check fails | `data/results/validation.json` |

@@ -38,17 +38,17 @@
   {
    "check": "vote parser: old format",
    "passed": true,
-   "detail": "{'for': {'S', 'RV'}, 'imod': {'DF', 'V'}, 'hverken': set()}"
+   "detail": "{'for': {'RV', 'S'}, 'imod': {'DF', 'V'}, 'hverken': set()}"
   },
   {
    "check": "vote parser: list ending in og",
    "passed": true,
-   "detail": "{'for': {'M', 'S', 'V'}, 'imod': {'SF', 'DD'}, 'hverken': {'DF'}}"
+   "detail": "{'for': {'M', 'S', 'V'}, 'imod': {'DD', 'SF'}, 'hverken': {'DF'}}"
   },
   {
    "check": "vote parser: named member with initial",
    "passed": true,
-   "detail": "{'for': {'NB', 'SF', 'LA'}, 'imod': {'M', 'S', 'V'}, 'hverken': {'DD'}}"
+   "detail": "{'for': {'NB', 'LA', 'SF'}, 'imod': {'M', 'S', 'V'}, 'hverken': {'DD'}}"
   },
   {
    "check": "vote parser: tally format has no parties",

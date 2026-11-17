@@ -6,7 +6,21 @@
   "status": "not labeled yet"
  },
  "name_resolution": {
-  "status": "not labeled yet"
+  "status": "labeled",
+  "n": 57,
+  "of": 57,
+  "yes": 57,
+  "share": 1.0,
+  "ci95": [
+   0.937,
+   1.0
+  ],
+  "distinct_pairs": 33,
+  "distinct_yes": 33,
+  "distinct_ci95": [
+   0.896,
+   1.0
+  ]
  },
  "challenge_stance": {
   "status": "not labeled yet"

@@ -17,7 +17,7 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 STEPS = [
     "collect.py", "build_dataset.py", "make_labeling_sheets.py", "analyze_network.py", "analyze_votes.py",
-    "analyze_language.py", "analyze_role.py", "summarize.py", "check_labels.py", "validate.py", "export_site.py", "make_notebook.py",
+    "analyze_language.py", "analyze_role.py", "analyze_archetypes.py", "summarize.py", "check_labels.py", "validate.py", "export_site.py", "make_notebook.py",
 ]
 
 

@@ -107,6 +107,24 @@ def layer_summary(layer):
                                   "by_formation", "formations_right_on_average", "unchanged_pairs")}
 
 
+MEMBER_FIELDS = ["person", "name", "party", "parties", "years", "made", "received", "made_per_year", "received_per_year",
+                 "cross_bloc_share", "at_government_share", "tone", "negative_share", "tone_at_other_bloc", "tone_received",
+                 "rebel_rate", "minister_share", "archetypes", "primary", "cluster"]
+
+
+def archetype_block():
+    """The archetype analysis (tools/analyze_archetypes.py), trimmed to what the page draws."""
+    if not (RESULTS / "archetypes.json").exists():
+        return None
+    a = read("archetypes")
+    rnd = lambda v: round(v, 3) if isinstance(v, float) else v
+    keep = {k: a[k] for k in ("status", "blocs", "settings", "features", "archetypes", "thresholds", "counts", "tone_overall",
+                              "archetype_profiles", "overlaps", "tone_by_target", "made_received_spearman", "words",
+                              "by_party", "over_time", "clusters")}
+    keep["members"] = [{k: rnd(m.get(k)) for k in MEMBER_FIELDS} for m in a["members"]]
+    return keep
+
+
 def main():
     windows = load_windows()
     network, language, role, votes, summary, validation = (read(n) for n in ("network", "language", "role", "votes", "summary", "validation"))
@@ -164,6 +182,7 @@ def main():
             "files_repaired": numbers.get("files_repaired", []),
         },
     }
+    site["archetypes"] = archetype_block()
     OUT.write_text(json.dumps(site, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
     print("wrote", OUT.name, round(OUT.stat().st_size / 1e6, 2), "MB")
 

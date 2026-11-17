@@ -23,6 +23,9 @@ from afinn import Afinn
 from scipy.stats import spearmanr
 from sklearn.metrics import cohen_kappa_score
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from analyze_archetypes import RITUAL
+
 ROOT = Path(__file__).resolve().parents[1]
 SHEETS = ROOT / "labeling"
 DATA = ROOT / "data"
@@ -121,7 +124,8 @@ def stance():
     if first is None or first.empty:
         return {"status": "not labeled yet"}
     afinn = Afinn(language="da")
-    first = first.assign(score=first["next_speaker_says"].map(afinn.score))
+    # Score exactly what analyze_archetypes.py scores: the opening "tak for det" removed.
+    first = first.assign(score=first["next_speaker_says"].map(lambda t: afinn.score(RITUAL.sub("", t))))
     human = first[column].map(STANCE_SCORE)
     rho, p = spearmanr(first["score"], human) if first["score"].nunique() > 1 and human.nunique() > 1 else (math.nan, math.nan)
     result = {"status": "partial", "n": len(first), "of": total, "distribution": first[column].value_counts().to_dict(),

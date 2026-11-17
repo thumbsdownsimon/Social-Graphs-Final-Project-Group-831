@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crossing the Aisle</title>
-<meta name="description" content="When parties enter government together, do their members stop arguing, and do they start sounding alike? Votes, floor challenges and language in the Danish Parliament, 2009-2026.">
+<meta name="description" content="Can we find archetypes of members in the Danish Parliament from how they vote, debate and talk? Attack dogs, lightning rods, bridge builders and defectors in the challenge network, 2009-2026.">
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -16,7 +16,9 @@
       <small>Final project &middot; 02805 &middot; DTU</small>
     </a>
     <nav class="wlf-nav">
-      <a href="#evidence">Evidence</a>
+      <a href="#status">Status</a>
+      <a href="#archetypes">Archetypes</a>
+      <a href="#part2">Governments</a>
       <a href="#explore">Explore</a>
       <a href="#methods">Methods</a>
       <a href="https://github.com/thumbsdownsimon/Social-Graphs-Final-Project-Group-831">Source</a>
@@ -27,16 +29,135 @@
 <main class="wlf-main" id="top">
 
   <section class="hero">
-    <div class="wlf-case-no">The question</div>
-    <p class="question">When a change of government makes parties vote together, do their members' floor challenges and language follow?</p>
-    <div class="wlf-case-no">The finding</div>
-    <h1 id="finding">When parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</h1>
+    <div class="wlf-case-no">The question &middot; draft</div>
+    <p class="question">Members of parliament do not all play the same role. Some attack, some get attacked, some build bridges and some leave their party. Can we find distinct archetypes of members in the Danish parliament from how they vote, debate and talk?</p>
+    <div class="wlf-case-no">The draft finding</div>
+    <h1 id="arch-finding">Mostly one axis, not six roles: the members who attack the most are also attacked the most and sound the most negative, while bridge builders are set apart by tone alone. Defectors and rebels do not form a type of their own.</h1>
   </section>
 
   <div class="pending" id="label-banner" hidden>
     <span class="wlf-stamp">Validation pending</span>
     <p id="label-banner-text"></p>
   </div>
+
+  <div class="stats" aria-label="Key archetype numbers">
+    <div class="stat"><strong data-a="profiled"></strong><span>members profiled (at least <span data-a="minMade"></span> challenges made), from <span data-a="scored"></span> scored challenges, 2009&ndash;2026</span></div>
+    <div class="stat"><strong data-a="k"></strong><span>clusters found by k-means without the rules (silhouette <span data-a="silhouette"></span>: weak structure)</span></div>
+    <div class="stat"><strong data-a="spearman"></strong><span>rank correlation between challenges made and received per year</span></div>
+    <div class="stat"><strong data-a="enterDrop"></strong><span>median challenges per year before &rarr; after a member's party enters government</span></div>
+  </div>
+
+  <!-- ===== Project status (for the group, remove before hand-in) ===== -->
+  <section id="status" class="wlf-card status-card">
+    <div class="wlf-case-no">Where we are &middot; for the group</div>
+    <h2>Project status, 17 November 2026</h2>
+    <p>The problem statement changed on 11 November from "do government changes reduce challenges?" to "are there archetypes of members?". Part 1 below is the new archetype analysis (draft, <code>tools/analyze_archetypes.py</code>). Part 2 is the earlier government-change analysis, kept because it answers the last question of the new statement: do members change role when their party enters government?</p>
+    <div class="table-wrap">
+    <table class="data status-table">
+      <thead><tr><th>Part of the problem statement</th><th>State</th><th>What is left</th></tr></thead>
+      <tbody>
+        <tr><td>Challenge network 2009&ndash;2026</td><td>Done</td><td>Hand-check the rule: <code>challenge_precision</code>, <code>challenge_missed</code> (<span data-l="challenge_precision"></span>; <span data-l="challenge_missed"></span>)</td></tr>
+        <tr><td>Names resolved to people</td><td>Done</td><td><span data-l="name_resolution"></span></td></tr>
+        <tr><td>Member profiles: network, votes, party history</td><td>Draft</td><td>Review the thresholds and the bloc definition (M kept as centre)</td></tr>
+        <tr><td>Rule-based archetypes</td><td>Draft</td><td>Agree on the six rules (Figure 1.2). Bridge builder was redefined from betweenness to tone, because betweenness only measured activity</td></tr>
+        <tr><td>Clustering vs archetypes</td><td>Draft</td><td>Decide whether to report k = 3 or force more clusters</td></tr>
+        <tr><td>Tone of every challenge (hostile/neutral/friendly)</td><td>Unvalidated</td><td>Label <code>challenge_stance</code> twice (<span data-l="challenge_stance"></span>). AFINN is then scored against it automatically</td></tr>
+        <tr><td>Emotional / argumentative language</td><td>Draft</td><td>Simple word-rate measures; check that they mean what we claim</td></tr>
+        <tr><td>Hostility aimed at other bloc, own side, government</td><td>Draft</td><td>Figure 1.5</td></tr>
+        <tr><td>Distinctive words per archetype</td><td>Draft</td><td>Words still partly reflect policy topics (Figure 1.6)</td></tr>
+        <tr><td>Archetypes across parties</td><td>Draft</td><td>Figure 1.4</td></tr>
+        <tr><td>Archetype change over time</td><td>Draft</td><td>Figure 1.7 and Part 2. Few members become ministers, so that row is thin</td></tr>
+        <tr><td>GitHub Pages</td><td>Ready</td><td>The repo is private; Pages needs it public (or GitHub Pro). Settings &rarr; Pages &rarr; branch <code>main</code>, folder <code>/ (root)</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <hr class="wlf-hr">
+  <h2 id="archetypes">Part 1 &middot; Archetypes</h2>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.1 &middot; Attack and be attacked</div>
+    <h3>Those who challenge most are challenged most</h3>
+    <div class="controls">
+      <label for="arch-party">Party</label><select id="arch-party"></select>
+      <label for="arch-member">Member</label><input id="arch-member" list="arch-member-list" placeholder="Type a name"><datalist id="arch-member-list"></datalist>
+    </div>
+    <div class="legend" id="legend-arch"></div>
+    <div id="fig-arch-scatter" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> each dot is a member: challenges they made per year in the chamber (x) and challenges they received as a backbencher per year (y), both on log scales. Colour is the member's main archetype (when they hold several, the one they are most extreme on). Dashed lines are the top-10% thresholds for attack dog and lightning rod. <strong>What to see:</strong> the cloud runs along the diagonal, so attack dogs and lightning rods are largely the same people (<span data-a="overlapAL"></span> hold both).</p>
+      <p class="check"><strong>Misses:</strong> "per year" counts years in which the member spoke at all, so a member who sat silently for a year looks more active than they were. Ministers rarely make short remarks, so they sit low on x by design.</p>
+    </figcaption>
+    <details class="table-view"><summary>All profiled members as a table</summary><div id="table-arch-members" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.2 &middot; The rules and what else sets each type apart</div>
+    <h3>Bridge builders and negative Nancies are about tone; attack dogs and lightning rods about the network</h3>
+    <div class="legend" id="legend-profiles"></div>
+    <div id="fig-arch-profiles" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> for each archetype (top) and each data-driven cluster (bottom), the mean of every measure in standard deviations from the average profiled member. Outlined cells are measures the archetype's rule uses, so they are high by construction. <strong>What to see:</strong> the cells that are <em>not</em> outlined. Those show what the rule did not ask for, for example that attack dogs also have a more negative tone.</p>
+      <div id="arch-rules" class="table-wrap"></div>
+    </figcaption>
+    <details class="table-view"><summary>How often archetypes overlap</summary><div id="table-arch-overlap" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.3 &middot; Do the roles exist without the rules?</div>
+    <h3>Clustering finds three broad groups, not six roles</h3>
+    <div id="arch-clusters" class="table-wrap"></div>
+    <figcaption>
+      <p><strong>Method:</strong> k-means on all <span data-a="nFeatures"></span> standardised measures, k from 3 to 10, chosen by silhouette; stability is the adjusted Rand index between <span data-a="nSeeds"></span> random starts. <strong>Result:</strong> <span id="arch-cluster-text"></span></p>
+      <p class="check"><strong>Misses:</strong> a silhouette near 0.1 means members form a continuum, so the clusters are a summary of that continuum rather than natural kinds. Rebel rate only exists from 2017 and is set to 0 before.</p>
+    </figcaption>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.4 &middot; Across parties</div>
+    <h3>Does every party have its own attack dog?</h3>
+    <div id="arch-party-table" class="table-wrap"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> profiled members per party (their most common party), and how many hold each archetype. Hover a count to see the names. <strong>What to see:</strong> attack dogs and lightning rods come from the wing parties (EL, DF, and in part SF, LA and NB), while bridge builders come from the centre-right and centre. Defectors are mostly the DF&rarr;DD move of 2022.</p>
+    </figcaption>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.5 &middot; At whom</div>
+    <h3>Challenges at the other bloc and at the government are the most negative</h3>
+    <div id="fig-arch-tone" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> mean tone of challenges by who is targeted, in AFINN points per 100 words (higher is friendlier), with 95% intervals. The opening "tak for det" is removed before scoring. <strong>Compared with:</strong> each other; the overall share of negative challenges is <span data-a="negShare"></span>.</p>
+      <p class="check"><strong>Unvalidated:</strong> AFINN counts positive and negative words and does not see irony or who the words are aimed at. It is scored against the group's stance labels once those are done.</p>
+    </figcaption>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.6 &middot; How they talk</div>
+    <h3>Distinctive words of each archetype</h3>
+    <div class="controls"><label for="arch-words-select">Archetype</label><select id="arch-words-select"></select></div>
+    <div id="fig-arch-words" class="words-grid"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> words most typical of the archetype's challenges, by log-odds with an informative Dirichlet prior (Monroe et al. 2008), with names of people and parties removed. Left: against all other profiled members. Right: against colleagues in the same parties, which removes party topics. <strong>Misses:</strong> attack dogs are often spokespeople for contested areas (labour market, immigration), so even the right-hand list partly shows topic, not style.</p>
+    </figcaption>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 1.7 &middot; Over time</div>
+    <h3>Members whose party enters government challenge less and sound friendlier</h3>
+    <div id="fig-arch-time" class="chart"></div>
+    <div id="fig-arch-time-tone" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> members followed from one government period to the next (at least <span data-a="minWindow"></span> challenges in both), grouped by what happened between. Top: median challenges made per year before and after. Bottom: mean tone before and after. <strong>Compared with:</strong> members whose party stayed in opposition, which shows the background drift. Part 2 tests the same change at the party level against a shuffle.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-arch-time" class="table-wrap"></div></details>
+  </figure>
+
+  <hr class="wlf-hr">
+  <h2 id="part2">Part 2 &middot; When parties govern together</h2>
+  <p class="question">When a change of government makes parties vote together, do their members' floor challenges and language follow?</p>
+  <p id="finding"><strong>Finding:</strong> when parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</p>
 
   <div class="stats" aria-label="Key numbers">
     <div class="stat"><strong data-n="challengePairs"></strong><span>party pairs that joined or split moved the expected way in challenges</span></div>
@@ -52,11 +173,11 @@
   </section>
 
   <hr class="wlf-hr">
-  <h2 id="evidence">The evidence</h2>
+  <h3 id="evidence">The evidence</h3>
 
   <!-- ===== Figure 1 ===== -->
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 1 &middot; How fast</div>
+    <div class="wlf-case-no">Figure 2.1 &middot; How fast</div>
     <h3>Votes and challenges change together, at the moment of formation</h3>
     <div class="controls"><label for="event-select">Event</label><select id="event-select"></select></div>
     <div id="fig-timeline-votes" class="chart"></div>
@@ -70,7 +191,7 @@
 
   <!-- ===== Figure 2 ===== -->
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 2 &middot; Against the null</div>
+    <div class="wlf-case-no">Figure 2.2 &middot; Against the null</div>
     <h3>Across six formations, challenges are the clearest signal, and language is weaker</h3>
     <div class="legend" id="legend-layers"></div>
     <div id="fig-layers" class="chart"></div>
@@ -83,20 +204,20 @@
 
   <!-- ===== Figure 3 ===== -->
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 3 &middot; What language does change</div>
+    <div class="wlf-case-no">Figure 2.3 &middot; What language does change</div>
     <h3>The clearest language signal is the vocabulary of being in opposition</h3>
     <div class="legend" id="legend-role"></div>
     <div id="fig-role" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> words addressing the government (<em>minister&hellip;</em>, <em>regering&hellip;</em>) per 1,000 words of S and V backbench speech, per quarter. The bars on top mark when each party held ministers. <strong>Compared with:</strong> the same party while in office. <strong>What to see:</strong> each line is high while its party is out of government, and the two swap at each formation.</p>
-      <p class="check"><strong>Check:</strong> shuffling government status within each party gives a mean gap of 0 &plusmn; <span data-n="roleNull"></span>; the real gap is <span data-n="roleGap"></span> words per 1,000. As a second method, a classifier trained on other governments separates government from opposition on a government and speakers it never saw: accuracy <span data-n="roleClassifier"></span>, against about 0.50 with shuffled labels. <strong>Misses:</strong> counting words cannot tell an attack from a polite question, and we did not test whether this vocabulary explains the similarity shift in Figure 2.</p>
+      <p class="check"><strong>Check:</strong> shuffling government status within each party gives a mean gap of 0 &plusmn; <span data-n="roleNull"></span>; the real gap is <span data-n="roleGap"></span> words per 1,000. As a second method, a classifier trained on other governments separates government from opposition on a government and speakers it never saw: accuracy <span data-n="roleClassifier"></span>, against about 0.50 with shuffled labels. <strong>Misses:</strong> counting words cannot tell an attack from a polite question, and we did not test whether this vocabulary explains the similarity shift in Figure 2.2.</p>
     </figcaption>
     <details class="table-view"><summary>Show classifier results</summary><div id="table-role" class="table-wrap"></div></details>
   </figure>
 
   <!-- ===== Figure 4 ===== -->
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 4 &middot; The whole chamber</div>
+    <div class="wlf-case-no">Figure 2.4 &middot; The whole chamber</div>
     <h3>Who challenges whom, against chance</h3>
     <div class="controls"><label for="matrix-select">Government</label><select id="matrix-select"></select></div>
     <div class="legend" id="legend-matrix"></div>
@@ -111,7 +232,7 @@
 
   <!-- ===== Figure 5 ===== -->
   <figure class="wlf-card fig" id="explore">
-    <div class="wlf-case-no">Figure 5 &middot; Explore the members</div>
+    <div class="wlf-case-no">Figure 2.5 &middot; Explore the members</div>
     <h3>The network is organised by policy area, not party</h3>
     <div class="controls">
       <label for="net-window">Government</label><select id="net-window"></select>
@@ -195,5 +316,6 @@
 <div id="tooltip" class="tooltip" role="status" hidden></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/archetypes.js"></script>
 </body>
 </html>
