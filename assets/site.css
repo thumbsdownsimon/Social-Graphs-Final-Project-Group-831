@@ -1,167 +1,277 @@
-/* Project page additions on top of the shared case-file theme. */
+/* Components of the one-page site, on top of assets/theme.css (tokens, fonts, header, cards). */
 :root{
-  --together: #0e6aa8;
-  --apart: #b1352a;
-  --placebo: #7d7263;
-  --grid: rgba(43, 38, 34, .14);
+  --together: #1f5a8c;   /* chart blue: closer, friendlier, government */
+  --apart: #b8202e;      /* chart red: apart, harsher, opposition */
+  --placebo: #8c8279;
+  --grid: rgba(31, 42, 51, .12);
 }
 
-.wlf a.wlf-brand{ color: #f1e6c8; }
-.wlf .wlf-nav a{ color: #d8c691; }
+/* ---------- opening section ---------- */
+.hero{ padding: 1rem 0 1.5rem; }
+.hero .kicker{ margin-top: .4rem; }
+.hero .question{ font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); margin: .3rem 0 1.6rem; max-width: 46rem; }
+.wlf .hero h1{ font-size: clamp(1.6rem, 3.6vw, 2.35rem); line-height: 1.28; margin: .3rem 0 1.8rem; max-width: 52rem; }
+.timeline{ margin: 0; }
+.timeline figcaption{ font-size: .8rem; color: var(--ink-faint); margin-top: .3rem; }
 
-.hero{ padding: .5rem 0 2rem; }
-.hero .question{ font-size: 1.05rem; color: var(--ink-soft); margin: .2rem 0 1.4rem; max-width: 46rem; }
-.hero h1{ font-size: clamp(1.45rem, 3.4vw, 2.15rem); line-height: 1.3; margin: .2rem 0 0; max-width: 54rem; }
+/* key numbers: big, light, Nordic */
+.stats{ display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); gap: 1.2rem 1.6rem; margin: 1.5rem 0 2.5rem; }
+.stat{ border-top: 2px solid var(--brass); padding-top: .7rem; }
+.stat strong{ display: block; font-family: var(--sans); font-weight: 600; font-size: 2.3rem; line-height: 1.1; color: var(--red); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.stat span{ font-size: .86rem; color: var(--ink-soft); line-height: 1.45; display: block; margin-top: .3rem; }
+.stat span span{ display: inline; margin: 0; }
 
+/* ---------- part headers ---------- */
+.part-head{ margin: 0 0 1.8rem; max-width: 52rem; }
+.wlf .part-head h2{ font-size: clamp(1.7rem, 3.2vw, 2.25rem); margin: .35rem 0 .7rem; }
+.part-question{ font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--ink-soft); }
+.part-finding{ font-size: 1.08rem; font-weight: 500; color: var(--ink); border-left: 3px solid var(--red); padding: .1rem 0 .1rem 1rem; }
+.wlf h3.sub{ font-size: 1.3rem; margin: 2rem 0 .8rem; }
+
+/* ---------- boxes ---------- */
 .pending{
-  display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
-  border: 1px dashed var(--red); border-radius: var(--radius);
-  padding: .8rem 1rem; margin-bottom: 1.8rem;
+  display: flex; gap: .6rem 1rem; align-items: flex-start; flex-wrap: wrap;
+  background: var(--paper-alt); border: 1px solid var(--line); border-left: 3px solid var(--brass);
+  border-radius: var(--radius-sm); padding: 1rem 1.2rem; margin: 0 0 1.8rem; font-size: .92rem;
 }
-.pending[hidden]{ display: none; }
-.pending p{ margin: 0; flex: 1 1 18rem; font-size: .92rem; }
+.pending[hidden], .pending:empty{ display: none; }
+.pending p{ margin: 0 0 .5rem; flex: 1 1 100%; }
+.pending .table-wrap{ flex: 1 1 100%; }
 
-.stats{ display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 0 0 2.2rem; }
-.stat{ border-top: 3px solid var(--ink); padding-top: .6rem; }
-.stat strong{ display: block; font-family: 'Special Elite', monospace; font-weight: normal; font-size: 2rem; line-height: 1.2; }
-.stat span{ font-size: .86rem; color: var(--ink-soft); line-height: 1.4; display: block; }
-.stat span span{ display: inline; }
+.define{ margin: 0 0 2.4rem; border-top: 3px solid var(--red); }
+.define h2{ margin: .2rem 0 .6rem; font-size: 1.55rem; }
+.wlf .define h3{ font-family: var(--sans); font-size: .95rem; font-weight: 600; color: var(--ink); margin: 0 0 .4rem; }
+.define-lead{ font-size: 1.05rem; margin: 0 0 1.1rem; max-width: 50rem; }
+.define-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem 2rem; font-size: .93rem; }
+.define-grid ul, .define-steps{ margin: 0; padding-left: 1.2rem; }
+.define-grid li{ margin-bottom: .35rem; }
+.define-arrow{ margin: .8rem 0 0; font-family: var(--serif); font-size: 1.15rem; color: var(--oak); }
+.define-arrow span{ display: inline-block; min-width: 2rem; text-align: center; border: 1px solid var(--oak); border-radius: 50%; padding: 0 .3rem; }
+.define-arrow small{ font-family: var(--sans); font-size: .82rem; color: var(--ink-soft); margin-left: .5rem; }
 
-.fig{ margin: 0 0 1.6rem; }
-.fig h3{ margin: .2rem 0 .9rem; font-size: 1.22rem; line-height: 1.3; }
-figcaption{ font-size: .9rem; margin-top: .8rem; }
+/* ---------- figures ---------- */
+.fig{ margin: 0 0 1.8rem; }
+.wlf .fig h3{ margin: .3rem 0 1rem; font-size: 1.28rem; line-height: 1.3; }
+figcaption{ font-size: .9rem; margin-top: 1rem; color: var(--ink-soft); }
 figcaption p{ margin: 0 0 .7rem; }
-.check{ border-left: 3px solid var(--gold); padding-left: .8rem; }
+figcaption strong{ color: var(--ink); font-weight: 600; }
+.check{ border-left: 3px solid var(--brass); padding-left: .9rem; }
 
-.controls{ display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; margin-bottom: .8rem; font-size: .88rem; }
+.controls{ display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; margin-bottom: .9rem; font-size: .88rem; color: var(--ink-soft); }
 .controls select, .controls input{
   font: inherit; color: var(--ink); background: var(--paper);
-  border: 1px solid var(--ink-soft); border-radius: var(--radius); padding: .32rem .45rem; max-width: 100%; min-height: 2.2rem;
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: .35rem .55rem; max-width: 100%; min-height: 2.25rem;
 }
+.controls select:focus-visible, .controls input:focus-visible{ outline: 2px solid var(--link); outline-offset: 1px; }
 .controls input{ min-width: 11rem; flex: 1 1 11rem; max-width: 18rem; }
 
 .chart{ width: 100%; }
-.chart svg{ display: block; width: 100%; height: auto; overflow: visible; font-family: 'Courier Prime', 'Courier New', monospace; }
-.chart text{ fill: var(--ink-soft); font-size: 12px; font-family: 'Courier Prime', 'Courier New', monospace; }
-.chart .title{ fill: var(--ink); font-size: 13px; font-weight: 700; }
-.chart .strong{ fill: var(--ink); font-weight: 700; }
-.chart .domain{ stroke: var(--ink-faint); }
+.chart svg{ display: block; width: 100%; height: auto; overflow: visible; font-family: var(--sans); }
+.chart text{ fill: var(--ink-soft); font-size: 12px; font-family: var(--sans); }
+.chart .title{ fill: var(--ink); font-size: 13px; font-weight: 600; }
+.chart .strong{ fill: var(--ink); font-weight: 600; }
+.chart .domain{ stroke: var(--line-strong); }
 .chart .tick line{ stroke: var(--grid); }
 
-.legend{ display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .84rem; margin-bottom: .4rem; color: var(--ink-soft); }
-.legend i{ display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: .35rem; vertical-align: -1px; }
+.legend{ display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; font-size: .84rem; margin-bottom: .5rem; color: var(--ink-soft); }
+.legend i{ display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: .4rem; vertical-align: -1px; }
 .legend i.line{ height: 2px; width: 16px; border-radius: 0; vertical-align: 3px; }
-.legend i.ramp{ width: 110px; height: 11px; border-radius: 2px; vertical-align: -1px; }
+.legend i.ramp{ width: 110px; height: 10px; border-radius: 3px; vertical-align: -1px; }
 
 .tooltip{
-  position: fixed; z-index: 90; pointer-events: none; max-width: 17rem;
-  background: #241e18; color: #f1e6c8; font-size: .82rem; line-height: 1.4;
-  padding: .45rem .6rem; border-radius: var(--radius); box-shadow: 0 4px 12px rgba(0,0,0,.4);
+  position: fixed; z-index: 90; pointer-events: none; max-width: 18rem;
+  background: var(--ink); color: #eef2f5; font-size: .82rem; line-height: 1.45;
+  padding: .55rem .7rem; border-radius: var(--radius-sm); box-shadow: 0 6px 18px rgba(0, 0, 0, .22);
 }
-.tooltip strong{ display: block; font-size: .95rem; color: #fff; }
+.tooltip strong{ display: block; font-size: .92rem; color: #fff; margin-bottom: .1rem; }
 
-.table-view{ margin-top: .6rem; font-size: .88rem; }
-.table-view summary{ cursor: pointer; color: var(--red); min-height: 1.8rem; }
+/* tables */
+.table-view{ margin-top: .7rem; font-size: .88rem; }
+.table-view summary{ cursor: pointer; color: var(--link); min-height: 1.8rem; font-weight: 500; }
+.table-view summary:hover{ color: var(--red); }
 .table-wrap{ overflow-x: auto; }
 table.data{ border-collapse: collapse; width: 100%; font-size: .83rem; margin: .5rem 0; }
-table.data th, table.data td{ text-align: left; padding: .28rem .55rem; border-bottom: 1px solid var(--line); white-space: nowrap; vertical-align: top; }
+table.data th{ text-align: left; font-weight: 600; color: var(--ink-soft); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; border-bottom: 1px solid var(--line-strong); padding: .4rem .55rem; white-space: nowrap; }
+table.data td{ text-align: left; padding: .35rem .55rem; border-bottom: 1px solid var(--line); white-space: nowrap; vertical-align: top; }
 table.data td.num, table.data th.num{ text-align: right; font-variant-numeric: tabular-nums; }
 table.data td.wrap{ white-space: normal; min-width: 14rem; }
+details.wlf-card{ margin: 0 0 1.8rem; padding-top: 1rem; padding-bottom: 1rem; }
 
-.net-layout{ display: grid; grid-template-columns: minmax(0, 2fr) minmax(13rem, 1fr); gap: 1rem; }
-.member-panel{ font-size: .85rem; border-left: 1px solid var(--line); padding-left: .9rem; max-height: 34rem; overflow-y: auto; }
-.member-panel h4{ margin: 0; font-family: 'Special Elite', monospace; font-size: 1.05rem; }
-.member-panel h5{ margin: .8rem 0 .2rem; font-size: .84rem; }
+/* member explorer panels (Figures 5 and 12) */
+.net-layout{ display: grid; grid-template-columns: minmax(0, 2fr) minmax(13rem, 1fr); gap: 1.2rem; }
+.member-panel{ font-size: .85rem; border-left: 1px solid var(--line); padding-left: 1rem; max-height: 34rem; overflow-y: auto; }
+.wlf .member-panel h4{ margin: 0; font-size: 1.15rem; }
+.member-panel h5{ margin: .9rem 0 .25rem; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .member-panel ol{ margin: 0; padding: 0; list-style: none; }
-.member-panel li{ display: flex; justify-content: space-between; gap: .6rem; border-bottom: 1px dotted var(--line); }
-.member-panel button{ all: unset; cursor: pointer; color: var(--red); min-height: 1.6rem; }
-.member-panel button:focus-visible{ outline: 1px dotted var(--red); }
+.member-panel li{ display: flex; justify-content: space-between; gap: .6rem; border-bottom: 1px solid var(--line); padding: .15rem 0; }
+.member-panel button{ all: unset; cursor: pointer; color: var(--link); min-height: 1.6rem; }
+.member-panel button:hover{ color: var(--red); }
+.member-panel button:focus-visible{ outline: 2px solid var(--link); }
 .node{ cursor: pointer; }
 .node:focus-visible circle.mark{ stroke: var(--ink); stroke-width: 2.5px; }
 
-.limits li{ margin-bottom: .5rem; }
+/* ---------- "less obvious findings" cards ---------- */
+.cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1rem 0 1rem; }
+.cards > .case{ margin: 0; }
+.wlf a.case{ display: flex; flex-direction: column; color: var(--ink); text-decoration: none; border-top: 3px solid var(--red); transition: transform .15s ease, box-shadow .15s ease; }
+.wlf a.case:hover{ transform: translateY(-2px); box-shadow: 0 2px 4px var(--shadow), 0 14px 28px -18px rgba(31, 42, 51, .35); color: var(--ink); }
+.wlf a.case:focus-visible{ outline: 2px solid var(--red); outline-offset: 3px; }
+.wlf .case h3{ margin: .3rem 0 .5rem; font-size: 1.15rem; }
+.case p{ font-size: .9rem; margin: 0 0 .9rem; flex: 1; color: var(--ink-soft); }
+.case-more{ color: var(--link); font-size: .86rem; font-weight: 500; }
+
+/* ---------- methods ---------- */
+.limits li{ margin-bottom: .55rem; }
 .refs{ font-size: .88rem; padding-left: 1.4rem; }
-.refs li{ margin-bottom: .4rem; }
-pre{ background: #241e18; color: #f1e6c8; padding: .8rem 1rem; border-radius: var(--radius); overflow-x: auto; font-size: .84rem; }
-.roster{ display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .7rem; }
-.agent{ background: var(--paper-alt); border: 1px dashed var(--line); border-radius: var(--radius); padding: .7rem .9rem; }
+.refs li{ margin-bottom: .45rem; }
+pre{ background: var(--ink); color: #eef2f5; padding: .9rem 1.1rem; border-radius: var(--radius-sm); overflow-x: auto; font-size: .84rem; }
+.wlf pre code{ background: none; border: 0; padding: 0; color: inherit; }
+.roster{ display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .8rem; }
+.agent{ background: var(--paper); border: 1px solid var(--line); border-top: 2px solid var(--brass); border-radius: var(--radius-sm); padding: .8rem 1rem; }
 .agent strong, .agent span{ display: block; }
-.agent strong{ font-family: 'Special Elite', monospace; font-weight: normal; }
-.agent span{ color: var(--ink-soft); font-size: .88rem; }
+.agent strong{ font-family: var(--serif); font-weight: 400; font-size: 1.05rem; color: var(--oak); }
+.agent span{ color: var(--ink-soft); font-size: .86rem; }
 
-@media (max-width: 44rem){
-  .wlf-main{ padding: 1.5rem 1rem 3rem; }
-  .wlf-card{ padding: 1rem; }
-  .net-layout{ grid-template-columns: 1fr; }
-  .member-panel{ border-left: none; border-top: 1px solid var(--line); padding: .7rem 0 0; max-height: none; }
-}
-
-/* ---------- Definition of a challenge (top of page) ---------- */
-.define{ margin: 0 0 2.2rem; border-left: 5px solid var(--red); }
-.define h2{ margin: .1rem 0 .6rem; font-size: 1.45rem; }
-.define h3{ font-size: 1rem; margin: 0 0 .4rem; }
-.define-lead{ font-size: 1.04rem; margin: 0 0 1rem; max-width: 50rem; }
-.define-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem 1.8rem; font-size: .92rem; }
-.define-grid ul, .define-steps{ margin: 0; padding-left: 1.2rem; }
-.define-grid li{ margin-bottom: .3rem; }
-.define-arrow{ margin: .7rem 0 0; font-family: 'Special Elite', monospace; font-size: 1.15rem; }
-.define-arrow span{ display: inline-block; min-width: 1.9rem; text-align: center; border: 1px solid var(--ink); border-radius: 50%; padding: 0 .3rem; }
-.define-arrow small{ font-family: 'Courier Prime', monospace; font-size: .85rem; color: var(--ink-soft); margin-left: .5rem; }
-
-/* ---------- Party key: small floating window ----------
-   Fixed to the right edge and vertically centred, so it is on screen at all times.
-   On wide screens the content gets extra right padding so the key never covers it;
-   on narrow screens it floats over the page and can be minimised with its header. */
+/* ---------- party key: small floating window ----------
+   Fixed to the right edge and vertically centred, so it is always on screen. On wide screens
+   the content keeps a right-hand gutter so the key never covers it; on phones it starts
+   minimised (site.js) and floats over the page. */
 .party-key{
   position: fixed; z-index: 80; right: .75rem; top: 50%; transform: translateY(-50%);
-  width: 14.5rem; max-width: calc(100vw - 1.5rem);
-  font-size: .72rem; line-height: 1.25;
+  width: 14.5rem; max-width: calc(100vw - 1.5rem); font-size: .74rem; line-height: 1.3;
 }
 .party-key details{
-  background: var(--paper-alt); border: 1px solid var(--line); border-top: 3px solid var(--ink);
-  border-radius: var(--radius); box-shadow: 0 4px 14px var(--shadow);
-  max-height: calc(100vh - 1.5rem); overflow-y: auto; padding: 0 .55rem .35rem;
+  background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--red);
+  border-radius: var(--radius-sm); box-shadow: 0 2px 4px var(--shadow), 0 12px 28px -14px rgba(31, 42, 51, .3);
+  max-height: calc(100vh - 6rem); overflow-y: auto; padding: 0 .65rem .45rem;
 }
 .party-key details:not([open]){ width: max-content; margin-left: auto; padding-bottom: 0; }
 .party-key summary{
-  cursor: pointer; font-family: 'Special Elite', monospace; font-size: .88rem;
-  min-height: 1.9rem; display: flex; align-items: center; gap: .4rem; list-style: none;
+  cursor: pointer; font-family: var(--serif); font-size: .95rem; color: var(--oak);
+  min-height: 2rem; display: flex; align-items: center; gap: .4rem; list-style: none;
 }
 .party-key summary::-webkit-details-marker{ display: none; }
-.party-key summary::after{ content: "hide"; margin-left: auto; padding-left: .6rem; color: var(--red); font-family: 'Courier Prime', monospace; font-size: .7rem; text-decoration: underline; }
+.party-key summary::after{ content: "hide"; margin-left: auto; padding-left: .6rem; color: var(--link); font-family: var(--sans); font-size: .7rem; text-decoration: underline; }
 .party-key details:not([open]) summary::after{ content: "show"; }
-.party-key summary:focus-visible{ outline: 1px dotted var(--red); }
-.party-key dl{ display: grid; grid-template-columns: 2.1rem 1fr; gap: .1rem .3rem; margin: 0 0 .3rem; }
-.party-key dt{ font-weight: 700; }
-.party-key dd{ margin: 0; }
-.party-key dd small{ color: var(--ink-soft); font-size: .66rem; }
-.party-key-note{ margin: .25rem 0 0; padding-top: .25rem; border-top: 1px dotted var(--line); color: var(--ink-soft); font-size: .66rem; }
-.party-key-note b{ color: var(--ink); }
+.party-key summary:focus-visible{ outline: 2px solid var(--red); }
+.party-key dl{ display: grid; grid-template-columns: 2.2rem 1fr; gap: .12rem .3rem; margin: 0 0 .35rem; }
+.party-key dt{ font-weight: 600; color: var(--ink); }
+.party-key dd{ margin: 0; color: var(--ink-soft); }
+.party-key dd small{ color: var(--ink-faint); font-size: .66rem; }
+.party-key-note{ margin: .3rem 0 0; padding-top: .3rem; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .67rem; }
+.party-key-note b{ color: var(--ink); font-weight: 600; }
 
-/* From ~900px wide, reserve a right-hand gutter so the key never covers content. */
+/* From ~900px wide, reserve a right-hand gutter for the key. */
 @media (min-width: 56rem){
   .wlf-main{ max-width: 81rem; padding-right: 17rem; }
 }
-/* Phones: too narrow for a gutter, so the key starts minimised (site.js) and is a bit smaller. */
 @media (max-width: 55.99rem){
   .party-key{ width: 13rem; right: .5rem; }
 }
+@media (max-width: 44rem){
+  body.wlf{ font-size: 16px; }
+  .wlf-main{ padding: 1.5rem 1rem 3rem; }
+  .wlf-card{ padding: 1.1rem; }
+  .net-layout{ grid-template-columns: 1fr; }
+  .member-panel{ border-left: none; border-top: 1px solid var(--line); padding: .8rem 0 0; max-height: none; }
+  /* Keep the sticky header short on phones: one line of links that scrolls sideways. */
+  .site-header-inner{ padding: .45rem 1rem; gap: .25rem; }
+  .wlf a.brand{ font-size: 1.1rem; }
+  .wlf a.brand small{ display: none; }
+  .site-nav{ font-size: .8rem; flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; }
+  .wlf .site-nav a{ padding: .25rem .55rem; white-space: nowrap; }
+}
 
-/* ---------- Navigation across the pages ---------- */
-.wlf .wlf-nav{ flex-wrap: wrap; gap: .35rem 1.1rem; }
-.wlf .wlf-nav a[aria-current="page"]{ color: #f1e6c8; border-bottom-color: var(--gold); }
+/* =====================================================================
+   PARLIAMENTARY RECORD LAYOUT
+   A cover sheet, a contents page, a glossary entry, and each part laid out
+   like an annotated record: a margin column with the section number, title,
+   a line drawing and margin notes, beside the body text and figures.
+   ===================================================================== */
 
-/* ---------- "Beyond the obvious" cards on the main page ---------- */
-.cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-.cards > .case{ margin: 0; } /* the theme spaces stacked cards; in a row that misaligns them */
-.wlf a.case{ display: flex; flex-direction: column; color: var(--ink); text-decoration: none; border-top: 3px solid var(--red); transition: transform .12s ease; }
-.wlf a.case:hover{ transform: translateY(-2px); color: var(--ink); }
-.wlf a.case:focus-visible{ outline: 2px dotted var(--red); outline-offset: 3px; }
-.case h3{ margin: .2rem 0 .5rem; font-size: 1.12rem; line-height: 1.3; }
-.case p{ font-size: .9rem; margin: 0 0 .8rem; flex: 1; }
-.case-more{ color: var(--red); font-size: .88rem; }
+/* ---------- cover sheet ---------- */
+.cover{ padding: .5rem 0 1rem; }
+.cover-meta{
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: .3rem 1rem;
+  font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--oak);
+  border-top: 3px double var(--oak); border-bottom: 1px solid var(--oak); padding: .45rem 0; margin-bottom: 1.4rem;
+}
+.cover-meta span span{ letter-spacing: 0; }
+.wlf .cover-title{ font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1; margin: 0 0 .6rem; color: var(--oxblood); letter-spacing: -.01em; }
+.cover-sub{ font-style: italic; font-size: 1.2rem; color: var(--ink-soft); max-width: 40rem; margin: 0 0 1rem; }
+.cover-art{ margin: .5rem 0 1.4rem; border-bottom: 1px solid var(--line-strong); }
+.cover-art svg{ display: block; width: 100%; max-width: 38rem; height: auto; margin: 0 auto; }
+.cover-grid{ display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 1.2rem 2.4rem; margin-bottom: 1.6rem; }
+.cover-grid .question{ font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); margin: .35rem 0 0; }
+.lede{ font-family: var(--serif); font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.35; color: var(--oak); margin: .35rem 0 0; }
+@media (max-width: 44rem){ .cover-grid{ grid-template-columns: 1fr; } }
 
-/* ---------- Subpages ---------- */
-.next-pages{ margin-top: 2.5rem; padding-top: 1rem; border-top: 1px dashed var(--line); font-size: .92rem; }
-details.wlf-card{ margin: 0 0 1.6rem; }
-.pending:empty{ display: none; }
+/* key numbers as a ledger line */
+.stats{ border-top: 3px double var(--oak); border-bottom: 1px solid var(--oak); padding: 1rem 0; gap: 1rem 2rem; }
+.stat{ border-top: 0; padding-top: 0; }
+.stat strong{ font-family: var(--serif); font-weight: 400; color: var(--oxblood); font-size: 2.4rem; }
+.stat span{ font-family: var(--sans); font-size: .8rem; }
+
+/* ---------- glossary entry ---------- */
+.define{ border-top: 3px solid var(--oxblood); }
+.headword{ font-size: 1.05rem; margin: 0 0 1rem; padding-bottom: .8rem; border-bottom: 1px dotted var(--line-strong); }
+.headword .hw{ font-family: var(--serif); font-weight: 700; font-size: 1.35rem; color: var(--oxblood); margin-right: .4rem; }
+.headword i{ color: var(--ink-faint); margin-right: .4rem; }
+.headword .gloss{ font-family: var(--serif); font-style: italic; }
+
+/* ---------- contents with dotted leaders ---------- */
+.toc{ margin: 2.8rem 0 1rem; }
+.wlf .toc h2{ margin: 0 0 .3rem; font-size: 1.6rem; }
+.toc-intro{ color: var(--ink-soft); max-width: 46rem; }
+.toc ol{ list-style: none; margin: 1rem 0 0; padding: 0; border-top: 1px solid var(--oak); }
+.toc li{ padding: .8rem 0 .7rem; border-bottom: 1px solid var(--line); }
+.wlf .toc a{ display: flex; align-items: baseline; gap: .7rem; color: var(--oak); text-decoration: none; }
+.wlf .toc a:hover .toc-title{ color: var(--red); }
+.toc-no{ font-family: var(--serif); color: var(--oxblood); min-width: 2.4rem; }
+.toc-title{ font-family: var(--serif); font-size: 1.18rem; }
+.toc-dots{ flex: 1; border-bottom: 2px dotted var(--line-strong); transform: translateY(-.3em); min-width: 1.5rem; }
+.toc-fig{ font-family: var(--sans); font-size: .78rem; color: var(--ink-faint); white-space: nowrap; }
+.toc li p{ margin: .2rem 0 0 3.1rem; font-size: .93rem; color: var(--ink-soft); max-width: 44rem; }
+
+/* ---------- parts: margin + body ---------- */
+.part{ --part: var(--oxblood); margin-top: 4.5rem; padding-top: 1.6rem; border-top: 3px solid var(--part); }
+.part[data-part="2"]{ --part: var(--bottle); }
+.part[data-part="3"]{ --part: var(--oak); }
+.part[data-part="4"]{ --part: var(--navy); }
+.part[data-part="5"]{ --part: var(--slate); }
+.part .kicker{ color: var(--part); }
+.part-no{ font-family: var(--serif); font-size: 3.2rem; line-height: 1; color: var(--part); }
+.wlf .part-margin h2{ font-size: 1.5rem; line-height: 1.2; margin: .35rem 0 .9rem; }
+.part-art svg{ width: 112px; height: auto; fill: none; stroke: var(--part); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+.notes{ margin-top: .9rem; }
+.note{ border-top: 1px solid var(--line-strong); padding: .55rem 0 .7rem; }
+.note strong{ display: block; font-family: var(--serif); font-weight: 400; font-size: 1.75rem; line-height: 1.1; color: var(--part); font-variant-numeric: tabular-nums; }
+.note > span{ display: block; font-family: var(--sans); font-size: .76rem; line-height: 1.4; color: var(--ink-soft); margin-top: .2rem; }
+.part-body > .part-question:first-child{ margin-top: 0; }
+.part .part-finding{ border-left-color: var(--part); font-family: var(--text); font-size: 1.1rem; font-weight: 400; }
+.part .fig, .part details.wlf-card, .part .define{ border-top: 2px solid var(--part); }
+.part .wlf-case-no{ color: var(--part); }
+
+/* Two columns once there is room: the margin stays in view while its part is read. */
+@media (min-width: 70rem){
+  .part{ display: grid; grid-template-columns: 12.5rem minmax(0, 1fr); gap: 0 2.6rem; }
+  .part-margin{ position: sticky; top: 5.2rem; align-self: start; max-height: calc(100vh - 6rem); overflow: auto; }
+}
+/* Narrower: the margin sits above the body, its notes in a row. */
+@media (max-width: 69.99rem){
+  .part-margin{ display: grid; grid-template-columns: auto 1fr; gap: 0 1.2rem; align-items: end; margin-bottom: 1.4rem; }
+  .part-margin .part-no{ grid-row: span 2; font-size: 2.6rem; }
+  .part-margin .part-art{ display: none; }
+  .part-margin .notes{ grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0 1.6rem; }
+  .part-margin .note{ flex: 1 1 12rem; }
+}
+
+/* figures as document frames: the label reads like a filing tab */
+.fig .wlf-case-no{ display: inline-block; background: var(--paper-alt); border: 1px solid var(--line); border-bottom: 0; padding: .15rem .55rem; margin: -1.5rem 0 .6rem -.6rem; transform: translateY(-1px); }
+.part .fig{ border-top-width: 2px; }
+figcaption{ border-top: 1px dashed var(--line-strong); padding-top: .8rem; }
+.check{ border-left-color: var(--part, var(--brass)); }
+.party-key{ font-family: var(--sans); }
+.cover-art svg{ max-width: 30rem; }
+/* UI around the charts stays in the sans-serif, like the charts themselves */
+.legend, .controls, table.data, .table-view summary, .member-panel, .tooltip, .wlf-stamp{ font-family: var(--sans); }

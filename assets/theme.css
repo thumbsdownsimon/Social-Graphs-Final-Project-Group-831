@@ -1,240 +1,144 @@
 /* ============================================================
-   THE WIKI-LINK FILES — shared case-file / detective-agency theme
-   Used by index.html and every posts/*.html write-up.
+   CROSSING THE AISLE · theme
+   A mix of two directions: the chamber (warm ivory, oak, a classic serif for
+   headings, brass dividers) and Nordic minimalism (white cards, a clean sans-serif
+   for reading, generous space, one Danish red accent).
+   Inspired by Danish parliamentary settings; it uses no logo or official design
+   of Folketinget, which has not endorsed this site.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
 :root{
-  --paper:        #ece2c8;
-  --paper-alt:     #e2d5ae;
-  --paper-dark:    #d3c193;
-  --board:         #8a6a4b;
-  --board-dark:    #6e5238;
-  --ink:           #2b2622;
-  --ink-soft:      #5b4f3f;
-  --ink-faint:     #8a7a62;
-  --red:           #9c2b21;
-  --red-dark:      #7a1f17;
-  --string:        #b3312c;
-  --blue-tack:     #2f5e6b;
-  --gold:          #a9822f;
-  --line:          #b7a377;
-  --shadow:        rgba(35, 28, 15, 0.35);
-  --radius: 3px;
+  /* surfaces */
+  --page:       #f7f4ec;   /* warm ivory page */
+  --paper:      #ffffff;   /* cards and figures */
+  --paper-alt:  #fbf9f4;   /* quiet boxes inside cards */
+  --line:       #e6e0d3;   /* hairlines and card borders */
+  --line-strong:#cfc7b6;
+
+  /* ink */
+  --oak:        #3a2b1f;   /* headings */
+  --ink:        #1f2a33;   /* body text (slate) */
+  --ink-soft:   #4a5560;
+  --ink-faint:  #7d8790;
+
+  /* accents */
+  --red:        #c8102e;   /* Danish red: kickers, key numbers, links on hover */
+  --red-dark:   #9e0c24;
+  --brass:      #a8854f;   /* dividers and figure labels */
+  --gold:       #a8854f;   /* kept for older rules that use it */
+  --link:       #1f5a8c;
+
+  /* chamber colours: one per part, used on its rule, margin and labels (never as chart data colours) */
+  --oxblood:    #6b1e28;
+  --bottle:     #23493a;
+  --navy:       #1e3350;
+  --slate:      #4a5560;
+
+  --shadow:     rgba(31, 42, 51, .08);
+  --radius:     3px;   /* document frames, not app cards */
+  --radius-sm:  3px;
+
+  --serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;   /* headings and numbers */
+  --text:  'Source Serif 4', Georgia, serif;                          /* reading text */
+  --sans:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 *{ box-sizing: border-box; }
-
 html{ scroll-behavior: smooth; }
+[id]{ scroll-margin-top: 5rem; }  /* anchors land below the sticky header */
 
 body.wlf{
   margin: 0;
-  background:
-    radial-gradient(ellipse at top left, rgba(255,255,255,0.08), transparent 60%),
-    var(--paper);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
-    radial-gradient(ellipse at top left, rgba(255,255,255,0.08), transparent 60%);
+  background: var(--page);
   color: var(--ink);
-  font-family: 'Courier Prime', 'Courier New', monospace;
-  line-height: 1.7;
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
 }
 
-.wlf h1, .wlf h2, .wlf h3, .wlf .display{
-  font-family: 'Special Elite', 'Courier New', monospace;
-  letter-spacing: 0.02em;
-  color: var(--ink);
+.wlf h1, .wlf h2, .wlf h3, .wlf h4{
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--oak);
+  letter-spacing: 0;
 }
+.wlf h2{ font-size: 1.75rem; line-height: 1.25; margin: 2.2rem 0 .8rem; }
+.wlf h3{ font-size: 1.25rem; line-height: 1.3; }
+.wlf p{ margin: 0 0 1rem; }
 
-.wlf a{ color: var(--red); text-decoration-thickness: 1px; }
-.wlf a:hover{ color: var(--red-dark); }
+.wlf a{ color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.wlf a:hover{ color: var(--red); }
+.wlf code{ font-size: .9em; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 4px; padding: 0 .25rem; }
 
-/* ---------- masthead / nav ---------- */
-.wlf-masthead{
-  background: linear-gradient(180deg, #241e18, #1a1512);
-  color: var(--paper);
-  border-bottom: 6px double var(--gold);
-  padding: 1.6rem 1.25rem 1.4rem;
+/* ---------- sticky header ---------- */
+.site-header{
+  position: sticky; top: 0; z-index: 70;
+  background: var(--oxblood);
+  border-bottom: 3px solid var(--brass);
 }
-.wlf-masthead-inner{
-  max-width: 64rem;
-  margin: 0 auto;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: .5rem 1.5rem;
+.site-header-inner{
+  max-width: 81rem; margin: 0 auto; padding: .7rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: .6rem 1.5rem; flex-wrap: wrap;
 }
-.wlf-brand{
-  font-family: 'Special Elite', monospace;
-  font-size: 1.55rem;
-  color: #f1e6c8;
-  text-decoration: none;
-  letter-spacing: .03em;
+.wlf a.brand{
+  font-family: var(--serif); font-size: 1.3rem; color: #f7f0e3; text-decoration: none; line-height: 1.15;
 }
-.wlf-brand small{
-  display: block;
-  font-family: 'Courier Prime', monospace;
-  font-size: .72rem;
-  color: #b8a26f;
-  letter-spacing: .18em;
-  margin-top: .15rem;
+.wlf a.brand small{
+  display: block; font-family: var(--sans); font-size: .68rem; color: #d9b98a;
+  letter-spacing: .12em; text-transform: uppercase; margin-top: .15rem;
 }
-.wlf-nav{ display: flex; gap: 1.25rem; font-size: .85rem; align-items: baseline; }
-.wlf-nav a{ color: #d8c691; text-decoration: none; border-bottom: 1px dotted transparent; }
-.wlf-nav a:hover{ border-bottom-color: #d8c691; }
-
-/* ---------- case-files dropdown ----------
-   A native <details>, so it opens, closes and takes the keyboard without any
-   script; assets/nav.js only adds click-outside and Escape. */
-.wlf-cases{ position: relative; }
-.wlf-cases > summary{
-  color: #d8c691;
-  cursor: pointer;
-  list-style: none;
-  border-bottom: 1px dotted transparent;
-  user-select: none;
+.site-nav{ display: flex; flex-wrap: wrap; gap: .2rem .3rem; font-size: .86rem; font-family: var(--sans); }
+.wlf .site-nav a{
+  color: rgba(247, 240, 227, .82); text-decoration: none; padding: .3rem .6rem;
+  border-bottom: 2px solid transparent; transition: color .15s ease, border-color .15s ease;
 }
-.wlf-cases > summary::-webkit-details-marker{ display: none; }
-.wlf-cases > summary::after{ content: " \25BE"; font-size: .85em; margin-left: .15em; }
-.wlf-cases[open] > summary::after{ content: " \25B4"; }
-.wlf-cases > summary:hover,
-.wlf-cases[open] > summary{ border-bottom-color: #d8c691; }
-.wlf-cases > summary:focus-visible{ outline: 1px dotted #d8c691; outline-offset: 3px; }
-
-.wlf-cases-menu{
-  /* The nav sits at the right of the masthead, so the panel hangs from the
-     trigger's right edge; when the nav wraps to the left on a narrow screen the
-     media query below flips it. */
-  position: absolute;
-  top: calc(100% + .7rem);
-  right: 0;
-  z-index: 60;
-  display: flex;
-  flex-direction: column;
-  min-width: 16.5rem;
-  padding: .3rem 0;
-  background: #1a1512;
-  border: 1px solid var(--gold);
-  border-radius: var(--radius);
-  box-shadow: 0 10px 24px rgba(0,0,0,.5);
-}
-.wlf-cases-menu a{
-  padding: .5rem .85rem;
-  border-bottom: none;
-  white-space: nowrap;
-  color: #c9b78a;
-}
-.wlf-cases-menu a strong{
-  font-family: 'Special Elite', monospace;
-  font-weight: normal;
-  color: #f1e6c8;
-  margin-right: .35rem;
-}
-.wlf-cases-menu a:hover{ background: #2a2119; border-bottom: none; }
-.wlf-cases-menu a.current{ background: #241d16; }
-.wlf-cases-menu a.current strong{ color: var(--gold); }
-
-@media (max-width: 34rem){
-  .wlf-cases-menu{
-    right: auto;
-    left: 0;
-    min-width: 15rem;
-    max-width: calc(100vw - 2rem);
-  }
-  .wlf-cases-menu a{ white-space: normal; }
-  .wlf-cases-menu a strong{ display: block; margin-right: 0; }
-}
+.wlf .site-nav a:hover{ color: #fff; border-bottom-color: rgba(217, 185, 138, .6); }
+.wlf .site-nav a[aria-current="true"]{ color: #fff; border-bottom-color: #d9b98a; }
+.wlf .site-nav a:focus-visible{ outline: 2px solid #d9b98a; outline-offset: 2px; }
 
 /* ---------- layout ---------- */
 .wlf-main{ max-width: 64rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
-.wlf-board{
-  background:
-    repeating-linear-gradient(45deg, rgba(0,0,0,0.05) 0, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 6px),
-    var(--board);
-  border-radius: 6px;
-  box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 6px 18px var(--shadow);
-  padding: 2rem 1.25rem;
-  margin: 2.5rem 0;
-}
 
-/* ---------- folder / index cards ---------- */
 .wlf-card{
-  background: var(--paper-alt);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 4px 10px var(--shadow), 0 1px 0 rgba(255,255,255,.4) inset;
-  padding: 1.4rem 1.5rem;
-  position: relative;
-}
-.wlf-card + .wlf-card{ margin-top: 1.25rem; }
-.wlf-pin{
-  position: absolute;
-  top: -10px; left: 50%;
-  transform: translateX(-50%);
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #e35b52, var(--red-dark) 70%);
-  box-shadow: 0 3px 4px rgba(0,0,0,.5);
+  padding: 1.5rem 1.6rem;
 }
 
-/* ---------- stamps & tags ---------- */
-.wlf-stamp{
-  display: inline-block;
-  font-family: 'Special Elite', monospace;
-  color: var(--red);
-  border: 3px solid var(--red);
-  border-radius: 4px;
-  padding: .15rem .6rem;
-  transform: rotate(-4deg);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: .8rem;
-  opacity: .85;
-}
+/* small uppercase labels: figure numbers, card labels */
 .wlf-case-no{
-  font-family: 'Special Elite', monospace;
-  color: var(--ink-faint);
-  font-size: .8rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-family: var(--sans); font-size: .72rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--brass);
+}
+.kicker{
+  font-family: var(--sans); font-size: .75rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--red);
 }
 
-/* ---------- buttons ---------- */
-.wlf-btn{
-  font-family: 'Special Elite', monospace;
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  color: var(--ink);
-  padding: .55rem 1.1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: .95rem;
-  letter-spacing: .03em;
-  transition: transform .08s ease, box-shadow .08s ease;
-  box-shadow: 2px 2px 0 var(--ink);
-}
-.wlf-btn:hover{ background: var(--paper-alt); }
-.wlf-btn:active{ transform: translate(2px,2px); box-shadow: none; }
-.wlf-btn.primary{ background: var(--red); color: #fbf3dc; border-color: var(--red-dark); box-shadow: 2px 2px 0 var(--red-dark); }
-.wlf-btn.primary:hover{ background: var(--red-dark); }
-.wlf-btn:disabled{ opacity: .45; cursor: not-allowed; }
-
-/* ---------- misc ---------- */
+/* brass divider with a small diamond, like a rule in a printed record */
 .wlf-hr{
-  border: none;
-  border-top: 2px dashed var(--line);
-  margin: 2.5rem 0;
+  border: 0; height: 1px; margin: 4rem 0 3rem; position: relative; overflow: visible;
+  background: linear-gradient(90deg, transparent, var(--brass) 15%, var(--brass) 85%, transparent);
 }
-.wlf-muted{ color: var(--ink-soft); font-size: .92rem; }
-.wlf-footer{
-  text-align: center;
-  padding: 2rem 1rem 3rem;
-  color: var(--ink-faint);
-  font-size: .82rem;
+.wlf-hr::after{
+  content: ""; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px;
+  background: var(--page); border: 1px solid var(--brass); transform: translate(-50%, -50%) rotate(45deg);
 }
-.wlf-mono-tight{ font-family: 'Courier Prime', monospace; }
 
-::selection{ background: var(--gold); color: #241e18; }
+.wlf-stamp{
+  display: inline-block; font-family: var(--sans); font-size: .7rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--red);
+  border: 1px solid var(--red); border-radius: 999px; padding: .15rem .6rem;
+}
+.wlf-muted{ color: var(--ink-faint); }
+
+/* ---------- footer ---------- */
+.wlf-footer{
+  background: var(--oak); color: #eadfcb; text-align: center;
+  font-size: .82rem; letter-spacing: .02em; padding: 1.6rem 1.25rem;
+  border-top: 3px solid var(--brass);
+}

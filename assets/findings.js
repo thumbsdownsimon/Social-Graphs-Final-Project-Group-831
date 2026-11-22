@@ -1,14 +1,13 @@
-/* The three "beyond the obvious" pages: settings.html, language.html and latenight.html.
-   Each page sets <body data-page="...">. Figures are drawn from data/results/settings.json
+/* Parts 2-4 of the one-page site (settings, talk alike, late night) and the government timeline
+   at the top. Each part is drawn when its figures are on the page. Figures are drawn from data/results/settings.json
    (tools/analyze_settings.py), data/results/similarity.json (tools/analyze_similarity.py)
    and data/results/label_checks.json (tools/check_labels.py). Nothing is computed here
    beyond sorting and formatting. */
 (function () {
   "use strict";
 
-  const C = { blue: "#0e6aa8", red: "#b1352a", grey: "#7d7263", ink: "#2b2622", soft: "#5b4f3f", grid: "rgba(43,38,34,.14)", paper: "#e2d5ae" };
+  const C = { blue: "#1f5a8c", red: "#b8202e", grey: "#8c8279", ink: "#1f2a33", soft: "#4a5560", grid: "rgba(31,42,51,.12)", paper: "#ffffff" };
   const tooltip = document.getElementById("tooltip");
-  const page = document.body.dataset.page;
 
   /* ---------- helpers ---------- */
   const signed = (v, d = 2) => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(d);
@@ -98,9 +97,38 @@
   function loadJSON(path) {
     return fetch(path).then((r) => { if (!r.ok) throw new Error(`${path}: ${r.status}`); return r.json(); });
   }
-  function fail(error) {
-    document.querySelectorAll(".chart").forEach((el) => { el.innerHTML = `<p class="wlf-muted">Could not load the data (${error.message}). Serve the repo folder with <code>python -m http.server</code>.</p>`; });
+  function fail(error, ...ids) {
+    ids.map((id) => document.getElementById(id)).filter(Boolean).forEach((el) => { el.innerHTML = `<p class="wlf-muted">Could not load the data (${error.message}). Serve the repo folder with <code>python -m http.server</code>.</p>`; });
     console.error(error);
+  }
+
+  /* ---------- government timeline (top of the page) ---------- */
+  function drawGovernments(governments) {
+    const parse = d3.utcParse("%Y-%m-%d");
+    const end = new Date(Date.UTC(2026, 10, 1));  // the data were collected in November 2026
+    const rows = governments.map((g, i) => ({ from: parse(g.from), to: i + 1 < governments.length ? parse(governments[i + 1].from) : end,
+      parties: g.parties, counts: g.minister_counts }));
+    const width = 960, height = 112, m = { l: 8, r: 8, t: 8, b: 26 };
+    const svg = svgIn("fig-governments", width, height);
+    const x = d3.scaleUtc().domain([rows[0].from, end]).range([m.l, width - m.r]);
+    // One neutral tint for every government: red and blue already mean apart/together in the charts.
+    rows.forEach((r) => {
+      const x0 = x(r.from), x1 = x(r.to), w = Math.max(1, x1 - x0 - 2);
+      const label = r.parties.join(" + ");
+      const g = svg.append("g").attr("tabindex", 0).attr("role", "img").attr("aria-label", `${d3.utcFormat("%B %Y")(r.from)}: ${label}`);
+      g.append("rect").attr("x", x0 + 1).attr("y", m.t).attr("width", w).attr("height", height - m.t - m.b).attr("rx", 4)
+        .attr("fill", C.paper).attr("stroke", "#a8854f").attr("stroke-width", 1);
+      if (w > 46) {
+        g.append("text").attr("x", x0 + 1 + w / 2).attr("y", m.t + 32).attr("text-anchor", "middle").attr("class", "strong").text(w > 80 ? label : label.replace(/ \+ /g, "+"));
+        g.append("text").attr("x", x0 + 1 + w / 2).attr("y", m.t + 52).attr("text-anchor", "middle").text(d3.utcFormat("%Y")(r.from));
+      }
+      const tip = [`From ${d3.utcFormat("%-d %B %Y")(r.from)}`, `Ministers: ${Object.entries(r.counts).map(([p, n]) => `${p} ${n}`).join(", ")}`];
+      g.on("pointermove", (e) => showTip(e, label, tip)).on("pointerleave", hideTip)
+        .on("focus", function () { const b = this.getBoundingClientRect(); showTip({ clientX: b.left + b.width / 2, clientY: b.top }, label, tip); })
+        .on("blur", hideTip);
+    });
+    svg.append("g").attr("transform", `translate(0,${height - m.b + 4})`).call(d3.axisBottom(x).ticks(d3.utcYear.every(2)).tickSize(0))
+      .call((g) => g.select(".domain").remove());
   }
 
   /* ---------- tone validation box (settings and late night) ---------- */
@@ -127,7 +155,7 @@
     }
   }
 
-  /* ---------- settings.html ---------- */
+  /* ---------- Part 2: same member, different setting ---------- */
   const MEASURE_TEXT = {
     tone: { name: "Tone", unit: "AFINN points per 100 words", up: "friendlier", down: "harsher", upColor: C.blue, downColor: C.red },
     negativity: { name: "Negative words", unit: "negative AFINN points per 100 words", up: "more negative words", down: "fewer negative words", upColor: C.red, downColor: C.blue },
@@ -138,10 +166,10 @@
   function settingsPage(S, labels) {
     const tone = S.effects.filter((r) => r.measure === "tone");
     const byLevel = Object.fromEntries(tone.map((r) => [r.level, r]));
-    setN("turns", fmt(S.corpus.turns_in_settings));
-    setN("members", fmt(S.corpus.members));
+    setN("setTurns", fmt(S.corpus.turns_in_settings));
+    setN("setMembers", fmt(S.corpus.members));
     setN("reference", S.reference);
-    setN("shuffles", S.shuffles);
+    setN("setShuffles", S.shuffles);
     setN("chamBeyond", S.chameleon_summary.beyond_z2);
     setN("chamRanked", S.chameleon_summary.members_ranked);
     setN("chamExpected", S.chameleon_summary.expected_beyond_z2_by_chance);
@@ -267,8 +295,8 @@
     });
   }
 
-  /* ---------- latenight.html ---------- */
-  function lateNightPage(S, labels) {
+  /* ---------- Part 4: the late-night effect ---------- */
+  function lateNightPage(S) {
     const N = S.late_night;
     const bins = N.bins;
     const last = bins[bins.length - 1];
@@ -286,7 +314,7 @@
       setN("sittingMean", signed(R.sitting_weighted_mean));
       setN("sittingsBelow", R.sittings_below_zero);
     }
-    setN("shuffles", S.shuffles);
+    setN("setShuffles", S.shuffles);
     const select = document.getElementById("hour-measure");
     const choices = { tone: "Tone", negativity: "Negative words", positivity: "Positive words", questions: "Questions" };
     select.replaceChildren(...Object.entries(choices).map(([k, v]) => new Option(v, k)));
@@ -319,10 +347,9 @@
     makeTable(document.getElementById("table-hours"), ["Clock time", "Turns", "Members", "Tone (centred)", "Negative (centred)", "Tone (raw mean)", "Most common settings"],
       bins.map((b) => [b.bin, fmt(b.turns), b.members, signed(b.tone, 3), signed(b.negativity, 3), b.tone_raw.toFixed(2),
         Object.entries(b.top_settings).map(([s, v]) => `${s} ${(v * 100).toFixed(0)}%`).join(", ")]), [1, 2, 3, 4, 5]);
-    toneValidation(labels);
   }
 
-  /* ---------- language.html ---------- */
+  /* ---------- Part 3: talk alike, fight alike ---------- */
   function languagePage(L) {
     const cross = (m) => L.bins[m].filter((b) => !b.same_party).sort((a, b) => a.bin - b.bin);
     const t = L.tests;
@@ -335,14 +362,14 @@
     // With n shuffles, no shuffle reaching the observed value means p < 1/n, not p = 0.
     const pText = (p) => (p === 0 ? `p < ${(1 / L.settings.shuffles).toFixed(3)}` : `p = ${p}`);
     setN("pDebate", `${pText(t.tfidf.exp_debate.p_one_sided)} (TF-IDF) and ${pText(t.embedding.exp_debate.p_one_sided)} (embeddings)`);
-    setN("shuffles", L.settings.shuffles);
+    setN("simShuffles", L.settings.shuffles);
     setN("agreement", L.method_agreement_spearman.toFixed(2));
     const nmiParty = d3.mean(L.windows, (w) => w.nmi_language_party), nmiChal = d3.mean(L.windows, (w) => w.nmi_language_challenge);
-    setN("nmiParty", nmiParty.toFixed(2));
-    setN("nmiPartyNull", d3.mean(L.windows, (w) => w.nmi_language_party_null).toFixed(2));
+    setN("simNmiParty", nmiParty.toFixed(2));
+    setN("simNmiPartyNull", d3.mean(L.windows, (w) => w.nmi_language_party_null).toFixed(2));
     setN("nmiChallenge", nmiChal.toFixed(2));
     setN("nmiChallengeNull", d3.mean(L.windows, (w) => w.nmi_language_challenge_null).toFixed(2));
-    setN("stability", `${d3.min(L.windows, (w) => w.language_stability_nmi).toFixed(2)}–${d3.max(L.windows, (w) => w.language_stability_nmi).toFixed(2)}`);
+    setN("simStability", `${d3.min(L.windows, (w) => w.language_stability_nmi).toFixed(2)}–${d3.max(L.windows, (w) => w.language_stability_nmi).toFixed(2)}`);
     setN("minWords", fmt(L.settings.min_words_member));
     setN("k", L.settings.k_neighbours);
 
@@ -480,10 +507,17 @@
   }
 
   /* ---------- start ---------- */
-  const labelsP = loadJSON("data/results/label_checks.json").catch(() => null);
-  if (page === "settings") Promise.all([loadJSON("data/results/settings.json"), labelsP]).then(([S, lab]) => settingsPage(S, lab)).catch(fail);
-  if (page === "latenight") Promise.all([loadJSON("data/results/settings.json"), labelsP]).then(([S, lab]) => lateNightPage(S, lab)).catch(fail);
-  if (page === "language") loadJSON("data/results/similarity.json").then(languagePage).catch(fail);
+  // Each part is drawn only if its figure is on the page, and a failure in one part does not stop the others.
+  const has = (id) => document.getElementById(id) !== null;
+  if (has("fig-governments")) loadJSON("data/governments.json").then(drawGovernments).catch((e) => fail(e, "fig-governments"));
+  if (has("fig-settings") || has("fig-hours")) {
+    const labelsP = loadJSON("data/results/label_checks.json").catch(() => null);
+    Promise.all([loadJSON("data/results/settings.json"), labelsP]).then(([S, lab]) => {
+      if (has("fig-settings")) settingsPage(S, lab);
+      if (has("fig-hours")) lateNightPage(S);
+    }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-methods", "fig-hours"));
+  }
+  if (has("fig-lift")) loadJSON("data/results/similarity.json").then(languagePage).catch((e) => fail(e, "fig-lift", "fig-nmi", "fig-map"));
 })();
 
 /* Party key: start minimised on phone-sized screens (same rule as on the main page, in site.js). */
@@ -491,4 +525,54 @@
   "use strict";
   const box = document.getElementById("party-key-box");
   if (box && window.matchMedia("(max-width: 55.99rem)").matches) box.open = false;
+})();
+
+/* Header nav: mark the part being read. A part counts as current once its header has passed
+   the top quarter of the window. */
+(function () {
+  "use strict";
+  const links = [...document.querySelectorAll(".site-nav a[href^='#']")];
+  const targets = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  if (!targets.length) return;
+  function update() {
+    const line = window.innerHeight * 0.25;
+    let current = null;
+    targets.forEach((t) => { if (t.getBoundingClientRect().top <= line) current = t; });
+    links.forEach((a) => {
+      if (current && a.getAttribute("href") === "#" + current.id) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+
+/* Cover drawing: 179 seats in a horseshoe, like the chamber. Decoration only: the seats are
+   not coloured by party or by data, so it cannot be read as a result. */
+(function () {
+  "use strict";
+  const host = document.getElementById("cover-art");
+  if (!host) return;
+  const ns = "http://www.w3.org/2000/svg";
+  const W = 560, H = 250, cx = W / 2, cy = H - 18, rows = 8, seats = 179;
+  const radii = Array.from({ length: rows }, (_, i) => 80 + i * 20);
+  const total = radii.reduce((a, r) => a + r, 0);
+  let counts = radii.map((r) => Math.round((seats * r) / total));
+  counts[rows - 1] += seats - counts.reduce((a, b) => a + b, 0);  // make the rows add up to 179
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const add = (tag, attrs) => { const el = document.createElementNS(ns, tag); Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v)); svg.append(el); return el; };
+  radii.forEach((r, i) => {
+    const n = counts[i];
+    for (let k = 0; k < n; k++) {
+      const a = Math.PI - (Math.PI * (k + 0.5)) / n;  // left to right across the half circle
+      add("circle", { cx: (cx + r * Math.cos(a)).toFixed(1), cy: (cy - r * Math.sin(a)).toFixed(1), r: 4.6, fill: i % 2 ? "#a8854f" : "#6b1e28", opacity: i % 2 ? 0.55 : 0.8 });
+    }
+  });
+  // the chair's desk and the speakers' lectern in the middle
+  add("rect", { x: cx - 34, y: cy - 34, width: 68, height: 12, rx: 2, fill: "none", stroke: "#3a2b1f", "stroke-width": 1.5 });
+  add("rect", { x: cx - 9, y: cy - 16, width: 18, height: 16, rx: 2, fill: "none", stroke: "#3a2b1f", "stroke-width": 1.5 });
+  add("line", { x1: 30, y1: cy + 10, x2: W - 30, y2: cy + 10, stroke: "#a8854f", "stroke-width": 1 });
+  host.append(svg);
 })();

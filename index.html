@@ -10,35 +10,54 @@
 </head>
 <body class="wlf">
 
-<div class="wlf-masthead">
-  <div class="wlf-masthead-inner">
-    <a class="wlf-brand" href="index.html">CROSSING THE AISLE
-      <small>Final project &middot; 02805 &middot; DTU</small>
-    </a>
-    <nav class="wlf-nav">
-      <a href="index.html#evidence" aria-current="page">Main finding</a>
-      <a href="settings.html">Settings</a>
-      <a href="language.html">Talk alike</a>
-      <a href="latenight.html">Late night</a>
-      <a href="index.html#methods">Methods</a>
-      <a href="https://github.com/thumbsdownsimon/Social-Graphs-Final-Project-Group-831">Source</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="#top">Crossing the Aisle<small>Folketinget 2009&ndash;2026 &middot; DTU 02805</small></a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#main-finding">Main finding</a>
+      <a href="#settings">Settings</a>
+      <a href="#talk-alike">Talk alike</a>
+      <a href="#late-night">Late night</a>
+      <a href="#methods">Methods</a>
     </nav>
   </div>
-</div>
+</header>
 
-<main class="wlf-main" id="top">
+<main class="wlf-main">
 
-  <section class="hero">
-    <div class="wlf-case-no">The question</div>
-    <p class="question">When a change of government makes parties vote together, do their members' floor challenges and language follow?</p>
-    <div class="wlf-case-no">The finding</div>
-    <h1 id="finding">When parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</h1>
+  <section class="cover" id="top">
+    <div class="cover-meta"><span>Folketinget &middot; 2009&ndash;2026</span><span>A study of <span data-n="edges"></span> floor challenges</span></div>
+    <h1 class="cover-title">Crossing the Aisle</h1>
+    <p class="cover-sub">Who challenges whom in the Danish Parliament, how they sound when they do, and what changes when parties govern together.</p>
+    <div class="cover-art" id="cover-art" aria-hidden="true"></div>
+    <div class="cover-grid">
+      <div>
+        <div class="kicker">The question</div>
+        <p class="question">When a change of government makes parties vote together, do their members' floor challenges and language follow?</p>
+      </div>
+      <div>
+        <div class="kicker">The main finding</div>
+        <p class="lede" id="finding">When parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</p>
+      </div>
+    </div>
+    <figure class="timeline" aria-labelledby="timeline-caption">
+      <div id="fig-governments" class="chart"></div>
+      <figcaption id="timeline-caption">Who governed when, 2009&ndash;2026: the parties holding at least two ministers, from Folketinget's records of minister roles. Hover a period for details.</figcaption>
+    </figure>
   </section>
+
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong data-n="challengePairs"></strong><span>party pairs that joined or split moved the expected way in challenges</span></div>
+    <div class="stat"><strong data-n="svBefore"></strong><span>S&ndash;V challenges before they governed together (2019&ndash;22; <span data-n="svBeforeExpected"></span> expected by chance)</span></div>
+    <div class="stat"><strong data-n="svAfter"></strong><span>S&ndash;V challenges while they did (2022&ndash;26; <span data-n="svAfterExpected"></span> expected by chance)</span></div>
+    <div class="stat"><strong data-n="rebelRate"></strong><span>of member votes went against their party, 2019&ndash;26</span></div>
+  </div>
 
   <!-- ===== Definition: what a challenge is ===== -->
   <section class="wlf-card define" id="challenge" aria-labelledby="challenge-title">
-    <div class="wlf-case-no">Definition</div>
+    <div class="wlf-case-no">Glossary</div>
     <h2 id="challenge-title">What we mean by a &ldquo;challenge&rdquo;</h2>
+    <p class="headword"><span class="hw">kort be&middot;m&aelig;rk&middot;ning</span> <i>noun, Danish</i> <span class="gloss">&ldquo;short remark&rdquo;</span></p>
     <p class="define-lead">A <strong>challenge</strong> is one <em>kort bemærkning</em> (short remark): a member asks for the floor right after another member's speech and speaks back to that member, usually to question or contest what they just said.</p>
     <div class="define-grid">
       <div>
@@ -63,50 +82,48 @@
   </section>
 
   <div class="pending" id="label-banner" hidden>
-    <span class="wlf-stamp">Validation pending</span>
+    <span class="wlf-stamp">Not yet checked</span>
     <p id="label-banner-text"></p>
   </div>
 
-  <div class="stats" aria-label="Key numbers">
-    <div class="stat"><strong data-n="challengePairs"></strong><span>party pairs that joined or split moved the expected way in challenges</span></div>
-    <div class="stat"><strong data-n="svBefore"></strong><span>S&ndash;V challenges before they governed together (2019&ndash;22; <span data-n="svBeforeExpected"></span> expected by chance)</span></div>
-    <div class="stat"><strong data-n="svAfter"></strong><span>S&ndash;V challenges while they did (2022&ndash;26; <span data-n="svAfterExpected"></span> expected by chance)</span></div>
-    <div class="stat"><strong data-n="rebelRate"></strong><span>of member votes went against their party, 2019&ndash;26</span></div>
-  </div>
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">Contents</h2>
+    <p class="toc-intro">That coalition partners stop attacking each other is what most readers would expect, and Part 1 measures it. Parts 2&ndash;4 use the same transcripts for questions that are less obvious.</p>
+    <ol>
+      <li><a href="#main-finding"><span class="toc-no">&sect;&thinsp;1</span><span class="toc-title">Coalition partners stop challenging each other</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 1&ndash;5</span></a>
+        <p>When parties enter government together, challenges between them fall, and return when they split. The expected result, measured.</p></li>
+      <li><a href="#settings"><span class="toc-no">&sect;&thinsp;2</span><span class="toc-title">Same member, different setting</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 6&ndash;9</span></a>
+        <p>Compared with themselves in a routine bill debate, members are harsher in question time and friendlier in party-leader debates.</p></li>
+      <li><a href="#talk-alike"><span class="toc-no">&sect;&thinsp;3</span><span class="toc-title">Talk alike, fight alike</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 10&ndash;12</span></a>
+        <p>Members from different parties who talk about the same things challenge each other far more. Language groups members by policy area, not party.</p></li>
+      <li><a href="#late-night"><span class="toc-no">&sect;&thinsp;4</span><span class="toc-title">The late-night effect</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 13</span></a>
+        <p>Tone barely moves through the day and evening, then turns harsher after midnight on average.</p></li>
+      <li><a href="#methods"><span class="toc-no">&sect;&thinsp;5</span><span class="toc-title">Methods and data</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig"></span></a>
+        <p>Data, limitations, how we checked our own work, and how to reproduce it.</p></li>
+    </ol>
+  </nav>
 
+  <section class="part" id="main-finding" data-part="1">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;1</div>
+      <div class="kicker">Part 1</div>
+      <h2>Coalition partners stop challenging each other</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><path d="M8 50 A40 40 0 0 1 88 50"/><path d="M20 50 A28 28 0 0 1 76 50"/><path d="M32 50 A16 16 0 0 1 64 50"/>
+      <circle cx="48" cy="26" r="4"/><path d="M36 58h24"/><path d="M42 50v8M54 50v8"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong data-n="foldChange"></strong><span>drop in challenges between coalition partners, relative to chance</span></div>
+        <div class="note"><strong data-n="challengePairs"></strong><span>party pairs that joined or split moved the expected way</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+      <p class="part-question">When parties enter government together, do their members stop challenging each other on the floor, and does their language follow?</p>
   <section>
-    <h2>The short version</h2>
+    <h3 class="sub">The short version</h3>
     <p>Danish members almost never vote against their party, so individual votes say little about them. The floor is different. After most speeches, other members can call a <em>kort bemærkning</em>, a short remark aimed at whoever holds the floor. Those calls are recorded in the transcripts, which gives a directed network of who challenges whom: <span data-n="edges"></span> challenges across <span data-n="members"></span> members since 2009.</p>
     <p>We followed that network, the votes and the language across <span data-n="formations"></span> changes of government. Parties that enter government together stop challenging each other, and parties that split start again, including when we follow only the same members across the change. The language result is more mixed: similarity in the same debate shifts modestly in the expected direction, a classifier's ability to tell parties apart does not reliably change, and much of the clearest difference is the vocabulary of being in opposition.</p>
   </section>
 
-  <section aria-labelledby="beyond-title">
-    <h2 id="beyond-title">Beyond the obvious</h2>
-    <p>That coalition partners stop attacking each other is what most readers would expect. The same transcripts can answer questions that are less obvious. Each has its own page, with its own checks.</p>
-    <div class="cards">
-      <a class="wlf-card case" href="settings.html">
-        <div class="wlf-case-no">Tone &middot; settings</div>
-        <h3>Same member, different setting</h3>
-        <p>Compared with themselves in a routine bill debate, members are harsher in question time and friendlier in the televised party-leader debates. Some change far more than chance.</p>
-        <span class="case-more">Read the evidence &rarr;</span>
-      </a>
-      <a class="wlf-card case" href="language.html">
-        <div class="wlf-case-no">Language &middot; network</div>
-        <h3>Talk alike, fight alike</h3>
-        <p>Members from different parties who talk about the same things challenge each other far more than their activity predicts. Language groups members by policy area, not party.</p>
-        <span class="case-more">Read the evidence &rarr;</span>
-      </a>
-      <a class="wlf-card case" href="latenight.html">
-        <div class="wlf-case-no">Tone &middot; time</div>
-        <h3>The late-night effect</h3>
-        <p>Tone barely moves through the day and evening. After midnight it turns harsher on average, compared with the same member in the same kind of debate, though not on every late night.</p>
-        <span class="case-more">Read the evidence &rarr;</span>
-      </a>
-    </div>
-  </section>
-
-  <hr class="wlf-hr">
-  <h2 id="evidence">The evidence</h2>
+  <h3 class="sub" id="evidence">The evidence</h3>
 
   <!-- ===== Figure 1 ===== -->
   <figure class="wlf-card fig">
@@ -161,7 +178,6 @@
     </figcaption>
   </figure>
 
-  <hr class="wlf-hr">
 
   <!-- ===== Figure 5 ===== -->
   <figure class="wlf-card fig" id="explore">
@@ -183,10 +199,246 @@
     </figcaption>
     <details class="table-view" open><summary>What each community debates</summary><div id="table-communities" class="table-wrap"></div></details>
   </figure>
+    </div>
+  </section>
 
-  <hr class="wlf-hr">
+  <section class="part" id="settings" data-part="2">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;2</div>
+      <div class="kicker">Part 2</div>
+      <h2>Same member, different setting</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><path d="M30 58h36"/><path d="M36 58l4-26h16l4 26"/><path d="M34 32h28"/>
+      <path d="M48 32V18"/><rect x="44" y="6" width="8" height="13" rx="4"/><path d="M40 14a8 8 0 0 0 16 0"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong data-n="qtTone"></strong><span>tone in minister question time, against the same members in a routine debate</span></div>
+        <div class="note"><strong><span data-n="chamBeyond"></span>&thinsp;/&thinsp;<span data-n="chamRanked"></span></strong><span>members change tone between big and routine debates beyond chance (about <span data-n="chamExpected"></span> expected)</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+      <p class="part-question">Does the same member of parliament sound different depending on where they speak?</p>
+      <p class="part-finding">Yes. Judged by the words they use, the same members are harsher in question time and in the final readings of bills than in a routine bill debate, and friendlier in the televised party-leader debates. Some members change far more than others.</p>
+  <section class="wlf-card define" aria-labelledby="tone-title">
+    <div class="wlf-case-no">How we measure it</div>
+    <h2 id="tone-title">Tone, and comparing each member with themselves</h2>
+    <div class="define-grid">
+      <div>
+        <h3>Tone of one turn</h3>
+        <ul>
+          <li><strong>Word list:</strong> each turn is scored with the Danish AFINN list, which gives words a score from &minus;5 (very negative) to +5 (very positive).</li>
+          <li><strong>Tone</strong> = positive points minus negative points, per 100 words, so long and short turns compare fairly.</li>
+          <li><strong>Adapted to parliament:</strong> words that are formulaic or mean something else here are dropped, such as <em>tak</em> (every turn opens with "Tak for det") and <em>n&aring;r</em> (almost always "when"). The full list is below.</li>
+          <li><strong>Who counts:</strong> members speaking as members (no chair, no ministers), turns of 30 words or more: <span data-n="setTurns"></span> turns by <span data-n="setMembers"></span> members.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Each member against themselves</h3>
+        <ul>
+          <li><strong>Reference:</strong> for every member, their average tone in a <em><span data-n="reference"></span></em>, the most common and most routine kind of debate.</li>
+          <li><strong>Difference:</strong> their average tone in another setting minus that reference, then averaged over all members who spoke at least <span data-n="minCell"></span> times in both.</li>
+          <li><strong>Why:</strong> a difference cannot come from which parties or which people speak in a setting, because each member is only ever compared with themselves.</li>
+        </ul>
+      </div>
+    </div>
+    <details class="table-view"><summary>Words dropped from the word list, and why</summary><div id="dropped-words" class="table-wrap"></div></details>
+  </section>
 
-  <section id="methods">
+  <div class="pending" id="tone-validation"></div>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 6 &middot; Settings</div>
+    <h3>Compared with themselves in a routine debate, members are harsher in question time and friendlier in party-leader debates</h3>
+    <div class="controls"><label for="measure-select">Measure</label><select id="measure-select"></select></div>
+    <div class="legend" id="legend-settings"></div>
+    <div id="fig-settings" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> for each setting, the average over members of their tone there minus their own tone in a routine first reading of a government bill. The line is a 95% interval from resampling members. <strong>Compared with:</strong> the members themselves (the reference row at 0). <strong>What to see:</strong> minister question time (<span data-n="qtTone"></span>), PM question time (<span data-n="pmTone"></span>) and final readings (<span data-n="finalTone"></span>) sit to the left; party-leader debates (<span data-n="leaderTone"></span>) to the right.</p>
+      <p class="check"><strong>Check:</strong> shuffling the setting labels among each member's own turns (<span data-n="setShuffles"></span> times) gives the z-scores in the table, and Figure 9 repeats the comparison with a different tone method. <strong>Misses:</strong> settings differ in format and topic as well as audience. Question time consists of questions, which carry fewer polite words, and a word list cannot see sarcasm or who a word is aimed at. Only party leaders speak in party-leader debates, so that row rests on few members.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-settings" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 7 &middot; Government and opposition</div>
+    <h3>Government and opposition members do not change the same way</h3>
+    <div class="legend" id="legend-side"></div>
+    <div id="fig-side" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> the same tone difference as Figure 6, computed separately for members of government parties and members of opposition parties at the time they spoke. Settings with fewer than 20 members on either side are left out, which removes question time: government members rarely ask questions there. <strong>What to see:</strong> rows where the two dots are far apart, for example debates on members' motions, which are mostly proposed by the opposition and where government members are the harsher side.</p>
+      <p class="check"><strong>Misses:</strong> "government" is the party's status on the day, so a member who moves between government and opposition counts on both sides at different times.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-side" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 8 &middot; Chameleons</div>
+    <h3>Some members change tone far more than chance between the big debates and routine ones</h3>
+    <div class="legend" id="legend-chameleons"></div>
+    <div id="fig-chameleons" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> the eight members who turn friendliest and the eight who turn harshest in the three big televised debates (opening, closing and party-leader debates) compared with their own routine first readings. Only members with at least <span data-n="minCham"></span> turns in both are ranked (<span data-n="chamRanked"></span> members). <strong>Compared with:</strong> shuffling each member's own turns between the two kinds of debate. <strong>What to see:</strong> <span data-n="chamBeyond"></span> of the <span data-n="chamRanked"></span> members differ beyond |z| = 2, where about <span data-n="chamExpected"></span> would by chance.</p>
+      <p class="check"><strong>Misses:</strong> the big debates cover everything, while a first reading covers one bill, so part of a member's change can be topic. A member's role matters too: spokespersons and party leaders dominate the big debates.</p>
+    </figcaption>
+    <details class="table-view"><summary>All ranked members</summary><div id="table-chameleons" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 9 &middot; Second method</div>
+    <h3>A contextual sentiment model ranks the settings much like the word list</h3>
+    <div id="fig-methods" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> each dot is a setting. Across: its mean tone from the adapted word list. Up: the mean score of a multilingual sentiment model (a fine-tuned DistilBERT, P(positive) &minus; P(negative)) on <span data-n="modelTurns"></span> turns sampled evenly across settings. <strong>What to see:</strong> dots along a rising line. Rank correlation across settings: <span data-n="rhoSettings"></span>; across single turns: <span data-n="rhoTurns"></span>.</p>
+      <p class="check"><strong>Misses:</strong> the model was not trained on parliamentary speech and reads only the first 256 word pieces of a turn. This compares raw setting means, not members against themselves.</p>
+    </figcaption>
+  </figure>
+
+  <details class="table-view wlf-card"><summary>The settings: turns, members and raw means</summary><div id="table-overview" class="table-wrap"></div></details>
+    </div>
+  </section>
+
+  <section class="part" id="talk-alike" data-part="3">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;3</div>
+      <div class="kicker">Part 3</div>
+      <h2>Talk alike, fight alike</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><path d="M10 12h40a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6H26l-10 9v-9h-6a6 6 0 0 1-6-6V18a6 6 0 0 1 6-6z"/>
+      <path d="M46 24h40a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6h-6v9l-10-9H46a6 6 0 0 1-6-6V30a6 6 0 0 1 6-6z"/><path d="M14 22h26M14 29h18M50 36h32M58 43h24"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong>&times;<span data-n="liftWindow"></span></strong><span>challenges between the most alike cross-party pairs against the least alike, relative to activity</span></div>
+        <div class="note"><strong data-n="simNmiParty"></strong><span>match between language groups and party: no better than chance</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+      <p class="part-question">Do members fight the people who talk like them?</p>
+      <p class="part-finding">Yes, mostly because they end up in the same debates. Members of different parties who talk about the same things challenge each other far more than their activity predicts, but inside a single debate, talking alike adds little. Language groups members by policy area, not by party.</p>
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong>&times;<span data-n="liftWindow"></span></strong><span>more challenges, relative to activity, between the most alike fifth of cross-party pairs than the least alike fifth</span></div>
+    <div class="stat"><strong>&times;<span data-n="liftDebate"></span></strong><span>the same comparison, against who was in each debate</span></div>
+    <div class="stat"><strong data-n="simNmiParty"></strong><span>NMI between language communities and party (<span data-n="simNmiPartyNull"></span> with shuffled labels)</span></div>
+    <div class="stat"><strong data-n="nmiChallenge"></strong><span>NMI between language communities and challenge communities (<span data-n="nmiChallengeNull"></span> shuffled)</span></div>
+  </div>
+
+  <section class="wlf-card define" aria-labelledby="sim-title">
+    <div class="wlf-case-no">How we measure it</div>
+    <h2 id="sim-title">How alike two members talk</h2>
+    <div class="define-grid">
+      <div>
+        <h3>A language profile per member</h3>
+        <ul>
+          <li><strong>Text:</strong> everything a member said as a member (not as minister) in one government period, with names of people and parties removed. Members need at least <span data-n="minWords"></span> words in that period.</li>
+          <li><strong>TF-IDF:</strong> how often a member uses each word, weighted up for words few members use. Two members are alike when their weighted word use points the same way (cosine similarity).</li>
+          <li><strong>Embeddings (second method):</strong> the average of the member's sentence-embedding vectors from a multilingual sentence encoder, which also matches words with similar meanings.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Two expectations for challenges</h3>
+        <ul>
+          <li><strong>Activity alone:</strong> how many challenges a pair would share if challengers picked targets at random over the whole government period, given how much each member challenges and is challenged.</li>
+          <li><strong>Same debates:</strong> the same, but debate by debate, so it also knows who was in the room and who held the floor.</li>
+          <li><strong>Reading:</strong> beating the first expectation means conflict follows shared topics. Beating the second means members pick each other out even inside a debate.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 10 &middot; Shared turf</div>
+    <h3>The more alike two members from different parties talk, the more they challenge each other</h3>
+    <div class="controls"><label for="method-select">Similarity</label><select id="method-select"></select></div>
+    <div class="legend" id="legend-lift"></div>
+    <div id="fig-lift" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> all <span data-n="pairs"></span> pairs of members from different parties, within each government period, split into fifths by how alike they talk. Each point is the challenges between those pairs divided by what is expected. Ministers are left out at both ends. <strong>Compared with:</strong> the two expectations above. <strong>What to see:</strong> the solid line climbs steeply: the most alike fifth sees &times;<span data-n="liftWindow"></span> the least alike fifth. The dashed line is nearly flat at &times;<span data-n="liftDebate"></span>.</p>
+      <p class="check"><strong>Check:</strong> shuffling similarity among pairs in the same government period (<span data-n="simShuffles"></span> times) gives a lift of <span data-n="liftNull"></span>. Inside debates, <span data-n="pDebate"></span>. With embeddings the lifts are &times;<span data-n="liftWindowEmb"></span> and &times;<span data-n="liftDebateEmb"></span>, and the two similarity measures agree with a rank correlation of <span data-n="agreement"></span> over pairs. <strong>Misses:</strong> similarity here is mostly topic, and causality runs both ways: members who debate each other also pick up each other's words.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-lift" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 11 &middot; Two networks, one structure</div>
+    <h3>Groups found from language match the challenge network, not the parties</h3>
+    <div class="legend" id="legend-nmi"></div>
+    <div id="fig-nmi" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> for each government period, a language network that links every member to the <span data-n="k"></span> members they talk most like, split into communities with Louvain. Each dot is the normalised mutual information (NMI) between those communities and either party or the communities of the challenge network. <strong>Compared with:</strong> the same NMI with shuffled labels (grey ticks). <strong>What to see:</strong> language communities match party no better than chance (<span data-n="simNmiParty"></span> against <span data-n="simNmiPartyNull"></span>), but match the challenge communities clearly (<span data-n="nmiChallenge"></span> against <span data-n="nmiChallengeNull"></span>).</p>
+      <p class="check"><strong>Check:</strong> the language communities are stable across 10 Louvain seeds (NMI <span data-n="simStability"></span>). <strong>Misses:</strong> the profiles are dominated by topic. A classifier trained to tell parties apart can still do so (Figure 2); this measures what members talk about, not how.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-nmi" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig" id="map">
+    <div class="wlf-case-no">Figure 12 &middot; Explore the language map</div>
+    <h3>Where members sit by what they talk about</h3>
+    <div class="controls">
+      <label for="map-window">Government</label><select id="map-window"></select>
+      <label for="map-party">Party</label><select id="map-party"></select>
+      <label for="map-member">Member</label><input id="map-member" list="map-members" placeholder="Type a name"><datalist id="map-members"></datalist>
+    </div>
+    <div class="legend" id="legend-map"></div>
+    <div class="net-layout">
+      <div id="fig-map" class="chart"></div>
+      <aside id="map-panel" class="member-panel" aria-live="polite"><p class="wlf-muted">Click a member to see who they talk like and who they challenge.</p></aside>
+    </div>
+    <figcaption>
+      <p><strong>Plotted:</strong> each member's embedding profile in one government period, laid out in two dimensions with t-SNE, so members who talk alike sit close together. Size shows challenges made and received; colour shows government or opposition. <strong>What to see:</strong> click a member. Their challenge partners (solid lines) are often their language neighbours (dashed lines), from other parties.</p>
+      <p class="check"><strong>Misses:</strong> t-SNE keeps neighbours close but distorts distances between groups, so the size of a gap between clusters means nothing. This map is for exploring; the evidence is Figures 10 and 11.</p>
+    </figcaption>
+  </figure>
+
+  <details class="table-view wlf-card"><summary>The most frequent cross-party sparring partners in each government period</summary><div id="table-rivals" class="table-wrap"></div></details>
+    </div>
+  </section>
+
+  <section class="part" id="late-night" data-part="4">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;4</div>
+      <div class="kicker">Part 4</div>
+      <h2>The late-night effect</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><circle cx="44" cy="34" r="24"/><path d="M44 34V16M44 34l7 4"/>
+      <path d="M44 12v3M44 53v3M20 34h3M65 34h3"/><path d="M82 8a9 9 0 1 0 8 13 7 7 0 0 1-8-13z"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong data-n="lateTone"></strong><span>tone after midnight, against the same member in the same kind of debate</span></div>
+        <div class="note"><strong><span data-n="sittingsBelow"></span>&thinsp;/&thinsp;<span data-n="sittings"></span></strong><span>late sittings that show the drop</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+      <p class="part-question">Does tone change when a sitting runs late into the night?</p>
+      <p class="part-finding">Only after midnight, and not every night. On average, turns that start after midnight are harsher than the same member's turns in the same kind of debate earlier in the day, but only about half of the late sittings show it. Before midnight the changes are tiny.</p>
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong data-n="lateTone"></strong><span>tone points per 100 words after midnight, against the same member in the same kind of debate</span></div>
+    <div class="stat"><strong data-n="lateZ"></strong><span>standard deviations from the shuffled hours</span></div>
+    <div class="stat"><strong data-n="lateTurns"></strong><span>turns started after midnight, by <span data-n="lateMembers"></span> members</span></div>
+  </div>
+
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 13 &middot; By the clock</div>
+    <h3>Tone barely moves through the day and evening, then drops after midnight on average</h3>
+    <div class="controls"><label for="hour-measure">Measure</label><select id="hour-measure"></select></div>
+    <div class="legend" id="legend-hours"></div>
+    <div id="fig-hours" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> the tone of each turn (the adapted word list from <a href="#settings">Part 2</a>, checked against hand labels there) minus the same member's average in the same kind of debate, averaged by the clock time the turn started. A sitting that runs past midnight keeps its date. <strong>Compared with:</strong> the grey band, which shows how far the averages move when the clock times are shuffled among each member's turns in the same kind of debate (<span data-n="setShuffles"></span> shuffles). <strong>What to see:</strong> before midnight every average stays within 0.05 points of zero. Some of them still fall just outside the band, because with up to 100,000 turns per bin even tiny differences pass the shuffle test. After midnight, tone falls to <span data-n="lateTone"></span>, about ten times further, and negative words rise by <span data-n="lateNeg"></span> per 100 words.</p>
+      <p class="check"><strong>Check:</strong> late turns come mostly from debates on members' motions and closing debates (see the table). Comparing each turn with the same member in the same kind of debate removes that mix. <strong>Misses:</strong> only <span data-n="after22"></span> turns start after 22:00. The after-midnight turns come from <span data-n="sittings"></span> sittings. Leaving out any one of them keeps the effect between <span data-n="looMin"></span> and <span data-n="looMax"></span>; weighting every sitting equally gives <span data-n="sittingMean"></span>, and <span data-n="sittingsBelow"></span> of the <span data-n="sittings"></span> sittings are below zero. Turns in one sitting are not independent, so the shuffle band is narrower than it should be. Tiredness, a contested bill and a deadline can all keep a sitting going, and this cannot tell them apart.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-hours" class="table-wrap"></div></details>
+  </figure>
+    </div>
+  </section>
+
+  <section class="part" id="methods" data-part="5">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;5</div>
+      <div class="kicker">Methods and data</div>
+      <h2>How we did it, and what it cannot show</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><path d="M18 6h34l10 10v42H18z"/><path d="M52 6v10h10"/><path d="M24 22h28M24 29h28M24 36h20"/>
+      <circle cx="62" cy="42" r="11"/><path d="M70 50l12 12"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong data-n="edges"></strong><span>challenges in the network, 2009&ndash;2026</span></div>
+        <div class="note"><strong data-n="validationPassed"></strong><span>automated checks pass</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+  <section>
     <h2>Why votes alone are not enough</h2>
     <p>Individual votes carry almost no signal: <span data-n="rebelRate"></span> of cast votes in <span data-n="rebelWindow"></span> went against the member's party majority. Communities in the member vote network match party with NMI <span data-n="voteNmi"></span>, and shuffling each member's votes within their own party gives about the same (<span data-n="voteNull"></span>), so member votes add nothing beyond party. Party-level alignment is what moves, and it moves mechanically: parties in one government vote together. That is why the votes set up the question rather than answer it.</p>
 
@@ -240,6 +492,8 @@
       <div class="agent"><strong>Simon Jonsson</strong><span>s224331</span></div>
     </div>
   </section>
+    </div>
+  </section>
 </main>
 
 <footer class="wlf-footer">
@@ -275,5 +529,6 @@
 <div id="tooltip" class="tooltip" role="status" hidden></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/findings.js"></script>
 </body>
 </html>

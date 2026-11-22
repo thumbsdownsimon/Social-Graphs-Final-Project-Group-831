@@ -3,7 +3,8 @@
 (function () {
   "use strict";
 
-  const COLOR = { together: "#0e6aa8", apart: "#b1352a", placebo: "#7d7263", ink: "#2b2622", grid: "rgba(43,38,34,.14)", neutral: "#d8ccb0" };
+  // Chamber/Nordic theme. together and apart pass the dataviz palette validator on white and ivory.
+  const COLOR = { together: "#1f5a8c", apart: "#b8202e", placebo: "#8c8279", ink: "#1f2a33", grid: "rgba(31,42,51,.12)", neutral: "#e7e3da", paper: "#ffffff" };
   const LAYER_NAMES = { votes: "Votes (agreement on contested votes)", challenges: "Floor challenges", same_debate_similarity: "Language: same-debate similarity", party_classifier: "Language: party classifier" };
   // Sign that makes "closer" point right in Figure 2.
   const CLOSER = { votes: 1, challenges: -1, same_debate_similarity: 1, party_classifier: -1 };
@@ -150,12 +151,16 @@
   function labelStatus() {
     const L = D.labels || {};
     const precision = L.challenge_precision || {};
-    const pending = ["challenge_precision", "challenge_missed", "name_resolution", "challenge_stance"].filter((k) => !L[k] || L[k].status !== "labeled");
+    const stance = L.challenge_stance || {};
     const banner = document.getElementById("label-banner");
-    if (pending.length) {
+    if (precision.status !== "labeled") {
+      // State what was and was not checked by hand, rather than a count of unfinished sheets.
+      const tone = stance.n
+        ? `Tone was checked against ${stance.n} hand-labelled short remarks by one labeller (Part 2).`
+        : "Tone has not been checked against hand labels either.";
       banner.hidden = false;
       document.getElementById("label-banner-text").textContent =
-        `The group's hand labels are not finished (${pending.length} of 4 sheets outstanding). Until they are, the challenge rule's accuracy and the tone of challenges are unvalidated, and results here are preliminary.`;
+        `The rule that finds challenges in the transcripts has not been checked against hand labels, so its error rate is unknown; read the network results with that in mind. ${tone}`;
     }
     document.getElementById("precision-text").textContent = precision.status === "labeled"
       ? `In our hand-labeled sample, ${precision.yes} of ${precision.n} edges were real challenges to the floor speaker (95% CI ${precision.ci95[0]}–${precision.ci95[1]}).`
@@ -282,7 +287,7 @@
         .attr("r", (r) => (relationClass(r.relation) === "placebo" ? 2.5 : 5))
         .attr("fill", (r) => COLOR[relationClass(r.relation)])
         .attr("fill-opacity", (r) => (relationClass(r.relation) === "placebo" ? 0.45 : 0.95))
-        .attr("stroke", "#e2d5ae").attr("stroke-width", (r) => (relationClass(r.relation) === "placebo" ? 0 : 1.5))
+        .attr("stroke", COLOR.paper).attr("stroke-width", (r) => (relationClass(r.relation) === "placebo" ? 0 : 1.5))
         .style("cursor", "default")
         .on("pointermove", (event, r) => showTip(event, r.pair, [
           `${(CLOSER[key] * r.placebo_units).toFixed(1)} placebo units`, `Raw change ${r.change.toFixed(3)}`,
@@ -433,7 +438,7 @@
       if (A.x === null || B.x === null) return;
       const lit = selected && (a === selected || b === selected);
       links.append("line").attr("x1", x(A.x)).attr("y1", y(A.y)).attr("x2", x(B.x)).attr("y2", y(B.y))
-        .attr("stroke", lit ? COLOR.ink : "#7d7263").attr("stroke-opacity", lit ? 0.75 : selected ? 0.08 : 0.22)
+        .attr("stroke", lit ? COLOR.ink : COLOR.placebo).attr("stroke-opacity", lit ? 0.75 : selected ? 0.08 : 0.22)
         .attr("stroke-width", lit ? Math.min(3, 0.8 + w / 8) : 0.8);
     });
     const group = svg.append("g");
@@ -447,14 +452,14 @@
         .on("pointerleave", hideTip);
       g.append("circle").attr("r", Math.max(r(n.made + n.received), 11)).attr("fill", "transparent");
       g.append("circle").attr("class", "mark").attr("r", r(n.made + n.received)).attr("fill", n.side === "government" ? COLOR.together : COLOR.apart)
-        .attr("fill-opacity", dim ? 0.14 : 0.95).attr("stroke", n.id === selected ? COLOR.ink : "#e2d5ae").attr("stroke-width", n.id === selected ? 2.5 : 1);
+        .attr("fill-opacity", dim ? 0.14 : 0.95).attr("stroke", n.id === selected ? COLOR.ink : COLOR.paper).attr("stroke-width", n.id === selected ? 2.5 : 1);
     });
     if (selected && byId.get(selected) && byId.get(selected).x !== null) {
       const n = byId.get(selected);
       const side = x(n.x) > width * 0.7 ? "end" : "start";
-      svg.append("text").attr("x", x(n.x) + (side === "start" ? 12 : -12)).attr("y", y(n.y) + 4).attr("text-anchor", side).attr("class", "strong").style("paint-order", "stroke").style("stroke", "#e2d5ae").style("stroke-width", "3px").text(n.name);
+      svg.append("text").attr("x", x(n.x) + (side === "start" ? 12 : -12)).attr("y", y(n.y) + 4).attr("text-anchor", side).attr("class", "strong").style("paint-order", "stroke").style("stroke", COLOR.paper).style("stroke-width", "3px").text(n.name);
     }
-    legend("legend-net", [{ color: COLOR.together, label: "Government party" }, { color: COLOR.apart, label: "Outside government" }, { color: "#7d7263", label: "Size: challenges made and received" }]);
+    legend("legend-net", [{ color: COLOR.together, label: "Government party" }, { color: COLOR.apart, label: "Outside government" }, { color: COLOR.placebo, label: "Size: challenges made and received" }]);
     renderPanel(net, byId);
 
     const w = D.per_window[name];
