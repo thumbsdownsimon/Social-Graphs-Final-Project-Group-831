@@ -182,8 +182,7 @@ pre{ background: var(--ink); color: #eef2f5; padding: .9rem 1.1rem; border-radiu
   .wlf .site-nav a{ padding: .25rem .55rem; white-space: nowrap; }
 }
 
-/* =====================================================================
-   PARLIAMENTARY RECORD LAYOUT
+/* ==============================================================   PARLIAMENTARY RECORD LAYOUT
    A cover sheet, a contents page, a glossary entry, and each part laid out
    like an annotated record: a margin column with the section number, title,
    a line drawing and margin notes, beside the body text and figures.
@@ -275,3 +274,17 @@ figcaption{ border-top: 1px dashed var(--line-strong); padding-top: .8rem; }
 .cover-art svg{ max-width: 30rem; }
 /* UI around the charts stays in the sans-serif, like the charts themselves */
 .legend, .controls, table.data, .table-view summary, .member-panel, .tooltip, .wlf-stamp{ font-family: var(--sans); }
+=======
+
+/* ---------- Layer explorer (Figure 5) and layer comparison (Figure 6) ---------- */
+.layer-note{ margin: -.3rem 0 .5rem; font-size: .84rem; color: var(--ink-soft); }
+.layer-note:empty{ display: none; }
+.tone-toggle{ display: inline-flex; align-items: center; gap: .35rem; min-height: 2.2rem; cursor: pointer; }
+.tone-toggle[hidden]{ display: none; }
+.tone-toggle input{ min-height: 0; width: 1rem; height: 1rem; accent-color: var(--ink); }
+.tone-bar{ display: flex; height: 10px; border-radius: 2px; overflow: hidden; margin: .5rem 0 .25rem; }
+.tone-bar span{ display: block; height: 100%; }
+.committee-list{ margin: .2rem 0 .4rem; line-height: 1.45; }
+.empty-layer{ padding: 3rem 1rem; text-align: center; border: 1px dashed var(--line); border-radius: var(--radius); }
+#table-layer-defs{ margin-bottom: 1rem; }
+.member-emoji{ font-size: 1.5rem; letter-spacing: .25rem; margin: .5rem 0 0; }

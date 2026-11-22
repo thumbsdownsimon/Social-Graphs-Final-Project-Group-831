@@ -181,23 +181,73 @@
 
   <!-- ===== Figure 5 ===== -->
   <figure class="wlf-card fig" id="explore">
-    <div class="wlf-case-no">Figure 5 &middot; Explore the members</div>
-    <h3>The network is organised by policy area, not party</h3>
+    <div class="wlf-case-no">Figure 5 &middot; Explore the members, layer by layer</div>
+    <h3 id="net-title">The network is organised by policy area, not party</h3>
     <div class="controls">
+      <label for="net-layer">Layer</label><select id="net-layer">
+        <option value="C" selected>C. Challenges</option>
+        <option value="E">E. Committees</option>
+      </select>
       <label for="net-window">Government</label><select id="net-window"></select>
       <label for="net-party">Party</label><select id="net-party"></select>
       <label for="net-member">Member</label><input id="net-member" list="member-list" placeholder="Type a name"><datalist id="member-list"></datalist>
+      <label class="tone-toggle" id="net-tone-label"><input type="checkbox" id="net-tone" checked> Colour lines by tone</label>
     </div>
+    <p class="layer-note" id="net-layer-note"></p>
     <div class="legend" id="legend-net"></div>
     <div class="net-layout">
       <div id="fig-network" class="chart"></div>
       <aside id="member-panel" class="member-panel" aria-live="polite"><p class="wlf-muted">Click a member to see who they challenged most and who challenged them.</p></aside>
     </div>
     <figcaption>
+      <p class="check" id="layer-stats" hidden></p>
+      <div data-layer="C">
       <p><strong>Plotted:</strong> members linked by the disparity-filter backbone of their challenges (&alpha; = 0.05, so <span data-n="backboneEdges"></span> of <span data-n="allEdges"></span> linked pairs are kept, and the largest connected part is drawn, <span data-n="membersDrawn"></span> members; search finds the rest). Layout comes after filtering; colour shows government or opposition. <strong>What to see:</strong> this drawing is for exploring, not evidence. The evidence is the numbers below it.</p>
       <p class="check"><strong>Check:</strong> Louvain communities reach modularity <span data-n="modularity"></span> against <span data-n="modularityNull"></span> for a rewired network, and are stable between seeds (NMI <span data-n="stability"></span>), yet barely match party (NMI <span data-n="nmiParty"></span>). <span data-n="committeeShare"></span> of challenges are between members sharing a committee, against <span data-n="committeeNull"></span> under the shuffle. <strong>Misses:</strong> the topic words below were read by us, not tested, and most members sit on many committees, so that check is not a sharp one.</p>
+      <div class="needs-layers">
+      <p><strong>Tone:</strong> with &ldquo;Colour lines by tone&rdquo; on, each line takes the main tone of the challenges in that pair, both ways. Each challenge is translated to English and read by DeepMoji (Figure 5c): its sentiment is the probability of happy and loving emoji minus that of angry and disapproving ones. At &minus;<span data-n="toneCut"></span> or lower a challenge counts as hostile, at +<span data-n="toneCut"></span> or higher as friendly, and neutral in between. In this period: <span data-n="toneShares"></span>.</p>
+      <p class="check"><strong>Misses:</strong> DeepMoji learned from English tweets, not parliamentary Danish, and machine translation adds its own errors. <span data-n="toneCheck"></span></p>
+      </div>
+      </div>
+      <div data-layer="E" hidden>
+      <p><strong>Plotted:</strong> each member linked to the <span data-n="kNeighbours"></span> members whose committee seats overlap theirs most: Jaccard similarity of the committees they sat on (member, chair or deputy chair) in any session of the period. The panel shows how many committees a pair shares. <strong>What to see:</strong> <span data-n="committeesSee"></span></p>
+      <p class="check"><strong>Misses:</strong> parties assign committee seats, so small parties' members sit on many committees each and overlap with everyone. A seat says nothing about how active a member was there.</p>
+      </div>
     </figcaption>
-    <details class="table-view" open><summary>What each community debates</summary><div id="table-communities" class="table-wrap"></div></details>
+    <details class="table-view" open data-layer="C"><summary>What each community debates</summary><div id="table-communities" class="table-wrap"></div></details>
+  </figure>
+
+  <!-- ===== Figure 5b ===== -->
+  <figure class="wlf-card fig" id="layers">
+    <div class="wlf-case-no">Figure 5b &middot; Two layers, one chamber</div>
+    <h3 id="compare-title">Do members who sit on the same committees challenge each other more?</h3>
+    <div class="table-wrap" id="table-layer-defs"></div>
+    <div class="legend" id="legend-compare"></div>
+    <div id="fig-compare" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> for each government, the rank correlation (Spearman) over every pair of seated members between how many challenges the pair exchanged (both ways) and how much their committee seats overlap (Jaccard). <strong>Compared with:</strong> 0, where sharing committees says nothing about who challenges whom. <strong>What to see:</strong> <span data-n="compareSee"></span></p>
+      <p class="check"><strong>Check:</strong> the table below describes each layer's drawn network in Figure 5 for the government chosen there. NMI compares its Louvain communities with party (1 means the communities are the parties). Assortativity is above 0 when lines join members of the same party or side more often than chance. <strong>Misses:</strong> most pairs never challenge each other, so the correlation rests on the minority that do. Committee seats follow policy area, and so do debates, so this does not separate &ldquo;meet in committee, then clash on the floor&rdquo; from &ldquo;work on the same subject&rdquo;.</p>
+    </figcaption>
+    <details class="table-view" open><summary>Network statistics per layer</summary><div id="table-layer-stats" class="table-wrap"></div></details>
+  </figure>
+
+  <!-- ===== Figure 5c ===== -->
+  <figure class="wlf-card fig" id="emoji">
+    <div class="wlf-case-no">Figure 5c &middot; Beyond positive and negative</div>
+    <h3 id="emoji-title">What DeepMoji hears in a challenge</h3>
+    <div class="controls"><label for="emoji-measure">Show</label><select id="emoji-measure">
+      <option value="mean_prob">Mean probability of each emoji</option>
+      <option value="top1_count">How often each emoji is the top pick</option>
+    </select></div>
+    <div class="legend" id="legend-emoji"></div>
+    <div id="fig-emoji" class="chart"></div>
+    <div class="legend" id="legend-sentiment"></div>
+    <div id="fig-sentiment" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> top, the emoji <a href="https://aclanthology.org/D17-1169/">DeepMoji</a> (Felbo et al., 2017) predicts for <span data-n="emojiChallenges"></span> challenges, 2009&ndash;2026, from the <span data-n="emojiShown"></span> most likely of its 64. Each remark is translated from Danish with Helsinki-NLP's opus-mt-da-en and scored sentence by sentence, and the sentences are averaged. Bars are coloured by emotion group. Bottom, the distribution of each challenge's sentiment: the probability of happy and loving emoji minus that of angry and disapproving ones. One curve is for challenges aimed at the government (ministers and government parties), the other for those aimed at the opposition. <strong>What to see:</strong> <span data-n="emojiSee"></span></p>
+      <p class="check"><strong>Check:</strong> mean sentiment aimed at the government is <span data-n="sentGov"></span>, against <span data-n="sentOpp"></span> aimed at the opposition. <strong>Misses:</strong> 😂 is DeepMoji's most common answer for almost any text and, on Twitter, often means mockery, so it is grouped as laughter and counts as neither friendly nor hostile. Which emoji count as which emotion is our reading, set in <code>archetypes/deepmoji.py</code>. <span data-n="toneCheck"></span></p>
+    </figcaption>
+    <details class="table-view"><summary>Emotion groups per government</summary><div id="table-emotions" class="table-wrap"></div></details>
   </figure>
     </div>
   </section>

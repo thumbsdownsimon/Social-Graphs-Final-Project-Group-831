@@ -413,45 +413,102 @@
     setNumber("assortNull", `${w.party_assortativity.null_mean.toFixed(3)} ± ${w.party_assortativity.null_sd.toFixed(3)} and ${w.side_assortativity.null_mean.toFixed(3)} ± ${w.side_assortativity.null_sd.toFixed(3)}`);
   }
 
-  /* ---------- Figure 5 ---------- */
+  /* ---------- Figure 5: one member network per layer (data/layers.json, archetypes/run_layers.py) ---------- */
+  let L = null;
   let selected = null;
+  const TONE = { hostile: "#c4661f", neutral: "#a39a8c", friendly: "#2f7d4f" };
+  const LAYER_UI = {
+    C: { title: "The network is organised by policy area, not party", size: "Size: challenges made and received" },
+    E: { title: "Committees: who sits on the same committees", size: "Size: lines drawn", lists: [["Shares most committees with", null]] },
+  };
+  const layerValue = () => document.getElementById("net-layer").value;
+  const windowValue = () => document.getElementById("net-window").value;
+
+  // The challenge network from site.json, in the layer format, for when layers.json is missing.
+  function siteChallengeNet(name) {
+    const n = D.networks[name];
+    return { nodes: n.nodes.map((m) => ({ ...m, out: m.challenged, in: m.challenged_by })), edges: n.edges, drawn: n.members_drawn, edges_all: n.edges_all };
+  }
+  function currentNet(layer, name) {
+    if (L) return (L.networks[layer] || {})[name] || null;
+    return layer === "C" ? siteChallengeNet(name) : null;
+  }
+  function toneOf(t) {
+    const total = t[0] + t[1] + t[2];
+    if (!total) return null;
+    const net = (t[2] - t[0]) / total;
+    return net <= -0.25 ? "hostile" : net >= 0.25 ? "friendly" : "neutral";
+  }
+
+  function showLayerText(layer) {
+    document.getElementById("net-title").textContent = LAYER_UI[layer].title;
+    const def = L ? L.layers[layer] : null;
+    document.getElementById("net-layer-note").textContent = def ? `Line: ${def.edge.toLowerCase()} · Edge property: ${def.property.toLowerCase()}` : "";
+    document.querySelectorAll("#explore [data-layer]").forEach((el) => { el.hidden = el.dataset.layer !== layer; });
+    document.getElementById("net-tone-label").hidden = !(layer === "C" && L);
+  }
 
   function drawNetwork() {
-    const name = document.getElementById("net-window").value;
+    const layer = layerValue();
+    const name = windowValue();
     const partyFilter = document.getElementById("net-party").value;
-    const net = D.networks[name];
+    showLayerText(layer);
+    const net = currentNet(layer, name);
+    const host = document.getElementById("fig-network");
+    const stats = document.getElementById("layer-stats");
+    if (!net) {
+      const p = document.createElement("p");
+      p.className = "wlf-muted empty-layer";
+      p.textContent = !L ? "The layer data (data/layers.json) could not load, so only the challenge layer is shown."
+        : "No data for this layer in this period.";
+      host.replaceChildren(p);
+      legend("legend-net", []);
+      stats.hidden = true;
+      renderPanel(layer, null, new Map());
+      return;
+    }
     const nodes = net.nodes.filter((n) => n.x !== null);
     const byId = new Map(net.nodes.map((n) => [n.id, n]));
-    const host = document.getElementById("fig-network");
+    const degree = new Map();
+    net.edges.forEach(([a, b]) => { degree.set(a, (degree.get(a) || 0) + 1); degree.set(b, (degree.get(b) || 0) + 1); });
+    const sizeOf = layer === "C" ? (n) => n.made + n.received : (n) => degree.get(n.id) || 0;
     const width = Math.max(host.clientWidth, 280);
     const height = Math.min(520, Math.max(340, width * 0.9));
     const frame = svgFor("fig-network", height, { top: 6, right: 6, bottom: 6, left: 6 });
     const { svg, inner } = frame;
     const x = d3.scaleLinear().domain(d3.extent(nodes, (n) => n.x)).range([inner.left + 8, inner.right - 8]);
     const y = d3.scaleLinear().domain(d3.extent(nodes, (n) => n.y)).range([inner.top + 8, inner.bottom - 8]);
-    const r = d3.scaleSqrt().domain([0, d3.max(nodes, (n) => n.made + n.received)]).range([2.5, 10]);
+    const r = d3.scaleSqrt().domain([0, d3.max(nodes, sizeOf) || 1]).range([2.5, 10]);
+    const toneOn = layer === "C" && L && document.getElementById("net-tone").checked;
+    const wExtent = d3.extent(net.edges, (e) => e[2]);
+    const fade = layer === "C" ? () => (toneOn ? 0.5 : 0.22) : d3.scaleLinear().domain(wExtent[0] === wExtent[1] ? [0, 1] : wExtent).range([0.1, 0.42]);
     const neighbours = new Set();
     if (selected) net.edges.forEach(([a, b]) => { if (a === selected) neighbours.add(b); if (b === selected) neighbours.add(a); });
     const links = svg.append("g");
-    net.edges.forEach(([a, b, w]) => {
+    net.edges.forEach((e) => {
+      const [a, b, w] = e;
       const A = byId.get(a); const B = byId.get(b);
-      if (A.x === null || B.x === null) return;
+      if (!A || !B || A.x === null || B.x === null) return;
       const lit = selected && (a === selected || b === selected);
+      const tone = toneOn && e[3] ? toneOf(e[3]) : null;
+      const color = tone ? TONE[tone] : lit ? COLOR.ink : COLOR.placebo;
+      const strokeW = layer === "C" ? Math.min(3, 0.8 + w / 8) : 0.6 + 1.6 * ((w - wExtent[0]) / ((wExtent[1] - wExtent[0]) || 1));
       links.append("line").attr("x1", x(A.x)).attr("y1", y(A.y)).attr("x2", x(B.x)).attr("y2", y(B.y))
-        .attr("stroke", lit ? COLOR.ink : COLOR.placebo).attr("stroke-opacity", lit ? 0.75 : selected ? 0.08 : 0.22)
-        .attr("stroke-width", lit ? Math.min(3, 0.8 + w / 8) : 0.8);
+        .attr("stroke", color).attr("stroke-opacity", lit ? 0.85 : selected ? 0.08 : fade(w))
+        .attr("stroke-width", lit ? Math.max(1.2, strokeW) : layer === "C" ? (tone ? 1.1 : 0.8) : strokeW);
     });
     const group = svg.append("g");
     nodes.forEach((n) => {
       const matches = !partyFilter || n.party === partyFilter;
       const dim = !matches || (selected && n.id !== selected && !neighbours.has(n.id));
+      const tip = layer === "C" ? [`${n.party}, ${n.side}`, `Made ${n.made}, received ${n.received}`] : [`${n.party}, ${n.side}`, `${degree.get(n.id) || 0} lines drawn`];
       const g = group.append("g").attr("class", "node").attr("transform", `translate(${x(n.x)},${y(n.y)})`).attr("tabindex", matches ? 0 : -1).attr("role", "button").attr("aria-label", `${n.name}, ${n.party}`)
         .on("click", () => selectMember(n.id))
         .on("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectMember(n.id); } })
-        .on("pointermove", (event) => showTip(event, n.name, [`${n.party}, ${n.side}`, `Made ${n.made}, received ${n.received}`]))
+        .on("pointermove", (event) => showTip(event, n.name, tip))
         .on("pointerleave", hideTip);
-      g.append("circle").attr("r", Math.max(r(n.made + n.received), 11)).attr("fill", "transparent");
-      g.append("circle").attr("class", "mark").attr("r", r(n.made + n.received)).attr("fill", n.side === "government" ? COLOR.together : COLOR.apart)
+      g.append("circle").attr("r", Math.max(r(sizeOf(n)), 11)).attr("fill", "transparent");
+      g.append("circle").attr("class", "mark").attr("r", r(sizeOf(n))).attr("fill", n.side === "government" ? COLOR.together : COLOR.apart)
         .attr("fill-opacity", dim ? 0.14 : 0.95).attr("stroke", n.id === selected ? COLOR.ink : COLOR.paper).attr("stroke-width", n.id === selected ? 2.5 : 1);
     });
     if (selected && byId.get(selected) && byId.get(selected).x !== null) {
@@ -459,22 +516,37 @@
       const side = x(n.x) > width * 0.7 ? "end" : "start";
       svg.append("text").attr("x", x(n.x) + (side === "start" ? 12 : -12)).attr("y", y(n.y) + 4).attr("text-anchor", side).attr("class", "strong").style("paint-order", "stroke").style("stroke", COLOR.paper).style("stroke-width", "3px").text(n.name);
     }
-    legend("legend-net", [{ color: COLOR.together, label: "Government party" }, { color: COLOR.apart, label: "Outside government" }, { color: COLOR.placebo, label: "Size: challenges made and received" }]);
-    renderPanel(net, byId);
+    const items = [{ color: COLOR.together, label: "Government party" }, { color: COLOR.apart, label: "Outside government" }, { color: COLOR.placebo, label: LAYER_UI[layer].size }];
+    if (toneOn) items.push({ color: TONE.hostile, label: "Mostly hostile", line: true }, { color: TONE.neutral, label: "Mixed / neutral", line: true }, { color: TONE.friendly, label: "Mostly friendly", line: true });
+    else if (layer !== "C") items.push({ color: COLOR.placebo, label: "Thicker line: more similar", line: true });
+    legend("legend-net", items);
+    renderPanel(layer, net, byId);
 
-    const w = D.per_window[name];
-    setNumber("backboneEdges", fmt(net.backbone_edges));
-    setNumber("membersDrawn", `${fmt(net.members_drawn)} of ${fmt(net.nodes.length)}`);
-    setNumber("allEdges", fmt(net.edges_all));
-    setNumber("modularity", w.communities.modularity.toFixed(2));
-    setNumber("modularityNull", `${w.communities.null_modularity_mean.toFixed(2)} ± ${w.communities.null_modularity_sd.toFixed(3)}`);
-    setNumber("stability", w.communities.seed_stability_nmi_mean.toFixed(2));
-    setNumber("nmiParty", w.communities.nmi_with_party.toFixed(2));
-    setNumber("committeeShare", pct(w.committee_test.share_sharing_a_committee));
-    setNumber("committeeNull", pct(w.committee_test.null_mean));
-    const rows = Object.entries(w.community_topics).map(([c, t]) => [`Community ${+c + 1}`, t.members, t.words.join(", ")]);
-    const table = makeTable(document.getElementById("table-communities"), ["", "Members", "Words setting its debates apart"], rows, [1]);
-    table.querySelectorAll("tbody td:nth-child(3)").forEach((td) => td.classList.add("wrap"));
+    if (net.stats) {
+      const s = net.stats;
+      stats.hidden = false;
+      stats.textContent = `This layer, ${name}: ${fmt(s.members)} members, ${fmt(s.edges)} lines. Louvain finds ${s.communities} communities (modularity ${s.modularity.toFixed(2)}), which match party with NMI ${s.nmi_party.toFixed(2)}. Assortativity by party ${s.assort_party.toFixed(2)}, by government side ${s.assort_side.toFixed(2)}.`;
+    } else stats.hidden = true;
+
+    if (layer === "C") {
+      const w = D.per_window[name];
+      setNumber("backboneEdges", fmt(net.edges.length));
+      setNumber("membersDrawn", `${fmt(net.drawn)} of ${fmt(net.nodes.length)}`);
+      setNumber("allEdges", fmt(net.edges_all));
+      setNumber("modularity", w.communities.modularity.toFixed(2));
+      setNumber("modularityNull", `${w.communities.null_modularity_mean.toFixed(2)} ± ${w.communities.null_modularity_sd.toFixed(3)}`);
+      setNumber("stability", w.communities.seed_stability_nmi_mean.toFixed(2));
+      setNumber("nmiParty", w.communities.nmi_with_party.toFixed(2));
+      setNumber("committeeShare", pct(w.committee_test.share_sharing_a_committee));
+      setNumber("committeeNull", pct(w.committee_test.null_mean));
+      const rows = Object.entries(w.community_topics).map(([c, t]) => [`Community ${+c + 1}`, t.members, t.words.join(", ")]);
+      const table = makeTable(document.getElementById("table-communities"), ["", "Members", "Words setting its debates apart"], rows, [1]);
+      table.querySelectorAll("tbody td:nth-child(3)").forEach((td) => td.classList.add("wrap"));
+      if (net.tone_counts) {
+        const t = net.tone_counts; const total = t.hostile + t.neutral + t.friendly;
+        setNumber("toneShares", `${pct(t.hostile / total)} hostile, ${pct(t.neutral / total)} neutral and ${pct(t.friendly / total)} friendly, of ${fmt(total)} scored challenges`);
+      }
+    }
   }
 
   function selectMember(id) {
@@ -482,45 +554,202 @@
     drawNetwork();
   }
 
-  function renderPanel(net, byId) {
+  function memberList(title, list, byId, value) {
+    const head = document.createElement("h5"); head.textContent = title;
+    const ol = document.createElement("ol");
+    list.forEach(([id, v]) => {
+      const other = byId.get(id);
+      const li = document.createElement("li");
+      const button = document.createElement("button");
+      button.textContent = other ? `${other.name} (${other.party})` : String(id);
+      button.addEventListener("click", () => { selected = id; drawNetwork(); });
+      const n = document.createElement("span"); n.textContent = value ? value(v, other) : v;
+      li.append(button, n); ol.append(li);
+    });
+    return [head, ol];
+  }
+
+  function toneBar(t) {
+    const total = t[0] + t[1] + t[2];
+    const wrap = document.createElement("div");
+    if (!total) return wrap;
+    const bar = document.createElement("div"); bar.className = "tone-bar";
+    ["hostile", "neutral", "friendly"].forEach((k, i) => {
+      const s = document.createElement("span"); s.style.width = (100 * t[i] / total) + "%"; s.style.background = TONE[k]; bar.append(s);
+    });
+    const text = document.createElement("div"); text.className = "wlf-muted";
+    text.textContent = `Tone of challenges made: ${pct(t[0] / total)} hostile, ${pct(t[1] / total)} neutral, ${pct(t[2] / total)} friendly`;
+    wrap.append(bar, text);
+    return wrap;
+  }
+
+  function renderPanel(layer, net, byId) {
     const panel = document.getElementById("member-panel");
     panel.replaceChildren();
     const member = selected ? byId.get(selected) : null;
     if (!member) {
       const p = document.createElement("p");
       p.className = "wlf-muted";
-      p.textContent = selected ? "This member did not take part in this period." : "Click a member to see who they challenged most and who challenged them.";
+      p.textContent = selected && net ? "This member is not in this layer for this period."
+        : layer === "C" ? "Click a member to see who they challenged most and who challenged them."
+        : "Click a member to see who they are most alike in this layer.";
       panel.append(p);
       return;
     }
     const h = document.createElement("h4"); h.textContent = member.name;
-    const sub = document.createElement("div"); sub.className = "wlf-muted"; sub.textContent = `${member.party}, ${member.side}. Made ${member.made}, received ${member.received}.`;
+    const sub = document.createElement("div"); sub.className = "wlf-muted";
     panel.append(h, sub);
-    [["Challenged most", member.challenged], ["Challenged most by", member.challenged_by]].forEach(([title, list]) => {
-      const head = document.createElement("h5"); head.textContent = title;
-      const ol = document.createElement("ol");
-      list.forEach(([id, count]) => {
-        const other = byId.get(id);
-        const li = document.createElement("li");
-        const button = document.createElement("button");
-        button.textContent = other ? `${other.name} (${other.party})` : String(id);
-        button.addEventListener("click", () => { selected = id; drawNetwork(); });
-        const n = document.createElement("span"); n.textContent = count;
-        li.append(button, n); ol.append(li);
-      });
-      panel.append(head, ol);
-    });
+    if (layer === "C") {
+      sub.textContent = `${member.party}, ${member.side}. Made ${member.made}, received ${member.received}.`;
+      if (member.tone) panel.append(toneBar(member.tone));
+      if (member.emoji && member.emoji.length && L.emoji) {
+        const e = document.createElement("div"); e.className = "member-emoji";
+        e.textContent = member.emoji.map((i) => L.emoji.emoji[i]).join(" ");
+        const note = document.createElement("div"); note.className = "wlf-muted"; note.textContent = "Most typical DeepMoji emoji in their challenges, relative to the chamber";
+        panel.append(e, note);
+      }
+      panel.append(...memberList("Challenged most", member.out, byId), ...memberList("Challenged most by", member.in, byId));
+      return;
+    }
+    sub.textContent = `${member.party}, ${member.side}.`;
+    if (layer === "E" && member.member_of) {
+      const names = L.committees[windowValue()];
+      const head = document.createElement("h5"); head.textContent = `Committees (${member.member_of.length})`;
+      const p = document.createElement("p"); p.className = "committee-list"; p.textContent = member.member_of.map((i) => names[i]).join(", ");
+      panel.append(head, p);
+      const mine = new Set(member.member_of);
+      panel.append(...memberList(LAYER_UI.E.lists[0][0], member.top, byId, (v, other) => other && other.member_of ? `${other.member_of.filter((i) => mine.has(i)).length} shared` : v.toFixed(2)));
+      return;
+    }
+    const [title, value] = LAYER_UI[layer].lists[0];
+    panel.append(...memberList(title, member.top, byId, value));
   }
 
   function fillNetworkControls() {
-    const name = document.getElementById("net-window").value;
-    const net = D.networks[name];
+    const net = currentNet(layerValue(), windowValue());
+    const nodes = net ? net.nodes : [];
     const partySelect = document.getElementById("net-party");
     const current = partySelect.value;
-    partySelect.replaceChildren(new Option("All parties", ""), ...[...new Set(net.nodes.map((n) => n.party))].sort().map((p) => new Option(p, p)));
+    partySelect.replaceChildren(new Option("All parties", ""), ...[...new Set(nodes.map((n) => n.party))].sort().map((p) => new Option(p, p)));
     partySelect.value = [...partySelect.options].some((o) => o.value === current) ? current : "";
     const list = document.getElementById("member-list");
-    list.replaceChildren(...net.nodes.map((n) => n.name).sort().map((v) => { const o = document.createElement("option"); o.value = v; return o; }));
+    list.replaceChildren(...nodes.map((n) => n.name).sort().map((v) => { const o = document.createElement("option"); o.value = v; return o; }));
+  }
+
+  /* ---------- Figure 5b: challenges vs committees ---------- */
+  function drawCompare() {
+    if (!L) return;
+    const rows = L.windows.map((w) => {
+      const c = L.correlations[w];
+      if (!c) return null;
+      const i = c.layers.indexOf("C"); const j = c.layers.indexOf("E");
+      return i < 0 || j < 0 ? null : { w, rho: c.rho[i][j], pairs: c.pairs, members: c.members };
+    }).filter(Boolean);
+    const label = (w) => { const row = D.windows.find((x) => x.name === w); return `${row.government.join("+")} ${row.from.slice(0, 4)}`; };
+    const host = document.getElementById("fig-compare");
+    const width = Math.max(host.clientWidth, 280);
+    const left = Math.min(150, width * 0.38);
+    const frame = svgFor("fig-compare", 30 + rows.length * 30, { top: 8, right: 40, bottom: 22, left });
+    const { svg, inner } = frame;
+    const top = Math.max(0.3, d3.max(rows, (r) => r.rho));
+    const x = d3.scaleLinear().domain([Math.min(0, d3.min(rows, (r) => r.rho)), top]).nice().range([inner.left, inner.right]);
+    const y = d3.scaleBand().domain(rows.map((r) => r.w)).range([inner.top, inner.bottom]).padding(0.35);
+    svg.append("g").attr("transform", `translate(0,${inner.bottom})`).call(d3.axisBottom(x).ticks(5).tickSize(-(inner.bottom - inner.top))).call((g) => g.select(".domain").remove());
+    rows.forEach((r) => {
+      svg.append("text").attr("x", inner.left - 8).attr("y", y(r.w) + y.bandwidth() / 2 + 4).attr("text-anchor", "end").text(label(r.w));
+      svg.append("rect").attr("x", x(Math.min(0, r.rho))).attr("y", y(r.w)).attr("width", Math.abs(x(r.rho) - x(0))).attr("height", y.bandwidth())
+        .attr("fill", COLOR.together).attr("rx", 2)
+        .on("pointermove", (event) => showTip(event, label(r.w), [`Spearman ρ = ${r.rho.toFixed(3)}`, `${fmt(r.pairs)} pairs of ${fmt(r.members)} members`]))
+        .on("pointerleave", hideTip);
+      svg.append("text").attr("x", x(r.rho) + 5).attr("y", y(r.w) + y.bandwidth() / 2 + 4).text(r.rho.toFixed(2));
+    });
+    svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", inner.top).attr("y2", inner.bottom).attr("stroke", COLOR.ink);
+    legend("legend-compare", [{ color: COLOR.together, label: "Spearman ρ: challenges exchanged vs committee overlap, per pair of members" }]);
+    drawLayerStats();
+  }
+
+  function drawLayerStats() {
+    if (!L) return;
+    const name = windowValue();
+    const rows = Object.keys(L.layers).map((k) => {
+      const s = (L.networks[k][name] || {}).stats;
+      const lab = `${k}. ${L.layers[k].name}`;
+      return s ? [lab, fmt(s.members), fmt(s.edges), s.communities, s.modularity.toFixed(2), s.nmi_party.toFixed(2), s.assort_party.toFixed(2), s.assort_side.toFixed(2)]
+        : [lab, "–", "–", "–", "–", "–", "–", "–"];
+    });
+    makeTable(document.getElementById("table-layer-stats"), [`Layer (${name})`, "Members", "Lines", "Communities", "Modularity", "NMI with party", "Assort. party", "Assort. side"], rows, [1, 2, 3, 4, 5, 6, 7]);
+  }
+
+  /* ---------- Figure 5c: DeepMoji ---------- */
+  const EMOTION_COLOR = { anger: COLOR.apart, disapproval: "#d9822b", sadness: "#6b5b95", laughter: "#c9a227", happy: "#2f7d4f", love: COLOR.together, other: "#a39a8c" };
+
+  function drawEmoji() {
+    if (!L || !L.emoji) return;
+    const em = L.emoji;
+    const measure = document.getElementById("emoji-measure").value;
+    const values = em[measure];
+    const groupOf = {};
+    Object.entries(em.groups).forEach(([g, ids]) => ids.forEach((i) => { groupOf[i] = g; }));
+    const host = document.getElementById("fig-emoji");
+    const width = Math.max(host.clientWidth, 280);
+    const shown = width < 520 ? 16 : width < 800 ? 24 : 32;
+    setNumber("emojiShown", shown);
+    const order = values.map((v, i) => i).sort((a, b) => values[b] - values[a]).slice(0, shown);
+    const total = d3.sum(values);
+    const frame = svgFor("fig-emoji", 230, { top: 10, right: 8, bottom: 34, left: 46 });
+    const { svg, inner } = frame;
+    const x = d3.scaleBand().domain(order).range([inner.left, inner.right]).padding(0.18);
+    const y = d3.scaleLinear().domain([0, d3.max(order, (i) => values[i] / total)]).nice().range([inner.bottom, inner.top]);
+    svg.append("g").attr("transform", `translate(${inner.left},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => pct(v)).tickSize(-(inner.right - inner.left))).call((g) => g.select(".domain").remove());
+    order.forEach((i) => {
+      svg.append("rect").attr("x", x(i)).attr("y", y(values[i] / total)).attr("width", x.bandwidth()).attr("height", inner.bottom - y(values[i] / total))
+        .attr("fill", EMOTION_COLOR[groupOf[i]]).attr("rx", 1.5)
+        .on("pointermove", (event) => showTip(event, `${em.emoji[i]} ${em.names[i].replace(/_/g, " ")}`, [groupOf[i], measure === "mean_prob" ? `mean probability ${pct(values[i] / total, 1)}` : `top pick for ${fmt(values[i])} challenges (${pct(values[i] / total, 1)})`]))
+        .on("pointerleave", hideTip);
+      svg.append("text").attr("x", x(i) + x.bandwidth() / 2).attr("y", inner.bottom + 22).attr("text-anchor", "middle").style("font-size", Math.min(18, x.bandwidth()) + "px").text(em.emoji[i]);
+    });
+    legend("legend-emoji", Object.keys(em.groups).map((g) => ({ color: EMOTION_COLOR[g], label: g })));
+
+    const sframe = svgFor("fig-sentiment", 240, { top: 14, right: 8, bottom: 40, left: 46 });
+    const centers = em.bins.slice(0, -1).map((b, k) => (b + em.bins[k + 1]) / 2);
+    const series = [["Aimed at the government", em.hist_at_government, COLOR.together], ["Aimed at the opposition", em.hist_at_opposition, COLOR.apart]]
+      .map(([label, h, color]) => { const n = d3.sum(h); return { label, color, share: h.map((v) => v / n) }; });
+    const sx = d3.scaleLinear().domain([em.bins[0], em.bins[em.bins.length - 1]]).range([sframe.inner.left, sframe.inner.right]);
+    const sy = d3.scaleLinear().domain([0, d3.max(series, (d) => d3.max(d.share))]).nice().range([sframe.inner.bottom, sframe.inner.top]);
+    const g = sframe.svg;
+    g.append("g").attr("transform", `translate(0,${sframe.inner.bottom})`).call(d3.axisBottom(sx).ticks(8));
+    g.append("g").attr("transform", `translate(${sframe.inner.left},0)`).call(d3.axisLeft(sy).ticks(4).tickFormat((v) => pct(v)).tickSize(-(sframe.inner.right - sframe.inner.left))).call((a) => a.select(".domain").remove());
+    const cut = L.settings.tone_cut;
+    [-cut, cut].forEach((c) => g.append("line").attr("x1", sx(c)).attr("x2", sx(c)).attr("y1", sframe.inner.top).attr("y2", sframe.inner.bottom).attr("stroke", COLOR.ink).attr("stroke-dasharray", "3 3").attr("stroke-opacity", 0.5));
+    g.append("text").attr("x", sx(-cut) - 4).attr("y", sframe.inner.top + 4).attr("text-anchor", "end").text("\u2190 hostile");
+    g.append("text").attr("x", sx(cut) + 4).attr("y", sframe.inner.top + 4).text("friendly \u2192");
+    g.append("text").attr("x", (sframe.inner.left + sframe.inner.right) / 2).attr("y", sframe.inner.bottom + 34).attr("text-anchor", "middle").text("Sentiment: P(happy + love emoji) \u2212 P(anger + disapproval emoji)");
+    series.forEach((d) => {
+      g.append("path").datum(d.share).attr("fill", d.color).attr("fill-opacity", 0.12).attr("stroke", d.color).attr("stroke-width", 2)
+        .attr("d", d3.area().x((v, k) => sx(centers[k])).y0(sframe.inner.bottom).y1((v) => sy(v)).curve(d3.curveMonotoneX));
+    });
+    legend("legend-sentiment", series.map((d) => ({ color: d.color, label: d.label, line: true })).concat([{ color: COLOR.ink, label: "Tone cut-offs (dashed)", line: true }]));
+  }
+
+  function layerNumbers() {
+    if (!L) return;
+    const s = L.settings;
+    setNumber("kNeighbours", s.k_neighbours);
+    setNumber("minSharedVotes", s.min_shared_votes);
+    setNumber("toneCut", s.tone_cut.toFixed(2));
+    const em = L.emoji;
+    setNumber("emojiChallenges", fmt(em.challenges));
+    setNumber("sentGov", em.mean_at_government.toFixed(3));
+    setNumber("sentOpp", em.mean_at_opposition.toFixed(3));
+    const groups = Object.keys(em.groups);
+    makeTable(document.getElementById("table-emotions"), ["Government", "Challenges", ...groups.map((g) => `${g} ${em.groups[g].slice(0, 4).map((i) => em.emoji[i]).join("")}`)],
+      Object.entries(em.groups_by_window).map(([w, v]) => [w, fmt(v.challenges), ...groups.map((g) => pct(v[g], 1))]), groups.map((_, i) => i + 1));
+    const check = L.tone.hand_labels || {};
+    setNumber("toneCheck", check.status === "labeled"
+      ? `Against the group's ${check.rows} hand-labeled challenges, the word list agrees on ${pct(check.accuracy)}.`
+      : `It is not validated yet: the group's hand-labeled tone sheet (labeling/challenge_stance.csv) is ${check.status || "missing"}.`);
+    makeTable(document.getElementById("table-layer-defs"), ["Layer", "What a line represents", "Edge property"],
+      Object.entries(L.layers).map(([k, v]) => [`${k}. ${v.name}`, v.edge, v.property]));
   }
 
   /* ---------- static tables ---------- */
@@ -555,15 +784,24 @@
       });
       s.value = "2022 M+S+V";
     });
-    fillNumbers(); drawTables();
+    if (!L) {
+      document.getElementById("net-layer").disabled = true;
+      document.getElementById("layers").hidden = true;
+      document.getElementById("emoji").hidden = true;
+      document.querySelectorAll(".needs-layers").forEach((el) => { el.hidden = true; });
+    }
+    fillNumbers(); drawTables(); layerNumbers();
     fillNetworkControls();
-    const drawAll = () => { drawTimeline(); drawLayers(); drawRole(); drawMatrix(); drawNetwork(); };
+    const drawAll = () => { drawTimeline(); drawLayers(); drawRole(); drawMatrix(); drawNetwork(); drawCompare(); drawEmoji(); };
     eventSelect.addEventListener("change", drawTimeline);
     document.getElementById("matrix-select").addEventListener("change", drawMatrix);
-    document.getElementById("net-window").addEventListener("change", () => { fillNetworkControls(); drawNetwork(); });
+    document.getElementById("emoji-measure").addEventListener("change", drawEmoji);
+    ["net-layer", "net-window"].forEach((id) => document.getElementById(id).addEventListener("change", () => { fillNetworkControls(); drawNetwork(); drawLayerStats(); }));
     document.getElementById("net-party").addEventListener("change", drawNetwork);
+    document.getElementById("net-tone").addEventListener("change", drawNetwork);
     document.getElementById("net-member").addEventListener("change", (e) => {
-      const m = D.networks[document.getElementById("net-window").value].nodes.find((n) => n.name === e.target.value);
+      const net = currentNet(layerValue(), windowValue());
+      const m = net && net.nodes.find((n) => n.name === e.target.value);
       if (m) { selected = m.id; drawNetwork(); }
     });
     drawAll();
@@ -577,7 +815,10 @@
     });
   }
 
-  fetch("data/site.json").then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((data) => { D = data; init(); })
+  // layers.json is optional: without it the page still draws everything from site.json.
+  const getJson = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  Promise.all([getJson("data/site.json"), getJson("data/layers.json").catch(() => null)])
+    .then(([data, layers]) => { D = data; L = layers; init(); })
     .catch((error) => {
       const p = document.createElement("p");
       p.textContent = `The figures could not load (${error.message}).`;

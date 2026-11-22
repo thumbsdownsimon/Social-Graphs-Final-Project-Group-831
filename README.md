@@ -34,6 +34,9 @@ We conclude whether the Danish parliament can be described by a small set of arc
 - [Archetypes defined by rules](#archetypes-defined-by-rules)
 - [Nulls: is a role more than chance?](#nulls-is-a-role-more-than-chance)
 - [First results of layer 1](#first-results-of-layer-1)
+- [The member networks on the site](#the-member-networks-on-the-site)
+- [DeepMoji: emotion in challenges](#deepmoji-emotion-in-challenges)
+- [Not done: committees vs the televised chamber](#not-done-committees-vs-the-televised-chamber)
 - [Planned layers](#planned-layers)
 - [Code layout](#code-layout)
 - [How to run it](#how-to-run-it)
@@ -153,6 +156,51 @@ These come from the first full run (500 shuffles, null within debates), 11 Nov 2
 - **Friendly fire barely survives the within-debate null.** 77 member-windows have `share_own_side` ≥ 0.3, but only 6 have z ≥ 2. Most own-side challenges happen in debates where the floor holder is an ally anyway.
 - **Roles are not stable across windows.** Of 7 attack dogs whose office did not change, none kept the role in the next window. For lightning rods it was 12 of 52. Either roles really are situational, or the rules sit too close to noise. The sensitivity check and the clustering (layer 4) should tell these apart.
 
+## The member networks on the site
+
+The group kept two member networks, C (challenges) and E (committees). The site's Figure 5 draws them, Figure 5b compares them, and Figure 5c shows DeepMoji. They are built by `archetypes/run_layers.py` into `data/layers.json`:
+
+| Layer | What an edge represents | Edge property | How it is measured |
+|---|---|---|---|
+| C. Challenges | One member challenges another | Hostility, neutrality, friendliness | The challenge network and backbone as before. Each challenge's tone comes from DeepMoji (next section). Sentiment is P(happy + love emoji) − P(anger + disapproval emoji): −0.10 or lower is hostile, +0.10 or higher is friendly, anything else is neutral. Not yet validated against `labeling/challenge_stance.csv`; the script reports agreement once that sheet is labeled. |
+| E. Committees | Members share committee memberships | Shared membership | Jaccard overlap of committees sat on (member, chair, deputy) in the period. |
+
+E gives every pair a value, so each member keeps their 5 most similar members (a k-nearest-neighbour graph). C keeps the disparity backbone from `tools/export_site.py`, so its drawing is unchanged. Three more layers were built and dropped by the group. **A (voting)**: members almost never vote against their party (`data/results/votes.json`), so a member voting network only redraws the party blocks; per-member rebel rates stay planned as a feature for the clustering. **B (language)** and **D (topics)**: Part 3 of the site ("Talk alike", `tools/analyze_similarity.py`) already builds member language networks.
+
+For every layer and government, the script reports Louvain communities, NMI with party and assortativity by party and government side. Figure 5b shows, per government, the Spearman correlation over all pairs of seated members between challenges exchanged and committee overlap.
+
+```
+.venv\Scripts\python -m archetypes.run_layers
+```
+
+This downloads whatever raw data is missing through `tools/collect.py` (tables, committees and transcripts: about an hour the first time, throttled and cached in `data-raw/`). If `data/challenge_emoji.parquet` is missing, it also runs DeepMoji. It then builds `data-raw/derived/speeches.parquet` with the functions from `tools/build_dataset.py`, but it never overwrites the committed tables in `data/`. Once the cache exists, a run takes about 10 minutes. `--no-download` makes it stop instead of downloading. The site still works without `data/layers.json`: Figure 5 then shows only the challenge layer.
+
+## DeepMoji: emotion in challenges
+
+A single positive/negative score throws away most of what a remark does. DeepMoji (Felbo et al., 2017) instead predicts which of 64 emoji a text would carry. `archetypes/deepmoji.py` runs it on every challenge:
+
+1. **Set-up**, as on the course page (week 7, Goodies): it clones the PyTorch port [torchMoji](https://github.com/huggingface/torchMoji) at a pinned commit into `third_party/` (not committed), applies the two one-line patches for Python 3.11 and PyTorch 2, and downloads the weights from Hugging Face (`Uberduck/torchmoji`).
+2. **Translation.** DeepMoji learned from English tweets, so each Danish remark is split into sentences and translated with `Helsinki-NLP/opus-mt-da-en` (on the GPU if there is one). Translations are cached in `data-raw/derived/challenge_translations.parquet` and are not committed.
+3. **Scoring.** Each sentence gets 64 emoji probabilities, and each challenge gets the mean over its sentences.
+4. **Emotion groups**, summed like the course's emotion tracks: anger, disapproval, sadness, laughter (😂 alone), happy, love and other. Which emoji go in which group is our reading, set in `GROUPS`. 😂 is DeepMoji's default answer and, on Twitter, often means mockery, so it counts as neither friendly nor hostile.
+
+```
+.venv\Scripts\python -m archetypes.deepmoji --limit 200   # a trial on 200 challenges
+.venv\Scripts\python -m archetypes.deepmoji               # all challenges
+```
+
+It needs `transformers`, `sentencepiece`, `sacremoses`, `emoji`, `text-unidecode` and `huggingface_hub`. The full run took about TIME_PLACEHOLDER with a CUDA build of PyTorch on an RTX 5060 laptop GPU. The site's Figure 5c shows which emoji come up and the distribution of sentiment, for challenges aimed at the government and at the opposition. The challenge network (Figure 5, layer C) colours its lines by this tone.
+
+**Not validated yet.** Translation adds errors, and the model reads tweets, not parliament. The check is the group's tone sheet (`labeling/challenge_stance.csv`, 60 challenges): `run_layers.py` reports how often DeepMoji's hostile/neutral/friendly agrees with it, against always guessing the most common label, and a confusion table (in `data/layers.json`, `tone.hand_labels`).
+
+## Not done: committees vs the televised chamber
+
+The group asked whether members behave differently in committees, which are not televised, than in the chamber (*Møde i salen*), which is. ODA does sort meetings by `Mødetype` (1 = chamber, 2 = committee meeting: 11,469 of them). But committee meetings have **no transcripts**: the data holds only their date, committee, room and agenda. So the speech-based measures used here (challenges, tone, DeepMoji) cannot be computed for committees, and the group decided not to pursue the question. What the data would allow, if it is picked up again:
+
+- **Written committee questions** (*Spørgsmål* documents, about 313,000, with the asking member as *Spørger*). The question text is in the title. They are written, not spoken, so any difference from chamber speech mixes "not televised" with "written".
+- **Open vs closed *samråd*** (consultations where a committee questions a minister). About 1,756 agenda items are open *samråd*, which are themselves televised, and 159 are closed. This keeps the genre fixed, so only the camera differs, but there are few closed cases.
+- **Activity rather than text**: members who are loud in the chamber against members who work through committee questions (the "show horse vs work horse" distinction).
+
 ## Planned layers
 
 - **Layer 2, tone** (`tone.py`, `words.py`). Score every challenge as hostile / neutral / friendly with a Danish sentiment score (AFINN-da is already a dependency), checked against `labeling/challenge_stance.csv`. Per member: share hostile, mean intensity, and hostility aimed at the other bloc / own side / government. Distinctive words per archetype (TF-IDF or log-odds). This needs `data-raw/derived/speeches.parquet`, which holds the text.
@@ -171,6 +219,10 @@ These come from the first full run (500 shuffles, null within debates), 11 Nov 2
 | `archetypes/nulls.py` | shuffles and z-scores |
 | `archetypes/roles.py` | rule-based archetypes, role tables by party, transitions |
 | `archetypes/run_network.py` | runs layer 1 end to end |
+| `archetypes/run_layers.py` | the member networks (C, E) and DeepMoji summaries for the site, with downloads |
+| `archetypes/deepmoji.py` | DeepMoji emoji for every challenge: sets up torchMoji, translates, scores |
+| `data/challenge_emoji.parquet` | 64 emoji probabilities and emotion groups per challenge (no text) |
+| `data/layers.json` | output of `run_layers.py`, read by the site |
 | `tests/test_network.py` | toy graphs with answers worked out by hand |
 | `data/archetypes/` | outputs (parquet) |
 | `data/results/archetypes_network.json` | summary for the notebook and site |
