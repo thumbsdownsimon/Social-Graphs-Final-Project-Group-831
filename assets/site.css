@@ -146,3 +146,22 @@ pre{ background: #241e18; color: #f1e6c8; padding: .8rem 1rem; border-radius: va
 @media (max-width: 55.99rem){
   .party-key{ width: 13rem; right: .5rem; }
 }
+
+/* ---------- Navigation across the pages ---------- */
+.wlf .wlf-nav{ flex-wrap: wrap; gap: .35rem 1.1rem; }
+.wlf .wlf-nav a[aria-current="page"]{ color: #f1e6c8; border-bottom-color: var(--gold); }
+
+/* ---------- "Beyond the obvious" cards on the main page ---------- */
+.cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+.cards > .case{ margin: 0; } /* the theme spaces stacked cards; in a row that misaligns them */
+.wlf a.case{ display: flex; flex-direction: column; color: var(--ink); text-decoration: none; border-top: 3px solid var(--red); transition: transform .12s ease; }
+.wlf a.case:hover{ transform: translateY(-2px); color: var(--ink); }
+.wlf a.case:focus-visible{ outline: 2px dotted var(--red); outline-offset: 3px; }
+.case h3{ margin: .2rem 0 .5rem; font-size: 1.12rem; line-height: 1.3; }
+.case p{ font-size: .9rem; margin: 0 0 .8rem; flex: 1; }
+.case-more{ color: var(--red); font-size: .88rem; }
+
+/* ---------- Subpages ---------- */
+.next-pages{ margin-top: 2.5rem; padding-top: 1rem; border-top: 1px dashed var(--line); font-size: .92rem; }
+details.wlf-card{ margin: 0 0 1.6rem; }
+.pending:empty{ display: none; }

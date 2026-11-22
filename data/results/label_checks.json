@@ -6,9 +6,63 @@
   "status": "not labeled yet"
  },
  "name_resolution": {
-  "status": "not labeled yet"
+  "status": "labeled",
+  "n": 57,
+  "of": 57,
+  "yes": 57,
+  "share": 1.0,
+  "ci95": [
+   0.937,
+   1.0
+  ],
+  "distinct_pairs": 33,
+  "distinct_yes": 33,
+  "distinct_ci95": [
+   0.896,
+   1.0
+  ]
  },
  "challenge_stance": {
-  "status": "not labeled yet"
+  "status": "partial",
+  "n": 60,
+  "of": 60,
+  "distribution": {
+   "neutral": 40,
+   "hostile": 17,
+   "friendly": 3
+  },
+  "afinn_spearman_with_labels": 0.321,
+  "afinn_p": 0.0125,
+  "note": "AFINN counts positive and negative words; it does not see who the words are aimed at.",
+  "tone_measures": {
+   "afinn_raw": {
+    "spearman": 0.321,
+    "p": 0.0125,
+    "mean_by_label": {
+     "friendly": 11.0,
+     "hostile": 1.059,
+     "neutral": 5.125
+    }
+   },
+   "afinn_adapted_rate": {
+    "spearman": 0.275,
+    "p": 0.0331,
+    "mean_by_label": {
+     "friendly": 3.894,
+     "hostile": -0.497,
+     "neutral": 0.696
+    }
+   },
+   "model": {
+    "spearman": 0.236,
+    "p": 0.0692,
+    "mean_by_label": {
+     "friendly": -0.306,
+     "hostile": -0.51,
+     "neutral": -0.409
+    }
+   }
+  },
+  "cohen_kappa": "no second labeler yet"
  }
 }

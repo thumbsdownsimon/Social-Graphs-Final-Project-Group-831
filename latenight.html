@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The late-night effect · Crossing the Aisle</title>
+<meta name="description" content="Does the tone in the Danish Parliament change when a sitting runs late into the night? Each turn is compared with the same member in the same kind of debate.">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="wlf" data-page="latenight">
+
+<div class="wlf-masthead">
+  <div class="wlf-masthead-inner">
+    <a class="wlf-brand" href="index.html">CROSSING THE AISLE
+      <small>Final project &middot; 02805 &middot; DTU</small>
+    </a>
+    <nav class="wlf-nav">
+      <a href="index.html#evidence">Main finding</a>
+      <a href="settings.html">Settings</a>
+      <a href="language.html">Talk alike</a>
+      <a href="latenight.html" aria-current="page">Late night</a>
+      <a href="index.html#methods">Methods</a>
+      <a href="https://github.com/thumbsdownsimon/Social-Graphs-Final-Project-Group-831">Source</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wlf-main" id="top">
+  <section class="hero">
+    <div class="wlf-case-no">The question</div>
+    <p class="question">Does tone change when a sitting runs late into the night?</p>
+    <div class="wlf-case-no">The finding</div>
+    <h1>Only after midnight, and not every night. On average, turns that start after midnight are harsher than the same member's turns in the same kind of debate earlier in the day, but only about half of the late sittings show it. Before midnight the changes are tiny.</h1>
+  </section>
+
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong data-n="lateTone"></strong><span>tone points per 100 words after midnight, against the same member in the same kind of debate</span></div>
+    <div class="stat"><strong data-n="lateZ"></strong><span>standard deviations from the shuffled hours</span></div>
+    <div class="stat"><strong data-n="lateTurns"></strong><span>turns started after midnight, by <span data-n="lateMembers"></span> members</span></div>
+  </div>
+
+  <div class="pending" id="tone-validation"></div>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure N1 &middot; By the clock</div>
+    <h3>Tone barely moves through the day and evening, then drops after midnight on average</h3>
+    <div class="controls"><label for="hour-measure">Measure</label><select id="hour-measure"></select></div>
+    <div class="legend" id="legend-hours"></div>
+    <div id="fig-hours" class="chart"></div>
+    <figcaption>
+      <p><strong>Plotted:</strong> the tone of each turn (the adapted word list from the <a href="settings.html">settings page</a>) minus the same member's average in the same kind of debate, averaged by the clock time the turn started. A sitting that runs past midnight keeps its date. <strong>Compared with:</strong> the grey band, which shows how far the averages move when the clock times are shuffled among each member's turns in the same kind of debate (<span data-n="shuffles"></span> shuffles). <strong>What to see:</strong> before midnight every average stays within 0.05 points of zero. Some of them still fall just outside the band, because with up to 100,000 turns per bin even tiny differences pass the shuffle test. After midnight, tone falls to <span data-n="lateTone"></span>, about ten times further, and negative words rise by <span data-n="lateNeg"></span> per 100 words.</p>
+      <p class="check"><strong>Check:</strong> late turns come mostly from debates on members' motions and closing debates (see the table). Comparing each turn with the same member in the same kind of debate removes that mix. <strong>Misses:</strong> only <span data-n="after22"></span> turns start after 22:00. The after-midnight turns come from <span data-n="sittings"></span> sittings. Leaving out any one of them keeps the effect between <span data-n="looMin"></span> and <span data-n="looMax"></span>; weighting every sitting equally gives <span data-n="sittingMean"></span>, and <span data-n="sittingsBelow"></span> of the <span data-n="sittings"></span> sittings are below zero. Turns in one sitting are not independent, so the shuffle band is narrower than it should be. Tiredness, a contested bill and a deadline can all keep a sitting going, and this cannot tell them apart.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-hours" class="table-wrap"></div></details>
+  </figure>
+  <p class="next-pages">More: <a href="index.html">the main finding</a> &middot; <a href="settings.html">Same member, different setting</a> &middot; <a href="language.html">Do members fight the people who talk like them?</a></p>
+</main>
+
+<footer class="wlf-footer">
+  02805 Social Graphs and Interactions &middot; Technical University of Denmark &middot; Data source: Folketinget
+</footer>
+
+<!-- ===== Party key: small floating window, always on screen (can be minimised) ===== -->
+<aside class="party-key" aria-label="Party abbreviations">
+  <details id="party-key-box" open>
+    <summary title="Show or hide the party key">Party key</summary>
+    <dl>
+      <dt>S</dt><dd>Social Democrats <small>(A)</small></dd>
+      <dt>V</dt><dd>Venstre / Liberals <small>(V)</small></dd>
+      <dt>DF</dt><dd>Danish People's Party <small>(O)</small></dd>
+      <dt>SF</dt><dd>Green Left <small>(F)</small></dd>
+      <dt>RV</dt><dd>Social Liberals <small>(B)</small></dd>
+      <dt>KF</dt><dd>Conservatives <small>(C)</small></dd>
+      <dt>EL</dt><dd>Red&ndash;Green Alliance <small>(&Oslash;)</small></dd>
+      <dt>LA</dt><dd>Liberal Alliance <small>(I)</small></dd>
+      <dt>ALT</dt><dd>The Alternative <small>(&Aring;)</small></dd>
+      <dt>M</dt><dd>Moderates <small>(M)</small></dd>
+      <dt>DD</dt><dd>Denmark Democrats <small>(&AElig;)</small></dd>
+      <dt>NB</dt><dd>New Right <small>(D)</small></dd>
+      <dt>KD</dt><dd>Christian Democrats <small>(K)</small></dd>
+      <dt>BP</dt><dd>Citizens' Party <small>(H)</small></dd>
+      <dt>FG</dt><dd>Independent Greens <small>(Q)</small></dd>
+    </dl>
+    <p class="party-key-note"><b>IA, SIU, NQ</b> Greenland &middot; <b>JF, SP, T</b> Faroe Islands &middot; <b>N</b> North Atlantic seat</p>
+    <p class="party-key-note">(A) = ballot letter &middot; &#9733; = in government</p>
+  </details>
+</aside>
+
+<div id="tooltip" class="tooltip" role="status" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="assets/findings.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ Where a model or agent touched a result, and how it was checked. "The model said
 
 **Claude (Claude Code, model Opus 5.5)** wrote the scripts, ran the analysis, drafted the docs and built the site. **The group** chose the project, supplied the current terms of use, and is responsible for the hand labels. **Before submitting,** each group member needs to read the code and be able to explain it: the agent's reading is not understanding on your behalf.
 
-**No language model labeled any data.** The only models applied to text are a pretrained sentence encoder and logistic regressions trained on party or government status, with a lexicon pending labels.
+**No language model labeled any data.** The models applied to text are a pretrained sentence encoder, logistic regressions trained on party or government status, a lexicon, and (for the settings page) a pretrained multilingual sentiment model used as a second tone method. The lexicon and the sentiment model are both pending the hand labels. Hand labels are typed by a group member; when the agent shows rows in chat for labeling, it shows the text only and never suggests a label.
 
 ## Measurements
 
@@ -87,6 +87,19 @@ For S–V in 2022 alone: challenges 623 → 22 (expected 489 → 135), votes on 
 - **Captures:** positive and negative words in a remark.
 - **Misses:** whom the words target. It would count a sentence praising one's own plan as friendly in a hostile remark.
 - **Check:** *pending*. `challenge_stance` has 60 rows, needs a second labeler for Cohen's kappa, and `check_labels.py` reports the correlation with AFINN. No tone result is claimed until then.
+
+### Tone by setting and by hour (`tools/analyze_settings.py`, pages `settings.html` and `latenight.html`)
+- **Captures:** positive minus negative AFINN points per 100 words in a member's turn, compared with the same member's own turns: in a routine first reading of a government bill (settings), or in the same kind of debate (hours).
+- **Misses:** sarcasm, and whom the words are aimed at. Settings differ in format and topic, not only audience: question time is made of questions. The setting comes from the agenda item title by keyword rules, which the agent wrote and checked by reading the most common titles; 5% of turns fit no rule and are left out.
+- **Adapted lexicon:** the agent listed the most frequent AFINN hits in 20,000 random turns and dropped 24 words that are formulaic or mean something else in parliament (`DROPPED_WORDS` in the script, each with a reason, also shown on the page). The largest was *når* ("when"), scored +1 as if it meant "reach". This is a judgment call; `check_labels.py` reports raw and adapted AFINN against the hand labels so the group can see whether it helped.
+- **Check:** within-member shuffles of the setting (or hour) labels, 200 times, and a 95% interval from resampling members. A multilingual sentiment model (`lxyuan/distilbert-base-multilingual-cased-sentiments-student`) scores a sample of turns per setting as a second method. For the after-midnight result, a leave-one-sitting-out range and a sitting-weighted mean, because turns in one sitting are not independent. Hand labels (one labeller, Simon, 60 short remarks typed in chat; 40 neutral, 17 hostile, 3 friendly): Spearman with the labels 0.32 for unchanged AFINN, 0.28 for the adapted rate used on the pages, 0.24 (p = 0.07) for the sentiment model. So the measure tracks hostility only weakly, and the pages say so. Dropping words did not improve agreement. A second labeller is still needed for Cohen's kappa. Two of the 60 sampled "short remarks" were full speeches (rows 38 and 45), a sign of rule errors that `challenge_precision` would measure.
+- **Caution:** on three test sentences the sentiment model called a plain question negative. Its agreement with the labels is reported, not assumed.
+
+### Language similarity and challenges (`tools/analyze_similarity.py`, page `language.html`)
+- **Captures:** how alike two members' backbench speech is in one government period (TF-IDF cosine, and the mean of the cached sentence embeddings as a second method), against how often they challenged each other.
+- **Misses:** similarity is mostly topic. Causality runs both ways: members who debate each other pick up each other's words.
+- **Check:** two expectations for each pair (activity over the period, and debate by debate), similarity shuffled among pairs of the same kind in the same period (1,000 times), both similarity methods (rank correlation 0.62 over pairs), Louvain stability over 10 seeds, and NMI against shuffled labels.
+- **Result:** across parties, the most alike fifth of pairs has 8.4 times the challenges per expected of the least alike fifth against activity alone (4.7 with embeddings), but only 1.10 times (1.03) against who was in each debate. Language communities match party no better than shuffled labels, and match challenge communities clearly. The t-SNE map is for exploring, not evidence.
 
 ## Other checks and corrections
 

@@ -12,13 +12,15 @@
 
 <div class="wlf-masthead">
   <div class="wlf-masthead-inner">
-    <a class="wlf-brand" href="#top">CROSSING THE AISLE
+    <a class="wlf-brand" href="index.html">CROSSING THE AISLE
       <small>Final project &middot; 02805 &middot; DTU</small>
     </a>
     <nav class="wlf-nav">
-      <a href="#evidence">Evidence</a>
-      <a href="#explore">Explore</a>
-      <a href="#methods">Methods</a>
+      <a href="index.html#evidence" aria-current="page">Main finding</a>
+      <a href="settings.html">Settings</a>
+      <a href="language.html">Talk alike</a>
+      <a href="latenight.html">Late night</a>
+      <a href="index.html#methods">Methods</a>
       <a href="https://github.com/thumbsdownsimon/Social-Graphs-Final-Project-Group-831">Source</a>
     </nav>
   </div>
@@ -53,7 +55,7 @@
         <ul>
           <li><strong>Directed:</strong> from the member who makes the remark to the member who holds the floor.</li>
           <li><strong>Counted, not read:</strong> we record who challenged whom, not what was said.</li>
-          <li><strong>Not always hostile:</strong> a challenge can be a friendly question. It measures who engages whom.</li>
+          <li><strong>Not always hostile:</strong> in 60 challenges we read and labelled by hand, 40 were neutral questions or polite disagreement, 17 hostile and 3 friendly. A challenge measures who engages whom, not who attacks whom.</li>
           <li><strong>Not included:</strong> question time, and follow-up remarks the chair announces in other words.</li>
         </ul>
       </div>
@@ -76,6 +78,31 @@
     <h2>The short version</h2>
     <p>Danish members almost never vote against their party, so individual votes say little about them. The floor is different. After most speeches, other members can call a <em>kort bemærkning</em>, a short remark aimed at whoever holds the floor. Those calls are recorded in the transcripts, which gives a directed network of who challenges whom: <span data-n="edges"></span> challenges across <span data-n="members"></span> members since 2009.</p>
     <p>We followed that network, the votes and the language across <span data-n="formations"></span> changes of government. Parties that enter government together stop challenging each other, and parties that split start again, including when we follow only the same members across the change. The language result is more mixed: similarity in the same debate shifts modestly in the expected direction, a classifier's ability to tell parties apart does not reliably change, and much of the clearest difference is the vocabulary of being in opposition.</p>
+  </section>
+
+  <section aria-labelledby="beyond-title">
+    <h2 id="beyond-title">Beyond the obvious</h2>
+    <p>That coalition partners stop attacking each other is what most readers would expect. The same transcripts can answer questions that are less obvious. Each has its own page, with its own checks.</p>
+    <div class="cards">
+      <a class="wlf-card case" href="settings.html">
+        <div class="wlf-case-no">Tone &middot; settings</div>
+        <h3>Same member, different setting</h3>
+        <p>Compared with themselves in a routine bill debate, members are harsher in question time and friendlier in the televised party-leader debates. Some change far more than chance.</p>
+        <span class="case-more">Read the evidence &rarr;</span>
+      </a>
+      <a class="wlf-card case" href="language.html">
+        <div class="wlf-case-no">Language &middot; network</div>
+        <h3>Talk alike, fight alike</h3>
+        <p>Members from different parties who talk about the same things challenge each other far more than their activity predicts. Language groups members by policy area, not party.</p>
+        <span class="case-more">Read the evidence &rarr;</span>
+      </a>
+      <a class="wlf-card case" href="latenight.html">
+        <div class="wlf-case-no">Tone &middot; time</div>
+        <h3>The late-night effect</h3>
+        <p>Tone barely moves through the day and evening. After midnight it turns harsher on average, compared with the same member in the same kind of debate, though not on every late night.</p>
+        <span class="case-more">Read the evidence &rarr;</span>
+      </a>
+    </div>
   </section>
 
   <hr class="wlf-hr">

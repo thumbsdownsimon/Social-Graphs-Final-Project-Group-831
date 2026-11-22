@@ -115,6 +115,44 @@ def names():
     return result
 
 
+def tone_measures(first, human, column):
+    """The three tone measures tools/analyze_settings.py can use, each scored against the labels.
+
+    raw AFINN (sum of word scores), the adapted rate the settings analysis uses (AFINN without
+    DROPPED_WORDS, positive minus negative per 100 words) and the multilingual sentiment model
+    (P(positive) - P(negative)). Reported: Spearman with the labels (hostile -1, neutral 0,
+    friendly 1) and each measure's mean within each label, which shows whether it separates
+    hostile from neutral, the distinction the settings and late-night results rest on.
+    """
+    sys.path.insert(0, str(ROOT / "tools"))
+    from analyze_settings import MODEL, _score_block
+
+    texts = first["next_speaker_says"].fillna("").tolist()
+    words = [max(len(t.split()), 1) for t in texts]
+    rates = _score_block(texts, words)
+    scores = {"afinn_raw": first["score"].to_numpy(dtype=float),
+              "afinn_adapted_rate": [pos - neg for pos, neg, _ in rates]}
+    try:
+        from transformers import pipeline
+
+        classifier = pipeline("text-classification", model=MODEL, top_k=None, device=-1)
+        out = classifier(texts, truncation=True, max_length=256, batch_size=16)
+        scores["model"] = [sum(d["score"] * {"positive": 1, "negative": -1}.get(d["label"], 0) for d in row) for row in out]
+    except Exception as error:  # the model is optional; report why it is missing
+        scores["model"] = None
+        model_error = str(error)[:200]
+    result = {}
+    for name, values in scores.items():
+        if values is None:
+            result[name] = {"status": f"not available: {model_error}"}
+            continue
+        values = pd.Series(values, index=first.index, dtype=float)
+        rho, p = spearmanr(values, human) if values.nunique() > 1 and human.nunique() > 1 else (math.nan, math.nan)
+        result[name] = {"spearman": finite(rho, 3), "p": finite(p, 4),
+                        "mean_by_label": {k: finite(v, 3) for k, v in values.groupby(first[column]).mean().items()}}
+    return result
+
+
 def stance():
     column = "stance_hostile_neutral_friendly"
     first, total = read_labels("challenge_stance", column, STANCE_SCORE)
@@ -127,6 +165,7 @@ def stance():
     result = {"status": "partial", "n": len(first), "of": total, "distribution": first[column].value_counts().to_dict(),
               "afinn_spearman_with_labels": finite(rho, 3), "afinn_p": finite(p, 4),
               "note": "AFINN counts positive and negative words; it does not see who the words are aimed at."}
+    result["tone_measures"] = tone_measures(first, human, column)
     second = read_labels("challenge_stance_second", column, STANCE_SCORE)[0]
     if second is not None and not second.empty:
         merged = first.merge(second, on=["session", "meeting", "turn"], suffixes=("", "_2"))
