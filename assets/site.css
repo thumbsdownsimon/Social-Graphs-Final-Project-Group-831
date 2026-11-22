@@ -108,39 +108,41 @@ pre{ background: #241e18; color: #f1e6c8; padding: .8rem 1rem; border-radius: va
 .define-arrow span{ display: inline-block; min-width: 1.9rem; text-align: center; border: 1px solid var(--ink); border-radius: 50%; padding: 0 .3rem; }
 .define-arrow small{ font-family: 'Courier Prime', monospace; font-size: .85rem; color: var(--ink-soft); margin-left: .5rem; }
 
-/* ---------- Party key (right side) ----------
-   Wide screens: fixed panel to the right of the content, which gets extra right padding
-   so nothing sits underneath it. site.js sets --key-top so it starts below the masthead.
-   Narrow screens: a "Party key" button in the bottom-right corner that opens the panel. */
+/* ---------- Party key: small floating window ----------
+   Fixed to the right edge and vertically centred, so it is on screen at all times.
+   On wide screens the content gets extra right padding so the key never covers it;
+   on narrow screens it floats over the page and can be minimised with its header. */
 .party-key{
-  position: fixed; z-index: 80; right: 1rem; bottom: 1rem;
-  width: min(19rem, calc(100vw - 2rem)); font-size: .8rem; line-height: 1.35;
+  position: fixed; z-index: 80; right: .75rem; top: 50%; transform: translateY(-50%);
+  width: 14.5rem; max-width: calc(100vw - 1.5rem);
+  font-size: .72rem; line-height: 1.25;
 }
 .party-key details{
   background: var(--paper-alt); border: 1px solid var(--line); border-top: 3px solid var(--ink);
   border-radius: var(--radius); box-shadow: 0 4px 14px var(--shadow);
-  max-height: calc(100vh - 2rem); overflow-y: auto; padding: .2rem .7rem .5rem;
+  max-height: calc(100vh - 1.5rem); overflow-y: auto; padding: 0 .55rem .35rem;
 }
-.party-key details:not([open]){ width: max-content; margin-left: auto; padding-bottom: .2rem; }
+.party-key details:not([open]){ width: max-content; margin-left: auto; padding-bottom: 0; }
 .party-key summary{
-  cursor: pointer; font-family: 'Special Elite', monospace; font-size: 1rem;
-  min-height: 2.2rem; display: flex; align-items: center; gap: .4rem; list-style: none;
+  cursor: pointer; font-family: 'Special Elite', monospace; font-size: .88rem;
+  min-height: 1.9rem; display: flex; align-items: center; gap: .4rem; list-style: none;
 }
 .party-key summary::-webkit-details-marker{ display: none; }
-.party-key summary::after{ content: "\25BE"; margin-left: auto; color: var(--ink-soft); }
-.party-key details:not([open]) summary::after{ content: "\25B4"; }
+.party-key summary::after{ content: "hide"; margin-left: auto; padding-left: .6rem; color: var(--red); font-family: 'Courier Prime', monospace; font-size: .7rem; text-decoration: underline; }
+.party-key details:not([open]) summary::after{ content: "show"; }
 .party-key summary:focus-visible{ outline: 1px dotted var(--red); }
-.party-key table{ width: 100%; border-collapse: collapse; margin: .2rem 0 .4rem; }
-.party-key th{ text-align: left; font-weight: 700; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding: .15rem .3rem; }
-.party-key td{ padding: .2rem .3rem; border-bottom: 1px dotted var(--line); vertical-align: top; }
-.party-key td:first-child{ font-weight: 700; white-space: nowrap; width: 2.6rem; }
-.party-key td:nth-child(3){ text-align: center; color: var(--ink-soft); width: 2.4rem; }
-.party-key td small{ display: block; color: var(--ink-soft); font-size: .74rem; }
-.party-key-note{ margin: .3rem 0; color: var(--ink-soft); font-size: .74rem; }
-.party-key-sub{ margin: .6rem 0 0; font-weight: 700; }
+.party-key dl{ display: grid; grid-template-columns: 2.1rem 1fr; gap: .1rem .3rem; margin: 0 0 .3rem; }
+.party-key dt{ font-weight: 700; }
+.party-key dd{ margin: 0; }
+.party-key dd small{ color: var(--ink-soft); font-size: .66rem; }
+.party-key-note{ margin: .25rem 0 0; padding-top: .25rem; border-top: 1px dotted var(--line); color: var(--ink-soft); font-size: .66rem; }
+.party-key-note b{ color: var(--ink); }
 
-@media (min-width: 80rem){
-  .wlf-main{ max-width: 83rem; padding-right: 20rem; }
-  .party-key{ top: var(--key-top, 1rem); bottom: auto; right: max(1rem, calc((100vw - 83rem) / 2 + 1rem)); }
-  .party-key details{ max-height: calc(100vh - var(--key-top, 1rem) - 1rem); }
+/* From ~900px wide, reserve a right-hand gutter so the key never covers content. */
+@media (min-width: 56rem){
+  .wlf-main{ max-width: 81rem; padding-right: 17rem; }
+}
+/* Phones: too narrow for a gutter, so the key starts minimised (site.js) and is a bit smaller. */
+@media (max-width: 55.99rem){
+  .party-key{ width: 13rem; right: .5rem; }
 }
