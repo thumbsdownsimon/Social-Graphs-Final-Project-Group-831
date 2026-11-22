@@ -33,6 +33,33 @@
     <h1 id="finding">When parties enter government together, challenges between their members fall about <span data-n="foldChange"></span> relative to chance within a quarter or two, and come back when they split. Their language shifts far less clearly.</h1>
   </section>
 
+  <!-- ===== Definition: what a challenge is ===== -->
+  <section class="wlf-card define" id="challenge" aria-labelledby="challenge-title">
+    <div class="wlf-case-no">Definition</div>
+    <h2 id="challenge-title">What we mean by a &ldquo;challenge&rdquo;</h2>
+    <p class="define-lead">A <strong>challenge</strong> is one <em>kort bemærkning</em> (short remark): a member asks for the floor right after another member's speech and speaks back to that member, usually to question or contest what they just said.</p>
+    <div class="define-grid">
+      <div>
+        <h3>How it looks in a debate</h3>
+        <ol class="define-steps">
+          <li><strong>Member A</strong> gives a speech.</li>
+          <li>The <strong>chair</strong> announces a short remark from Member B.</li>
+          <li><strong>Member B</strong> speaks, aimed at Member A.</li>
+        </ol>
+        <p class="define-arrow"><span>B</span> &rarr; <span>A</span> <small>one challenge, from B to A</small></p>
+      </div>
+      <div>
+        <h3>How we count it</h3>
+        <ul>
+          <li><strong>Directed:</strong> from the member who makes the remark to the member who holds the floor.</li>
+          <li><strong>Counted, not read:</strong> we record who challenged whom, not what was said.</li>
+          <li><strong>Not always hostile:</strong> a challenge can be a friendly question. It measures who engages whom.</li>
+          <li><strong>Not included:</strong> question time, and follow-up remarks the chair announces in other words.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <div class="pending" id="label-banner" hidden>
     <span class="wlf-stamp">Validation pending</span>
     <p id="label-banner-text"></p>
@@ -191,6 +218,47 @@
 <footer class="wlf-footer">
   02805 Social Graphs and Interactions &middot; Technical University of Denmark &middot; Data source: Folketinget
 </footer>
+
+<!-- ===== Party key: fixed on the right on wide screens, a pop-up button on narrow ones ===== -->
+<aside class="party-key" aria-label="Party abbreviations">
+  <details id="party-key-box" open>
+    <summary>Party key</summary>
+    <p class="party-key-note">Codes used on this page. The ballot letter is what Danish media often use instead.</p>
+    <table>
+      <thead><tr><th>Code</th><th>Party</th><th title="Letter on the Danish ballot">Ballot</th></tr></thead>
+      <tbody>
+        <tr><td>S</td><td>Socialdemokratiet <small>Social Democrats</small></td><td>A</td></tr>
+        <tr><td>V</td><td>Venstre <small>Liberal Party</small></td><td>V</td></tr>
+        <tr><td>DF</td><td>Dansk Folkeparti <small>Danish People's Party</small></td><td>O</td></tr>
+        <tr><td>SF</td><td>Socialistisk Folkeparti <small>Green Left</small></td><td>F</td></tr>
+        <tr><td>RV</td><td>Radikale Venstre <small>Social Liberals</small></td><td>B</td></tr>
+        <tr><td>KF</td><td>Det Konservative Folkeparti <small>Conservatives</small></td><td>C</td></tr>
+        <tr><td>EL</td><td>Enhedslisten <small>Red&ndash;Green Alliance</small></td><td>&Oslash;</td></tr>
+        <tr><td>LA</td><td>Liberal Alliance</td><td>I</td></tr>
+        <tr><td>ALT</td><td>Alternativet <small>The Alternative</small></td><td>&Aring;</td></tr>
+        <tr><td>M</td><td>Moderaterne <small>Moderates</small></td><td>M</td></tr>
+        <tr><td>DD</td><td>Danmarksdemokraterne <small>Denmark Democrats</small></td><td>&AElig;</td></tr>
+        <tr><td>NB</td><td>Nye Borgerlige <small>New Right</small></td><td>D</td></tr>
+        <tr><td>KD</td><td>Kristendemokraterne <small>Christian Democrats</small></td><td>K</td></tr>
+        <tr><td>BP</td><td>Borgernes Parti <small>Citizens' Party</small></td><td>H</td></tr>
+        <tr><td>FG</td><td>Frie Gr&oslash;nne <small>Independent Greens</small></td><td>Q</td></tr>
+      </tbody>
+    </table>
+    <p class="party-key-sub">Greenland and the Faroe Islands</p>
+    <table>
+      <tbody>
+        <tr><td>IA</td><td>Inuit Ataqatigiit <small>Greenland</small></td></tr>
+        <tr><td>SIU</td><td>Siumut <small>Greenland</small></td></tr>
+        <tr><td>NQ</td><td>Naleraq <small>Greenland</small></td></tr>
+        <tr><td>JF</td><td>Javna&eth;arflokkurin <small>Faroe Islands</small></td></tr>
+        <tr><td>SP</td><td>Sambandsflokkurin <small>Faroe Islands</small></td></tr>
+        <tr><td>T</td><td>Tj&oacute;&eth;veldi <small>Faroe Islands</small></td></tr>
+        <tr><td>N</td><td>North Atlantic seat <small>code as in the source data</small></td></tr>
+      </tbody>
+    </table>
+    <p class="party-key-note">&#9733; marks a party in government. &ldquo;S&ndash;V&rdquo; means a pair of parties.</p>
+  </details>
+</aside>
 
 <div id="tooltip" class="tooltip" role="status" hidden></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>

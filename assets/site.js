@@ -579,3 +579,22 @@
       document.getElementById("evidence").after(p);
     });
 })();
+
+/* Party key: on wide screens keep it open and just below the masthead (it follows the
+   page once the masthead scrolls away); on narrow screens start it closed as a button. */
+(function () {
+  "use strict";
+  const box = document.getElementById("party-key-box");
+  const masthead = document.querySelector(".wlf-masthead");
+  if (!box) return;
+  const wide = window.matchMedia("(min-width: 80rem)");
+  if (!wide.matches) box.open = false;
+  function place() {
+    const bottom = masthead ? masthead.getBoundingClientRect().bottom : 0;
+    document.documentElement.style.setProperty("--key-top", `${Math.max(16, bottom + 16)}px`);
+  }
+  place();
+  window.addEventListener("scroll", place, { passive: true });
+  window.addEventListener("resize", place);
+  wide.addEventListener("change", (e) => { box.open = e.matches; });
+})();
