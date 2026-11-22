@@ -746,8 +746,8 @@
       Object.entries(em.groups_by_window).map(([w, v]) => [w, fmt(v.challenges), ...groups.map((g) => pct(v[g], 1))]), groups.map((_, i) => i + 1));
     const check = L.tone.hand_labels || {};
     setNumber("toneCheck", check.status === "labeled"
-      ? `Against the group's ${check.rows} hand-labeled challenges, the word list agrees on ${pct(check.accuracy)}.`
-      : `It is not validated yet: the group's hand-labeled tone sheet (labeling/challenge_stance.csv) is ${check.status || "missing"}.`);
+      ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so read the colours as harsher or friendlier than usual, not as a verdict on single remarks.`
+      : `It is not validated yet: the group's hand-labelled tone sheet (labeling/challenge_stance.csv) is ${check.status || "missing"}.`);
     makeTable(document.getElementById("table-layer-defs"), ["Layer", "What a line represents", "Edge property"],
       Object.entries(L.layers).map(([k, v]) => [`${k}. ${v.name}`, v.edge, v.property]));
   }

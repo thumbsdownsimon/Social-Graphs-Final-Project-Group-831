@@ -297,7 +297,15 @@ def stance_check(scored):
     majority = both["label"].value_counts().idxmax()
     tones = ["hostile", "neutral", "friendly"]
     confusion = pd.crosstab(both["label"], both["tone"]).reindex(index=tones, columns=tones, fill_value=0)
+    # The categories can fail while the score still ranks remarks sensibly, so check both.
+    from sklearn.metrics import roc_auc_score
+    hostile = (both["label"] == "hostile").astype(int)
+    order = both["label"].map({"hostile": -1, "neutral": 0, "friendly": 1})
+    rho = spearmanr(order, both["sentiment"])
     return {"status": "labeled", "rows": len(both),
+            "auc_hostile": round(float(roc_auc_score(hostile, -both["sentiment"])), 3) if 0 < hostile.sum() < len(both) else None,
+            "spearman": round(float(rho.statistic), 3), "spearman_p": round(float(rho.pvalue), 4),
+            "label_means": both.groupby("label")["sentiment"].mean().round(3).to_dict(),
             "accuracy": round(float((both["label"] == both["tone"]).mean()), 3),
             "majority_label": majority, "majority_baseline": round(float((both["label"] == majority).mean()), 3),
             "hostile_recall": round(float((both.loc[both["label"] == "hostile", "tone"] == "hostile").mean()), 3)
