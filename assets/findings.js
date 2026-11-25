@@ -213,8 +213,6 @@
       sideRows.map((r) => [r.level, signed(r.gov.effect), r.gov.members, signed(r.opp.effect), r.opp.members]), [1, 2, 3, 4]);
 
     drawChameleons(S);
-    if (S.second_method) drawMethods(S.second_method);
-    else document.getElementById("fig-methods").innerHTML = '<p class="wlf-muted">The second method has not been run yet.</p>';
     makeTable(document.getElementById("table-overview"), ["Setting", "Turns", "Members", "Words", "Tone", "Negative", "Positive", "Questions"],
       S.settings.map((r) => [r.setting, fmt(r.turns), r.members, fmt(r.words), r.tone.toFixed(2), r.negativity.toFixed(2), r.positivity.toFixed(2), r.questions.toFixed(2)]), [1, 2, 3, 4, 5, 6, 7]);
     toneValidation(labels);
@@ -274,25 +272,6 @@
     legend("legend-chameleons", [{ color: C.blue, label: "Friendlier in big debates" }, { color: C.red, label: "Harsher in big debates" }, { color: C.ink, shape: "hollow", label: "Hollow: |z| < 2" }]);
     makeTable(document.getElementById("table-chameleons"), ["Member", "Party", "Big-debate turns", "Routine turns", "Big-debate tone", "Routine tone", "Difference", "z"],
       [...all].sort((a, b) => Math.abs(b.z) - Math.abs(a.z)).map((r) => [r.name, r.party, r.flagship_turns, r.routine_turns, signed(r.flagship_tone), signed(r.routine_tone), signed(r.difference), r.z]), [2, 3, 4, 5, 6, 7]);
-  }
-
-  function drawMethods(M) {
-    setN("rhoSettings", M.spearman_setting_means.toFixed(2));
-    setN("rhoTurns", M.spearman_turn_level.toFixed(2));
-    setN("modelTurns", fmt(M.turns_scored));
-    const width = 760, height = 420, m = { l: 70, r: 30, t: 20, b: 50 };
-    const svg = svgIn("fig-methods", width, height);
-    const x = d3.scaleLinear().domain(d3.extent(M.by_setting, (d) => d.tone)).nice().range([m.l, width - m.r]);
-    const y = d3.scaleLinear().domain(d3.extent(M.by_setting, (d) => d.model)).nice().range([height - m.b, m.t]);
-    svg.append("g").attr("transform", `translate(0,${height - m.b})`).call(d3.axisBottom(x).ticks(6).tickSize(-(height - m.t - m.b)));
-    svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(width - m.l - m.r)));
-    svg.append("text").attr("x", (m.l + width - m.r) / 2).attr("y", height - 10).attr("text-anchor", "middle").text("Adapted AFINN tone (mean per setting)");
-    svg.append("text").attr("transform", `translate(16,${(height - m.b + m.t) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("Model score, P(pos) − P(neg)");
-    M.by_setting.forEach((d) => {
-      svg.append("circle").attr("cx", x(d.tone)).attr("cy", y(d.model)).attr("r", 6).attr("fill", C.ink).attr("stroke", C.paper).attr("stroke-width", 2)
-        .on("pointermove", (e) => showTip(e, d.setting, [`AFINN tone ${d.tone.toFixed(2)}`, `Model ${d.model.toFixed(3)}`, `${d.turns} sampled turns`])).on("pointerleave", hideTip);
-      svg.append("text").attr("x", x(d.tone) + 9).attr("y", y(d.model) + 4).attr("font-size", 11).text(d.setting);
-    });
   }
 
   /* ---------- Part 4: the late-night effect ---------- */
@@ -515,7 +494,7 @@
     Promise.all([loadJSON("data/results/settings.json"), labelsP]).then(([S, lab]) => {
       if (has("fig-settings")) settingsPage(S, lab);
       if (has("fig-hours")) lateNightPage(S);
-    }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-methods", "fig-hours"));
+    }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-hours"));
   }
   if (has("fig-lift")) loadJSON("data/results/similarity.json").then(languagePage).catch((e) => fail(e, "fig-lift", "fig-nmi", "fig-map"));
 })();

@@ -97,7 +97,7 @@ table.data td.num, table.data th.num{ text-align: right; font-variant-numeric: t
 table.data td.wrap{ white-space: normal; min-width: 14rem; }
 details.wlf-card{ margin: 0 0 1.8rem; padding-top: 1rem; padding-bottom: 1rem; }
 
-/* member explorer panels (Figures 5 and 12) */
+/* member explorer panels (Figures 5 and 11) */
 .net-layout{ display: grid; grid-template-columns: minmax(0, 2fr) minmax(13rem, 1fr); gap: 1.2rem; }
 .member-panel{ font-size: .85rem; border-left: 1px solid var(--line); padding-left: 1rem; max-height: 34rem; overflow-y: auto; }
 .wlf .member-panel h4{ margin: 0; font-size: 1.15rem; }

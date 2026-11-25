@@ -92,11 +92,11 @@
     <ol>
       <li><a href="#main-finding"><span class="toc-no">&sect;&thinsp;1</span><span class="toc-title">Coalition partners stop challenging each other</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 1&ndash;5</span></a>
         <p>When parties enter government together, challenges between them fall, and return when they split. The expected result, measured.</p></li>
-      <li><a href="#settings"><span class="toc-no">&sect;&thinsp;2</span><span class="toc-title">Same member, different setting</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 6&ndash;9</span></a>
+      <li><a href="#settings"><span class="toc-no">&sect;&thinsp;2</span><span class="toc-title">Same member, different setting</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 6&ndash;8</span></a>
         <p>Compared with themselves in a routine bill debate, members are harsher in question time and friendlier in party-leader debates.</p></li>
-      <li><a href="#talk-alike"><span class="toc-no">&sect;&thinsp;3</span><span class="toc-title">Talk alike, fight alike</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 10&ndash;12</span></a>
+      <li><a href="#talk-alike"><span class="toc-no">&sect;&thinsp;3</span><span class="toc-title">Talk alike, fight alike</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 9&ndash;11</span></a>
         <p>Members from different parties who talk about the same things challenge each other far more. Language groups members by policy area, not party.</p></li>
-      <li><a href="#late-night"><span class="toc-no">&sect;&thinsp;4</span><span class="toc-title">The late-night effect</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 13</span></a>
+      <li><a href="#late-night"><span class="toc-no">&sect;&thinsp;4</span><span class="toc-title">The late-night effect</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 12</span></a>
         <p>Tone barely moves through the day and evening, then turns harsher after midnight on average.</p></li>
       <li><a href="#methods"><span class="toc-no">&sect;&thinsp;5</span><span class="toc-title">Methods and data</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig"></span></a>
         <p>Data, limitations, how we checked our own work, and how to reproduce it.</p></li>
@@ -308,7 +308,7 @@
     <div id="fig-settings" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> for each setting, the average over members of their tone there minus their own tone in a routine first reading of a government bill. The line is a 95% interval from resampling members. <strong>Compared with:</strong> the members themselves (the reference row at 0). <strong>What to see:</strong> minister question time (<span data-n="qtTone"></span>), PM question time (<span data-n="pmTone"></span>) and final readings (<span data-n="finalTone"></span>) sit to the left; party-leader debates (<span data-n="leaderTone"></span>) to the right.</p>
-      <p class="check"><strong>Check:</strong> shuffling the setting labels among each member's own turns (<span data-n="setShuffles"></span> times) gives the z-scores in the table, and Figure 9 repeats the comparison with a different tone method. <strong>Misses:</strong> settings differ in format and topic as well as audience. Question time consists of questions, which carry fewer polite words, and a word list cannot see sarcasm or who a word is aimed at. Only party leaders speak in party-leader debates, so that row rests on few members.</p>
+      <p class="check"><strong>Check:</strong> shuffling the setting labels among each member's own turns (<span data-n="setShuffles"></span> times) gives the z-scores in the table. <strong>Misses:</strong> settings differ in format and topic as well as audience. Question time consists of questions, which carry fewer polite words, and a word list cannot see sarcasm or who a word is aimed at. Only party leaders speak in party-leader debates, so that row rests on few members.</p>
     </figcaption>
     <details class="table-view"><summary>Show as table</summary><div id="table-settings" class="table-wrap"></div></details>
   </figure>
@@ -335,16 +335,6 @@
       <p class="check"><strong>Misses:</strong> the big debates cover everything, while a first reading covers one bill, so part of a member's change can be topic. A member's role matters too: spokespersons and party leaders dominate the big debates.</p>
     </figcaption>
     <details class="table-view"><summary>All ranked members</summary><div id="table-chameleons" class="table-wrap"></div></details>
-  </figure>
-
-  <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 9 &middot; Second method</div>
-    <h3>A contextual sentiment model ranks the settings much like the word list</h3>
-    <div id="fig-methods" class="chart"></div>
-    <figcaption>
-      <p><strong>Plotted:</strong> each dot is a setting. Across: its mean tone from the adapted word list. Up: the mean score of a multilingual sentiment model (a fine-tuned DistilBERT, P(positive) &minus; P(negative)) on <span data-n="modelTurns"></span> turns sampled evenly across settings. <strong>What to see:</strong> dots along a rising line. Rank correlation across settings: <span data-n="rhoSettings"></span>; across single turns: <span data-n="rhoTurns"></span>.</p>
-      <p class="check"><strong>Misses:</strong> the model was not trained on parliamentary speech and reads only the first 256 word pieces of a turn. This compares raw setting means, not members against themselves.</p>
-    </figcaption>
   </figure>
 
   <details class="table-view wlf-card"><summary>The settings: turns, members and raw means</summary><div id="table-overview" class="table-wrap"></div></details>
@@ -397,7 +387,7 @@
   </section>
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 10 &middot; Shared turf</div>
+    <div class="wlf-case-no">Figure 9 &middot; Shared turf</div>
     <h3>The more alike two members from different parties talk, the more they challenge each other</h3>
     <div class="controls"><label for="method-select">Similarity</label><select id="method-select"></select></div>
     <div class="legend" id="legend-lift"></div>
@@ -410,7 +400,7 @@
   </figure>
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 11 &middot; Two networks, one structure</div>
+    <div class="wlf-case-no">Figure 10 &middot; Two networks, one structure</div>
     <h3>Groups found from language match the challenge network, not the parties</h3>
     <div class="legend" id="legend-nmi"></div>
     <div id="fig-nmi" class="chart"></div>
@@ -422,7 +412,7 @@
   </figure>
 
   <figure class="wlf-card fig" id="map">
-    <div class="wlf-case-no">Figure 12 &middot; Explore the language map</div>
+    <div class="wlf-case-no">Figure 11 &middot; Explore the language map</div>
     <h3>Where members sit by what they talk about</h3>
     <div class="controls">
       <label for="map-window">Government</label><select id="map-window"></select>
@@ -436,7 +426,7 @@
     </div>
     <figcaption>
       <p><strong>Plotted:</strong> each member's embedding profile in one government period, laid out in two dimensions with t-SNE, so members who talk alike sit close together. Size shows challenges made and received; colour shows government or opposition. <strong>What to see:</strong> click a member. Their challenge partners (solid lines) are often their language neighbours (dashed lines), from other parties.</p>
-      <p class="check"><strong>Misses:</strong> t-SNE keeps neighbours close but distorts distances between groups, so the size of a gap between clusters means nothing. This map is for exploring; the evidence is Figures 10 and 11.</p>
+      <p class="check"><strong>Misses:</strong> t-SNE keeps neighbours close but distorts distances between groups, so the size of a gap between clusters means nothing. This map is for exploring; the evidence is Figures 9 and 10.</p>
     </figcaption>
   </figure>
 
@@ -467,7 +457,7 @@
 
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 13 &middot; By the clock</div>
+    <div class="wlf-case-no">Figure 12 &middot; By the clock</div>
     <h3>Tone barely moves through the day and evening, then drops after midnight on average</h3>
     <div class="controls"><label for="hour-measure">Measure</label><select id="hour-measure"></select></div>
     <div class="legend" id="legend-hours"></div>
