@@ -157,15 +157,15 @@
     if (precision.status !== "labeled") {
       // State what was and was not checked by hand, rather than a count of unfinished sheets.
       const tone = stance.n
-        ? `Tone was checked against ${stance.n} hand-labelled short remarks by one labeller (Part 2).`
-        : "Tone has not been checked against hand labels either.";
+        ? `We did check tone, against ${stance.n} short remarks labelled by one person (Part 2).`
+        : "We did not check tone against hand labels either.";
       banner.hidden = false;
       document.getElementById("label-banner-text").textContent =
-        `The rule that finds challenges in the transcripts has not been checked against hand labels, so its error rate is unknown; read the network results with that in mind. ${tone}`;
+        `We did not check the rule that finds challenges in the transcripts against hand labels, so its error rate is unknown; read the network results with that in mind. ${tone}`;
     }
     document.getElementById("precision-text").textContent = precision.status === "labeled"
       ? `In our hand-labeled sample, ${precision.yes} of ${precision.n} edges were real challenges to the floor speaker (95% CI ${precision.ci95[0]}–${precision.ci95[1]}).`
-      : "Its accuracy against the group's hand labels is still pending.";
+      : "We did not check the rule against hand labels, so how often it is wrong, and how many challenges it misses, is unknown.";
   }
 
   /* ---------- Figure 1 ---------- */
@@ -813,7 +813,7 @@
     const check = L.tone.hand_labels || {};
     setNumber("toneCheck", check.status === "labeled"
       ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so read the colours as harsher or friendlier than usual, not as a verdict on single remarks.`
-      : `It is not validated yet: the group's hand-labelled tone sheet (labeling/challenge_stance.csv) is ${check.status || "missing"}.`);
+      : "We did not check it against hand labels.");
     makeTable(document.getElementById("table-layer-defs"), ["Layer", "What a line represents", "Edge property"],
       Object.entries(L.layers).map(([k, v]) => [`${k}. ${v.name}`, v.edge, v.property]));
   }

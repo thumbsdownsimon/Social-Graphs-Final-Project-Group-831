@@ -82,7 +82,7 @@
   </section>
 
   <div class="pending" id="label-banner" hidden>
-    <span class="wlf-stamp">Not yet checked</span>
+    <span class="wlf-stamp">Not checked by hand</span>
     <p id="label-banner-text"></p>
   </div>
 
@@ -174,7 +174,7 @@
     <div id="fig-matrix" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> challenges from each row party to each column party, as a ratio to what the same-debate shuffle expects. Government parties are marked &#9733;. <strong>Compared with:</strong> 1 (grey) means as often as chance. Cells expecting under 5 challenges are left blank. <strong>What to see:</strong> pale or blue blocks where government parties meet each other, and a blue diagonal: members rarely challenge their own party.</p>
-      <p class="check"><strong>Check:</strong> assortativity by party is <span data-n="assortParty"></span> and by government side <span data-n="assortSide"></span> in this period; shuffling labels across members gives <span data-n="assortNull"></span>. Negative means members challenge across lines more than chance. <strong>Misses:</strong> challenges are not all hostile. How many are is what the hand-labeled tone sheet is meant to show.</p>
+      <p class="check"><strong>Check:</strong> assortativity by party is <span data-n="assortParty"></span> and by government side <span data-n="assortSide"></span> in this period; shuffling labels across members gives <span data-n="assortNull"></span>. Negative means members challenge across lines more than chance. <strong>Misses:</strong> challenges are not all hostile. Of the 60 we labelled by hand, 17 were.</p>
     </figcaption>
   </figure>
 
@@ -569,7 +569,7 @@
     <ul class="limits">
       <li><strong>Few events.</strong> Six formations, and party pairs within one are not independent. Only 2022 joined two former main rivals, and the 2026 government is too recent to test.</li>
       <li><strong>The network is rule-based.</strong> An edge means the chair called a short remark and another member spoke next. Later short remarks announced differently are missed, and spoken question time is not included. <span id="precision-text"></span></li>
-      <li><strong>A challenge is not always hostile.</strong> We count who addresses whom, not tone, until the hand labels are in. Fewer challenges could also reflect what gets negotiated in private, which this data cannot see.</li>
+      <li><strong>A challenge is not always hostile.</strong> The network counts who addresses whom, whatever the tone; of the 60 challenges we labelled by hand, 17 were hostile. Fewer challenges could also reflect what gets negotiated in private, which this data cannot see.</li>
       <li><strong>"Government" is not the whole alignment.</strong> Support parties outside government count as opposition here, though they often vote with it.</li>
       <li><strong>Language methods disagree.</strong> Same-debate similarity shows a shift; the party classifier does not (<span data-n="classifierResult"></span>). We report both.</li>
       <li><strong>Absence is not a position.</strong> About <span data-n="absent"></span> of vote rows are absences. We did not verify why, and never treat them as disagreement. <span data-n="noRows"></span> votes since 2017 have no individual rows at all.</li>

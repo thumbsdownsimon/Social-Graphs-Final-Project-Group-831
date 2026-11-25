@@ -138,13 +138,13 @@
     if (!el) return;
     const s = labels && labels.challenge_stance;
     if (!s || s.status === "not labeled yet" || !s.tone_measures) {
-      el.innerHTML = `<span class="wlf-stamp">Validation pending</span> <p>The group has not finished hand-labelling the tone of the 60 sampled short remarks yet, so these tone measures are <strong>not yet checked against human judgement</strong>. Read the results as provisional.</p>`;
+      el.innerHTML = `<span class="wlf-stamp">Not checked by hand</span> <p>We <strong>did not check these tone measures against human judgement</strong>. Read the results with that in mind.</p>`;
       return;
     }
     const names = { afinn_raw: "AFINN, unchanged", afinn_adapted_rate: "AFINN adapted (used here)", model: "Multilingual sentiment model" };
     const rows = Object.entries(s.tone_measures).map(([k, v]) => [names[k] || k, v.spearman ?? "–",
       v.mean_by_label ? (v.mean_by_label.hostile ?? "–") : "–", v.mean_by_label ? (v.mean_by_label.neutral ?? "–") : "–", v.mean_by_label ? (v.mean_by_label.friendly ?? "–") : "–"]);
-    el.innerHTML = `<p><strong>Checked against ${s.n} hand-labelled short remarks</strong> (${Object.entries(s.distribution).map(([k, v]) => `${v} ${k}`).join(", ")}). Spearman correlation with the labels (hostile −1, neutral 0, friendly +1), and each measure's mean score within each label. ${typeof s.cohen_kappa === "number" ? `Agreement between two labellers: Cohen's κ = ${s.cohen_kappa}.` : "One labeller so far, so labeller agreement is not yet known."}</p><div class="table-wrap" id="tone-validation-table"></div>`;
+    el.innerHTML = `<p><strong>Checked against ${s.n} hand-labelled short remarks</strong> (${Object.entries(s.distribution).map(([k, v]) => `${v} ${k}`).join(", ")}). Spearman correlation with the labels (hostile −1, neutral 0, friendly +1), and each measure's mean score within each label.${typeof s.cohen_kappa === "number" ? ` Agreement between two labellers: Cohen's κ = ${s.cohen_kappa}.` : ""}</p><div class="table-wrap" id="tone-validation-table"></div>`;
     makeTable(document.getElementById("tone-validation-table"), ["Measure", "Spearman", "Mean, hostile", "Mean, neutral", "Mean, friendly"], rows, [1, 2, 3, 4]);
     const used = s.tone_measures.afinn_adapted_rate, raw = s.tone_measures.afinn_raw;
     if (used && used.spearman != null) {
