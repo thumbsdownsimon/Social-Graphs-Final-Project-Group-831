@@ -120,7 +120,7 @@
     setNumber("recount", `${rc.s_v_challenges.raw_xml.before} and ${rc.s_v_challenges.raw_xml.after} from raw XML, against ${rc.s_v_challenges.pipeline.before} and ${rc.s_v_challenges.pipeline.after} from the pipeline, for backbench challenges before and after 2022`);
     setNumber("recountVotes", `S and V majorities matched on ${pct(rc.s_v_votes.from_member_votes)} of ${fmt(rc.s_v_votes.votes)} votes`);
     setNumber("permutations", "20,000");
-    const variantText = (v) => `${v.right_direction} of ${v.pairs_tested} pairs in the expected direction, ${pText(v.p_one_sided)}`;
+    const variantText = (v) => `${v.right_direction} of ${v.pairs_tested} pairs in the expected direction, mean effect ${v.mean_effect_in_placebo_sd.toFixed(1)} placebo units, ${pText(v.p_one_sided)}`;
     setNumber("backbench", variantText(D.variants.challenges_backbench_only));
     setNumber("panel", variantText(D.variants.challenges_same_members_panel));
     const svSim = layers.same_debate_similarity.rows.find((r) => r.pair === "S-V" && r.transition === "2022-12-15");
@@ -266,6 +266,7 @@
     const rowHeight = 92;
     const frame = svgFor("fig-layers", order.length * rowHeight + 46, { top: 8, right: 12, bottom: 38, left: 12 });
     const { svg, inner } = frame;
+    const narrow = frame.width < 560;  // too narrow for the row title and its result on one line
     const all = order.flatMap((k) => D.layers[k].rows.map((r) => CLOSER[k] * r.placebo_units));
     const limit = Math.min(18, Math.ceil(d3.max(all, Math.abs)));
     const x = d3.scaleLinear().domain([-limit, limit]).range([inner.left, inner.right]).clamp(true);
@@ -280,7 +281,7 @@
       const layer = D.layers[key];
       const s = layer.summary;
       svg.append("text").attr("class", "title").attr("x", inner.left).attr("y", y0 + 16).text(LAYER_NAMES[key]);
-      svg.append("text").attr("x", inner.right).attr("y", y0 + 16).attr("text-anchor", "end").text(`${s.right_direction} of ${s.pairs_tested} · ${pText(s.p_one_sided)}`);
+      svg.append("text").attr("x", narrow ? inner.left : inner.right).attr("y", y0 + (narrow ? 30 : 16)).attr("text-anchor", narrow ? "start" : "end").text(`${s.right_direction} of ${s.pairs_tested} · mean effect ${s.mean_effect_in_placebo_sd.toFixed(2)} · ${pText(s.p_one_sided)}`);
       const rows = [...layer.rows].sort((a, b) => (relationClass(a.relation) === "placebo" ? -1 : 1) - (relationClass(b.relation) === "placebo" ? -1 : 1));
       svg.selectAll(null).data(rows).join("circle")
         .attr("cx", (r) => x(CLOSER[key] * r.placebo_units))
