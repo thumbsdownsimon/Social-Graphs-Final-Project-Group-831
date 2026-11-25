@@ -523,7 +523,7 @@
     const cellAt = new Map(T.cells.map((c) => [`${c.window}|${c.topic}`, c]));
     const M = 0.25;
     const color = (v) => { const t = Math.max(-1, Math.min(1, v / M)); return t < 0 ? d3.interpolateLab(MID, BLOC)(-t) : d3.interpolateLab(MID, GOV)(t); };
-    const lineName = (w) => (w === "bloc" ? "red–blue" : "government–opposition");
+    const lineName = (w) => (w === "bloc" ? "left against right" : "government against opposition");
 
     /* Figure 14: heatmap, topics × governments */
     {
@@ -548,10 +548,10 @@
               .attr("fill", "none").attr("stroke", C.grid).attr("stroke-dasharray", "3 3");
             return;
           }
-          const tip = [`Which line: ${signed(c.delta, 3)} (${lineName(c.winner)} fits better)`,
-            `Q red–blue ${signed(c.Q_bloc, 3)} (z ${signed(c.z_bloc, 1)} vs shuffle)`,
-            `Q government–opposition ${signed(c.Q_gov, 3)} (z ${signed(c.z_gov, 1)})`,
-            `${fmt(c.edges)} challenges in ${fmt(c.debates)} debates`].concat(c.flip ? ["Goes against this government's winning line"] : []);
+          const tip = [`Members fought mostly ${lineName(c.winner)} (gap ${signed(c.delta, 3)})`,
+            `Left–right: modularity ${signed(c.Q_bloc, 3)} (z ${signed(c.z_bloc, 1)} vs shuffle)`,
+            `Government–opposition: modularity ${signed(c.Q_gov, 3)} (z ${signed(c.z_gov, 1)})`,
+            `${fmt(c.edges)} challenges in ${fmt(c.debates)} debates`].concat(c.flip ? ["Goes the other way from the rest of this government"] : []);
           svg.append("rect").attr("x", x + gap).attr("y", y + gap).attr("width", colW - 2 * gap).attr("height", rowH - 2 * gap).attr("rx", 3)
             .attr("fill", color(c.delta)).attr("stroke", c.flip ? C.ink : C.paper).attr("stroke-width", c.flip ? 2.5 : 1)
             .attr("tabindex", 0).attr("aria-label", `${t.label}, ${w}: ${signed(c.delta, 3)}`)
@@ -560,12 +560,12 @@
         });
       });
       legend("legend-topic-divide", [
-        { shape: "band", color: `linear-gradient(90deg, ${BLOC}, ${MID})`, label: `Red–blue line fits better (to ${signed(-M)})` },
-        { shape: "band", color: `linear-gradient(90deg, ${MID}, ${GOV})`, label: `Government–opposition line fits better (to ${signed(M)})` },
-        { shape: "hollow", color: C.ink, label: "Goes against its government's line" },
+        { shape: "band", color: `linear-gradient(90deg, ${BLOC}, ${MID})`, label: "Mostly left against right" },
+        { shape: "band", color: `linear-gradient(90deg, ${MID}, ${GOV})`, label: "Mostly government against opposition" },
+        { shape: "hollow", color: C.ink, label: "Goes the other way from the rest of its government" },
       ]);
       makeTable(document.getElementById("table-topic-divide"),
-        ["Topic", "Government", "Challenges", "Q red–blue", "z", "Q gov–opp", "z", "Which line", "Fits better"],
+        ["Topic", "Government", "Challenges", "Modularity left–right", "z", "Modularity gov–opp", "z", "Gap", "Members fought mostly"],
         T.cells.map((c) => [topicLabel[c.topic], c.window, fmt(c.edges), signed(c.Q_bloc, 3), signed(c.z_bloc, 1), signed(c.Q_gov, 3), signed(c.z_gov, 1),
           signed(c.delta, 3), lineName(c.winner) + (c.flip ? " (flip)" : "")]), [2, 3, 4, 5, 6, 7]);
     }
@@ -581,7 +581,7 @@
       svg.append("g").attr("transform", `translate(0,${top - 6})`).call(d3.axisTop(x).ticks(8).tickSize(-(T.windows.length * rowH + 6))).call((g) => g.select(".domain").remove());
       svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top - 6).attr("y2", top + T.windows.length * rowH).attr("stroke", C.ink).attr("stroke-width", 1.2);
       svg.append("line").attr("x1", x(2)).attr("x2", x(2)).attr("y1", top - 6).attr("y2", top + T.windows.length * rowH).attr("stroke", C.ink).attr("stroke-dasharray", "5 4");
-      svg.append("text").attr("x", (left + width - right) / 2).attr("y", height - 14).attr("text-anchor", "middle").text("Spread across topics, in SDs of the shuffled-topic null");
+      svg.append("text").attr("x", (left + width - right) / 2).attr("y", height - 14).attr("text-anchor", "middle").text("How differently topics behave, compared with random topics (SDs)");
       T.windows.forEach((w, i) => {
         const y = top + i * rowH + rowH / 2;
         svg.append("text").attr("x", left - 10).attr("y", y + 4).attr("text-anchor", "end").text(w);
@@ -598,7 +598,7 @@
             .attr("fill", main ? C.ink : C.paper).attr("stroke", main ? C.paper : C.grey).attr("stroke-width", 2);
         });
       });
-      legend("legend-topic-test", [{ color: C.ink, label: "Main test" }, { color: C.grey, shape: "hollow", label: "Checks (see table)" }, { color: C.ink, shape: "line", dash: true, label: "Bar set in advance: z = 2" }]);
+      legend("legend-topic-test", [{ color: C.ink, label: "Main test" }, { color: C.grey, shape: "hollow", label: "Same test done other ways (see table)" }, { color: C.ink, shape: "line", dash: true, label: "Bar set before the test: 2" }]);
       const inOrder = Object.entries(T.tests);
       makeTable(document.getElementById("table-topic-test"), ["Government", ...inOrder.map(([, v]) => v.label)],
         T.windows.map((w) => [w, ...inOrder.map(([, v]) => { const r = v.rows.find((row) => row.window === w); return r ? signed(r.z, 1) : null; })]),
