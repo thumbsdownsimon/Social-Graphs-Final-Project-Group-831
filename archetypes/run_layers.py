@@ -1,5 +1,5 @@
 """Two member networks per government window, challenges (C) and committees (E), and DeepMoji
-emotion for every challenge, for the site's layer explorer (Figures 5, 5b and 5c).
+emotion for every challenge, for the site's layer explorer (Figures 5a, 5b and 5c).
 
     python -m archetypes.run_layers            # download what is missing, then build everything
     python -m archetypes.run_layers --no-download   # fail instead of downloading

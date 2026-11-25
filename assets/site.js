@@ -433,7 +433,7 @@
     setNumber("assortNull", `${w.party_assortativity.null_mean.toFixed(3)} ± ${w.party_assortativity.null_sd.toFixed(3)} and ${w.side_assortativity.null_mean.toFixed(3)} ± ${w.side_assortativity.null_sd.toFixed(3)}`);
   }
 
-  /* ---------- Figure 5: one member network per layer (data/layers.json, archetypes/run_layers.py) ---------- */
+  /* ---------- Figure 5a: one member network per layer (data/layers.json, archetypes/run_layers.py) ---------- */
   let L = null;
   let selected = null;
   const TONE = { hostile: "#c4661f", neutral: "#a39a8c", friendly: "#2f7d4f" };
@@ -831,7 +831,7 @@
       Object.entries(em.groups_by_window).map(([w, v]) => [w, fmt(v.challenges), ...groups.map((g) => pct(v[g], 1))]), groups.map((_, i) => i + 1));
     const check = L.tone.hand_labels || {};
     setNumber("toneCheck", check.status === "labeled"
-      ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so read the colours as harsher or friendlier than usual, not as a verdict on single remarks.`
+      ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so it is used to compare the average tone of groups of challenges, not to label single challenges.`
       : "We did not check it against hand labels.");
     makeTable(document.getElementById("table-layer-defs"), ["Layer", "What a line represents", "Edge property"],
       Object.entries(L.layers).map(([k, v]) => [`${k}. ${v.name}`, v.edge, v.property]));

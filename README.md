@@ -158,7 +158,7 @@ These come from the first full run (500 shuffles, null within debates), 11 Nov 2
 
 ## The member networks on the site
 
-The group kept two member networks, C (challenges) and E (committees). The site's Figure 5 draws them, Figure 5b compares them, and Figure 5c shows DeepMoji. They are built by `archetypes/run_layers.py` into `data/layers.json`:
+The group kept two member networks, C (challenges) and E (committees). The site's Figure 5a draws them, Figure 5b compares them, and Figure 5c shows DeepMoji. They are built by `archetypes/run_layers.py` into `data/layers.json`:
 
 | Layer | What an edge represents | Edge property | How it is measured |
 |---|---|---|---|
