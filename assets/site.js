@@ -18,6 +18,7 @@
   ];
   const tooltip = document.getElementById("tooltip");
   let D;
+  let X = null;  // data/emoji_examples.json
 
   /* ---------- helpers ---------- */
   const pct = (v, digits = 0) => (v * 100).toFixed(digits) + "%";
@@ -731,6 +732,71 @@
     legend("legend-sentiment", series.map((d) => ({ color: d.color, label: d.label, line: true })).concat([{ color: COLOR.ink, label: "Tone cut-offs (dashed)", line: true }]));
   }
 
+  // Worked examples (data/emoji_examples.json, archetypes/deepmoji.py --examples): Danish, English, emoji.
+  function drawEmojiExamples() {
+    if (!X || !L || !L.emoji) return;
+    const em = L.emoji;
+    const groupOf = {};
+    Object.entries(em.groups).forEach(([g, ids]) => ids.forEach((i) => { groupOf[i] = g; }));
+    const el = (tag, className, text) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    };
+    const chips = (top, n) => {
+      const box = el("div", "emoji-chips");
+      top.slice(0, n).forEach(([i, p]) => {
+        const name = em.names[i].replace(/_/g, " ");
+        const chip = el("span", "emoji-chip");
+        chip.style.borderBottomColor = EMOTION_COLOR[groupOf[i]];
+        chip.title = `${name} (${groupOf[i]})`;
+        const face = el("span", "face", em.emoji[i]);
+        face.setAttribute("role", "img");
+        face.setAttribute("aria-label", name);
+        chip.append(face, el("span", "share", pct(p, 1)));
+        box.append(chip);
+      });
+      return box;
+    };
+    const cell = (label, content, lang) => {
+      const d = el("div");
+      d.append(el("span", "step", label));
+      if (lang) { const p = el("p", "", content); p.lang = lang; d.append(p); } else d.append(content);
+      return d;
+    };
+    const cut = L.settings.tone_cut;
+    const list = document.getElementById("emoji-example-list");
+    list.replaceChildren();
+    X.examples.forEach((x) => {
+      const card = el("article", "emoji-example");
+      const head = el("div", "emoji-example-head");
+      const date = new Date(x.date + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+      head.append(el("span", "", `${x.from} member to ${x.to === "a minister" ? x.to : x.to + " member"}, ${date}`),
+        el("span", "how", x.how === "chosen" ? "Picked as a failure" : "Random draw"));
+      card.append(head);
+      x.sentences.forEach((s) => {
+        const row = el("div", "emoji-steps");
+        row.append(cell("Danish", s.da, "da"), cell("Translated", s.en, "en"), cell("DeepMoji", chips(s.top, 3)));
+        card.append(row);
+      });
+      // Adding 0 turns a rounded -0 into 0.
+      const score = (Math.round(x.sentiment * 100) / 100 + 0).toFixed(2).replace("-", "\u2212");
+      const tone = x.sentiment <= -cut ? "hostile" : x.sentiment >= cut ? "friendly" : "neutral";
+      const result = el("div", "emoji-result");
+      result.append(el("span", "step", x.sentences.length > 1 ? `Whole remark, mean of ${x.sentences.length} sentences` : "Whole remark"),
+        chips(x.top, 5), el("span", "verdict", `Sentiment ${score}: ${tone}`));
+      card.append(result);
+      list.append(card);
+    });
+    setNumber("exPool", fmt(X.pool));
+    setNumber("exWords", X.words.join("\u2013"));
+    setNumber("exLeft", pct(X.venstre_as_left));
+    setNumber("exVenstre", fmt(X.venstre_sentences));
+    setNumber("exCut", pct(X.cut_at_hr));
+    document.getElementById("emoji-examples").hidden = false;
+  }
+
   function layerNumbers() {
     if (!L) return;
     const s = L.settings;
@@ -790,7 +856,7 @@
       document.getElementById("emoji").hidden = true;
       document.querySelectorAll(".needs-layers").forEach((el) => { el.hidden = true; });
     }
-    fillNumbers(); drawTables(); layerNumbers();
+    fillNumbers(); drawTables(); layerNumbers(); drawEmojiExamples();
     fillNetworkControls();
     const drawAll = () => { drawTimeline(); drawLayers(); drawRole(); drawMatrix(); drawNetwork(); drawCompare(); drawEmoji(); };
     eventSelect.addEventListener("change", drawTimeline);
@@ -815,10 +881,10 @@
     });
   }
 
-  // layers.json is optional: without it the page still draws everything from site.json.
+  // layers.json and emoji_examples.json are optional: without them the page still draws everything else.
   const getJson = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
-  Promise.all([getJson("data/site.json"), getJson("data/layers.json").catch(() => null)])
-    .then(([data, layers]) => { D = data; L = layers; init(); })
+  Promise.all([getJson("data/site.json"), getJson("data/layers.json").catch(() => null), getJson("data/emoji_examples.json").catch(() => null)])
+    .then(([data, layers, examples]) => { D = data; L = layers; X = examples; init(); })
     .catch((error) => {
       const p = document.createElement("p");
       p.textContent = `The figures could not load (${error.message}).`;

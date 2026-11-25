@@ -187,6 +187,7 @@ A single positive/negative score throws away most of what a remark does. DeepMoj
 ```
 .venv\Scripts\python -m archetypes.deepmoji --limit 200   # a trial on 200 challenges
 .venv\Scripts\python -m archetypes.deepmoji               # all challenges
+.venv\Scripts\python -m archetypes.deepmoji --examples    # worked examples for Figure 5c, from the cache (seconds)
 ```
 
 It needs `transformers`, `sentencepiece`, `sacremoses`, `emoji`, `text-unidecode` and `huggingface_hub`. The full run took about two hours of compute: translating 273,224 unique sentences took about 1 h 50 min on an RTX 5060 laptop GPU (CUDA build of PyTorch), and scoring 294,659 sentences took about 17 minutes on the CPU. Everything is cached, so a rerun of `run_layers.py` takes about a minute. The site's Figure 5c shows which emoji come up and the distribution of sentiment, for challenges aimed at the government and at the opposition. The challenge network (Figure 5, layer C) colours its lines by this tone.
@@ -222,6 +223,7 @@ The group asked whether members behave differently in committees, which are not 
 | `archetypes/run_layers.py` | the member networks (C, E) and DeepMoji summaries for the site, with downloads |
 | `archetypes/deepmoji.py` | DeepMoji emoji for every challenge: sets up torchMoji, translates, scores |
 | `data/challenge_emoji.parquet` | 64 emoji probabilities and emotion groups per challenge (no text) |
+| `data/emoji_examples.json` | four short remarks, Danish to English to emoji, quoted on the site (Figure 5c): three random draws, one chosen failure |
 | `data/layers.json` | output of `run_layers.py`, read by the site |
 | `tests/test_network.py` | toy graphs with answers worked out by hand |
 | `data/archetypes/` | outputs (parquet) |

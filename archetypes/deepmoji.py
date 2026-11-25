@@ -3,6 +3,7 @@ which of its 64 emoji fit each sentence.
 
     python -m archetypes.deepmoji              # set up torchMoji, translate, score
     python -m archetypes.deepmoji --limit 200  # quick trial on 200 challenges
+    python -m archetypes.deepmoji --examples   # worked examples for the site's Figure 5c (seconds)
 
 Why translate. DeepMoji (Felbo et al. 2017) was trained on 1.2 billion English tweets, so it has
 barely seen Danish. We translate each remark with an open Danish->English model
@@ -22,6 +23,7 @@ texts), and the remark's emoji distribution is the mean over its sentences.
 Reads  data/challenges.parquet, data-raw/derived/speeches.parquet (the text; see run_layers.py)
 Caches data-raw/derived/challenge_translations.parquet (English text, not committed)
 Writes data/challenge_emoji.parquet: one row per challenge, 64 emoji probabilities, no text.
+--examples writes data/emoji_examples.json: four short remarks with their text, see examples().
 """
 import argparse
 import json
@@ -33,7 +35,7 @@ import time
 import numpy as np
 import pandas as pd
 
-from .config import DATA, ROOT
+from .config import DATA, RENAMES, ROOT, SEED
 
 THIRD_PARTY = ROOT / "third_party"
 TORCHMOJI = THIRD_PARTY / "torchMoji"
@@ -44,6 +46,7 @@ TRANSLATOR = "Helsinki-NLP/opus-mt-da-en"
 SPEECHES = ROOT / "data-raw" / "derived" / "speeches.parquet"
 TRANSLATIONS = ROOT / "data-raw" / "derived" / "challenge_translations.parquet"
 OUT_FILE = DATA / "challenge_emoji.parquet"
+EXAMPLES_FILE = DATA / "emoji_examples.json"
 MAXLEN = 50            # DeepMoji tokens per sentence
 MAX_SOURCE_TOKENS = 256
 
@@ -78,6 +81,14 @@ HOSTILE_GROUPS = ("anger", "disapproval")
 FRIENDLY_GROUPS = ("happy", "love")
 
 SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÆØÅ0-9\"»(])")
+
+# Abbreviations SENTENCE_END wrongly splits at ("hr. Bjarne Laustsen"). Used only to count how many
+# remarks this affects and to keep such remarks out of the examples; the scores are unchanged.
+CUT_AT_ABBREVIATION = re.compile(r"\b(?:hr|fru|nr|pct|mio|mia|kr|bl\.a|f\.eks|art|stk|dr)\.$", re.IGNORECASE)
+EXAMPLE_WORDS = (12, 40)     # whole remark, so the site can quote it in full
+EXAMPLE_TOP_PICKS = 3        # one random remark for each of the most common top picks
+# One remark chosen by hand, shown as a failure: a complaint scored friendly, and Venstre as "the Left".
+CHOSEN_FAILURE = "Spørgsmålet lød, om Venstre synes, at dagpengereformen er en succes."
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -211,11 +222,74 @@ def add_groups(frame):
     return frame
 
 
+def examples():
+    """Worked examples for the site: Danish sentence, its translation, its emoji, and the remark's emoji.
+
+    Drawn by rule, not picked: for each of the most common top picks, one random remark among the
+    short ones (EXAMPLE_WORDS words, 1-3 sentences, no minister asking, not cut at an abbreviation,
+    and transcript status Typeset, so no provisional-looking text is quoted). The last example is
+    chosen by hand and marked so. Quotes are verbatim and short; speakers are given by party only.
+    """
+    scored = pd.read_parquet(OUT_FILE)
+    texts = challenge_texts()
+    edges = pd.read_parquet(DATA / "challenges.parquet")
+    frame = texts.merge(scored, on=["session", "meeting", "turn"]).merge(
+        edges[["session", "meeting", "turn", "date", "status", "challenger_person", "floor_person", "challenger_party",
+               "floor_party", "floor_is_minister", "challenger_is_minister"]], on=["session", "meeting", "turn"])
+    known = dict(zip(*(pd.read_parquet(TRANSLATIONS)[c] for c in ("danish", "english"))))
+    parts = frame["text"].map(split_sentences)
+    cut = parts.map(lambda s: any(CUT_AT_ABBREVIATION.search(x) for x in s))
+    words = frame["text"].str.split().str.len()
+    top = frame[EMOJI_NAMES].to_numpy().argmax(axis=1)
+    short = (words.between(*EXAMPLE_WORDS) & frame["sentences"].between(1, 3) & (parts.map(len) == frame["sentences"])
+             & ~cut & (frame["status"] == "Typeset") & ~frame["challenger_is_minister"].astype(bool)
+             & (frame["challenger_person"] != frame["floor_person"]))
+    common = np.argsort(-np.bincount(top, minlength=len(EMOJI_NAMES)))[:EXAMPLE_TOP_PICKS]
+    picks = [(frame[short & (top == i)].sample(1, random_state=SEED).index[0], "random") for i in common]
+    chosen = frame[short & frame["text"].str.contains(CHOSEN_FAILURE, regex=False)]
+    assert len(chosen) == 1, f"the hand-chosen remark matches {len(chosen)} rows"
+    picks.append((chosen.index[0], "chosen"))
+
+    def ranked(p):
+        return [[int(i), round(float(p[i]), 4)] for i in np.argsort(-p)[:5]]
+
+    english = [known[s] for k, _ in picks for s in parts[k]]
+    probs = iter(emoji_scores(english))
+    out = []
+    for k, how in picks:
+        row = frame.loc[k]
+        sentences = parts[k]
+        each = np.array([next(probs) for _ in sentences])
+        remark = row[EMOJI_NAMES].to_numpy(dtype=np.float32)
+        # The shown sentences must add up to the remark's stored score, the one the figures use.
+        np.testing.assert_allclose(each.mean(axis=0), remark, atol=1e-4)
+        out.append({"how": how, "date": str(row["date"])[:10], "session": row["session"], "meeting": int(row["meeting"]), "turn": int(row["turn"]),
+                    "from": RENAMES.get(row["challenger_party"], row["challenger_party"]),
+                    # A minister's party label can be wrong (see CHANGES.md), so it is not given.
+                    "to": "a minister" if row["floor_is_minister"] else RENAMES.get(row["floor_party"], row["floor_party"]),
+                    "sentences": [{"da": s, "en": known[s], "top": ranked(p)} for s, p in zip(sentences, each)],
+                    "top": ranked(remark), "sentiment": round(float(row["sentiment"]), 3)})
+
+    # How common the two visible failures are, over every challenge.
+    flat = pd.Series([s for p in parts for s in p])
+    venstre = flat[flat.str.contains(r"(?<!Radikale )\bVenstres?\b") & ~flat.str.match(r"Venstre")]
+    left = venstre.map(known).str.contains(r"\bLeft\b")
+    result = {"examples": out, "pool": int(short.sum()), "words": list(EXAMPLE_WORDS), "seed": SEED,
+              "cut_at_hr": round(float(parts.map(lambda s: any(x.endswith((" hr.", " Hr.")) for x in s)).mean()), 4),
+              "venstre_sentences": len(venstre), "venstre_as_left": round(float(left.mean()), 4)}
+    EXAMPLES_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
+    log("wrote", EXAMPLES_FILE.relative_to(ROOT), {k: v for k, v in result.items() if k != "examples"})
+    return result
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--limit", type=int, help="score a random sample of this many challenges (a trial run)")
+    parser.add_argument("--examples", action="store_true", help="only write the site's worked examples, from cached results")
     args = parser.parse_args(argv)
     check_groups()
+    if args.examples:
+        return examples()
     ensure_torchmoji()
     texts = challenge_texts(args.limit)
     sentences = translations(texts)

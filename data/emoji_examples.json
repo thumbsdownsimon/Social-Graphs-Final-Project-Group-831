@@ -1,0 +1,305 @@
+{
+ "examples": [
+  {
+   "how": "random",
+   "date": "2019-04-09",
+   "session": "20181",
+   "meeting": 83,
+   "turn": 628,
+   "from": "ALT",
+   "to": "DF",
+   "sentences": [
+    {
+     "da": "Jamen det er jo ærlig snak, og i modsætning til den socialdemokratiske ordfører er det også det rigtige beslutningsforslag, der bliver kommenteret her.",
+     "en": "That is, of course, honest talk, and unlike the Socialist rapporteur, it is also the right resolution that is being commented on here.",
+     "top": [
+      [
+       33,
+       0.0944
+      ],
+      [
+       50,
+       0.0594
+      ],
+      [
+       7,
+       0.0437
+      ],
+      [
+       53,
+       0.0406
+      ],
+      [
+       40,
+       0.0355
+      ]
+     ]
+    },
+    {
+     "da": "Hvad synes ordføreren om, at den her lovændring har så stor negativ indvirkning også for danske hjemløse?",
+     "en": "What does the rapporteur think about this amendment of the law having such a negative effect on the Danish homeless as well?",
+     "top": [
+      [
+       22,
+       0.1528
+      ],
+      [
+       12,
+       0.058
+      ],
+      [
+       25,
+       0.055
+      ],
+      [
+       32,
+       0.0533
+      ],
+      [
+       55,
+       0.0497
+      ]
+     ]
+    }
+   ],
+   "top": [
+    [
+     22,
+     0.0841
+    ],
+    [
+     33,
+     0.0495
+    ],
+    [
+     25,
+     0.0388
+    ],
+    [
+     62,
+     0.0368
+    ],
+    [
+     12,
+     0.0342
+    ]
+   ],
+   "sentiment": -0.0
+  },
+  {
+   "how": "random",
+   "date": "2009-11-24",
+   "session": "20091",
+   "meeting": 20,
+   "turn": 221,
+   "from": "V",
+   "to": "S",
+   "sentences": [
+    {
+     "da": "Jeg vil gerne spørge den socialdemokratiske ordfører, om han vil pålægge Danmarks Radio i deres public service-kontrakt at købe fodboldrettigheder.",
+     "en": "I would like to ask the Socialist rapporteur whether he will impose on Danmarks Radio in their public service contract to buy football rights.",
+     "top": [
+      [
+       33,
+       0.0928
+      ],
+      [
+       32,
+       0.0519
+      ],
+      [
+       55,
+       0.0419
+      ],
+      [
+       25,
+       0.0333
+      ],
+      [
+       19,
+       0.0325
+      ]
+     ]
+    }
+   ],
+   "top": [
+    [
+     33,
+     0.0928
+    ],
+    [
+     32,
+     0.0519
+    ],
+    [
+     55,
+     0.0419
+    ],
+    [
+     25,
+     0.0333
+    ],
+    [
+     19,
+     0.0325
+    ]
+   ],
+   "sentiment": 0.115
+  },
+  {
+   "how": "random",
+   "date": "2013-01-18",
+   "session": "20121",
+   "meeting": 47,
+   "turn": 251,
+   "from": "S",
+   "to": "DF",
+   "sentences": [
+    {
+     "da": "Jeg vil gerne høre ordføreren, om han mener, at Danmark bør melde sig ud af EU.",
+     "en": "I would like to hear from the rapporteur whether he thinks that Denmark should resign from the European Union.",
+     "top": [
+      [
+       32,
+       0.0525
+      ],
+      [
+       33,
+       0.0508
+      ],
+      [
+       55,
+       0.0498
+      ],
+      [
+       53,
+       0.042
+      ],
+      [
+       22,
+       0.0391
+      ]
+     ]
+    }
+   ],
+   "top": [
+    [
+     32,
+     0.0525
+    ],
+    [
+     33,
+     0.0508
+    ],
+    [
+     55,
+     0.0498
+    ],
+    [
+     53,
+     0.042
+    ],
+    [
+     22,
+     0.0391
+    ]
+   ],
+   "sentiment": -0.06
+  },
+  {
+   "how": "chosen",
+   "date": "2013-05-29",
+   "session": "20121",
+   "meeting": 104,
+   "turn": 1379,
+   "from": "EL",
+   "to": "V",
+   "sentences": [
+    {
+     "da": "Jeg forsøgte i sidste omgang to gange at stille samme spørgsmål, og jeg er så ked af, at jeg ikke fik et svar, for det var så ligetil et spørgsmål.",
+     "en": "I tried to ask the same question twice last time, and I am so sorry that I did not get an answer, because it was so straightforward to ask a question.",
+     "top": [
+      [
+       27,
+       0.0829
+      ],
+      [
+       5,
+       0.0823
+      ],
+      [
+       22,
+       0.0687
+      ],
+      [
+       45,
+       0.0605
+      ],
+      [
+       43,
+       0.0579
+      ]
+     ]
+    },
+    {
+     "da": "Spørgsmålet lød, om Venstre synes, at dagpengereformen er en succes.",
+     "en": "The question was whether the Left thinks that the unemployment benefit reform is a success.",
+     "top": [
+      [
+       33,
+       0.1557
+      ],
+      [
+       6,
+       0.0599
+      ],
+      [
+       13,
+       0.0565
+      ],
+      [
+       40,
+       0.0534
+      ],
+      [
+       50,
+       0.0375
+      ]
+     ]
+    }
+   ],
+   "top": [
+    [
+     33,
+     0.0797
+    ],
+    [
+     27,
+     0.0436
+    ],
+    [
+     5,
+     0.0429
+    ],
+    [
+     22,
+     0.0413
+    ],
+    [
+     45,
+     0.0327
+    ]
+   ],
+   "sentiment": 0.171
+  }
+ ],
+ "pool": 1490,
+ "words": [
+  12,
+  40
+ ],
+ "seed": 831,
+ "cut_at_hr": 0.2126,
+ "venstre_sentences": 9193,
+ "venstre_as_left": 0.9528
+}

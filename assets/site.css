@@ -287,4 +287,23 @@ figcaption{ border-top: 1px dashed var(--line-strong); padding-top: .8rem; }
 .committee-list{ margin: .2rem 0 .4rem; line-height: 1.45; }
 .empty-layer{ padding: 3rem 1rem; text-align: center; border: 1px dashed var(--line); border-radius: var(--radius); }
 #table-layer-defs{ margin-bottom: 1rem; }
+/* Worked examples under the DeepMoji charts (Figure 5c) */
+.emoji-examples{ margin: 1.6rem 0 1.2rem; font-family: var(--sans); }
+.wlf .emoji-examples h4{ font-size: 1.12rem; margin: 0 0 .5rem; }
+.emoji-examples .layer-note{ margin: 0 0 .8rem; font-size: .84rem; line-height: 1.55; color: var(--ink-soft); }
+.emoji-example{ border: 1px solid var(--line); border-radius: var(--radius); margin: 0 0 .9rem; overflow: hidden; }
+.emoji-example-head{ display: flex; flex-wrap: wrap; justify-content: space-between; gap: .1rem 1rem; padding: .4rem .8rem; background: var(--paper-alt); border-bottom: 1px solid var(--line); font-size: .78rem; color: var(--ink-soft); }
+.emoji-example-head .how{ font-weight: 600; color: var(--ink); }
+.emoji-steps{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(9.5rem, auto); gap: .6rem 1.2rem; padding: .65rem .8rem; border-bottom: 1px dashed var(--line); }
+.emoji-examples .step{ display: block; font-size: .66rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: .15rem; }
+.wlf .emoji-steps p{ margin: 0; font-size: .88rem; line-height: 1.5; }
+.emoji-steps p[lang="da"]{ font-family: var(--text); font-style: italic; color: var(--ink); }
+.emoji-chips{ display: flex; flex-wrap: wrap; gap: .35rem .6rem; }
+.emoji-chip{ display: inline-flex; flex-direction: column; align-items: center; border-bottom: 3px solid transparent; padding: 0 .1rem .15rem; }
+.emoji-chip .face{ font-size: 1.35rem; line-height: 1.25; }
+.emoji-chip .share{ font-size: .7rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.emoji-result{ display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.2rem; padding: .6rem .8rem; }
+.emoji-result .step{ margin: 0; }
+.emoji-result .verdict{ margin-left: auto; font-size: .84rem; font-weight: 600; color: var(--ink); }
+@media (max-width: 52rem){ .emoji-steps{ grid-template-columns: 1fr; } .emoji-result .verdict{ margin-left: 0; } }
 .member-emoji{ font-size: 1.5rem; letter-spacing: .25rem; margin: .5rem 0 0; }
