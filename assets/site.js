@@ -316,6 +316,13 @@
     };
     setNumber("factorJoined", range("joined"));
     setNumber("factorEntered", range("both_entered"));
+    const cs = D.layers.challenges.summary;
+    const effects = D.layers.challenges.rows.filter((r) => relationClass(r.relation) !== "placebo").map((r) => Math.abs(r.placebo_units));
+    setNumber("chalPairs", cs.pairs_tested);
+    setNumber("chalMean", cs.mean_effect_in_placebo_sd.toFixed(1));
+    setNumber("chalMedian", cs.median_effect.toFixed(1));
+    setNumber("chalRange", `${d3.min(effects).toFixed(1)} to ${d3.max(effects).toFixed(1)}`);
+    setNumber("chalP", pText(cs.p_one_sided));
   }
 
   function hash(text) {
