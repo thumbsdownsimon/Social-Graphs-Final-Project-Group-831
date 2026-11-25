@@ -40,6 +40,7 @@
       const span = document.createElement("span");
       const mark = document.createElement("i");
       if (it.shape === "line") { mark.className = "line"; mark.style.background = it.color; if (it.dash) mark.style.background = `repeating-linear-gradient(90deg, ${it.color} 0 4px, transparent 4px 7px)`; }
+      else if (it.shape === "tick") { mark.className = "tick-mark"; mark.style.background = it.color; }
       else if (it.shape === "hollow") { mark.style.border = `2px solid ${it.color}`; mark.style.background = "transparent"; }
       else if (it.shape === "band") { mark.className = "ramp"; mark.style.width = "22px"; mark.style.background = it.color; }
       else mark.style.background = it.color;
@@ -387,23 +388,40 @@
       L.rivals.map((r) => [r.window, `${r.a} (${r.party_a})`, `${r.b} (${r.party_b})`, r.challenges, r.expected_window, r.expected_debate, `${Math.round(r.similarity_percentile * 100)}%`]), [3, 4, 5, 6]);
   }
 
+  // One colour per comparison: its dot (real labels) and its tick (shuffled labels) share it.
+  const NMI_COLOR = { party: "#b8651b", challenge: "#6b4fa3" };
+
   function drawNmi(windows) {
-    const width = 760, rowH = 30, left = 140, right = 30, top = 34, height = top + windows.length * rowH + 34;
+    const width = 760, rowH = 34, left = 140, right = 30, top = 34, height = top + windows.length * rowH + 58;
     const svg = svgIn("fig-nmi", width, height);
     const x = d3.scaleLinear().domain([0, Math.max(0.6, d3.max(windows, (w) => w.nmi_language_challenge) * 1.1)]).range([left, width - right]);
     svg.append("g").attr("transform", `translate(0,${top - 6})`).call(d3.axisTop(x).ticks(6).tickSize(-(windows.length * rowH + 6))).call((g) => g.select(".domain").remove());
     windows.forEach((w, i) => {
       const yy = top + i * rowH + rowH / 2;
       svg.append("text").attr("x", left - 10).attr("y", yy + 4).attr("text-anchor", "end").text(w.window);
-      [[w.nmi_language_party_null, w.nmi_language_party, false, "party"], [w.nmi_language_challenge_null, w.nmi_language_challenge, true, "challenge communities"]].forEach(([nul, val, filled, label]) => {
-        svg.append("line").attr("x1", x(nul)).attr("x2", x(nul)).attr("y1", yy - 7).attr("y2", yy + 7).attr("stroke", C.grey).attr("stroke-width", 2);
-        svg.append("circle").attr("cx", x(val)).attr("cy", yy).attr("r", 6).attr("fill", filled ? C.ink : C.paper).attr("stroke", C.ink).attr("stroke-width", 2)
-          .on("pointermove", (e) => showTip(e, `${w.window}: language communities vs ${label}`, [`NMI ${val}`, `Shuffled labels: ${nul}`, `${w.members} members, ${w.language_communities} language communities`])).on("pointerleave", hideTip);
-        if (i === 0) svg.append("text").attr("x", x(val)).attr("y", yy - 11).attr("text-anchor", "middle").attr("class", "strong").text(filled ? "vs challenges" : "vs party");
+      const series = [
+        { key: "party", label: "party", val: w.nmi_language_party, nul: w.nmi_language_party_null, filled: false },
+        { key: "challenge", label: "challenge communities", val: w.nmi_language_challenge, nul: w.nmi_language_challenge_null, filled: true },
+      ];
+      const tip = (d) => (e) => showTip(e, `${w.window}: language communities vs ${d.label}`, [`NMI ${d.val}`, `Shuffled labels: ${d.nul}`, `${w.members} members, ${w.language_communities} language communities`]);
+      // Ticks first and taller than the dots, so a tick behind a dot still shows above and below it.
+      series.forEach((d) => {
+        svg.append("line").attr("x1", x(d.nul)).attr("x2", x(d.nul)).attr("y1", yy - 11).attr("y2", yy + 11).attr("stroke", NMI_COLOR[d.key]).attr("stroke-width", 3);
+        svg.append("rect").attr("x", x(d.nul) - 6).attr("y", yy - 12).attr("width", 12).attr("height", 24).attr("fill", "transparent").on("pointermove", tip(d)).on("pointerleave", hideTip);
+      });
+      series.forEach((d) => {
+        svg.append("circle").attr("cx", x(d.val)).attr("cy", yy).attr("r", 6).attr("fill", d.filled ? NMI_COLOR[d.key] : C.paper).attr("stroke", NMI_COLOR[d.key]).attr("stroke-width", 2)
+          .on("pointermove", tip(d)).on("pointerleave", hideTip);
+        if (i === 0) svg.append("text").attr("x", x(d.val)).attr("y", yy - 14).attr("text-anchor", "middle").attr("class", "strong").text(d.filled ? "vs challenges" : "vs party");
+        // Name each tick once, under the last row, pointing away from the other tick.
+        if (i === windows.length - 1) {
+          svg.append("text").attr("x", x(d.nul) + (d.filled ? 3 : -3)).attr("y", yy + 25).attr("text-anchor", d.filled ? "end" : "start").text(d.filled ? "vs challenges, shuffled" : "vs party, shuffled");
+        }
       });
     });
     svg.append("text").attr("x", left).attr("y", height - 8).text("NMI: 0 = unrelated, 1 = identical groupings");
-    legend("legend-nmi", [{ color: C.ink, label: "Language communities vs challenge-network communities" }, { color: C.ink, shape: "hollow", label: "Language communities vs party" }, { color: C.grey, shape: "line", label: "Same, with shuffled labels" }]);
+    legend("legend-nmi", [{ color: NMI_COLOR.challenge, label: "Language communities vs challenge-network communities" }, { color: NMI_COLOR.challenge, shape: "tick", label: "vs challenges, shuffled labels" },
+      { color: NMI_COLOR.party, shape: "hollow", label: "Language communities vs party" }, { color: NMI_COLOR.party, shape: "tick", label: "vs party, shuffled labels" }]);
     makeTable(document.getElementById("table-nmi"), ["Government", "Members", "Language communities", "Modularity", "Stability (NMI)", "vs party", "shuffled", "vs side", "vs challenges", "shuffled"],
       windows.map((w) => [w.window, w.members, w.language_communities, w.language_modularity, w.language_stability_nmi, w.nmi_language_party, w.nmi_language_party_null, w.nmi_language_side, w.nmi_language_challenge, w.nmi_language_challenge_null]), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
   }
