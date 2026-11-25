@@ -471,6 +471,79 @@
     </div>
   </section>
 
+  <!-- Draft Part 4b: topic blocs. Added for the group to assess; code in topic_blocs/, data in data/topic_blocs/,
+       via topic_blocs/export_site_json.py into data/results/topic_blocs.json. Remove this section to drop it. -->
+  <section class="part" id="topic-blocs" data-part="4b">
+    <aside class="part-margin">
+      <div class="part-no" aria-hidden="true">&sect;&thinsp;4b</div>
+      <div class="kicker">Part 4b &middot; draft</div>
+      <h2>Who do they argue with?</h2>
+      <div class="part-art"><svg viewBox="0 0 96 64" aria-hidden="true"><circle cx="22" cy="20" r="6"/><circle cx="22" cy="44" r="6"/><circle cx="74" cy="20" r="6"/><circle cx="74" cy="44" r="6"/>
+      <path d="M48 6v52"/><path d="M8 32h80" stroke-dasharray="4 4"/><path d="M28 20h40M28 44h40"/></svg></div>
+      <div class="notes" aria-label="Margin notes">
+        <div class="note"><strong data-n="tbPassOf"></strong><span>governments where some topics are fought over much harder than others</span></div>
+        <div class="note"><strong data-n="tbFlipsOf"></strong><span>topics that break with the rest of their government</span></div>
+      </div>
+    </aside>
+    <div class="part-body">
+      <div class="pending"><span class="wlf-stamp">Draft for the group</span><p>This part is a proposal (code in <code>topic_blocs/</code>), added so the group can judge it. It is not yet part of the analysis above, and nothing else on the page depends on it.</p></div>
+      <p class="part-question">Members mostly challenge the other side. But Folketinget has two ways of picking sides: the left (red) bloc against the right (blue) bloc, or the government against the opposition. Which one do members actually fight along, and does it depend on what is being debated?</p>
+      <p class="part-finding">Who governs decides who members fight with. The topic only decides how hard. Up to 2019 members fought left against right: support parties such as DF under V sat in opposition, but fought on their own bloc's side. Once S and V governed together in 2022, members fought government against opposition instead. That held on almost every topic. What changed with the topic was how sharp the fight was: hard on the economy, education and the environment, and barely there on foreign affairs and defence.</p>
+  <div class="stats" aria-label="Key numbers">
+    <div class="stat"><strong data-n="tbPassOf"></strong><span>governments in which some topics are fought over much harder than others, beyond chance</span></div>
+    <div class="stat"><strong data-n="tbFlipsOf"></strong><span>topic &times; government combinations where members fight along the other line than the rest of that government</span></div>
+    <div class="stat"><strong data-n="tbMatched"></strong><span>of challenges we could give a topic</span></div>
+  </div>
+
+  <section class="wlf-card define" aria-labelledby="tb-title">
+    <div class="wlf-case-no">How we measure it</div>
+    <h2 id="tb-title">Which line do challenges cross?</h2>
+    <div class="define-grid">
+      <div>
+        <h3>Two ways to pick sides</h3>
+        <ul>
+          <li><strong>Left against right:</strong> S, SF, RV, EL, ALT and FG against V, KF, DF, LA, NB, DD, BP and KD.</li>
+          <li><strong>Government against opposition:</strong> the parties with ministers against everyone else. A support party that votes with the government still counts as opposition.</li>
+          <li><strong>When they differ:</strong> when a government leans on support parties from its own bloc, as DF did for V, and when a government spans both blocs, as S, V and M did from 2022.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Which line fits better</h3>
+        <ul>
+          <li><strong>Topic:</strong> each debate is about a bill or motion. We look up the committee it was sent to and group the committees into 9 policy areas, such as the economy or immigration (<span data-n="tbPolicy"></span> of challenges get one).</li>
+          <li><strong>Count crossings:</strong> for each topic under each government, we count how many challenges cross each line, against how many would by chance (modularity, week 4). Where there are at least <span data-n="tbMinEdges"></span> challenges.</li>
+          <li><strong>Compare:</strong> the line with more crossings than chance is the one members fight along. The bigger the gap between the two lines, the more one of them dominates.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 14 &middot; Topic by government</div>
+    <h3>Until 2019 members fight left against right; in 2022, government against opposition</h3>
+    <div class="legend" id="legend-topic-divide"></div>
+    <div id="fig-topic-divide" class="chart"></div>
+    <figcaption>
+      <p><strong>How to read it:</strong> each square is one topic under one government. Brown means members fought mostly left against right; blue means mostly government against opposition. The darker the square, the more one line dominated; pale means neither line stood out. A black outline marks a topic that went the other way from the rest of its government. Empty squares had fewer than <span data-n="tbMinEdges"></span> challenges, and the 2026 government has too few for any topic. <strong>What to see:</strong> each column is nearly one colour: brown up to 2019, blue in 2022. So the government sets the line, not the topic. Down each column the shade changes: economy and environment are dark, while foreign affairs and defence is pale or outlined in every government up to 2019.</p>
+      <p class="check"><strong>Check:</strong> in most squares, both lines are crossed far more often than if we kept who was in each debate but shuffled who challenged whom (<span data-n="tbDebShuffles"></span> shuffles). The exception is 2022, where the left&ndash;right line is mostly no better than chance: members had stopped fighting along it. <strong>Misses:</strong> the committee a bill goes to is a rough guide to its topic. Which bloc RV and M belong to is our choice, and both have moved between camps.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-topic-divide" class="table-wrap"></div></details>
+  </figure>
+
+  <figure class="wlf-card fig">
+    <div class="wlf-case-no">Figure 15 &middot; Could it be chance?</div>
+    <h3>In six of seven governments, the differences between topics are too large to be chance</h3>
+    <div class="legend" id="legend-topic-test"></div>
+    <div id="fig-topic-test" class="chart"></div>
+    <figcaption>
+      <p><strong>How to read it:</strong> one row per government. Each dot says how differently the topics in that government's column of Figure 14 behave, compared with what we get if we hand out topics to debates at random (<span data-n="tbTopicShuffles"></span> times). Above 2, the bar we set before running the test, the differences are too large to be chance. The black dot is the main test; the hollow dots repeat it in other ways, listed in the table. <strong>What to see:</strong> every government clears the bar except 2011&ndash;14, when every topic looked alike. Most of the repeats agree.</p>
+      <p class="check"><strong>Misses:</strong> different members turn up for different topics, and that can make topics look different too. Only <span data-n="tbFlips"></span> of <span data-n="tbCells"></span> squares go against their government, so the topic mostly changes how hard members fight, rarely who they fight with.</p>
+    </figcaption>
+    <details class="table-view"><summary>Show as table</summary><div id="table-topic-test" class="table-wrap"></div></details>
+  </figure>
+    </div>
+  </section>
+
   <section class="part" id="methods" data-part="5">
     <aside class="part-margin">
       <div class="part-no" aria-hidden="true">&sect;&thinsp;5</div>

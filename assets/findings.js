@@ -485,6 +485,106 @@
       { color: C.ink, shape: "line", label: "Selected: challenge partners" }, { color: C.grey, shape: "line", dash: true, label: "Selected: closest in language" }]);
   }
 
+  /* ---------- Part 4b (draft): which line do they argue across, by topic ---------- */
+  // Drawn from data/results/topic_blocs.json (topic_blocs/export_site_json.py).
+  function topicBlocsPage(T) {
+    const S = T.summary;
+    const pct = (v, d = 1) => `${(v * 100).toFixed(d)}%`;
+    setN("tbPass", S.windows_pass); setN("tbTested", S.windows_tested);
+    setN("tbFlips", S.flips); setN("tbCells", S.cells);
+    setN("tbPassOf", `${S.windows_pass} / ${S.windows_tested}`); setN("tbFlipsOf", `${S.flips} / ${S.cells}`);
+    setN("tbMatched", pct(S.edge_share_matched)); setN("tbAmbig", pct(S.edge_share_ambiguous));
+    setN("tbPolicy", pct(S.edge_share_policy, 0)); setN("tbMinEdges", fmt(S.min_edges));
+    setN("tbDebShuffles", fmt(S.debate_shuffles)); setN("tbTopicShuffles", fmt(S.topic_shuffles));
+
+    const BLOC = "#9a5b13", GOV = C.blue, MID = "#e6e2dc";   // diverging: red–blue line ← grey → government line
+    const topicLabel = Object.fromEntries(T.topics.map((t) => [t.key, t.label]));
+    const cellAt = new Map(T.cells.map((c) => [`${c.window}|${c.topic}`, c]));
+    const M = 0.25;
+    const color = (v) => { const t = Math.max(-1, Math.min(1, v / M)); return t < 0 ? d3.interpolateLab(MID, BLOC)(-t) : d3.interpolateLab(MID, GOV)(t); };
+    const lineName = (w) => (w === "bloc" ? "left against right" : "government against opposition");
+
+    /* Figure 14: heatmap, topics × governments */
+    {
+      const width = 760, left = 220, right = 12, top = 46, rowH = 32, gap = 2;
+      const colW = (width - left - right) / T.windows.length;
+      const height = top + T.topics.length * rowH + 12;
+      const svg = svgIn("fig-topic-divide", width, height);
+      T.windows.forEach((w, j) => {
+        const [year, ...parties] = w.split(" ");
+        const x = left + j * colW + colW / 2;
+        svg.append("text").attr("x", x).attr("y", 16).attr("text-anchor", "middle").attr("class", "strong").text(year);
+        svg.append("text").attr("x", x).attr("y", 32).attr("text-anchor", "middle").text(parties.join(" "));
+      });
+      T.topics.forEach((t, i) => {
+        const y = top + i * rowH;
+        svg.append("text").attr("x", left - 10).attr("y", y + rowH / 2 + 4).attr("text-anchor", "end").text(t.label);
+        T.windows.forEach((w, j) => {
+          const c = cellAt.get(`${w}|${t.key}`);
+          const x = left + j * colW;
+          if (!c) {
+            svg.append("rect").attr("x", x + gap).attr("y", y + gap).attr("width", colW - 2 * gap).attr("height", rowH - 2 * gap).attr("rx", 3)
+              .attr("fill", "none").attr("stroke", C.grid).attr("stroke-dasharray", "3 3");
+            return;
+          }
+          const tip = [`Members fought mostly ${lineName(c.winner)} (gap ${signed(c.delta, 3)})`,
+            `Left–right: modularity ${signed(c.Q_bloc, 3)} (z ${signed(c.z_bloc, 1)} vs shuffle)`,
+            `Government–opposition: modularity ${signed(c.Q_gov, 3)} (z ${signed(c.z_gov, 1)})`,
+            `${fmt(c.edges)} challenges in ${fmt(c.debates)} debates`].concat(c.flip ? ["Goes the other way from the rest of this government"] : []);
+          svg.append("rect").attr("x", x + gap).attr("y", y + gap).attr("width", colW - 2 * gap).attr("height", rowH - 2 * gap).attr("rx", 3)
+            .attr("fill", color(c.delta)).attr("stroke", c.flip ? C.ink : C.paper).attr("stroke-width", c.flip ? 2.5 : 1)
+            .attr("tabindex", 0).attr("aria-label", `${t.label}, ${w}: ${signed(c.delta, 3)}`)
+            .on("pointermove", (e) => showTip(e, `${t.label} · ${w}`, tip)).on("pointerleave", hideTip)
+            .on("focus", function () { const b = this.getBoundingClientRect(); showTip({ clientX: b.left + b.width / 2, clientY: b.top }, `${t.label} · ${w}`, tip); }).on("blur", hideTip);
+        });
+      });
+      legend("legend-topic-divide", [
+        { shape: "band", color: `linear-gradient(90deg, ${BLOC}, ${MID})`, label: "Mostly left against right" },
+        { shape: "band", color: `linear-gradient(90deg, ${MID}, ${GOV})`, label: "Mostly government against opposition" },
+        { shape: "hollow", color: C.ink, label: "Goes the other way from the rest of its government" },
+      ]);
+      makeTable(document.getElementById("table-topic-divide"),
+        ["Topic", "Government", "Challenges", "Modularity left–right", "z", "Modularity gov–opp", "z", "Gap", "Members fought mostly"],
+        T.cells.map((c) => [topicLabel[c.topic], c.window, fmt(c.edges), signed(c.Q_bloc, 3), signed(c.z_bloc, 1), signed(c.Q_gov, 3), signed(c.z_gov, 1),
+          signed(c.delta, 3), lineName(c.winner) + (c.flip ? " (flip)" : "")]), [2, 3, 4, 5, 6, 7]);
+    }
+
+    /* Figure 15: z of the between-topic spread per government, main test and checks */
+    {
+      const variants = Object.entries(T.tests).sort(([a], [b]) => (a === "main") - (b === "main"));  // main drawn last, on top
+      const width = 760, left = 140, right = 30, top = 34, rowH = 34;
+      const height = top + T.windows.length * rowH + 40;
+      const svg = svgIn("fig-topic-test", width, height);
+      const zs = variants.flatMap(([, v]) => v.rows.map((r) => r.z));
+      const x = d3.scaleLinear().domain([Math.min(-1, d3.min(zs)), Math.max(7, d3.max(zs))]).nice().range([left, width - right]);
+      svg.append("g").attr("transform", `translate(0,${top - 6})`).call(d3.axisTop(x).ticks(8).tickSize(-(T.windows.length * rowH + 6))).call((g) => g.select(".domain").remove());
+      svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top - 6).attr("y2", top + T.windows.length * rowH).attr("stroke", C.ink).attr("stroke-width", 1.2);
+      svg.append("line").attr("x1", x(2)).attr("x2", x(2)).attr("y1", top - 6).attr("y2", top + T.windows.length * rowH).attr("stroke", C.ink).attr("stroke-dasharray", "5 4");
+      svg.append("text").attr("x", (left + width - right) / 2).attr("y", height - 14).attr("text-anchor", "middle").text("How differently topics behave, compared with random topics (SDs)");
+      T.windows.forEach((w, i) => {
+        const y = top + i * rowH + rowH / 2;
+        svg.append("text").attr("x", left - 10).attr("y", y + 4).attr("text-anchor", "end").text(w);
+        variants.forEach(([key, v]) => {
+          const r = v.rows.find((row) => row.window === w);
+          if (!r) return;
+          const main = key === "main";
+          const tip = [v.label, `z ${signed(r.z, 1)}, p ${r.p.toFixed(3)}`, `${r.n_topics} topics, ${fmt(r.edges)} challenges`];
+          const g = svg.append("g").attr("tabindex", 0).attr("aria-label", `${w}, ${v.label}: z ${signed(r.z, 1)}`)
+            .on("pointermove", (e) => showTip(e, w, tip)).on("pointerleave", hideTip)
+            .on("focus", function () { const b = this.getBoundingClientRect(); showTip({ clientX: b.left + b.width / 2, clientY: b.top }, w, tip); }).on("blur", hideTip);
+          g.append("circle").attr("cx", x(r.z)).attr("cy", y).attr("r", 10).attr("fill", "transparent");
+          g.append("circle").attr("cx", x(r.z)).attr("cy", y).attr("r", main ? 6.5 : 4.5)
+            .attr("fill", main ? C.ink : C.paper).attr("stroke", main ? C.paper : C.grey).attr("stroke-width", 2);
+        });
+      });
+      legend("legend-topic-test", [{ color: C.ink, label: "Main test" }, { color: C.grey, shape: "hollow", label: "Same test done other ways (see table)" }, { color: C.ink, shape: "line", dash: true, label: "Bar set before the test: 2" }]);
+      const inOrder = Object.entries(T.tests);
+      makeTable(document.getElementById("table-topic-test"), ["Government", ...inOrder.map(([, v]) => v.label)],
+        T.windows.map((w) => [w, ...inOrder.map(([, v]) => { const r = v.rows.find((row) => row.window === w); return r ? signed(r.z, 1) : null; })]),
+        variants.map((_, i) => i + 1));
+    }
+  }
+
   /* ---------- start ---------- */
   // Each part is drawn only if its figure is on the page, and a failure in one part does not stop the others.
   const has = (id) => document.getElementById(id) !== null;
@@ -497,6 +597,7 @@
     }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-hours"));
   }
   if (has("fig-lift")) loadJSON("data/results/similarity.json").then(languagePage).catch((e) => fail(e, "fig-lift", "fig-nmi", "fig-map"));
+  if (has("fig-topic-divide")) loadJSON("data/results/topic_blocs.json").then(topicBlocsPage).catch((e) => fail(e, "fig-topic-divide", "fig-topic-test"));
 })();
 
 /* Party key: start minimised on phone-sized screens (same rule as on the main page, in site.js). */
