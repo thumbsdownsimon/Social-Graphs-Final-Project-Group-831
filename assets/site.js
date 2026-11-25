@@ -257,6 +257,10 @@
   }
 
   /* ---------- Figure 2 ---------- */
+  // Only the challenges layer is a log ratio (natural log), so only it has a factor.
+  const challengeFactor = (r) => Math.exp(Math.abs(r.change));
+  const factorText = (r) => `${challengeFactor(r).toFixed(1)}× ${r.change < 0 ? "fewer" : "more"}`;
+
   function drawLayers() {
     const order = ["challenges", "votes", "same_debate_similarity", "party_classifier"];
     const rowHeight = 92;
@@ -291,7 +295,7 @@
         .attr("stroke", COLOR.paper).attr("stroke-width", (r) => (relationClass(r.relation) === "placebo" ? 0 : 1.5))
         .style("cursor", "default")
         .on("pointermove", (event, r) => showTip(event, r.pair, [
-          `${(CLOSER[key] * r.placebo_units).toFixed(1)} placebo units`, `Raw change ${r.change.toFixed(3)}`,
+          `${(CLOSER[key] * r.placebo_units).toFixed(1)} placebo units`, `Raw change ${r.change.toFixed(3)}${key === "challenges" ? ` (${factorText(r)}, relative to chance)` : ""}`,
           `Formation ${r.transition}`, r.relation.replace("_", " "),
         ]))
         .on("pointerleave", hideTip);
@@ -302,9 +306,16 @@
       { color: COLOR.placebo, label: "Relation unchanged (placebo)" },
     ]);
     const rows = order.flatMap((k) => D.layers[k].rows.filter((r) => relationClass(r.relation) !== "placebo").map((r) => [
-      LAYER_NAMES[k], r.transition, r.pair, r.relation.replace("_", " "), r.change.toFixed(3), r.placebo_units.toFixed(1),
+      LAYER_NAMES[k], r.transition, r.pair, r.relation.replace("_", " "), r.change.toFixed(3),
+      k === "challenges" ? factorText(r) : null, r.placebo_units.toFixed(1),
     ]));
-    makeTable(document.getElementById("table-layers"), ["Layer", "Formation", "Pair", "Relation", "Raw change", "Placebo units"], rows, [4, 5]);
+    makeTable(document.getElementById("table-layers"), ["Layer", "Formation", "Pair", "Relation", "Raw change", "Factor", "Placebo units"], rows, [4, 5, 6]);
+    const range = (relation) => {
+      const f = D.layers.challenges.rows.filter((r) => r.relation === relation).map(challengeFactor);
+      return `${d3.min(f).toFixed(1)} to ${d3.max(f).toFixed(1)} times`;
+    };
+    setNumber("factorJoined", range("joined"));
+    setNumber("factorEntered", range("both_entered"));
   }
 
   function hash(text) {
