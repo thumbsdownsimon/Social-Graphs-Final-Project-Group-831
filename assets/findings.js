@@ -520,7 +520,7 @@
     const cellAt = new Map(T.cells.map((c) => [`${c.window}|${c.topic}`, c]));
     const M = 0.25;
     const color = (v) => { const t = Math.max(-1, Math.min(1, v / M)); return t < 0 ? d3.interpolateLab(MID, BLOC)(-t) : d3.interpolateLab(MID, GOV)(t); };
-    const lineName = (w) => (w === "bloc" ? "left against right" : "government against opposition");
+    const lineName = (w) => (w === "bloc" ? "against opposing bloc" : "government against opposition");
 
     /* Figure 14: heatmap, topics × governments */
     {
@@ -557,7 +557,7 @@
         });
       });
       legend("legend-topic-divide", [
-        { shape: "band", color: `linear-gradient(90deg, ${BLOC}, ${MID})`, label: "Mostly left against right" },
+        { shape: "band", color: `linear-gradient(90deg, ${BLOC}, ${MID})`, label: "Mostly against opposing bloc" },
         { shape: "band", color: `linear-gradient(90deg, ${MID}, ${GOV})`, label: "Mostly government against opposition" },
         { shape: "hollow", color: C.ink, label: "Goes the other way from the rest of its government" },
       ]);
