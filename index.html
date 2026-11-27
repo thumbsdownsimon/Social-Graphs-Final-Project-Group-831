@@ -82,7 +82,7 @@
   </section>
 
   <div class="pending" id="label-banner" hidden>
-    <span class="wlf-stamp">Not yet checked</span>
+    <span class="wlf-stamp">Not checked by hand</span>
     <p id="label-banner-text"></p>
   </div>
 
@@ -92,11 +92,11 @@
     <ol>
       <li><a href="#main-finding"><span class="toc-no">&sect;&thinsp;1</span><span class="toc-title">Coalition partners stop challenging each other</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 1&ndash;5</span></a>
         <p>When parties enter government together, challenges between them fall, and return when they split. The expected result, measured.</p></li>
-      <li><a href="#settings"><span class="toc-no">&sect;&thinsp;2</span><span class="toc-title">Same member, different setting</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 6&ndash;9</span></a>
+      <li><a href="#settings"><span class="toc-no">&sect;&thinsp;2</span><span class="toc-title">Same member, different setting</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 6&ndash;8</span></a>
         <p>Compared with themselves in a routine bill debate, members are harsher in question time and friendlier in party-leader debates.</p></li>
-      <li><a href="#talk-alike"><span class="toc-no">&sect;&thinsp;3</span><span class="toc-title">Talk alike, fight alike</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 10&ndash;12</span></a>
+      <li><a href="#talk-alike"><span class="toc-no">&sect;&thinsp;3</span><span class="toc-title">Talk alike, fight alike</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 9&ndash;11</span></a>
         <p>Members from different parties who talk about the same things challenge each other far more. Language groups members by policy area, not party.</p></li>
-      <li><a href="#late-night"><span class="toc-no">&sect;&thinsp;4</span><span class="toc-title">The late-night effect</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 13</span></a>
+      <li><a href="#late-night"><span class="toc-no">&sect;&thinsp;4</span><span class="toc-title">The late-night effect</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig">Fig. 12</span></a>
         <p>Tone barely moves through the day and evening, then turns harsher after midnight on average.</p></li>
       <li><a href="#methods"><span class="toc-no">&sect;&thinsp;5</span><span class="toc-title">Methods and data</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-fig"></span></a>
         <p>Data, limitations, how we checked our own work, and how to reproduce it.</p></li>
@@ -146,10 +146,12 @@
     <div class="legend" id="legend-layers"></div>
     <div id="fig-layers" class="chart"></div>
     <figcaption>
-      <p><strong>Plotted:</strong> each dot is one party pair at one change of government. Position is how far that pair's change stands from pairs whose relation did not change at the same formation, in units of their spread, with right meaning "closer". <strong>Compared with:</strong> the grey dots, those unchanged pairs, which act as a placebo for anything that shifted the whole chamber. <strong>What to see:</strong> blue dots to the right and red to the left, most sharply for challenges.</p>
+      <p><strong>Plotted:</strong> each dot is one party pair at one change of government. Position is how far that pair's change stands from pairs whose relation did not change at the same formation, in units of their spread, with right meaning "closer". <strong>Compared with:</strong> the grey dots, those unchanged pairs, which act as a placebo for anything that shifted the whole chamber. <strong>What to see:</strong> blue dots to the right and red to the left, most sharply for challenges. Each row gives how many pairs moved the expected way and their mean effect in placebo units (positive means the expected way).</p>
       <p class="check"><strong>Check:</strong> a permutation test shuffles which pairs count as joined or split within each formation (<span data-n="permutations"></span> shuffles). Challenges also hold among backbenchers only (<span data-n="backbench"></span>) and following the same members across the change (<span data-n="panel"></span>). <strong>Misses:</strong> rows use different units, so compare each row with its own grey dots, not row with row. Only 2022 joined former main rivals, so S&ndash;V alone is one case: there, similarity barely moved (<span data-n="svSimilarity"></span> placebo units). 2026 is left out because its window is too thin.</p>
     </figcaption>
-    <details class="table-view"><summary>Show as table</summary><div id="table-layers" class="table-wrap"></div></details>
+    <details class="table-view"><summary>Show as table</summary><div id="table-layers" class="table-wrap"></div>
+      <p>For challenges, the raw change is a natural log: challenges relative to chance after the formation, divided by the same before it. <em>Factor</em> is that change without the log. <em>Joined</em>: one party was in the previous government and the other was not (<span data-n="factorJoined"></span> fewer challenges). <em>Both entered</em>: neither was in the previous government (<span data-n="factorEntered"></span> fewer). The chart shows both as &ldquo;Entered government together&rdquo;. The other layers use other units, so they have no factor.</p>
+      <p>A placebo unit is the spread (standard deviation) of the pairs whose relation did not change at the same formation. Over the <span data-n="chalPairs"></span> pairs that joined or split, challenges moved <strong><span data-n="chalMean"></span> placebo units</strong> on average in the expected direction (median <span data-n="chalMedian"></span>, from <span data-n="chalRange"></span>): the mean of the <em>Placebo units</em> column for floor challenges, without the minus signs. One-sided permutation test within formations: <span data-n="chalP"></span>.</p></details>
   </figure>
 
   <!-- ===== Figure 3 ===== -->
@@ -174,14 +176,14 @@
     <div id="fig-matrix" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> challenges from each row party to each column party, as a ratio to what the same-debate shuffle expects. Government parties are marked &#9733;. <strong>Compared with:</strong> 1 (grey) means as often as chance. Cells expecting under 5 challenges are left blank. <strong>What to see:</strong> pale or blue blocks where government parties meet each other, and a blue diagonal: members rarely challenge their own party.</p>
-      <p class="check"><strong>Check:</strong> assortativity by party is <span data-n="assortParty"></span> and by government side <span data-n="assortSide"></span> in this period; shuffling labels across members gives <span data-n="assortNull"></span>. Negative means members challenge across lines more than chance. <strong>Misses:</strong> challenges are not all hostile. How many are is what the hand-labeled tone sheet is meant to show.</p>
+      <p class="check"><strong>Check:</strong> assortativity by party is <span data-n="assortParty"></span> and by government side <span data-n="assortSide"></span> in this period; shuffling labels across members gives <span data-n="assortNull"></span>. Negative means members challenge across lines more than chance. <strong>Misses:</strong> challenges are not all hostile. Of the 60 we labelled by hand, 17 were.</p>
     </figcaption>
   </figure>
 
 
-  <!-- ===== Figure 5 ===== -->
+  <!-- ===== Figure 5a ===== -->
   <figure class="wlf-card fig" id="explore">
-    <div class="wlf-case-no">Figure 5 &middot; Explore the members, layer by layer</div>
+    <div class="wlf-case-no">Figure 5a &middot; Explore the members, layer by layer</div>
     <h3 id="net-title">The network is organised by policy area, not party</h3>
     <div class="controls">
       <label for="net-layer">Layer</label><select id="net-layer">
@@ -226,7 +228,7 @@
     <div id="fig-compare" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> for each government, the rank correlation (Spearman) over every pair of seated members between how many challenges the pair exchanged (both ways) and how much their committee seats overlap (Jaccard). <strong>Compared with:</strong> 0, where sharing committees says nothing about who challenges whom. <strong>What to see:</strong> the correlation is positive in every government, between 0.15 and 0.21. Pairs who share more committees exchange more challenges, but committee overlap explains only a small part of who challenges whom.</p>
-      <p class="check"><strong>Check:</strong> the table below describes each layer's drawn network in Figure 5 for the government chosen there. NMI compares its Louvain communities with party (1 means the communities are the parties). Assortativity is above 0 when lines join members of the same party or side more often than chance. <strong>Misses:</strong> most pairs never challenge each other, so the correlation rests on the minority that do. Committee seats follow policy area, and so do debates, so this does not separate &ldquo;meet in committee, then clash on the floor&rdquo; from &ldquo;work on the same subject&rdquo;.</p>
+      <p class="check"><strong>Check:</strong> the table below describes each layer's drawn network in Figure 5a for the government chosen there. NMI compares its Louvain communities with party (1 means the communities are the parties). Assortativity is above 0 when lines join members of the same party or side more often than chance. <strong>Misses:</strong> most pairs never challenge each other, so the correlation rests on the minority that do. Committee seats follow policy area, and so do debates, so this does not separate &ldquo;meet in committee, then clash on the floor&rdquo; from &ldquo;work on the same subject&rdquo;.</p>
     </figcaption>
     <details class="table-view" open><summary>Network statistics per layer</summary><div id="table-layer-stats" class="table-wrap"></div></details>
   </figure>
@@ -271,7 +273,7 @@
       </div>
     </aside>
     <div class="part-body">
-      <p class="part-question">Does the same member of parliament sound different depending on where they speak?</p>
+      <p class="part-question">Do members sound different depending on the kind of debate?</p>
       <p class="part-finding">Yes. Judged by the words they use, the same members are harsher in question time and in the final readings of bills than in a routine bill debate, and friendlier in the televised party-leader debates. Some members change far more than others.</p>
   <section class="wlf-card define" aria-labelledby="tone-title">
     <div class="wlf-case-no">How we measure it</div>
@@ -308,7 +310,7 @@
     <div id="fig-settings" class="chart"></div>
     <figcaption>
       <p><strong>Plotted:</strong> for each setting, the average over members of their tone there minus their own tone in a routine first reading of a government bill. The line is a 95% interval from resampling members. <strong>Compared with:</strong> the members themselves (the reference row at 0). <strong>What to see:</strong> minister question time (<span data-n="qtTone"></span>), PM question time (<span data-n="pmTone"></span>) and final readings (<span data-n="finalTone"></span>) sit to the left; party-leader debates (<span data-n="leaderTone"></span>) to the right.</p>
-      <p class="check"><strong>Check:</strong> shuffling the setting labels among each member's own turns (<span data-n="setShuffles"></span> times) gives the z-scores in the table, and Figure 9 repeats the comparison with a different tone method. <strong>Misses:</strong> settings differ in format and topic as well as audience. Question time consists of questions, which carry fewer polite words, and a word list cannot see sarcasm or who a word is aimed at. Only party leaders speak in party-leader debates, so that row rests on few members.</p>
+      <p class="check"><strong>Check:</strong> shuffling the setting labels among each member's own turns (<span data-n="setShuffles"></span> times) gives the z-scores in the table. <strong>Misses:</strong> settings differ in format and topic as well as audience. Question time consists of questions, which carry fewer polite words, and a word list cannot see sarcasm or who a word is aimed at. Only party leaders speak in party-leader debates, so that row rests on few members.</p>
     </figcaption>
     <details class="table-view"><summary>Show as table</summary><div id="table-settings" class="table-wrap"></div></details>
   </figure>
@@ -335,16 +337,6 @@
       <p class="check"><strong>Misses:</strong> the big debates cover everything, while a first reading covers one bill, so part of a member's change can be topic. A member's role matters too: spokespersons and party leaders dominate the big debates.</p>
     </figcaption>
     <details class="table-view"><summary>All ranked members</summary><div id="table-chameleons" class="table-wrap"></div></details>
-  </figure>
-
-  <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 9 &middot; Second method</div>
-    <h3>A contextual sentiment model ranks the settings much like the word list</h3>
-    <div id="fig-methods" class="chart"></div>
-    <figcaption>
-      <p><strong>Plotted:</strong> each dot is a setting. Across: its mean tone from the adapted word list. Up: the mean score of a multilingual sentiment model (a fine-tuned DistilBERT, P(positive) &minus; P(negative)) on <span data-n="modelTurns"></span> turns sampled evenly across settings. <strong>What to see:</strong> dots along a rising line. Rank correlation across settings: <span data-n="rhoSettings"></span>; across single turns: <span data-n="rhoTurns"></span>.</p>
-      <p class="check"><strong>Misses:</strong> the model was not trained on parliamentary speech and reads only the first 256 word pieces of a turn. This compares raw setting means, not members against themselves.</p>
-    </figcaption>
   </figure>
 
   <details class="table-view wlf-card"><summary>The settings: turns, members and raw means</summary><div id="table-overview" class="table-wrap"></div></details>
@@ -397,7 +389,7 @@
   </section>
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 10 &middot; Shared turf</div>
+    <div class="wlf-case-no">Figure 9 &middot; Shared turf</div>
     <h3>The more alike two members from different parties talk, the more they challenge each other</h3>
     <div class="controls"><label for="method-select">Similarity</label><select id="method-select"></select></div>
     <div class="legend" id="legend-lift"></div>
@@ -410,19 +402,19 @@
   </figure>
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 11 &middot; Two networks, one structure</div>
+    <div class="wlf-case-no">Figure 10 &middot; Two networks, one structure</div>
     <h3>Groups found from language match the challenge network, not the parties</h3>
     <div class="legend" id="legend-nmi"></div>
     <div id="fig-nmi" class="chart"></div>
     <figcaption>
-      <p><strong>Plotted:</strong> for each government period, a language network that links every member to the <span data-n="k"></span> members they talk most like, split into communities with Louvain. Each dot is the normalised mutual information (NMI) between those communities and either party or the communities of the challenge network. <strong>Compared with:</strong> the same NMI with shuffled labels (grey ticks). <strong>What to see:</strong> language communities match party no better than chance (<span data-n="simNmiParty"></span> against <span data-n="simNmiPartyNull"></span>), but match the challenge communities clearly (<span data-n="nmiChallenge"></span> against <span data-n="nmiChallengeNull"></span>).</p>
+      <p><strong>Plotted:</strong> for each government period, a language network that links every member to the <span data-n="k"></span> members they talk most like, split into communities with Louvain. Each dot is the normalised mutual information (NMI) between those communities and either party or the communities of the challenge network. <strong>Compared with:</strong> the same NMI with shuffled labels (the tick in the dot's colour: orange for party, purple for challenges). <strong>What to see:</strong> language communities match party no better than chance (<span data-n="simNmiParty"></span> against <span data-n="simNmiPartyNull"></span>), but match the challenge communities clearly (<span data-n="nmiChallenge"></span> against <span data-n="nmiChallengeNull"></span>).</p>
       <p class="check"><strong>Check:</strong> the language communities are stable across 10 Louvain seeds (NMI <span data-n="simStability"></span>). <strong>Misses:</strong> the profiles are dominated by topic. A classifier trained to tell parties apart can still do so (Figure 2); this measures what members talk about, not how.</p>
     </figcaption>
     <details class="table-view"><summary>Show as table</summary><div id="table-nmi" class="table-wrap"></div></details>
   </figure>
 
   <figure class="wlf-card fig" id="map">
-    <div class="wlf-case-no">Figure 12 &middot; Explore the language map</div>
+    <div class="wlf-case-no">Figure 11 &middot; Explore the language map</div>
     <h3>Where members sit by what they talk about</h3>
     <div class="controls">
       <label for="map-window">Government</label><select id="map-window"></select>
@@ -436,7 +428,7 @@
     </div>
     <figcaption>
       <p><strong>Plotted:</strong> each member's embedding profile in one government period, laid out in two dimensions with t-SNE, so members who talk alike sit close together. Size shows challenges made and received; colour shows government or opposition. <strong>What to see:</strong> click a member. Their challenge partners (solid lines) are often their language neighbours (dashed lines), from other parties.</p>
-      <p class="check"><strong>Misses:</strong> t-SNE keeps neighbours close but distorts distances between groups, so the size of a gap between clusters means nothing. This map is for exploring; the evidence is Figures 10 and 11.</p>
+      <p class="check"><strong>Misses:</strong> t-SNE keeps neighbours close but distorts distances between groups, so the size of a gap between clusters means nothing. This map is for exploring; the evidence is Figures 9 and 10.</p>
     </figcaption>
   </figure>
 
@@ -467,7 +459,7 @@
 
 
   <figure class="wlf-card fig">
-    <div class="wlf-case-no">Figure 13 &middot; By the clock</div>
+    <div class="wlf-case-no">Figure 12 &middot; By the clock</div>
     <h3>Tone barely moves through the day and evening, then drops after midnight on average</h3>
     <div class="controls"><label for="hour-measure">Measure</label><select id="hour-measure"></select></div>
     <div class="legend" id="legend-hours"></div>
@@ -506,7 +498,7 @@
     <ul class="limits">
       <li><strong>Few events.</strong> Six formations, and party pairs within one are not independent. Only 2022 joined two former main rivals, and the 2026 government is too recent to test.</li>
       <li><strong>The network is rule-based.</strong> An edge means the chair called a short remark and another member spoke next. Later short remarks announced differently are missed, and spoken question time is not included. <span id="precision-text"></span></li>
-      <li><strong>A challenge is not always hostile.</strong> We count who addresses whom, not tone, until the hand labels are in. Fewer challenges could also reflect what gets negotiated in private, which this data cannot see.</li>
+      <li><strong>A challenge is not always hostile.</strong> The network counts who addresses whom, whatever the tone; of the 60 challenges we labelled by hand, 17 were hostile. Fewer challenges could also reflect what gets negotiated in private, which this data cannot see.</li>
       <li><strong>"Government" is not the whole alignment.</strong> Support parties outside government count as opposition here, though they often vote with it.</li>
       <li><strong>Language methods disagree.</strong> Same-debate similarity shows a shift; the party classifier does not (<span data-n="classifierResult"></span>). We report both.</li>
       <li><strong>Absence is not a position.</strong> About <span data-n="absent"></span> of vote rows are absences. We did not verify why, and never treat them as disagreement. <span data-n="noRows"></span> votes since 2017 have no individual rows at all.</li>

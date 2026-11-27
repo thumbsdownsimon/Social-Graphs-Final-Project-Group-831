@@ -120,7 +120,7 @@
     setNumber("recount", `${rc.s_v_challenges.raw_xml.before} and ${rc.s_v_challenges.raw_xml.after} from raw XML, against ${rc.s_v_challenges.pipeline.before} and ${rc.s_v_challenges.pipeline.after} from the pipeline, for backbench challenges before and after 2022`);
     setNumber("recountVotes", `S and V majorities matched on ${pct(rc.s_v_votes.from_member_votes)} of ${fmt(rc.s_v_votes.votes)} votes`);
     setNumber("permutations", "20,000");
-    const variantText = (v) => `${v.right_direction} of ${v.pairs_tested} pairs in the expected direction, ${pText(v.p_one_sided)}`;
+    const variantText = (v) => `${v.right_direction} of ${v.pairs_tested} pairs in the expected direction, mean effect ${v.mean_effect_in_placebo_sd.toFixed(1)} placebo units, ${pText(v.p_one_sided)}`;
     setNumber("backbench", variantText(D.variants.challenges_backbench_only));
     setNumber("panel", variantText(D.variants.challenges_same_members_panel));
     const svSim = layers.same_debate_similarity.rows.find((r) => r.pair === "S-V" && r.transition === "2022-12-15");
@@ -157,15 +157,15 @@
     if (precision.status !== "labeled") {
       // State what was and was not checked by hand, rather than a count of unfinished sheets.
       const tone = stance.n
-        ? `Tone was checked against ${stance.n} hand-labelled short remarks by one labeller (Part 2).`
-        : "Tone has not been checked against hand labels either.";
+        ? `We did check tone, against ${stance.n} short remarks labelled by one person (Part 2).`
+        : "We did not check tone against hand labels either.";
       banner.hidden = false;
       document.getElementById("label-banner-text").textContent =
-        `The rule that finds challenges in the transcripts has not been checked against hand labels, so its error rate is unknown; read the network results with that in mind. ${tone}`;
+        `We did not check the rule that finds challenges in the transcripts against hand labels, so its error rate is unknown; read the network results with that in mind. ${tone}`;
     }
     document.getElementById("precision-text").textContent = precision.status === "labeled"
       ? `In our hand-labeled sample, ${precision.yes} of ${precision.n} edges were real challenges to the floor speaker (95% CI ${precision.ci95[0]}–${precision.ci95[1]}).`
-      : "Its accuracy against the group's hand labels is still pending.";
+      : "We did not check the rule against hand labels, so how often it is wrong, and how many challenges it misses, is unknown.";
   }
 
   /* ---------- Figure 1 ---------- */
@@ -257,11 +257,16 @@
   }
 
   /* ---------- Figure 2 ---------- */
+  // Only the challenges layer is a log ratio (natural log), so only it has a factor.
+  const challengeFactor = (r) => Math.exp(Math.abs(r.change));
+  const factorText = (r) => `${challengeFactor(r).toFixed(1)}× ${r.change < 0 ? "fewer" : "more"}`;
+
   function drawLayers() {
     const order = ["challenges", "votes", "same_debate_similarity", "party_classifier"];
     const rowHeight = 92;
     const frame = svgFor("fig-layers", order.length * rowHeight + 46, { top: 8, right: 12, bottom: 38, left: 12 });
     const { svg, inner } = frame;
+    const narrow = frame.width < 560;  // too narrow for the row title and its result on one line
     const all = order.flatMap((k) => D.layers[k].rows.map((r) => CLOSER[k] * r.placebo_units));
     const limit = Math.min(18, Math.ceil(d3.max(all, Math.abs)));
     const x = d3.scaleLinear().domain([-limit, limit]).range([inner.left, inner.right]).clamp(true);
@@ -276,7 +281,7 @@
       const layer = D.layers[key];
       const s = layer.summary;
       svg.append("text").attr("class", "title").attr("x", inner.left).attr("y", y0 + 16).text(LAYER_NAMES[key]);
-      svg.append("text").attr("x", inner.right).attr("y", y0 + 16).attr("text-anchor", "end").text(`${s.right_direction} of ${s.pairs_tested} · ${pText(s.p_one_sided)}`);
+      svg.append("text").attr("x", narrow ? inner.left : inner.right).attr("y", y0 + (narrow ? 30 : 16)).attr("text-anchor", narrow ? "start" : "end").text(`${s.right_direction} of ${s.pairs_tested} · mean effect ${s.mean_effect_in_placebo_sd.toFixed(2)} · ${pText(s.p_one_sided)}`);
       const rows = [...layer.rows].sort((a, b) => (relationClass(a.relation) === "placebo" ? -1 : 1) - (relationClass(b.relation) === "placebo" ? -1 : 1));
       svg.selectAll(null).data(rows).join("circle")
         .attr("cx", (r) => x(CLOSER[key] * r.placebo_units))
@@ -291,7 +296,7 @@
         .attr("stroke", COLOR.paper).attr("stroke-width", (r) => (relationClass(r.relation) === "placebo" ? 0 : 1.5))
         .style("cursor", "default")
         .on("pointermove", (event, r) => showTip(event, r.pair, [
-          `${(CLOSER[key] * r.placebo_units).toFixed(1)} placebo units`, `Raw change ${r.change.toFixed(3)}`,
+          `${(CLOSER[key] * r.placebo_units).toFixed(1)} placebo units`, `Raw change ${r.change.toFixed(3)}${key === "challenges" ? ` (${factorText(r)}, relative to chance)` : ""}`,
           `Formation ${r.transition}`, r.relation.replace("_", " "),
         ]))
         .on("pointerleave", hideTip);
@@ -302,9 +307,23 @@
       { color: COLOR.placebo, label: "Relation unchanged (placebo)" },
     ]);
     const rows = order.flatMap((k) => D.layers[k].rows.filter((r) => relationClass(r.relation) !== "placebo").map((r) => [
-      LAYER_NAMES[k], r.transition, r.pair, r.relation.replace("_", " "), r.change.toFixed(3), r.placebo_units.toFixed(1),
+      LAYER_NAMES[k], r.transition, r.pair, r.relation.replace("_", " "), r.change.toFixed(3),
+      k === "challenges" ? factorText(r) : null, r.placebo_units.toFixed(1),
     ]));
-    makeTable(document.getElementById("table-layers"), ["Layer", "Formation", "Pair", "Relation", "Raw change", "Placebo units"], rows, [4, 5]);
+    makeTable(document.getElementById("table-layers"), ["Layer", "Formation", "Pair", "Relation", "Raw change", "Factor", "Placebo units"], rows, [4, 5, 6]);
+    const range = (relation) => {
+      const f = D.layers.challenges.rows.filter((r) => r.relation === relation).map(challengeFactor);
+      return `${d3.min(f).toFixed(1)} to ${d3.max(f).toFixed(1)} times`;
+    };
+    setNumber("factorJoined", range("joined"));
+    setNumber("factorEntered", range("both_entered"));
+    const cs = D.layers.challenges.summary;
+    const effects = D.layers.challenges.rows.filter((r) => relationClass(r.relation) !== "placebo").map((r) => Math.abs(r.placebo_units));
+    setNumber("chalPairs", cs.pairs_tested);
+    setNumber("chalMean", cs.mean_effect_in_placebo_sd.toFixed(1));
+    setNumber("chalMedian", cs.median_effect.toFixed(1));
+    setNumber("chalRange", `${d3.min(effects).toFixed(1)} to ${d3.max(effects).toFixed(1)}`);
+    setNumber("chalP", pText(cs.p_one_sided));
   }
 
   function hash(text) {
@@ -414,7 +433,7 @@
     setNumber("assortNull", `${w.party_assortativity.null_mean.toFixed(3)} ± ${w.party_assortativity.null_sd.toFixed(3)} and ${w.side_assortativity.null_mean.toFixed(3)} ± ${w.side_assortativity.null_sd.toFixed(3)}`);
   }
 
-  /* ---------- Figure 5: one member network per layer (data/layers.json, archetypes/run_layers.py) ---------- */
+  /* ---------- Figure 5a: one member network per layer (data/layers.json, archetypes/run_layers.py) ---------- */
   let L = null;
   let selected = null;
   const TONE = { hostile: "#c4661f", neutral: "#a39a8c", friendly: "#2f7d4f" };
@@ -812,8 +831,8 @@
       Object.entries(em.groups_by_window).map(([w, v]) => [w, fmt(v.challenges), ...groups.map((g) => pct(v[g], 1))]), groups.map((_, i) => i + 1));
     const check = L.tone.hand_labels || {};
     setNumber("toneCheck", check.status === "labeled"
-      ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so read the colours as harsher or friendlier than usual, not as a verdict on single remarks.`
-      : `It is not validated yet: the group's hand-labelled tone sheet (labeling/challenge_stance.csv) is ${check.status || "missing"}.`);
+      ? `Checked against ${check.rows} challenges hand-labelled by one member of the group, the three categories agree with the hand label on only ${pct(check.accuracy)}, less than always answering "${check.majority_label}" (${pct(check.majority_baseline)}): DeepMoji calls many neutral remarks friendly. Its underlying score does put remarks in the right order (hostile against the rest: AUC ${check.auc_hostile.toFixed(2)}; Spearman ${check.spearman.toFixed(2)} with the labels, p = ${check.spearman_p.toFixed(3)}), so it is used to compare the average tone of groups of challenges, not to label single challenges.`
+      : "We did not check it against hand labels.");
     makeTable(document.getElementById("table-layer-defs"), ["Layer", "What a line represents", "Edge property"],
       Object.entries(L.layers).map(([k, v]) => [`${k}. ${v.name}`, v.edge, v.property]));
   }

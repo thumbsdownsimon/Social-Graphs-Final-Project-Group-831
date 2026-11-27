@@ -40,6 +40,7 @@
       const span = document.createElement("span");
       const mark = document.createElement("i");
       if (it.shape === "line") { mark.className = "line"; mark.style.background = it.color; if (it.dash) mark.style.background = `repeating-linear-gradient(90deg, ${it.color} 0 4px, transparent 4px 7px)`; }
+      else if (it.shape === "tick") { mark.className = "tick-mark"; mark.style.background = it.color; }
       else if (it.shape === "hollow") { mark.style.border = `2px solid ${it.color}`; mark.style.background = "transparent"; }
       else if (it.shape === "band") { mark.className = "ramp"; mark.style.width = "22px"; mark.style.background = it.color; }
       else mark.style.background = it.color;
@@ -137,13 +138,13 @@
     if (!el) return;
     const s = labels && labels.challenge_stance;
     if (!s || s.status === "not labeled yet" || !s.tone_measures) {
-      el.innerHTML = `<span class="wlf-stamp">Validation pending</span> <p>The group has not finished hand-labelling the tone of the 60 sampled short remarks yet, so these tone measures are <strong>not yet checked against human judgement</strong>. Read the results as provisional.</p>`;
+      el.innerHTML = `<span class="wlf-stamp">Not checked by hand</span> <p>We <strong>did not check these tone measures against human judgement</strong>. Read the results with that in mind.</p>`;
       return;
     }
     const names = { afinn_raw: "AFINN, unchanged", afinn_adapted_rate: "AFINN adapted (used here)", model: "Multilingual sentiment model" };
     const rows = Object.entries(s.tone_measures).map(([k, v]) => [names[k] || k, v.spearman ?? "–",
       v.mean_by_label ? (v.mean_by_label.hostile ?? "–") : "–", v.mean_by_label ? (v.mean_by_label.neutral ?? "–") : "–", v.mean_by_label ? (v.mean_by_label.friendly ?? "–") : "–"]);
-    el.innerHTML = `<p><strong>Checked against ${s.n} hand-labelled short remarks</strong> (${Object.entries(s.distribution).map(([k, v]) => `${v} ${k}`).join(", ")}). Spearman correlation with the labels (hostile −1, neutral 0, friendly +1), and each measure's mean score within each label. ${typeof s.cohen_kappa === "number" ? `Agreement between two labellers: Cohen's κ = ${s.cohen_kappa}.` : "One labeller so far, so labeller agreement is not yet known."}</p><div class="table-wrap" id="tone-validation-table"></div>`;
+    el.innerHTML = `<p><strong>Checked against ${s.n} hand-labelled short remarks</strong> (${Object.entries(s.distribution).map(([k, v]) => `${v} ${k}`).join(", ")}). Spearman correlation with the labels (hostile −1, neutral 0, friendly +1), and each measure's mean score within each label.${typeof s.cohen_kappa === "number" ? ` Agreement between two labellers: Cohen's κ = ${s.cohen_kappa}.` : ""}</p><div class="table-wrap" id="tone-validation-table"></div>`;
     makeTable(document.getElementById("tone-validation-table"), ["Measure", "Spearman", "Mean, hostile", "Mean, neutral", "Mean, friendly"], rows, [1, 2, 3, 4]);
     const used = s.tone_measures.afinn_adapted_rate, raw = s.tone_measures.afinn_raw;
     if (used && used.spearman != null) {
@@ -213,8 +214,6 @@
       sideRows.map((r) => [r.level, signed(r.gov.effect), r.gov.members, signed(r.opp.effect), r.opp.members]), [1, 2, 3, 4]);
 
     drawChameleons(S);
-    if (S.second_method) drawMethods(S.second_method);
-    else document.getElementById("fig-methods").innerHTML = '<p class="wlf-muted">The second method has not been run yet.</p>';
     makeTable(document.getElementById("table-overview"), ["Setting", "Turns", "Members", "Words", "Tone", "Negative", "Positive", "Questions"],
       S.settings.map((r) => [r.setting, fmt(r.turns), r.members, fmt(r.words), r.tone.toFixed(2), r.negativity.toFixed(2), r.positivity.toFixed(2), r.questions.toFixed(2)]), [1, 2, 3, 4, 5, 6, 7]);
     toneValidation(labels);
@@ -274,25 +273,6 @@
     legend("legend-chameleons", [{ color: C.blue, label: "Friendlier in big debates" }, { color: C.red, label: "Harsher in big debates" }, { color: C.ink, shape: "hollow", label: "Hollow: |z| < 2" }]);
     makeTable(document.getElementById("table-chameleons"), ["Member", "Party", "Big-debate turns", "Routine turns", "Big-debate tone", "Routine tone", "Difference", "z"],
       [...all].sort((a, b) => Math.abs(b.z) - Math.abs(a.z)).map((r) => [r.name, r.party, r.flagship_turns, r.routine_turns, signed(r.flagship_tone), signed(r.routine_tone), signed(r.difference), r.z]), [2, 3, 4, 5, 6, 7]);
-  }
-
-  function drawMethods(M) {
-    setN("rhoSettings", M.spearman_setting_means.toFixed(2));
-    setN("rhoTurns", M.spearman_turn_level.toFixed(2));
-    setN("modelTurns", fmt(M.turns_scored));
-    const width = 760, height = 420, m = { l: 70, r: 30, t: 20, b: 50 };
-    const svg = svgIn("fig-methods", width, height);
-    const x = d3.scaleLinear().domain(d3.extent(M.by_setting, (d) => d.tone)).nice().range([m.l, width - m.r]);
-    const y = d3.scaleLinear().domain(d3.extent(M.by_setting, (d) => d.model)).nice().range([height - m.b, m.t]);
-    svg.append("g").attr("transform", `translate(0,${height - m.b})`).call(d3.axisBottom(x).ticks(6).tickSize(-(height - m.t - m.b)));
-    svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(width - m.l - m.r)));
-    svg.append("text").attr("x", (m.l + width - m.r) / 2).attr("y", height - 10).attr("text-anchor", "middle").text("Adapted AFINN tone (mean per setting)");
-    svg.append("text").attr("transform", `translate(16,${(height - m.b + m.t) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("Model score, P(pos) − P(neg)");
-    M.by_setting.forEach((d) => {
-      svg.append("circle").attr("cx", x(d.tone)).attr("cy", y(d.model)).attr("r", 6).attr("fill", C.ink).attr("stroke", C.paper).attr("stroke-width", 2)
-        .on("pointermove", (e) => showTip(e, d.setting, [`AFINN tone ${d.tone.toFixed(2)}`, `Model ${d.model.toFixed(3)}`, `${d.turns} sampled turns`])).on("pointerleave", hideTip);
-      svg.append("text").attr("x", x(d.tone) + 9).attr("y", y(d.model) + 4).attr("font-size", 11).text(d.setting);
-    });
   }
 
   /* ---------- Part 4: the late-night effect ---------- */
@@ -408,23 +388,40 @@
       L.rivals.map((r) => [r.window, `${r.a} (${r.party_a})`, `${r.b} (${r.party_b})`, r.challenges, r.expected_window, r.expected_debate, `${Math.round(r.similarity_percentile * 100)}%`]), [3, 4, 5, 6]);
   }
 
+  // One colour per comparison: its dot (real labels) and its tick (shuffled labels) share it.
+  const NMI_COLOR = { party: "#b8651b", challenge: "#6b4fa3" };
+
   function drawNmi(windows) {
-    const width = 760, rowH = 30, left = 140, right = 30, top = 34, height = top + windows.length * rowH + 34;
+    const width = 760, rowH = 34, left = 140, right = 30, top = 34, height = top + windows.length * rowH + 58;
     const svg = svgIn("fig-nmi", width, height);
     const x = d3.scaleLinear().domain([0, Math.max(0.6, d3.max(windows, (w) => w.nmi_language_challenge) * 1.1)]).range([left, width - right]);
     svg.append("g").attr("transform", `translate(0,${top - 6})`).call(d3.axisTop(x).ticks(6).tickSize(-(windows.length * rowH + 6))).call((g) => g.select(".domain").remove());
     windows.forEach((w, i) => {
       const yy = top + i * rowH + rowH / 2;
       svg.append("text").attr("x", left - 10).attr("y", yy + 4).attr("text-anchor", "end").text(w.window);
-      [[w.nmi_language_party_null, w.nmi_language_party, false, "party"], [w.nmi_language_challenge_null, w.nmi_language_challenge, true, "challenge communities"]].forEach(([nul, val, filled, label]) => {
-        svg.append("line").attr("x1", x(nul)).attr("x2", x(nul)).attr("y1", yy - 7).attr("y2", yy + 7).attr("stroke", C.grey).attr("stroke-width", 2);
-        svg.append("circle").attr("cx", x(val)).attr("cy", yy).attr("r", 6).attr("fill", filled ? C.ink : C.paper).attr("stroke", C.ink).attr("stroke-width", 2)
-          .on("pointermove", (e) => showTip(e, `${w.window}: language communities vs ${label}`, [`NMI ${val}`, `Shuffled labels: ${nul}`, `${w.members} members, ${w.language_communities} language communities`])).on("pointerleave", hideTip);
-        if (i === 0) svg.append("text").attr("x", x(val)).attr("y", yy - 11).attr("text-anchor", "middle").attr("class", "strong").text(filled ? "vs challenges" : "vs party");
+      const series = [
+        { key: "party", label: "party", val: w.nmi_language_party, nul: w.nmi_language_party_null, filled: false },
+        { key: "challenge", label: "challenge communities", val: w.nmi_language_challenge, nul: w.nmi_language_challenge_null, filled: true },
+      ];
+      const tip = (d) => (e) => showTip(e, `${w.window}: language communities vs ${d.label}`, [`NMI ${d.val}`, `Shuffled labels: ${d.nul}`, `${w.members} members, ${w.language_communities} language communities`]);
+      // Ticks first and taller than the dots, so a tick behind a dot still shows above and below it.
+      series.forEach((d) => {
+        svg.append("line").attr("x1", x(d.nul)).attr("x2", x(d.nul)).attr("y1", yy - 11).attr("y2", yy + 11).attr("stroke", NMI_COLOR[d.key]).attr("stroke-width", 3);
+        svg.append("rect").attr("x", x(d.nul) - 6).attr("y", yy - 12).attr("width", 12).attr("height", 24).attr("fill", "transparent").on("pointermove", tip(d)).on("pointerleave", hideTip);
+      });
+      series.forEach((d) => {
+        svg.append("circle").attr("cx", x(d.val)).attr("cy", yy).attr("r", 6).attr("fill", d.filled ? NMI_COLOR[d.key] : C.paper).attr("stroke", NMI_COLOR[d.key]).attr("stroke-width", 2)
+          .on("pointermove", tip(d)).on("pointerleave", hideTip);
+        if (i === 0) svg.append("text").attr("x", x(d.val)).attr("y", yy - 14).attr("text-anchor", "middle").attr("class", "strong").text(d.filled ? "vs challenges" : "vs party");
+        // Name each tick once, under the last row, pointing away from the other tick.
+        if (i === windows.length - 1) {
+          svg.append("text").attr("x", x(d.nul) + (d.filled ? 3 : -3)).attr("y", yy + 25).attr("text-anchor", d.filled ? "end" : "start").text(d.filled ? "vs challenges, shuffled" : "vs party, shuffled");
+        }
       });
     });
     svg.append("text").attr("x", left).attr("y", height - 8).text("NMI: 0 = unrelated, 1 = identical groupings");
-    legend("legend-nmi", [{ color: C.ink, label: "Language communities vs challenge-network communities" }, { color: C.ink, shape: "hollow", label: "Language communities vs party" }, { color: C.grey, shape: "line", label: "Same, with shuffled labels" }]);
+    legend("legend-nmi", [{ color: NMI_COLOR.challenge, label: "Language communities vs challenge-network communities" }, { color: NMI_COLOR.challenge, shape: "tick", label: "vs challenges, shuffled labels" },
+      { color: NMI_COLOR.party, shape: "hollow", label: "Language communities vs party" }, { color: NMI_COLOR.party, shape: "tick", label: "vs party, shuffled labels" }]);
     makeTable(document.getElementById("table-nmi"), ["Government", "Members", "Language communities", "Modularity", "Stability (NMI)", "vs party", "shuffled", "vs side", "vs challenges", "shuffled"],
       windows.map((w) => [w.window, w.members, w.language_communities, w.language_modularity, w.language_stability_nmi, w.nmi_language_party, w.nmi_language_party_null, w.nmi_language_side, w.nmi_language_challenge, w.nmi_language_challenge_null]), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
   }
@@ -515,7 +512,7 @@
     Promise.all([loadJSON("data/results/settings.json"), labelsP]).then(([S, lab]) => {
       if (has("fig-settings")) settingsPage(S, lab);
       if (has("fig-hours")) lateNightPage(S);
-    }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-methods", "fig-hours"));
+    }).catch((e) => fail(e, "fig-settings", "fig-side", "fig-chameleons", "fig-hours"));
   }
   if (has("fig-lift")) loadJSON("data/results/similarity.json").then(languagePage).catch((e) => fail(e, "fig-lift", "fig-nmi", "fig-map"));
 })();
