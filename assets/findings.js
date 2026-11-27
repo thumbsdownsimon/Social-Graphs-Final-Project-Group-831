@@ -180,6 +180,11 @@
     setN("finalTone", signed(byLevel["Final readings"].effect));
     setN("minCell", S.min_turns_per_cell);
     setN("minCham", S.min_turns_chameleon);
+    const second = S.second_method;
+    if (second && second.spearman_setting_means != null) {
+      const perSetting = second.by_setting && second.by_setting.length ? Math.round(second.turns_scored / second.by_setting.length) : null;
+      setN("secondMethod", ` A multilingual sentiment model${perSetting ? `, run on ${fmt(perSetting)} turns per setting,` : ""} ranks the ${second.by_setting.length} settings in a similar order to the word list (rank correlation ${second.spearman_setting_means.toFixed(2)}, p = ${second.p_setting_means.toFixed(2)}), though turn by turn the two agree only weakly (${second.spearman_turn_level.toFixed(2)}).`);
+    }
     const dropped = document.getElementById("dropped-words");
     if (dropped) makeTable(dropped, ["Word", "Why it was dropped"], Object.entries(S.dropped_words), []);
 
@@ -334,9 +339,9 @@
     const cross = (m) => L.bins[m].filter((b) => !b.same_party).sort((a, b) => a.bin - b.bin);
     const t = L.tests;
     setN("pairs", fmt(L.cross_party_pairs));
-    setN("liftWindow", t.tfidf.exp_window.lift.toFixed(1));
+    setN("liftWindow", t.tfidf.exp_window.lift.toFixed(2));
     setN("liftDebate", t.tfidf.exp_debate.lift.toFixed(2));
-    setN("liftWindowEmb", t.embedding.exp_window.lift.toFixed(1));
+    setN("liftWindowEmb", t.embedding.exp_window.lift.toFixed(2));
     setN("liftDebateEmb", t.embedding.exp_debate.lift.toFixed(2));
     setN("liftNull", `${t.tfidf.exp_window.null_mean.toFixed(2)} ± ${t.tfidf.exp_window.null_sd.toFixed(2)}`);
     // With n shuffles, no shuffle reaching the observed value means p < 1/n, not p = 0.
@@ -377,6 +382,13 @@
       svg.append("text").attr("x", (m.l + width - m.r) / 2).attr("y", height - 12).attr("text-anchor", "middle").text("Pairs of members from different parties, by how alike they talk");
       makeTable(document.getElementById("table-lift"), ["Fifth", "Pairs", "Challenges", "× vs activity", "× vs same debate", "Mean similarity"],
         rows.map((r) => [r.bin + 1, fmt(r.pairs), fmt(r.observed), r.ratio_window, r.ratio_debate, r.mean_similarity]), [1, 2, 3, 4, 5]);
+      const lo = rows[0], hi = rows[rows.length - 1];
+      const test = L.tests[select.value];
+      const method = select.value === "tfidf" ? "TF-IDF" : "sentence embeddings";
+      setN("liftDerivation", `How the lift is computed (${method}): the most alike fifth's ratio divided by the least alike fifth's. `
+        + `Against activity: ${hi.ratio_window} ÷ ${lo.ratio_window} ≈ ×${test.exp_window.lift.toFixed(2)}. `
+        + `Against the same debate: ${hi.ratio_debate} ÷ ${lo.ratio_debate} ≈ ×${test.exp_debate.lift.toFixed(2)}. `
+        + `The lifts are computed from the unrounded ratios, so the last digit can differ.`);
     };
     select.addEventListener("change", draw);
     draw();
